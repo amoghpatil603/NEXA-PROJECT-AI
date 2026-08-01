@@ -1,0 +1,9 @@
+{
+  "status": "NEXA_TINY_TRAINING_STARTED",
+  "total_steps": 62,
+  "initial_loss": 9.069134593009949,
+  "final_loss": 7.628260314464569,
+  "average_loss": 8.340410634394615,
+  "learning_rate": 9.3e-05,
+  "tokens_processed": 126976
+}

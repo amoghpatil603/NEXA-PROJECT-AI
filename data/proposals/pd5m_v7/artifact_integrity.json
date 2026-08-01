@@ -1,0 +1,34 @@
+{
+  "manifest.json": {
+    "sha256": "a5196fb627dc4ece3863ee6583470bc92ff78144f92a7c3bebe5c95660a1acc8",
+    "bytes": 62340
+  },
+  "manifest.md": {
+    "sha256": "db23e391ba37c01fa1fe249222acbb4f3ed0612f8408d871a5ad669b98467b26",
+    "bytes": 8289
+  },
+  "rights_evidence.json": {
+    "sha256": "0c9ed9b7800b44e26bc86995139ee7d8cb538ae85c035ff8b834b3efebb1b036",
+    "bytes": 17974
+  },
+  "original_language_evidence.json": {
+    "sha256": "504f506192929484a06844ad2691bd1540dfb6de0ec798e661c1c56b0b215b2b",
+    "bytes": 21347
+  },
+  "statistics.json": {
+    "sha256": "8cb9d98643e9f26056c31d2a82e4b1d2112a07ecab3802a67c356d1e14a295f7",
+    "bytes": 2408
+  },
+  "reserve.json": {
+    "sha256": "76d9edc0d918391f75e9b8a23ce153ce53d5b64f7fa6de122dd3607b464efba8",
+    "bytes": 2744168
+  },
+  "selection_log.json": {
+    "sha256": "cdfc858d75522196b4b23cc03b41a2c6cdb7fe250a96214b3ac0bcf6148e81fc",
+    "bytes": 19441
+  },
+  "download_plan.json": {
+    "sha256": "7021ca09acf7b591ee409ea439d443c0cf44c14ec2b51653e2b72861f47dd02b",
+    "bytes": 31315
+  }
+}

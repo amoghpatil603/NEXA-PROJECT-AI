@@ -1,0 +1,38 @@
+{
+  "phase": "3F.1B",
+  "description": "Optimized IncrementalBPETokenizer benchmark report",
+  "timestamp": "2026-07-29T17:03:00Z",
+  "subsets": {
+    "1MB": {
+      "total_train_time_sec": 4.3811,
+      "merges_done": 100,
+      "time_per_100_merges_sec": 4.3811,
+      "peak_rss_mb": 87.38,
+      "actual_corpus_bytes": 1048576,
+      "estimated_full_8k_36mb_runtime_sec": 11898.4,
+      "estimated_full_8k_36mb_runtime_minutes": 198.31,
+      "speedup_vs_baseline": "0.30x"
+    },
+    "5MB": {
+      "total_train_time_sec": 24.044,
+      "merges_done": 100,
+      "time_per_100_merges_sec": 24.044,
+      "peak_rss_mb": 353.18,
+      "actual_corpus_bytes": 5242880,
+      "estimated_full_8k_36mb_runtime_sec": 13059.96,
+      "estimated_full_8k_36mb_runtime_minutes": 217.67,
+      "speedup_vs_baseline": "0.28x"
+    },
+    "10MB": {
+      "total_train_time_sec": 47.6649,
+      "merges_done": 100,
+      "time_per_100_merges_sec": 47.6649,
+      "peak_rss_mb": 687.24,
+      "actual_corpus_bytes": 10485760,
+      "estimated_full_8k_36mb_runtime_sec": 12945.06,
+      "estimated_full_8k_36mb_runtime_minutes": 215.75,
+      "speedup_vs_baseline": "0.28x"
+    }
+  },
+  "optimizations_summary": "Doubly-linked array indexing + direct pair occurrence lookup + lazy heap candidate tie-breaking."
+}

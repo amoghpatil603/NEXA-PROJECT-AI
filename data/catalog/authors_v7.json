@@ -1,0 +1,632 @@
+{
+  "Twain, Mark": {
+    "country_of_origin": "USA",
+    "default_category": "FICTION",
+    "confirmed_original_language": "English"
+  },
+  "Dickens, Charles": {
+    "country_of_origin": "UK",
+    "default_category": "FICTION",
+    "confirmed_original_language": "English"
+  },
+  "Austen, Jane": {
+    "country_of_origin": "UK",
+    "default_category": "FICTION",
+    "confirmed_original_language": "English"
+  },
+  "Melville, Herman": {
+    "country_of_origin": "USA",
+    "default_category": "FICTION",
+    "confirmed_original_language": "English"
+  },
+  "Poe, Edgar Allan": {
+    "country_of_origin": "USA",
+    "default_category": "FICTION",
+    "confirmed_original_language": "English"
+  },
+  "Hawthorne, Nathaniel": {
+    "country_of_origin": "USA",
+    "default_category": "FICTION",
+    "confirmed_original_language": "English"
+  },
+  "Bront\u00eb, Charlotte": {
+    "country_of_origin": "UK",
+    "default_category": "FICTION",
+    "confirmed_original_language": "English"
+  },
+  "Bront\u00eb, Emily": {
+    "country_of_origin": "UK",
+    "default_category": "FICTION",
+    "confirmed_original_language": "English"
+  },
+  "Eliot, George": {
+    "country_of_origin": "UK",
+    "default_category": "FICTION",
+    "confirmed_original_language": "English"
+  },
+  "Hardy, Thomas": {
+    "country_of_origin": "UK",
+    "default_category": "FICTION",
+    "confirmed_original_language": "English"
+  },
+  "Doyle, Arthur Conan": {
+    "country_of_origin": "UK",
+    "default_category": "FICTION",
+    "confirmed_original_language": "English"
+  },
+  "Stevenson, Robert Louis": {
+    "country_of_origin": "UK",
+    "default_category": "FICTION",
+    "confirmed_original_language": "English"
+  },
+  "Wells, H. G.": {
+    "country_of_origin": "UK",
+    "default_category": "FICTION",
+    "confirmed_original_language": "English"
+  },
+  "Stoker, Bram": {
+    "country_of_origin": "UK",
+    "default_category": "FICTION",
+    "confirmed_original_language": "English"
+  },
+  "London, Jack": {
+    "country_of_origin": "USA",
+    "default_category": "FICTION",
+    "confirmed_original_language": "English"
+  },
+  "Wharton, Edith": {
+    "country_of_origin": "USA",
+    "default_category": "FICTION",
+    "confirmed_original_language": "English"
+  },
+  "Cather, Willa": {
+    "country_of_origin": "USA",
+    "default_category": "FICTION",
+    "confirmed_original_language": "English"
+  },
+  "James, Henry": {
+    "country_of_origin": "USA",
+    "default_category": "FICTION",
+    "confirmed_original_language": "English"
+  },
+  "Crane, Stephen": {
+    "country_of_origin": "USA",
+    "default_category": "FICTION",
+    "confirmed_original_language": "English"
+  },
+  "Wilde, Oscar": {
+    "country_of_origin": "UK/Ireland",
+    "default_category": "FICTION",
+    "confirmed_original_language": "English"
+  },
+  "Carroll, Lewis": {
+    "country_of_origin": "UK",
+    "default_category": "FICTION",
+    "confirmed_original_language": "English"
+  },
+  "Stockton, Frank R.": {
+    "country_of_origin": "USA",
+    "default_category": "FICTION",
+    "confirmed_original_language": "English"
+  },
+  "Bierce, Ambrose": {
+    "country_of_origin": "USA",
+    "default_category": "FICTION",
+    "confirmed_original_language": "English"
+  },
+  "Shelley, Mary Wollstonecraft": {
+    "country_of_origin": "UK",
+    "default_category": "FICTION",
+    "confirmed_original_language": "English"
+  },
+  "Gaskell, Elizabeth Cleghorn": {
+    "country_of_origin": "UK",
+    "default_category": "FICTION",
+    "confirmed_original_language": "English"
+  },
+  "Collins, Wilkie": {
+    "country_of_origin": "UK",
+    "default_category": "FICTION",
+    "confirmed_original_language": "English"
+  },
+  "Trollope, Anthony": {
+    "country_of_origin": "UK",
+    "default_category": "FICTION",
+    "confirmed_original_language": "English"
+  },
+  "Alcott, Louisa May": {
+    "country_of_origin": "USA",
+    "default_category": "FICTION",
+    "confirmed_original_language": "English"
+  },
+  "Cooper, James Fenimore": {
+    "country_of_origin": "USA",
+    "default_category": "FICTION",
+    "confirmed_original_language": "English"
+  },
+  "Walpole, Horace": {
+    "country_of_origin": "UK",
+    "default_category": "FICTION",
+    "confirmed_original_language": "English"
+  },
+  "Howard, Robert E.": {
+    "country_of_origin": "USA",
+    "default_category": "FICTION",
+    "confirmed_original_language": "English"
+  },
+  "O. Henry": {
+    "country_of_origin": "USA",
+    "default_category": "FICTION",
+    "confirmed_original_language": "English"
+  },
+  "Chopin, Kate": {
+    "country_of_origin": "USA",
+    "default_category": "FICTION",
+    "confirmed_original_language": "English"
+  },
+  "Lovecraft, H. P.": {
+    "country_of_origin": "USA",
+    "default_category": "FICTION",
+    "confirmed_original_language": "English"
+  },
+  "Anderson, Sherwood": {
+    "country_of_origin": "USA",
+    "default_category": "FICTION",
+    "confirmed_original_language": "English"
+  },
+  "Lewis, Sinclair": {
+    "country_of_origin": "USA",
+    "default_category": "FICTION",
+    "confirmed_original_language": "English"
+  },
+  "Fitzgerald, F. Scott": {
+    "country_of_origin": "USA",
+    "default_category": "FICTION",
+    "confirmed_original_language": "English"
+  },
+  "Tarkington, Booth": {
+    "country_of_origin": "USA",
+    "default_category": "FICTION",
+    "confirmed_original_language": "English"
+  },
+  "Jewett, Sarah Orne": {
+    "country_of_origin": "USA",
+    "default_category": "FICTION",
+    "confirmed_original_language": "English"
+  },
+  "Harte, Bret": {
+    "country_of_origin": "USA",
+    "default_category": "FICTION",
+    "confirmed_original_language": "English"
+  },
+  "Cable, George Washington": {
+    "country_of_origin": "USA",
+    "default_category": "FICTION",
+    "confirmed_original_language": "English"
+  },
+  "Bellamy, Edward": {
+    "country_of_origin": "USA",
+    "default_category": "FICTION",
+    "confirmed_original_language": "English"
+  },
+  "Norris, Frank": {
+    "country_of_origin": "USA",
+    "default_category": "FICTION",
+    "confirmed_original_language": "English"
+  },
+  "Frederic, Harold": {
+    "country_of_origin": "USA",
+    "default_category": "FICTION",
+    "confirmed_original_language": "English"
+  },
+  "Howells, William Dean": {
+    "country_of_origin": "USA",
+    "default_category": "FICTION",
+    "confirmed_original_language": "English"
+  },
+  "Chesnutt, Charles W.": {
+    "country_of_origin": "USA",
+    "default_category": "FICTION",
+    "confirmed_original_language": "English"
+  },
+  "Johnson, Samuel": {
+    "country_of_origin": "UK",
+    "default_category": "ESSAYS / GENERAL NONFICTION",
+    "confirmed_original_language": "English"
+  },
+  "Hazlitt, William": {
+    "country_of_origin": "UK",
+    "default_category": "ESSAYS / GENERAL NONFICTION",
+    "confirmed_original_language": "English"
+  },
+  "Lamb, Charles": {
+    "country_of_origin": "UK",
+    "default_category": "ESSAYS / GENERAL NONFICTION",
+    "confirmed_original_language": "English"
+  },
+  "Arnold, Matthew": {
+    "country_of_origin": "UK",
+    "default_category": "ESSAYS / GENERAL NONFICTION",
+    "confirmed_original_language": "English"
+  },
+  "Ruskin, John": {
+    "country_of_origin": "UK",
+    "default_category": "ESSAYS / GENERAL NONFICTION",
+    "confirmed_original_language": "English"
+  },
+  "Pater, Walter": {
+    "country_of_origin": "UK",
+    "default_category": "ESSAYS / GENERAL NONFICTION",
+    "confirmed_original_language": "English"
+  },
+  "Chesterton, G. K.": {
+    "country_of_origin": "UK",
+    "default_category": "ESSAYS / GENERAL NONFICTION",
+    "confirmed_original_language": "English"
+  },
+  "Repplier, Agnes": {
+    "country_of_origin": "USA",
+    "default_category": "ESSAYS / GENERAL NONFICTION",
+    "confirmed_original_language": "English"
+  },
+  "Holmes, Oliver Wendell": {
+    "country_of_origin": "USA",
+    "default_category": "ESSAYS / GENERAL NONFICTION",
+    "confirmed_original_language": "English"
+  },
+  "Thoreau, Henry David": {
+    "country_of_origin": "USA",
+    "default_category": "ESSAYS / GENERAL NONFICTION",
+    "confirmed_original_language": "English"
+  },
+  "Mencken, H. L.": {
+    "country_of_origin": "USA",
+    "default_category": "ESSAYS / GENERAL NONFICTION",
+    "confirmed_original_language": "English"
+  },
+  "Emerson, Ralph Waldo": {
+    "country_of_origin": "USA",
+    "default_category": "ESSAYS / GENERAL NONFICTION",
+    "confirmed_original_language": "English"
+  },
+  "De Quincey, Thomas": {
+    "country_of_origin": "UK",
+    "default_category": "ESSAYS / GENERAL NONFICTION",
+    "confirmed_original_language": "English"
+  },
+  "Higginson, Thomas Wentworth": {
+    "country_of_origin": "USA",
+    "default_category": "ESSAYS / GENERAL NONFICTION",
+    "confirmed_original_language": "English"
+  },
+  "Crothers, Samuel McChord": {
+    "country_of_origin": "USA",
+    "default_category": "ESSAYS / GENERAL NONFICTION",
+    "confirmed_original_language": "English"
+  },
+  "More, Paul Elmer": {
+    "country_of_origin": "USA",
+    "default_category": "ESSAYS / GENERAL NONFICTION",
+    "confirmed_original_language": "English"
+  },
+  "Benson, Arthur Christopher": {
+    "country_of_origin": "UK",
+    "default_category": "ESSAYS / GENERAL NONFICTION",
+    "confirmed_original_language": "English"
+  },
+  "Darwin, Charles": {
+    "country_of_origin": "UK",
+    "default_category": "SCIENCE / EDUCATION",
+    "confirmed_original_language": "English"
+  },
+  "Faraday, Michael": {
+    "country_of_origin": "UK",
+    "default_category": "SCIENCE / EDUCATION",
+    "confirmed_original_language": "English"
+  },
+  "Huxley, Thomas Henry": {
+    "country_of_origin": "UK",
+    "default_category": "SCIENCE / EDUCATION",
+    "confirmed_original_language": "English"
+  },
+  "Tyndall, John": {
+    "country_of_origin": "UK",
+    "default_category": "SCIENCE / EDUCATION",
+    "confirmed_original_language": "English"
+  },
+  "Maxwell, James Clerk": {
+    "country_of_origin": "UK",
+    "default_category": "SCIENCE / EDUCATION",
+    "confirmed_original_language": "English"
+  },
+  "Lyell, Charles": {
+    "country_of_origin": "UK",
+    "default_category": "SCIENCE / EDUCATION",
+    "confirmed_original_language": "English"
+  },
+  "Proctor, Richard A.": {
+    "country_of_origin": "UK",
+    "default_category": "SCIENCE / EDUCATION",
+    "confirmed_original_language": "English"
+  },
+  "Wallace, Alfred Russel": {
+    "country_of_origin": "UK",
+    "default_category": "SCIENCE / EDUCATION",
+    "confirmed_original_language": "English"
+  },
+  "Franklin, Benjamin": {
+    "country_of_origin": "USA",
+    "default_category": "SCIENCE / EDUCATION",
+    "confirmed_original_language": "English"
+  },
+  "Lodge, Oliver": {
+    "country_of_origin": "UK",
+    "default_category": "SCIENCE / EDUCATION",
+    "confirmed_original_language": "English"
+  },
+  "Ball, Robert S.": {
+    "country_of_origin": "UK",
+    "default_category": "SCIENCE / EDUCATION",
+    "confirmed_original_language": "English"
+  },
+  "Geikie, Archibald": {
+    "country_of_origin": "UK",
+    "default_category": "SCIENCE / EDUCATION",
+    "confirmed_original_language": "English"
+  },
+  "Newcomb, Simon": {
+    "country_of_origin": "USA",
+    "default_category": "SCIENCE / EDUCATION",
+    "confirmed_original_language": "English"
+  },
+  "Galton, Francis": {
+    "country_of_origin": "UK",
+    "default_category": "SCIENCE / EDUCATION",
+    "confirmed_original_language": "English"
+  },
+  "Lubbock, John": {
+    "country_of_origin": "UK",
+    "default_category": "SCIENCE / EDUCATION",
+    "confirmed_original_language": "English"
+  },
+  "Romanes, George John": {
+    "country_of_origin": "UK",
+    "default_category": "SCIENCE / EDUCATION",
+    "confirmed_original_language": "English"
+  },
+  "Gibbon, Edward": {
+    "country_of_origin": "UK",
+    "default_category": "HISTORY / BIOGRAPHY",
+    "confirmed_original_language": "English"
+  },
+  "Macaulay, Thomas Babington": {
+    "country_of_origin": "UK",
+    "default_category": "HISTORY / BIOGRAPHY",
+    "confirmed_original_language": "English"
+  },
+  "Parkman, Francis": {
+    "country_of_origin": "USA",
+    "default_category": "HISTORY / BIOGRAPHY",
+    "confirmed_original_language": "English"
+  },
+  "Bancroft, George": {
+    "country_of_origin": "USA",
+    "default_category": "HISTORY / BIOGRAPHY",
+    "confirmed_original_language": "English"
+  },
+  "Froude, James Anthony": {
+    "country_of_origin": "UK",
+    "default_category": "HISTORY / BIOGRAPHY",
+    "confirmed_original_language": "English"
+  },
+  "Motley, John Lothrop": {
+    "country_of_origin": "USA",
+    "default_category": "HISTORY / BIOGRAPHY",
+    "confirmed_original_language": "English"
+  },
+  "Roosevelt, Theodore": {
+    "country_of_origin": "USA",
+    "default_category": "HISTORY / BIOGRAPHY",
+    "confirmed_original_language": "English"
+  },
+  "Prescott, William Hickling": {
+    "country_of_origin": "USA",
+    "default_category": "HISTORY / BIOGRAPHY",
+    "confirmed_original_language": "English"
+  },
+  "Irving, Washington": {
+    "country_of_origin": "USA",
+    "default_category": "HISTORY / BIOGRAPHY",
+    "confirmed_original_language": "English"
+  },
+  "Fiske, John": {
+    "country_of_origin": "USA",
+    "default_category": "HISTORY / BIOGRAPHY",
+    "confirmed_original_language": "English"
+  },
+  "Carlyle, Thomas": {
+    "country_of_origin": "UK",
+    "default_category": "HISTORY / BIOGRAPHY",
+    "confirmed_original_language": "English"
+  },
+  "Green, John Richard": {
+    "country_of_origin": "UK",
+    "default_category": "HISTORY / BIOGRAPHY",
+    "confirmed_original_language": "English"
+  },
+  "Lecky, William Edward Hartpole": {
+    "country_of_origin": "UK",
+    "default_category": "HISTORY / BIOGRAPHY",
+    "confirmed_original_language": "English"
+  },
+  "Adams, Henry": {
+    "country_of_origin": "USA",
+    "default_category": "HISTORY / BIOGRAPHY",
+    "confirmed_original_language": "English"
+  },
+  "Southey, Robert": {
+    "country_of_origin": "UK",
+    "default_category": "HISTORY / BIOGRAPHY",
+    "confirmed_original_language": "English"
+  },
+  "Boswell, James": {
+    "country_of_origin": "UK",
+    "default_category": "HISTORY / BIOGRAPHY",
+    "confirmed_original_language": "English"
+  },
+  "Douglass, Frederick": {
+    "country_of_origin": "USA",
+    "default_category": "HISTORY / BIOGRAPHY",
+    "confirmed_original_language": "English"
+  },
+  "Grant, Ulysses S.": {
+    "country_of_origin": "USA",
+    "default_category": "HISTORY / BIOGRAPHY",
+    "confirmed_original_language": "English"
+  },
+  "Washington, Booker T.": {
+    "country_of_origin": "USA",
+    "default_category": "HISTORY / BIOGRAPHY",
+    "confirmed_original_language": "English"
+  },
+  "Smith, Adam": {
+    "country_of_origin": "UK",
+    "default_category": "PHILOSOPHY / SOCIAL THOUGHT",
+    "confirmed_original_language": "English"
+  },
+  "Locke, John": {
+    "country_of_origin": "UK",
+    "default_category": "PHILOSOPHY / SOCIAL THOUGHT",
+    "confirmed_original_language": "English"
+  },
+  "Hume, David": {
+    "country_of_origin": "UK",
+    "default_category": "PHILOSOPHY / SOCIAL THOUGHT",
+    "confirmed_original_language": "English"
+  },
+  "Mill, John Stuart": {
+    "country_of_origin": "UK",
+    "default_category": "PHILOSOPHY / SOCIAL THOUGHT",
+    "confirmed_original_language": "English"
+  },
+  "Hobbes, Thomas": {
+    "country_of_origin": "UK",
+    "default_category": "PHILOSOPHY / SOCIAL THOUGHT",
+    "confirmed_original_language": "English"
+  },
+  "Burke, Edmund": {
+    "country_of_origin": "UK",
+    "default_category": "PHILOSOPHY / SOCIAL THOUGHT",
+    "confirmed_original_language": "English"
+  },
+  "Hamilton, Alexander": {
+    "country_of_origin": "USA",
+    "default_category": "PHILOSOPHY / SOCIAL THOUGHT",
+    "confirmed_original_language": "English"
+  },
+  "Madison, James": {
+    "country_of_origin": "USA",
+    "default_category": "PHILOSOPHY / SOCIAL THOUGHT",
+    "confirmed_original_language": "English"
+  },
+  "Jefferson, Thomas": {
+    "country_of_origin": "USA",
+    "default_category": "PHILOSOPHY / SOCIAL THOUGHT",
+    "confirmed_original_language": "English"
+  },
+  "James, William": {
+    "country_of_origin": "USA",
+    "default_category": "PHILOSOPHY / SOCIAL THOUGHT",
+    "confirmed_original_language": "English"
+  },
+  "Dewey, John": {
+    "country_of_origin": "USA",
+    "default_category": "PHILOSOPHY / SOCIAL THOUGHT",
+    "confirmed_original_language": "English"
+  },
+  "Spencer, Herbert": {
+    "country_of_origin": "UK",
+    "default_category": "PHILOSOPHY / SOCIAL THOUGHT",
+    "confirmed_original_language": "English"
+  },
+  "Bagehot, Walter": {
+    "country_of_origin": "UK",
+    "default_category": "PHILOSOPHY / SOCIAL THOUGHT",
+    "confirmed_original_language": "English"
+  },
+  "George, Henry": {
+    "country_of_origin": "USA",
+    "default_category": "PHILOSOPHY / SOCIAL THOUGHT",
+    "confirmed_original_language": "English"
+  },
+  "Paine, Thomas": {
+    "country_of_origin": "USA/UK",
+    "default_category": "PHILOSOPHY / SOCIAL THOUGHT",
+    "confirmed_original_language": "English"
+  },
+  "Bentham, Jeremy": {
+    "country_of_origin": "UK",
+    "default_category": "PHILOSOPHY / SOCIAL THOUGHT",
+    "confirmed_original_language": "English"
+  },
+  "Veblen, Thorstein": {
+    "country_of_origin": "USA",
+    "default_category": "PHILOSOPHY / SOCIAL THOUGHT",
+    "confirmed_original_language": "English"
+  },
+  "Royce, Josiah": {
+    "country_of_origin": "USA",
+    "default_category": "PHILOSOPHY / SOCIAL THOUGHT",
+    "confirmed_original_language": "English"
+  },
+  "Santayana, George": {
+    "country_of_origin": "USA",
+    "default_category": "PHILOSOPHY / SOCIAL THOUGHT",
+    "confirmed_original_language": "English"
+  },
+  "Sumner, William Graham": {
+    "country_of_origin": "USA",
+    "default_category": "PHILOSOPHY / SOCIAL THOUGHT",
+    "confirmed_original_language": "English"
+  },
+  "Muir, John": {
+    "country_of_origin": "USA",
+    "default_category": "OTHER EXPOSITORY PROSE",
+    "confirmed_original_language": "English"
+  },
+  "King, Clarence": {
+    "country_of_origin": "USA",
+    "default_category": "OTHER EXPOSITORY PROSE",
+    "confirmed_original_language": "English"
+  },
+  "Bates, Henry Walter": {
+    "country_of_origin": "UK",
+    "default_category": "OTHER EXPOSITORY PROSE",
+    "confirmed_original_language": "English"
+  },
+  "Hudson, W. H.": {
+    "country_of_origin": "UK",
+    "default_category": "OTHER EXPOSITORY PROSE",
+    "confirmed_original_language": "English"
+  },
+  "Hearn, Lafcadio": {
+    "country_of_origin": "USA/UK",
+    "default_category": "OTHER EXPOSITORY PROSE",
+    "confirmed_original_language": "English"
+  },
+  "Burroughs, John": {
+    "country_of_origin": "USA",
+    "default_category": "OTHER EXPOSITORY PROSE",
+    "confirmed_original_language": "English"
+  },
+  "White, Gilbert": {
+    "country_of_origin": "UK",
+    "default_category": "OTHER EXPOSITORY PROSE",
+    "confirmed_original_language": "English"
+  },
+  "Jefferies, Richard": {
+    "country_of_origin": "UK",
+    "default_category": "OTHER EXPOSITORY PROSE",
+    "confirmed_original_language": "English"
+  }
+}

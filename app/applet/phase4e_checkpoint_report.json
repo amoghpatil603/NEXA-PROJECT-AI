@@ -1,0 +1,8 @@
+{
+  "checkpoint_dir": "checkpoints_phase4e",
+  "latest_checkpoint": "checkpoints_phase4e/latest.ckpt",
+  "best_checkpoint": "checkpoints_phase4e/best.ckpt",
+  "checkpoint_frequency_steps": 500,
+  "resume_supported": true,
+  "safe_globals_configured": true
+}

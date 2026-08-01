@@ -1,0 +1,6 @@
+{
+  "train": 39978,
+  "validation": 3276,
+  "test": 3111,
+  "stride": 256
+}

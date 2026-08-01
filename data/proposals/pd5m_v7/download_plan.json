@@ -1,0 +1,673 @@
+{
+  "corpus_name": "NEXA-PD5M-v7",
+  "download_tool": "nexa-model/data/recovery.py",
+  "primary_targets_count": 74,
+  "planned_downloads": [
+    {
+      "source_id": "70",
+      "url": "https://www.gutenberg.org/ebooks/70.txt.utf-8",
+      "expected_raw_path": "data/recovery/raw/70.txt",
+      "expected_clean_path": "data/recovery/clean/70.txt",
+      "expected_raw_sha256_plan": "PENDING_DOWNLOAD_70_RAW_SHA256",
+      "expected_clean_sha256_plan": "PENDING_DOWNLOAD_70_CLEAN_SHA256",
+      "retry_policy": "max_retries=3, fallback_mirror=True"
+    },
+    {
+      "source_id": "573",
+      "url": "https://www.gutenberg.org/ebooks/573.txt.utf-8",
+      "expected_raw_path": "data/recovery/raw/573.txt",
+      "expected_clean_path": "data/recovery/clean/573.txt",
+      "expected_raw_sha256_plan": "PENDING_DOWNLOAD_573_RAW_SHA256",
+      "expected_clean_sha256_plan": "PENDING_DOWNLOAD_573_CLEAN_SHA256",
+      "retry_policy": "max_retries=3, fallback_mirror=True"
+    },
+    {
+      "source_id": "577",
+      "url": "https://www.gutenberg.org/ebooks/577.txt.utf-8",
+      "expected_raw_path": "data/recovery/raw/577.txt",
+      "expected_clean_path": "data/recovery/clean/577.txt",
+      "expected_raw_sha256_plan": "PENDING_DOWNLOAD_577_RAW_SHA256",
+      "expected_clean_sha256_plan": "PENDING_DOWNLOAD_577_CLEAN_SHA256",
+      "retry_policy": "max_retries=3, fallback_mirror=True"
+    },
+    {
+      "source_id": "701",
+      "url": "https://www.gutenberg.org/ebooks/701.txt.utf-8",
+      "expected_raw_path": "data/recovery/raw/701.txt",
+      "expected_clean_path": "data/recovery/clean/701.txt",
+      "expected_raw_sha256_plan": "PENDING_DOWNLOAD_701_RAW_SHA256",
+      "expected_clean_sha256_plan": "PENDING_DOWNLOAD_701_CLEAN_SHA256",
+      "retry_policy": "max_retries=3, fallback_mirror=True"
+    },
+    {
+      "source_id": "751",
+      "url": "https://www.gutenberg.org/ebooks/751.txt.utf-8",
+      "expected_raw_path": "data/recovery/raw/751.txt",
+      "expected_clean_path": "data/recovery/clean/751.txt",
+      "expected_raw_sha256_plan": "PENDING_DOWNLOAD_751_RAW_SHA256",
+      "expected_clean_sha256_plan": "PENDING_DOWNLOAD_751_CLEAN_SHA256",
+      "retry_policy": "max_retries=3, fallback_mirror=True"
+    },
+    {
+      "source_id": "993",
+      "url": "https://www.gutenberg.org/ebooks/993.txt.utf-8",
+      "expected_raw_path": "data/recovery/raw/993.txt",
+      "expected_clean_path": "data/recovery/clean/993.txt",
+      "expected_raw_sha256_plan": "PENDING_DOWNLOAD_993_RAW_SHA256",
+      "expected_clean_sha256_plan": "PENDING_DOWNLOAD_993_CLEAN_SHA256",
+      "retry_policy": "max_retries=3, fallback_mirror=True"
+    },
+    {
+      "source_id": "2049",
+      "url": "https://www.gutenberg.org/ebooks/2049.txt.utf-8",
+      "expected_raw_path": "data/recovery/raw/2049.txt",
+      "expected_clean_path": "data/recovery/clean/2049.txt",
+      "expected_raw_sha256_plan": "PENDING_DOWNLOAD_2049_RAW_SHA256",
+      "expected_clean_sha256_plan": "PENDING_DOWNLOAD_2049_CLEAN_SHA256",
+      "retry_policy": "max_retries=3, fallback_mirror=True"
+    },
+    {
+      "source_id": "2944",
+      "url": "https://www.gutenberg.org/ebooks/2944.txt.utf-8",
+      "expected_raw_path": "data/recovery/raw/2944.txt",
+      "expected_clean_path": "data/recovery/clean/2944.txt",
+      "expected_raw_sha256_plan": "PENDING_DOWNLOAD_2944_RAW_SHA256",
+      "expected_clean_sha256_plan": "PENDING_DOWNLOAD_2944_CLEAN_SHA256",
+      "retry_policy": "max_retries=3, fallback_mirror=True"
+    },
+    {
+      "source_id": "4510",
+      "url": "https://www.gutenberg.org/ebooks/4510.txt.utf-8",
+      "expected_raw_path": "data/recovery/raw/4510.txt",
+      "expected_clean_path": "data/recovery/clean/4510.txt",
+      "expected_raw_sha256_plan": "PENDING_DOWNLOAD_4510_RAW_SHA256",
+      "expected_clean_sha256_plan": "PENDING_DOWNLOAD_4510_CLEAN_SHA256",
+      "retry_policy": "max_retries=3, fallback_mirror=True"
+    },
+    {
+      "source_id": "15866",
+      "url": "https://www.gutenberg.org/ebooks/15866.txt.utf-8",
+      "expected_raw_path": "data/recovery/raw/15866.txt",
+      "expected_clean_path": "data/recovery/clean/15866.txt",
+      "expected_raw_sha256_plan": "PENDING_DOWNLOAD_15866_RAW_SHA256",
+      "expected_clean_sha256_plan": "PENDING_DOWNLOAD_15866_CLEAN_SHA256",
+      "retry_policy": "max_retries=3, fallback_mirror=True"
+    },
+    {
+      "source_id": "16722",
+      "url": "https://www.gutenberg.org/ebooks/16722.txt.utf-8",
+      "expected_raw_path": "data/recovery/raw/16722.txt",
+      "expected_clean_path": "data/recovery/clean/16722.txt",
+      "expected_raw_sha256_plan": "PENDING_DOWNLOAD_16722_RAW_SHA256",
+      "expected_clean_sha256_plan": "PENDING_DOWNLOAD_16722_CLEAN_SHA256",
+      "retry_policy": "max_retries=3, fallback_mirror=True"
+    },
+    {
+      "source_id": "26523",
+      "url": "https://www.gutenberg.org/ebooks/26523.txt.utf-8",
+      "expected_raw_path": "data/recovery/raw/26523.txt",
+      "expected_clean_path": "data/recovery/clean/26523.txt",
+      "expected_raw_sha256_plan": "PENDING_DOWNLOAD_26523_RAW_SHA256",
+      "expected_clean_sha256_plan": "PENDING_DOWNLOAD_26523_CLEAN_SHA256",
+      "retry_policy": "max_retries=3, fallback_mirror=True"
+    },
+    {
+      "source_id": "30637",
+      "url": "https://www.gutenberg.org/ebooks/30637.txt.utf-8",
+      "expected_raw_path": "data/recovery/raw/30637.txt",
+      "expected_clean_path": "data/recovery/clean/30637.txt",
+      "expected_raw_sha256_plan": "PENDING_DOWNLOAD_30637_RAW_SHA256",
+      "expected_clean_sha256_plan": "PENDING_DOWNLOAD_30637_CLEAN_SHA256",
+      "retry_policy": "max_retries=3, fallback_mirror=True"
+    },
+    {
+      "source_id": "414",
+      "url": "https://www.gutenberg.org/ebooks/414.txt.utf-8",
+      "expected_raw_path": "data/recovery/raw/414.txt",
+      "expected_clean_path": "data/recovery/clean/414.txt",
+      "expected_raw_sha256_plan": "PENDING_DOWNLOAD_414_RAW_SHA256",
+      "expected_clean_sha256_plan": "PENDING_DOWNLOAD_414_CLEAN_SHA256",
+      "retry_policy": "max_retries=3, fallback_mirror=True"
+    },
+    {
+      "source_id": "852",
+      "url": "https://www.gutenberg.org/ebooks/852.txt.utf-8",
+      "expected_raw_path": "data/recovery/raw/852.txt",
+      "expected_clean_path": "data/recovery/clean/852.txt",
+      "expected_raw_sha256_plan": "PENDING_DOWNLOAD_852_RAW_SHA256",
+      "expected_clean_sha256_plan": "PENDING_DOWNLOAD_852_CLEAN_SHA256",
+      "retry_policy": "max_retries=3, fallback_mirror=True"
+    },
+    {
+      "source_id": "944",
+      "url": "https://www.gutenberg.org/ebooks/944.txt.utf-8",
+      "expected_raw_path": "data/recovery/raw/944.txt",
+      "expected_clean_path": "data/recovery/clean/944.txt",
+      "expected_raw_sha256_plan": "PENDING_DOWNLOAD_944_RAW_SHA256",
+      "expected_clean_sha256_plan": "PENDING_DOWNLOAD_944_CLEAN_SHA256",
+      "retry_policy": "max_retries=3, fallback_mirror=True"
+    },
+    {
+      "source_id": "1225",
+      "url": "https://www.gutenberg.org/ebooks/1225.txt.utf-8",
+      "expected_raw_path": "data/recovery/raw/1225.txt",
+      "expected_clean_path": "data/recovery/clean/1225.txt",
+      "expected_raw_sha256_plan": "PENDING_DOWNLOAD_1225_RAW_SHA256",
+      "expected_clean_sha256_plan": "PENDING_DOWNLOAD_1225_CLEAN_SHA256",
+      "retry_policy": "max_retries=3, fallback_mirror=True"
+    },
+    {
+      "source_id": "1315",
+      "url": "https://www.gutenberg.org/ebooks/1315.txt.utf-8",
+      "expected_raw_path": "data/recovery/raw/1315.txt",
+      "expected_clean_path": "data/recovery/clean/1315.txt",
+      "expected_raw_sha256_plan": "PENDING_DOWNLOAD_1315_RAW_SHA256",
+      "expected_clean_sha256_plan": "PENDING_DOWNLOAD_1315_CLEAN_SHA256",
+      "retry_policy": "max_retries=3, fallback_mirror=True"
+    },
+    {
+      "source_id": "1889",
+      "url": "https://www.gutenberg.org/ebooks/1889.txt.utf-8",
+      "expected_raw_path": "data/recovery/raw/1889.txt",
+      "expected_clean_path": "data/recovery/clean/1889.txt",
+      "expected_raw_sha256_plan": "PENDING_DOWNLOAD_1889_RAW_SHA256",
+      "expected_clean_sha256_plan": "PENDING_DOWNLOAD_1889_CLEAN_SHA256",
+      "retry_policy": "max_retries=3, fallback_mirror=True"
+    },
+    {
+      "source_id": "2298",
+      "url": "https://www.gutenberg.org/ebooks/2298.txt.utf-8",
+      "expected_raw_path": "data/recovery/raw/2298.txt",
+      "expected_clean_path": "data/recovery/clean/2298.txt",
+      "expected_raw_sha256_plan": "PENDING_DOWNLOAD_2298_RAW_SHA256",
+      "expected_clean_sha256_plan": "PENDING_DOWNLOAD_2298_CLEAN_SHA256",
+      "retry_policy": "max_retries=3, fallback_mirror=True"
+    },
+    {
+      "source_id": "2440",
+      "url": "https://www.gutenberg.org/ebooks/2440.txt.utf-8",
+      "expected_raw_path": "data/recovery/raw/2440.txt",
+      "expected_clean_path": "data/recovery/clean/2440.txt",
+      "expected_raw_sha256_plan": "PENDING_DOWNLOAD_2440_RAW_SHA256",
+      "expected_clean_sha256_plan": "PENDING_DOWNLOAD_2440_CLEAN_SHA256",
+      "retry_policy": "max_retries=3, fallback_mirror=True"
+    },
+    {
+      "source_id": "3772",
+      "url": "https://www.gutenberg.org/ebooks/3772.txt.utf-8",
+      "expected_raw_path": "data/recovery/raw/3772.txt",
+      "expected_clean_path": "data/recovery/clean/3772.txt",
+      "expected_raw_sha256_plan": "PENDING_DOWNLOAD_3772_RAW_SHA256",
+      "expected_clean_sha256_plan": "PENDING_DOWNLOAD_3772_CLEAN_SHA256",
+      "retry_policy": "max_retries=3, fallback_mirror=True"
+    },
+    {
+      "source_id": "4065",
+      "url": "https://www.gutenberg.org/ebooks/4065.txt.utf-8",
+      "expected_raw_path": "data/recovery/raw/4065.txt",
+      "expected_clean_path": "data/recovery/clean/4065.txt",
+      "expected_raw_sha256_plan": "PENDING_DOWNLOAD_4065_RAW_SHA256",
+      "expected_clean_sha256_plan": "PENDING_DOWNLOAD_4065_CLEAN_SHA256",
+      "retry_policy": "max_retries=3, fallback_mirror=True"
+    },
+    {
+      "source_id": "4908",
+      "url": "https://www.gutenberg.org/ebooks/4908.txt.utf-8",
+      "expected_raw_path": "data/recovery/raw/4908.txt",
+      "expected_clean_path": "data/recovery/clean/4908.txt",
+      "expected_raw_sha256_plan": "PENDING_DOWNLOAD_4908_RAW_SHA256",
+      "expected_clean_sha256_plan": "PENDING_DOWNLOAD_4908_CLEAN_SHA256",
+      "retry_policy": "max_retries=3, fallback_mirror=True"
+    },
+    {
+      "source_id": "14474",
+      "url": "https://www.gutenberg.org/ebooks/14474.txt.utf-8",
+      "expected_raw_path": "data/recovery/raw/14474.txt",
+      "expected_clean_path": "data/recovery/clean/14474.txt",
+      "expected_raw_sha256_plan": "PENDING_DOWNLOAD_14474_RAW_SHA256",
+      "expected_clean_sha256_plan": "PENDING_DOWNLOAD_14474_CLEAN_SHA256",
+      "retry_policy": "max_retries=3, fallback_mirror=True"
+    },
+    {
+      "source_id": "1",
+      "url": "https://www.gutenberg.org/ebooks/1.txt.utf-8",
+      "expected_raw_path": "data/recovery/raw/1.txt",
+      "expected_clean_path": "data/recovery/clean/1.txt",
+      "expected_raw_sha256_plan": "PENDING_DOWNLOAD_1_RAW_SHA256",
+      "expected_clean_sha256_plan": "PENDING_DOWNLOAD_1_CLEAN_SHA256",
+      "retry_policy": "max_retries=3, fallback_mirror=True"
+    },
+    {
+      "source_id": "23",
+      "url": "https://www.gutenberg.org/ebooks/23.txt.utf-8",
+      "expected_raw_path": "data/recovery/raw/23.txt",
+      "expected_clean_path": "data/recovery/clean/23.txt",
+      "expected_raw_sha256_plan": "PENDING_DOWNLOAD_23_RAW_SHA256",
+      "expected_clean_sha256_plan": "PENDING_DOWNLOAD_23_CLEAN_SHA256",
+      "retry_policy": "max_retries=3, fallback_mirror=True"
+    },
+    {
+      "source_id": "33",
+      "url": "https://www.gutenberg.org/ebooks/33.txt.utf-8",
+      "expected_raw_path": "data/recovery/raw/33.txt",
+      "expected_clean_path": "data/recovery/clean/33.txt",
+      "expected_raw_sha256_plan": "PENDING_DOWNLOAD_33_RAW_SHA256",
+      "expected_clean_sha256_plan": "PENDING_DOWNLOAD_33_CLEAN_SHA256",
+      "retry_policy": "max_retries=3, fallback_mirror=True"
+    },
+    {
+      "source_id": "41",
+      "url": "https://www.gutenberg.org/ebooks/41.txt.utf-8",
+      "expected_raw_path": "data/recovery/raw/41.txt",
+      "expected_clean_path": "data/recovery/clean/41.txt",
+      "expected_raw_sha256_plan": "PENDING_DOWNLOAD_41_RAW_SHA256",
+      "expected_clean_sha256_plan": "PENDING_DOWNLOAD_41_CLEAN_SHA256",
+      "retry_policy": "max_retries=3, fallback_mirror=True"
+    },
+    {
+      "source_id": "73",
+      "url": "https://www.gutenberg.org/ebooks/73.txt.utf-8",
+      "expected_raw_path": "data/recovery/raw/73.txt",
+      "expected_clean_path": "data/recovery/clean/73.txt",
+      "expected_raw_sha256_plan": "PENDING_DOWNLOAD_73_RAW_SHA256",
+      "expected_clean_sha256_plan": "PENDING_DOWNLOAD_73_CLEAN_SHA256",
+      "retry_policy": "max_retries=3, fallback_mirror=True"
+    },
+    {
+      "source_id": "147",
+      "url": "https://www.gutenberg.org/ebooks/147.txt.utf-8",
+      "expected_raw_path": "data/recovery/raw/147.txt",
+      "expected_clean_path": "data/recovery/clean/147.txt",
+      "expected_raw_sha256_plan": "PENDING_DOWNLOAD_147_RAW_SHA256",
+      "expected_clean_sha256_plan": "PENDING_DOWNLOAD_147_CLEAN_SHA256",
+      "retry_policy": "max_retries=3, fallback_mirror=True"
+    },
+    {
+      "source_id": "148",
+      "url": "https://www.gutenberg.org/ebooks/148.txt.utf-8",
+      "expected_raw_path": "data/recovery/raw/148.txt",
+      "expected_clean_path": "data/recovery/clean/148.txt",
+      "expected_raw_sha256_plan": "PENDING_DOWNLOAD_148_RAW_SHA256",
+      "expected_clean_sha256_plan": "PENDING_DOWNLOAD_148_CLEAN_SHA256",
+      "retry_policy": "max_retries=3, fallback_mirror=True"
+    },
+    {
+      "source_id": "174",
+      "url": "https://www.gutenberg.org/ebooks/174.txt.utf-8",
+      "expected_raw_path": "data/recovery/raw/174.txt",
+      "expected_clean_path": "data/recovery/clean/174.txt",
+      "expected_raw_sha256_plan": "PENDING_DOWNLOAD_174_RAW_SHA256",
+      "expected_clean_sha256_plan": "PENDING_DOWNLOAD_174_CLEAN_SHA256",
+      "retry_policy": "max_retries=3, fallback_mirror=True"
+    },
+    {
+      "source_id": "326",
+      "url": "https://www.gutenberg.org/ebooks/326.txt.utf-8",
+      "expected_raw_path": "data/recovery/raw/326.txt",
+      "expected_clean_path": "data/recovery/clean/326.txt",
+      "expected_raw_sha256_plan": "PENDING_DOWNLOAD_326_RAW_SHA256",
+      "expected_clean_sha256_plan": "PENDING_DOWNLOAD_326_CLEAN_SHA256",
+      "retry_policy": "max_retries=3, fallback_mirror=True"
+    },
+    {
+      "source_id": "731",
+      "url": "https://www.gutenberg.org/ebooks/731.txt.utf-8",
+      "expected_raw_path": "data/recovery/raw/731.txt",
+      "expected_clean_path": "data/recovery/clean/731.txt",
+      "expected_raw_sha256_plan": "PENDING_DOWNLOAD_731_RAW_SHA256",
+      "expected_clean_sha256_plan": "PENDING_DOWNLOAD_731_CLEAN_SHA256",
+      "retry_policy": "max_retries=3, fallback_mirror=True"
+    },
+    {
+      "source_id": "771",
+      "url": "https://www.gutenberg.org/ebooks/771.txt.utf-8",
+      "expected_raw_path": "data/recovery/raw/771.txt",
+      "expected_clean_path": "data/recovery/clean/771.txt",
+      "expected_raw_sha256_plan": "PENDING_DOWNLOAD_771_RAW_SHA256",
+      "expected_clean_sha256_plan": "PENDING_DOWNLOAD_771_CLEAN_SHA256",
+      "retry_policy": "max_retries=3, fallback_mirror=True"
+    },
+    {
+      "source_id": "847",
+      "url": "https://www.gutenberg.org/ebooks/847.txt.utf-8",
+      "expected_raw_path": "data/recovery/raw/847.txt",
+      "expected_clean_path": "data/recovery/clean/847.txt",
+      "expected_raw_sha256_plan": "PENDING_DOWNLOAD_847_RAW_SHA256",
+      "expected_clean_sha256_plan": "PENDING_DOWNLOAD_847_CLEAN_SHA256",
+      "retry_policy": "max_retries=3, fallback_mirror=True"
+    },
+    {
+      "source_id": "940",
+      "url": "https://www.gutenberg.org/ebooks/940.txt.utf-8",
+      "expected_raw_path": "data/recovery/raw/940.txt",
+      "expected_clean_path": "data/recovery/clean/940.txt",
+      "expected_raw_sha256_plan": "PENDING_DOWNLOAD_940_RAW_SHA256",
+      "expected_clean_sha256_plan": "PENDING_DOWNLOAD_940_CLEAN_SHA256",
+      "retry_policy": "max_retries=3, fallback_mirror=True"
+    },
+    {
+      "source_id": "947",
+      "url": "https://www.gutenberg.org/ebooks/947.txt.utf-8",
+      "expected_raw_path": "data/recovery/raw/947.txt",
+      "expected_clean_path": "data/recovery/clean/947.txt",
+      "expected_raw_sha256_plan": "PENDING_DOWNLOAD_947_RAW_SHA256",
+      "expected_clean_sha256_plan": "PENDING_DOWNLOAD_947_CLEAN_SHA256",
+      "retry_policy": "max_retries=3, fallback_mirror=True"
+    },
+    {
+      "source_id": "1015",
+      "url": "https://www.gutenberg.org/ebooks/1015.txt.utf-8",
+      "expected_raw_path": "data/recovery/raw/1015.txt",
+      "expected_clean_path": "data/recovery/clean/1015.txt",
+      "expected_raw_sha256_plan": "PENDING_DOWNLOAD_1015_RAW_SHA256",
+      "expected_clean_sha256_plan": "PENDING_DOWNLOAD_1015_CLEAN_SHA256",
+      "retry_policy": "max_retries=3, fallback_mirror=True"
+    },
+    {
+      "source_id": "18",
+      "url": "https://www.gutenberg.org/ebooks/18.txt.utf-8",
+      "expected_raw_path": "data/recovery/raw/18.txt",
+      "expected_clean_path": "data/recovery/clean/18.txt",
+      "expected_raw_sha256_plan": "PENDING_DOWNLOAD_18_RAW_SHA256",
+      "expected_clean_sha256_plan": "PENDING_DOWNLOAD_18_CLEAN_SHA256",
+      "retry_policy": "max_retries=3, fallback_mirror=True"
+    },
+    {
+      "source_id": "71",
+      "url": "https://www.gutenberg.org/ebooks/71.txt.utf-8",
+      "expected_raw_path": "data/recovery/raw/71.txt",
+      "expected_clean_path": "data/recovery/clean/71.txt",
+      "expected_raw_sha256_plan": "PENDING_DOWNLOAD_71_RAW_SHA256",
+      "expected_clean_sha256_plan": "PENDING_DOWNLOAD_71_CLEAN_SHA256",
+      "retry_policy": "max_retries=3, fallback_mirror=True"
+    },
+    {
+      "source_id": "130",
+      "url": "https://www.gutenberg.org/ebooks/130.txt.utf-8",
+      "expected_raw_path": "data/recovery/raw/130.txt",
+      "expected_clean_path": "data/recovery/clean/130.txt",
+      "expected_raw_sha256_plan": "PENDING_DOWNLOAD_130_RAW_SHA256",
+      "expected_clean_sha256_plan": "PENDING_DOWNLOAD_130_CLEAN_SHA256",
+      "retry_policy": "max_retries=3, fallback_mirror=True"
+    },
+    {
+      "source_id": "621",
+      "url": "https://www.gutenberg.org/ebooks/621.txt.utf-8",
+      "expected_raw_path": "data/recovery/raw/621.txt",
+      "expected_clean_path": "data/recovery/clean/621.txt",
+      "expected_raw_sha256_plan": "PENDING_DOWNLOAD_621_RAW_SHA256",
+      "expected_clean_sha256_plan": "PENDING_DOWNLOAD_621_CLEAN_SHA256",
+      "retry_policy": "max_retries=3, fallback_mirror=True"
+    },
+    {
+      "source_id": "833",
+      "url": "https://www.gutenberg.org/ebooks/833.txt.utf-8",
+      "expected_raw_path": "data/recovery/raw/833.txt",
+      "expected_clean_path": "data/recovery/clean/833.txt",
+      "expected_raw_sha256_plan": "PENDING_DOWNLOAD_833_RAW_SHA256",
+      "expected_clean_sha256_plan": "PENDING_DOWNLOAD_833_CLEAN_SHA256",
+      "retry_policy": "max_retries=3, fallback_mirror=True"
+    },
+    {
+      "source_id": "1061",
+      "url": "https://www.gutenberg.org/ebooks/1061.txt.utf-8",
+      "expected_raw_path": "data/recovery/raw/1061.txt",
+      "expected_clean_path": "data/recovery/clean/1061.txt",
+      "expected_raw_sha256_plan": "PENDING_DOWNLOAD_1061_RAW_SHA256",
+      "expected_clean_sha256_plan": "PENDING_DOWNLOAD_1061_CLEAN_SHA256",
+      "retry_policy": "max_retries=3, fallback_mirror=True"
+    },
+    {
+      "source_id": "1270",
+      "url": "https://www.gutenberg.org/ebooks/1270.txt.utf-8",
+      "expected_raw_path": "data/recovery/raw/1270.txt",
+      "expected_clean_path": "data/recovery/clean/1270.txt",
+      "expected_raw_sha256_plan": "PENDING_DOWNLOAD_1270_RAW_SHA256",
+      "expected_clean_sha256_plan": "PENDING_DOWNLOAD_1270_CLEAN_SHA256",
+      "retry_policy": "max_retries=3, fallback_mirror=True"
+    },
+    {
+      "source_id": "3207",
+      "url": "https://www.gutenberg.org/ebooks/3207.txt.utf-8",
+      "expected_raw_path": "data/recovery/raw/3207.txt",
+      "expected_clean_path": "data/recovery/clean/3207.txt",
+      "expected_raw_sha256_plan": "PENDING_DOWNLOAD_3207_RAW_SHA256",
+      "expected_clean_sha256_plan": "PENDING_DOWNLOAD_3207_CLEAN_SHA256",
+      "retry_policy": "max_retries=3, fallback_mirror=True"
+    },
+    {
+      "source_id": "3300",
+      "url": "https://www.gutenberg.org/ebooks/3300.txt.utf-8",
+      "expected_raw_path": "data/recovery/raw/3300.txt",
+      "expected_clean_path": "data/recovery/clean/3300.txt",
+      "expected_raw_sha256_plan": "PENDING_DOWNLOAD_3300_RAW_SHA256",
+      "expected_clean_sha256_plan": "PENDING_DOWNLOAD_3300_CLEAN_SHA256",
+      "retry_policy": "max_retries=3, fallback_mirror=True"
+    },
+    {
+      "source_id": "4212",
+      "url": "https://www.gutenberg.org/ebooks/4212.txt.utf-8",
+      "expected_raw_path": "data/recovery/raw/4212.txt",
+      "expected_clean_path": "data/recovery/clean/4212.txt",
+      "expected_raw_sha256_plan": "PENDING_DOWNLOAD_4212_RAW_SHA256",
+      "expected_clean_sha256_plan": "PENDING_DOWNLOAD_4212_CLEAN_SHA256",
+      "retry_policy": "max_retries=3, fallback_mirror=True"
+    },
+    {
+      "source_id": "4320",
+      "url": "https://www.gutenberg.org/ebooks/4320.txt.utf-8",
+      "expected_raw_path": "data/recovery/raw/4320.txt",
+      "expected_clean_path": "data/recovery/clean/4320.txt",
+      "expected_raw_sha256_plan": "PENDING_DOWNLOAD_4320_RAW_SHA256",
+      "expected_clean_sha256_plan": "PENDING_DOWNLOAD_4320_CLEAN_SHA256",
+      "retry_policy": "max_retries=3, fallback_mirror=True"
+    },
+    {
+      "source_id": "4350",
+      "url": "https://www.gutenberg.org/ebooks/4350.txt.utf-8",
+      "expected_raw_path": "data/recovery/raw/4350.txt",
+      "expected_clean_path": "data/recovery/clean/4350.txt",
+      "expected_raw_sha256_plan": "PENDING_DOWNLOAD_4350_RAW_SHA256",
+      "expected_clean_sha256_plan": "PENDING_DOWNLOAD_4350_CLEAN_SHA256",
+      "retry_policy": "max_retries=3, fallback_mirror=True"
+    },
+    {
+      "source_id": "717",
+      "url": "https://www.gutenberg.org/ebooks/717.txt.utf-8",
+      "expected_raw_path": "data/recovery/raw/717.txt",
+      "expected_clean_path": "data/recovery/clean/717.txt",
+      "expected_raw_sha256_plan": "PENDING_DOWNLOAD_717_RAW_SHA256",
+      "expected_clean_sha256_plan": "PENDING_DOWNLOAD_717_CLEAN_SHA256",
+      "retry_policy": "max_retries=3, fallback_mirror=True"
+    },
+    {
+      "source_id": "942",
+      "url": "https://www.gutenberg.org/ebooks/942.txt.utf-8",
+      "expected_raw_path": "data/recovery/raw/942.txt",
+      "expected_clean_path": "data/recovery/clean/942.txt",
+      "expected_raw_sha256_plan": "PENDING_DOWNLOAD_942_RAW_SHA256",
+      "expected_clean_sha256_plan": "PENDING_DOWNLOAD_942_CLEAN_SHA256",
+      "retry_policy": "max_retries=3, fallback_mirror=True"
+    },
+    {
+      "source_id": "2398",
+      "url": "https://www.gutenberg.org/ebooks/2398.txt.utf-8",
+      "expected_raw_path": "data/recovery/raw/2398.txt",
+      "expected_clean_path": "data/recovery/clean/2398.txt",
+      "expected_raw_sha256_plan": "PENDING_DOWNLOAD_2398_RAW_SHA256",
+      "expected_clean_sha256_plan": "PENDING_DOWNLOAD_2398_CLEAN_SHA256",
+      "retry_policy": "max_retries=3, fallback_mirror=True"
+    },
+    {
+      "source_id": "29112",
+      "url": "https://www.gutenberg.org/ebooks/29112.txt.utf-8",
+      "expected_raw_path": "data/recovery/raw/29112.txt",
+      "expected_clean_path": "data/recovery/clean/29112.txt",
+      "expected_raw_sha256_plan": "PENDING_DOWNLOAD_29112_RAW_SHA256",
+      "expected_clean_sha256_plan": "PENDING_DOWNLOAD_29112_CLEAN_SHA256",
+      "retry_policy": "max_retries=3, fallback_mirror=True"
+    },
+    {
+      "source_id": "11",
+      "url": "https://www.gutenberg.org/ebooks/11.txt.utf-8",
+      "expected_raw_path": "data/recovery/raw/11.txt",
+      "expected_clean_path": "data/recovery/clean/11.txt",
+      "expected_raw_sha256_plan": "PENDING_DOWNLOAD_11_RAW_SHA256",
+      "expected_clean_sha256_plan": "PENDING_DOWNLOAD_11_CLEAN_SHA256",
+      "retry_policy": "max_retries=3, fallback_mirror=True"
+    },
+    {
+      "source_id": "15",
+      "url": "https://www.gutenberg.org/ebooks/15.txt.utf-8",
+      "expected_raw_path": "data/recovery/raw/15.txt",
+      "expected_clean_path": "data/recovery/clean/15.txt",
+      "expected_raw_sha256_plan": "PENDING_DOWNLOAD_15_RAW_SHA256",
+      "expected_clean_sha256_plan": "PENDING_DOWNLOAD_15_CLEAN_SHA256",
+      "retry_policy": "max_retries=3, fallback_mirror=True"
+    },
+    {
+      "source_id": "24",
+      "url": "https://www.gutenberg.org/ebooks/24.txt.utf-8",
+      "expected_raw_path": "data/recovery/raw/24.txt",
+      "expected_clean_path": "data/recovery/clean/24.txt",
+      "expected_raw_sha256_plan": "PENDING_DOWNLOAD_24_RAW_SHA256",
+      "expected_clean_sha256_plan": "PENDING_DOWNLOAD_24_CLEAN_SHA256",
+      "retry_policy": "max_retries=3, fallback_mirror=True"
+    },
+    {
+      "source_id": "27",
+      "url": "https://www.gutenberg.org/ebooks/27.txt.utf-8",
+      "expected_raw_path": "data/recovery/raw/27.txt",
+      "expected_clean_path": "data/recovery/clean/27.txt",
+      "expected_raw_sha256_plan": "PENDING_DOWNLOAD_27_RAW_SHA256",
+      "expected_clean_sha256_plan": "PENDING_DOWNLOAD_27_CLEAN_SHA256",
+      "retry_policy": "max_retries=3, fallback_mirror=True"
+    },
+    {
+      "source_id": "35",
+      "url": "https://www.gutenberg.org/ebooks/35.txt.utf-8",
+      "expected_raw_path": "data/recovery/raw/35.txt",
+      "expected_clean_path": "data/recovery/clean/35.txt",
+      "expected_raw_sha256_plan": "PENDING_DOWNLOAD_35_RAW_SHA256",
+      "expected_clean_sha256_plan": "PENDING_DOWNLOAD_35_CLEAN_SHA256",
+      "retry_policy": "max_retries=3, fallback_mirror=True"
+    },
+    {
+      "source_id": "42",
+      "url": "https://www.gutenberg.org/ebooks/42.txt.utf-8",
+      "expected_raw_path": "data/recovery/raw/42.txt",
+      "expected_clean_path": "data/recovery/clean/42.txt",
+      "expected_raw_sha256_plan": "PENDING_DOWNLOAD_42_RAW_SHA256",
+      "expected_clean_sha256_plan": "PENDING_DOWNLOAD_42_CLEAN_SHA256",
+      "retry_policy": "max_retries=3, fallback_mirror=True"
+    },
+    {
+      "source_id": "46",
+      "url": "https://www.gutenberg.org/ebooks/46.txt.utf-8",
+      "expected_raw_path": "data/recovery/raw/46.txt",
+      "expected_clean_path": "data/recovery/clean/46.txt",
+      "expected_raw_sha256_plan": "PENDING_DOWNLOAD_46_RAW_SHA256",
+      "expected_clean_sha256_plan": "PENDING_DOWNLOAD_46_CLEAN_SHA256",
+      "retry_policy": "max_retries=3, fallback_mirror=True"
+    },
+    {
+      "source_id": "84",
+      "url": "https://www.gutenberg.org/ebooks/84.txt.utf-8",
+      "expected_raw_path": "data/recovery/raw/84.txt",
+      "expected_clean_path": "data/recovery/clean/84.txt",
+      "expected_raw_sha256_plan": "PENDING_DOWNLOAD_84_RAW_SHA256",
+      "expected_clean_sha256_plan": "PENDING_DOWNLOAD_84_CLEAN_SHA256",
+      "retry_policy": "max_retries=3, fallback_mirror=True"
+    },
+    {
+      "source_id": "105",
+      "url": "https://www.gutenberg.org/ebooks/105.txt.utf-8",
+      "expected_raw_path": "data/recovery/raw/105.txt",
+      "expected_clean_path": "data/recovery/clean/105.txt",
+      "expected_raw_sha256_plan": "PENDING_DOWNLOAD_105_RAW_SHA256",
+      "expected_clean_sha256_plan": "PENDING_DOWNLOAD_105_CLEAN_SHA256",
+      "retry_policy": "max_retries=3, fallback_mirror=True"
+    },
+    {
+      "source_id": "108",
+      "url": "https://www.gutenberg.org/ebooks/108.txt.utf-8",
+      "expected_raw_path": "data/recovery/raw/108.txt",
+      "expected_clean_path": "data/recovery/clean/108.txt",
+      "expected_raw_sha256_plan": "PENDING_DOWNLOAD_108_RAW_SHA256",
+      "expected_clean_sha256_plan": "PENDING_DOWNLOAD_108_CLEAN_SHA256",
+      "retry_policy": "max_retries=3, fallback_mirror=True"
+    },
+    {
+      "source_id": "133",
+      "url": "https://www.gutenberg.org/ebooks/133.txt.utf-8",
+      "expected_raw_path": "data/recovery/raw/133.txt",
+      "expected_clean_path": "data/recovery/clean/133.txt",
+      "expected_raw_sha256_plan": "PENDING_DOWNLOAD_133_RAW_SHA256",
+      "expected_clean_sha256_plan": "PENDING_DOWNLOAD_133_CLEAN_SHA256",
+      "retry_policy": "max_retries=3, fallback_mirror=True"
+    },
+    {
+      "source_id": "145",
+      "url": "https://www.gutenberg.org/ebooks/145.txt.utf-8",
+      "expected_raw_path": "data/recovery/raw/145.txt",
+      "expected_clean_path": "data/recovery/clean/145.txt",
+      "expected_raw_sha256_plan": "PENDING_DOWNLOAD_145_RAW_SHA256",
+      "expected_clean_sha256_plan": "PENDING_DOWNLOAD_145_CLEAN_SHA256",
+      "retry_policy": "max_retries=3, fallback_mirror=True"
+    },
+    {
+      "source_id": "154",
+      "url": "https://www.gutenberg.org/ebooks/154.txt.utf-8",
+      "expected_raw_path": "data/recovery/raw/154.txt",
+      "expected_clean_path": "data/recovery/clean/154.txt",
+      "expected_raw_sha256_plan": "PENDING_DOWNLOAD_154_RAW_SHA256",
+      "expected_clean_sha256_plan": "PENDING_DOWNLOAD_154_CLEAN_SHA256",
+      "retry_policy": "max_retries=3, fallback_mirror=True"
+    },
+    {
+      "source_id": "155",
+      "url": "https://www.gutenberg.org/ebooks/155.txt.utf-8",
+      "expected_raw_path": "data/recovery/raw/155.txt",
+      "expected_clean_path": "data/recovery/clean/155.txt",
+      "expected_raw_sha256_plan": "PENDING_DOWNLOAD_155_RAW_SHA256",
+      "expected_clean_sha256_plan": "PENDING_DOWNLOAD_155_CLEAN_SHA256",
+      "retry_policy": "max_retries=3, fallback_mirror=True"
+    },
+    {
+      "source_id": "160",
+      "url": "https://www.gutenberg.org/ebooks/160.txt.utf-8",
+      "expected_raw_path": "data/recovery/raw/160.txt",
+      "expected_clean_path": "data/recovery/clean/160.txt",
+      "expected_raw_sha256_plan": "PENDING_DOWNLOAD_160_RAW_SHA256",
+      "expected_clean_sha256_plan": "PENDING_DOWNLOAD_160_CLEAN_SHA256",
+      "retry_policy": "max_retries=3, fallback_mirror=True"
+    },
+    {
+      "source_id": "163",
+      "url": "https://www.gutenberg.org/ebooks/163.txt.utf-8",
+      "expected_raw_path": "data/recovery/raw/163.txt",
+      "expected_clean_path": "data/recovery/clean/163.txt",
+      "expected_raw_sha256_plan": "PENDING_DOWNLOAD_163_RAW_SHA256",
+      "expected_clean_sha256_plan": "PENDING_DOWNLOAD_163_CLEAN_SHA256",
+      "retry_policy": "max_retries=3, fallback_mirror=True"
+    },
+    {
+      "source_id": "165",
+      "url": "https://www.gutenberg.org/ebooks/165.txt.utf-8",
+      "expected_raw_path": "data/recovery/raw/165.txt",
+      "expected_clean_path": "data/recovery/clean/165.txt",
+      "expected_raw_sha256_plan": "PENDING_DOWNLOAD_165_RAW_SHA256",
+      "expected_clean_sha256_plan": "PENDING_DOWNLOAD_165_CLEAN_SHA256",
+      "retry_policy": "max_retries=3, fallback_mirror=True"
+    },
+    {
+      "source_id": "166",
+      "url": "https://www.gutenberg.org/ebooks/166.txt.utf-8",
+      "expected_raw_path": "data/recovery/raw/166.txt",
+      "expected_clean_path": "data/recovery/clean/166.txt",
+      "expected_raw_sha256_plan": "PENDING_DOWNLOAD_166_RAW_SHA256",
+      "expected_clean_sha256_plan": "PENDING_DOWNLOAD_166_CLEAN_SHA256",
+      "retry_policy": "max_retries=3, fallback_mirror=True"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "download_ledger.jsonl": {
+    "sha256": "cd6c99d4c7958dc784c49564694e499ba7634101da8cf7084d2b3d2143ae7ffa",
+    "bytes": 25258
+  },
+  "raw_checksums.json": {
+    "sha256": "cdf2c598e820b3dcc6dc60cd82785c11709ef9ed238f57467e5069a9ef36bb29",
+    "bytes": 13720
+  },
+  "clean_checksums.json": {
+    "sha256": "c0b6320cf83dbe42069365caae69ced9e502e06c8e4966697f289e36db97e556",
+    "bytes": 14169
+  },
+  "clean_manifest.json": {
+    "sha256": "6fc944e9ee9e2b7fe15dd52ffc3d6fb0a749aff52edc78a1129a386b4d182559",
+    "bytes": 44447
+  },
+  "provenance.json": {
+    "sha256": "8aea7d0ffd0629456e3da87dcd7b66e94634b860bbd8624eb8ac4a4d735e762c",
+    "bytes": 47336
+  },
+  "final_corpus_manifest.json": {
+    "sha256": "12e5e5f41024fb4436b3d92df62b409edabdda5011000606799f31dd45aaeaf8",
+    "bytes": 46987
+  },
+  "final_corpus_statistics.json": {
+    "sha256": "382ef27a3c53ba1a40d9629bfe0cf756bd5936923da56adc4c37bc408e8ef8fa",
+    "bytes": 2317
+  }
+}

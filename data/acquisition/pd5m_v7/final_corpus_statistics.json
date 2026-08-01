@@ -1,0 +1,101 @@
+{
+  "corpus_name": "NEXA-PD5M-v7",
+  "status": "CERTIFIED",
+  "total_works": 75,
+  "unique_authors": 75,
+  "total_actual_clean_bytes": 36830981,
+  "total_actual_words": 6333969,
+  "total_actual_estimated_tokens": 8424143,
+  "top_author": "Eliot, George",
+  "top_author_share": "4.92%",
+  "top10_author_share": "35.49%",
+  "category_bytes": {
+    "FICTION": 10366625,
+    "ESSAYS / GENERAL NONFICTION": 5600386,
+    "SCIENCE / EDUCATION": 6867096,
+    "HISTORY / BIOGRAPHY": 6559114,
+    "PHILOSOPHY / SOCIAL THOUGHT": 6280069,
+    "OTHER EXPOSITORY PROSE": 1157691
+  },
+  "category_shares": {
+    "FICTION": "28.15%",
+    "ESSAYS / GENERAL NONFICTION": "15.21%",
+    "SCIENCE / EDUCATION": "18.64%",
+    "HISTORY / BIOGRAPHY": "17.81%",
+    "PHILOSOPHY / SOCIAL THOUGHT": "17.05%",
+    "OTHER EXPOSITORY PROSE": "3.14%"
+  },
+  "certification_gates": {
+    "PRIMARY_WORKS_VALID": {
+      "target": ">= 60",
+      "actual": 75,
+      "pass": true
+    },
+    "UNIQUE_AUTHORS_GE_60": {
+      "target": ">= 60",
+      "actual": 75,
+      "pass": true
+    },
+    "TOP_AUTHOR_LE_5": {
+      "target": "<= 5.0%",
+      "actual": "4.92%",
+      "pass": true
+    },
+    "TOP10_LE_40": {
+      "target": "<= 40.0%",
+      "actual": "35.49%",
+      "pass": true
+    },
+    "FICTION_LE_50": {
+      "target": "<= 50.0%",
+      "actual": "28.15%",
+      "pass": true
+    },
+    "ESSAYS_GE_15": {
+      "target": ">= 15.0%",
+      "actual": "15.21%",
+      "pass": true
+    },
+    "SCIENCE_GE_10": {
+      "target": ">= 10.0%",
+      "actual": "18.64%",
+      "pass": true
+    },
+    "TRANSLATIONS_ZERO": {
+      "target": 0,
+      "actual": 0,
+      "pass": true
+    },
+    "UNKNOWN_ORIGINAL_LANGUAGE_ZERO": {
+      "target": 0,
+      "actual": 0,
+      "pass": true
+    },
+    "RIGHTS_COVERAGE_100": {
+      "target": "100%",
+      "actual": "100%",
+      "pass": true
+    },
+    "PROVENANCE_COVERAGE_100": {
+      "target": "100%",
+      "actual": "100%",
+      "pass": true
+    },
+    "RAW_CHECKSUMS_100": {
+      "target": "100%",
+      "actual": "75/75",
+      "pass": true
+    },
+    "CLEAN_CHECKSUMS_100": {
+      "target": "100%",
+      "actual": "75/75",
+      "pass": true
+    },
+    "SECURITY_AUDIT_PASS": {
+      "target": "PASS",
+      "actual": "PASS",
+      "pass": true
+    }
+  },
+  "certification_result": "PASS"
+}

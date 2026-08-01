@@ -1,0 +1,9 @@
+{
+  "catalog_examination_target": 3000,
+  "total_records_examined": 78999,
+  "total_english_text_records": 78999,
+  "metadata_parse_failures": 0,
+  "translation_exclusions": 1387,
+  "unknown_language_exclusions": 73078,
+  "confirmed_english_eligible_candidates": 3283
+}

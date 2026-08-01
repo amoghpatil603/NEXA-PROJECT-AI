@@ -1,0 +1,9 @@
+{
+  "status": "NEXA_TINY_TRAINING_CERTIFIED",
+  "total_iterations": 100,
+  "initial_loss": 9.017057418823242,
+  "final_loss": 8.26301383972168,
+  "average_loss": 8.680746517181397,
+  "downward_trend_verified": true,
+  "finite_loss_verified": true
+}

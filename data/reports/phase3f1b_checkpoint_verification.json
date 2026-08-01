@@ -1,0 +1,17 @@
+{
+  "phase": "3F.1B",
+  "description": "IncrementalBPETokenizer Checkpoint Verification Report",
+  "timestamp": "2026-07-29T17:30:55Z",
+  "stage1_merges_before_interrupt": 10,
+  "checkpoints_created": [
+    "checkpoint_final.json",
+    "checkpoint_step_1.json"
+  ],
+  "checksums_valid": true,
+  "stage2_resumed_merges_total": 36,
+  "zero_duplicate_work_verified": true,
+  "resumed_merges_match_reference": true,
+  "resumed_vocab_matches_reference": true,
+  "resumed_encode_matches_reference": true,
+  "checkpoint_verification_passed": true
+}

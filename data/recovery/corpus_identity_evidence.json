@@ -1,0 +1,198 @@
+{
+  "recovery_timestamp": "2026-07-29T08:04:00Z",
+  "corpus_version_target": "NEXA-PD5M-v6.1",
+  "total_target_works": 84,
+  "positively_identified_count": 10,
+  "unidentified_count": 74,
+  "gate_status": {
+    "EXACT_IDENTITY_RECOVERED": "FAIL",
+    "reason": "Only 10 of 84 exact works are positively identified with Gutenberg IDs from surviving evidence. The baseline 74 works from pre-repair PD5M-v6.0 lack surviving source ID manifests."
+  },
+  "historical_baseline_metrics": {
+    "target_accepted_works": 84,
+    "historical_pre_repair_baseline": 77,
+    "repair_additions": 7,
+    "target_total_clean_bytes": 58404307,
+    "target_manifest_sha256": "ee075eb9683440c410a232bb50bbfc53e5a255d606ce199bdc6f8d75ae1ff193"
+  },
+  "positively_identified_works": [
+    {
+      "source_id": "1837",
+      "title": "The Prince and the Pauper",
+      "author": "Twain, Mark",
+      "category": "FICTION",
+      "expected_clean_filename": "1837.txt",
+      "expected_clean_sha256": null,
+      "expected_raw_sha256": null,
+      "rights_evidence": "Project Gutenberg Public Domain",
+      "original_language_evidence": "English",
+      "provenance_source": "phase3e8c_execute_repair.py / check_selected.py",
+      "evidence_confidence": "HIGH_CONFIRMED_ADDITION"
+    },
+    {
+      "source_id": "86",
+      "title": "A Connecticut Yankee in King Arthur's Court",
+      "author": "Twain, Mark",
+      "category": "FICTION",
+      "expected_clean_filename": "86.txt",
+      "expected_clean_sha256": null,
+      "expected_raw_sha256": null,
+      "rights_evidence": "Project Gutenberg Public Domain",
+      "original_language_evidence": "English",
+      "provenance_source": "phase3e8c_execute_repair.py / check_selected.py",
+      "evidence_confidence": "HIGH_CONFIRMED_ADDITION"
+    },
+    {
+      "source_id": "42188",
+      "title": "Shadows in the Moonlight",
+      "author": "Howard, Robert E.",
+      "category": "FICTION",
+      "expected_clean_filename": "42188.txt",
+      "expected_clean_sha256": null,
+      "expected_raw_sha256": null,
+      "rights_evidence": "Project Gutenberg Public Domain",
+      "original_language_evidence": "English",
+      "provenance_source": "phase3e8c_execute_repair.py / check_selected.py",
+      "evidence_confidence": "HIGH_CONFIRMED_ADDITION"
+    },
+    {
+      "source_id": "42259",
+      "title": "The People of the Black Circle",
+      "author": "Howard, Robert E.",
+      "category": "FICTION",
+      "expected_clean_filename": "42259.txt",
+      "expected_clean_sha256": null,
+      "expected_raw_sha256": null,
+      "rights_evidence": "Project Gutenberg Public Domain",
+      "original_language_evidence": "English",
+      "provenance_source": "phase3e8c_execute_repair.py / check_selected.py",
+      "evidence_confidence": "HIGH_CONFIRMED_ADDITION"
+    },
+    {
+      "source_id": "696",
+      "title": "The Castle of Otranto",
+      "author": "Walpole, Horace",
+      "category": "FICTION",
+      "expected_clean_filename": "696.txt",
+      "expected_clean_sha256": null,
+      "expected_raw_sha256": null,
+      "rights_evidence": "Project Gutenberg Public Domain",
+      "original_language_evidence": "English",
+      "provenance_source": "phase3e8c_execute_repair.py / check_selected.py",
+      "evidence_confidence": "HIGH_CONFIRMED_ADDITION"
+    },
+    {
+      "source_id": "121",
+      "title": "Northanger Abbey",
+      "author": "Austen, Jane",
+      "category": "FICTION",
+      "expected_clean_filename": "121.txt",
+      "expected_clean_sha256": null,
+      "expected_raw_sha256": null,
+      "rights_evidence": "Project Gutenberg Public Domain",
+      "original_language_evidence": "English",
+      "provenance_source": "phase3e8c_execute_repair.py / check_selected.py",
+      "evidence_confidence": "HIGH_CONFIRMED_ADDITION"
+    },
+    {
+      "source_id": "940",
+      "title": "The Last of the Mohicans",
+      "author": "Cooper, James Fenimore",
+      "category": "FICTION",
+      "expected_clean_filename": "940.txt",
+      "expected_clean_sha256": null,
+      "expected_raw_sha256": null,
+      "rights_evidence": "Project Gutenberg Public Domain",
+      "original_language_evidence": "English",
+      "provenance_source": "phase3e8c_execute_repair.py / check_selected.py",
+      "evidence_confidence": "HIGH_CONFIRMED_ADDITION"
+    },
+    {
+      "source_id": "23",
+      "title": null,
+      "author": null,
+      "category": null,
+      "expected_clean_filename": "23.txt",
+      "expected_clean_sha256": "dd486e6fbd229273d002d68cf02074947490337d7e5dcab3f9be1f44a7868c05",
+      "expected_raw_sha256": null,
+      "rights_evidence": "Project Gutenberg Public Domain",
+      "original_language_evidence": "English",
+      "provenance_source": "temp_manifest_sha.txt",
+      "evidence_confidence": "HIGH_CONFIRMED_BASELINE_HASH"
+    },
+    {
+      "source_id": "43453",
+      "title": null,
+      "author": null,
+      "category": null,
+      "expected_clean_filename": "43453.txt",
+      "expected_clean_sha256": "80d7622c4bfea508c163d22a0444fecefa07b07eb1eb365e49d33d867142f58",
+      "expected_raw_sha256": null,
+      "rights_evidence": "Project Gutenberg Public Domain",
+      "original_language_evidence": "English",
+      "provenance_source": "temp_manifest_sha.txt",
+      "evidence_confidence": "HIGH_CONFIRMED_BASELINE_HASH"
+    },
+    {
+      "source_id": "1564",
+      "title": null,
+      "author": null,
+      "category": null,
+      "expected_clean_filename": "1564.txt",
+      "expected_clean_sha256": "15ef8851545c38b1b1de788dc97d4f3f3170652c93b9c3a103184520f1bffc12",
+      "expected_raw_sha256": null,
+      "rights_evidence": "Project Gutenberg Public Domain",
+      "original_language_evidence": "English",
+      "provenance_source": "temp_manifest_sha.txt",
+      "evidence_confidence": "HIGH_CONFIRMED_BASELINE_HASH"
+    }
+  ],
+  "excluded_or_failed_records": [
+    {
+      "source_id": "22962",
+      "status": "FAILED_ACQUISITION",
+      "notes": "Failed acquisition attempt during initial acquisition phase"
+    },
+    {
+      "source_id": "26301",
+      "status": "FAILED_ACQUISITION",
+      "notes": "Failed acquisition attempt during initial acquisition phase"
+    },
+    {
+      "source_id": "26225",
+      "title": "Fifteen Thousand Useful Phrases",
+      "status": "FAILED_PRIMARY",
+      "notes": "Audio-only work on Project Gutenberg. No plain text representation available."
+    }
+  ],
+  "unconfirmed_reserve_candidates": [
+    {
+      "source_id": "599",
+      "provenance_source": "check_selected.py candidate array"
+    },
+    {
+      "source_id": "25344",
+      "provenance_source": "check_selected.py candidate array"
+    },
+    {
+      "source_id": "580",
+      "provenance_source": "check_selected.py candidate array"
+    }
+  ],
+  "evidence_sources_inspected": [
+    "temp_manifest_sha.txt",
+    "phase3e8c_execute_repair.py",
+    "phase3e8c_post_repair.py",
+    "freeze_corpus.py",
+    "generate_final_report.py",
+    "acquire_reserve_work.py",
+    "phase_3e8b_audit.py",
+    "run_phase_3e8b_analysis.py",
+    "run_phase_3e8b_search_combinations.py",
+    "check_selected.py",
+    "diagnose_phase_3e8a.py",
+    "fix_clean_bytes.py",
+    "fix_clean_hashes.py",
+    "debug_evidence_root.py"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "start_rss_mb": 420.5,
+  "peak_rss_mb": 785.2,
+  "target_rss_mb": 1000.0,
+  "warning_rss_mb": 1500.0,
+  "max_rss_mb": 2500.0,
+  "runtime_seconds": 1142.50,
+  "status": "PASS"
+}
