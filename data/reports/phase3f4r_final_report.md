@@ -4,9 +4,9 @@ NEXA PHASE 3F.4R FINAL REPORT
 2. Surviving shards discovered: 0
 3. Valid shards recovered: 0
 4. Partial/corrupt shards: 0
-5. Pilot small-document RSS: 23.82 MB
-6. Pilot medium-document RSS: 28.18 MB
-7. Pilot largest-document RSS: 36.37 MB
+5. Pilot small-document RSS: 22.75 MB
+6. Pilot medium-document RSS: 26.86 MB
+7. Pilot largest-document RSS: 30.65 MB
 8. Pilot decision: PASS
 9. Documents generated: 75
 10. Train documents: 65
@@ -23,11 +23,11 @@ NEXA PHASE 3F.4R FINAL REPORT
 21. UNK count: 0
 22. EOS count: 75
 23. Total shard size: 16746906 bytes
-24. Starting RSS: 18.06 MB
-25. Peak RSS: 126.18 MB
+24. Starting RSS: 16.77 MB
+25. Peak RSS: 136.95 MB
 26. Minimum available RAM: UNAVAILABLE
 27. Swap usage: 0
-28. Runtime: 299.85 s
+28. Runtime: 185.14 s
 29. Resume/checkpoint test: PASS
 30. Binary integrity result: PASS
 31. Tokenizer consistency result: PASS

@@ -1,5 +1,5 @@
 {
-  "start_rss": "15.04 MB",
-  "peak_loader_rss": "55.80 MB",
-  "absolute_ceiling": "2.5 GB"
+  "start_rss": 219.7265625,
+  "peak_loader_rss": 243.609375,
+  "batch_8_rss": 243.609375
 }
