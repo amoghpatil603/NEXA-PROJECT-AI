@@ -1,6 +1,12 @@
 {
+<<<<<<< HEAD
   "train": 39978,
   "validation": 3276,
   "test": 3111,
+=======
+  "train": 28182,
+  "validation": 2306,
+  "test": 2189,
+>>>>>>> origin/main
   "stride": 256
 }

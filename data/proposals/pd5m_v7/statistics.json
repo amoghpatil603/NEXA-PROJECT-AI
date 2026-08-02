@@ -1,0 +1,97 @@
+{
+  "corpus_name": "NEXA-PD5M-v7",
+  "status": "PROPOSED_PRE_DOWNLOAD",
+  "total_primary_works": 74,
+  "unique_authors": 74,
+  "total_estimated_tokens": 5800534,
+  "total_estimated_clean_bytes": 23202136,
+  "reserve_works_count": 3209,
+  "reserve_estimated_tokens": 256682903,
+  "reserve_estimated_bytes": 1026731612,
+  "category_distribution_bytes": {
+    "ESSAYS / GENERAL NONFICTION": 4066936,
+    "SCIENCE / EDUCATION": 3855716,
+    "HISTORY / BIOGRAPHY": 4586540,
+    "PHILOSOPHY / SOCIAL THOUGHT": 3790616,
+    "OTHER EXPOSITORY PROSE": 1263352,
+    "FICTION": 5638976
+  },
+  "category_distribution_shares": {
+    "ESSAYS / GENERAL NONFICTION": "17.53%",
+    "SCIENCE / EDUCATION": "16.62%",
+    "HISTORY / BIOGRAPHY": "19.77%",
+    "PHILOSOPHY / SOCIAL THOUGHT": "16.34%",
+    "OTHER EXPOSITORY PROSE": "5.44%",
+    "FICTION": "24.30%"
+  },
+  "top_author_share": "1.36%",
+  "top10_author_share": "13.42%",
+  "diversity_gates": {
+    "unique_primary_authors_gte_60": {
+      "target": ">= 60",
+      "actual": 74,
+      "pass": true
+    },
+    "top_author_share_lte_5pct": {
+      "target": "<= 5.0%",
+      "actual": "1.36%",
+      "pass": true
+    },
+    "top10_author_share_lte_40pct": {
+      "target": "<= 40.0%",
+      "actual": "13.42%",
+      "pass": true
+    },
+    "fiction_share_lte_50pct": {
+      "target": "<= 50.0%",
+      "actual": "24.30%",
+      "pass": true
+    },
+    "essays_share_gte_15pct": {
+      "target": ">= 15.0%",
+      "actual": "17.53%",
+      "pass": true
+    },
+    "science_share_gte_10pct": {
+      "target": ">= 10.0%",
+      "actual": "16.62%",
+      "pass": true
+    },
+    "confirmed_translations_in_primary": {
+      "target": 0,
+      "actual": 0,
+      "pass": true
+    },
+    "unknown_original_language_in_primary": {
+      "target": 0,
+      "actual": 0,
+      "pass": true
+    },
+    "rights_coverage": {
+      "target": "100%",
+      "actual": "100%",
+      "pass": true
+    },
+    "provenance_coverage": {
+      "target": "100%",
+      "actual": "100%",
+      "pass": true
+    },
+    "raw_checksum_coverage": {
+      "target": "100%",
+      "actual": "100%",
+      "pass": true
+    },
+    "clean_checksum_coverage": {
+      "target": "100%",
+      "actual": "100%",
+      "pass": true
+    },
+    "reserve_tokens_gte_2M": {
+      "target": ">= 2,000,000",
+      "actual": "256,682,903",
+      "pass": true
+    }
+  },
+  "pre_download_gate_status": "PASS"
+}

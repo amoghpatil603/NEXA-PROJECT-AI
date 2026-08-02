@@ -1,0 +1,117 @@
+{
+  "candidates": [
+    {
+      "name": "NEXA-NANO",
+      "config": {
+        "bias": false,
+        "d_ff": 1024,
+        "d_model": 256,
+        "dropout": 0.1,
+        "max_seq_len": 256,
+        "n_heads": 8,
+        "n_layers": 4,
+        "norm_eps": 1e-05,
+        "vocab_size": 8000,
+        "weight_tying": true
+      },
+      "params": {
+        "embedding": 2113536,
+        "attention": 1048576,
+        "mlp": 2097152,
+        "normalization": 2304,
+        "lm_head": 0,
+        "total": 5261568
+      },
+      "rss_mb": {
+        "start": 222.546875,
+        "post_model": 244.2109375,
+        "forward": 389.34765625,
+        "backward": 392.8046875,
+        "optimizer_step": 444.86328125,
+        "peak": 444.86328125
+      },
+      "loss_ok": true,
+      "grad_finite": true
+    },
+    {
+      "name": "NEXA-MICRO",
+      "config": {
+        "bias": false,
+        "d_ff": 1536,
+        "d_model": 384,
+        "dropout": 0.1,
+        "max_seq_len": 256,
+        "n_heads": 6,
+        "n_layers": 6,
+        "norm_eps": 1e-05,
+        "vocab_size": 8000,
+        "weight_tying": true
+      },
+      "params": {
+        "embedding": 3170304,
+        "attention": 3538944,
+        "mlp": 7077888,
+        "normalization": 4992,
+        "lm_head": 0,
+        "total": 13792128
+      },
+      "rss_mb": {
+        "start": 421.42578125,
+        "post_model": 421.42578125,
+        "forward": 572.3359375,
+        "backward": 603.5859375,
+        "optimizer_step": 638.7421875,
+        "peak": 638.7421875
+      },
+      "loss_ok": true,
+      "grad_finite": true
+    },
+    {
+      "name": "NEXA-SMALL",
+      "config": {
+        "bias": false,
+        "d_ff": 2048,
+        "d_model": 512,
+        "dropout": 0.1,
+        "max_seq_len": 256,
+        "n_heads": 8,
+        "n_layers": 8,
+        "norm_eps": 1e-05,
+        "vocab_size": 8000,
+        "weight_tying": true
+      },
+      "params": {
+        "embedding": 4227072,
+        "attention": 8388608,
+        "mlp": 16777216,
+        "normalization": 8704,
+        "lm_head": 0,
+        "total": 29401600
+      },
+      "rss_mb": {
+        "start": 638.7421875,
+        "post_model": 638.7421875,
+        "forward": 766.99609375,
+        "backward": 829.49609375,
+        "optimizer_step": 920.74609375,
+        "peak": 920.74609375
+      },
+      "loss_ok": true,
+      "grad_finite": true
+    }
+  ],
+  "context_tests": [
+    {
+      "seq_len": 128,
+      "peak_rss": 813.765625
+    },
+    {
+      "seq_len": 256,
+      "peak_rss": 813.765625
+    },
+    {
+      "seq_len": 512,
+      "peak_rss": 834.25
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+{
+  "root_cause": "UTF8_REPLACE_CORRUPTION",
+  "evidence": "The shards on disk were discovered to contain the byte sequence '\\xef\\xbf\\xbd' (the UTF-8 replacement character U+FFFD, which parses to uint16 49135 and 5053 depending on alignment) sprinkled throughout the binaries. This proves that an external process or script read the raw uint16 little-endian binary files as UTF-8 text and wrote them back out using an 'errors=replace' handler. This caused all invalid UTF-8 byte sequences to expand into 3-byte replacement characters, resulting in the ~1.42x size inflation and complete token corruption."
+}

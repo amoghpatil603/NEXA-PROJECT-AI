@@ -1,0 +1,763 @@
+{
+  "corpus_name": "NEXA-PD5M-v7",
+  "audit_timestamp": "2026-07-29T15:37:17Z",
+  "total_files_audited": 75,
+  "null_byte_failures": 0,
+  "executable_signature_failures": 0,
+  "html_residue_failures": 0,
+  "size_anomaly_failures": 0,
+  "duplicate_sha_failures": 0,
+  "overall_security_status": "PASS",
+  "file_audit_details": [
+    {
+      "source_id": "70",
+      "title": "What Is Man? and Other Essays",
+      "has_null_bytes": false,
+      "has_executable_signature": false,
+      "has_html_residue": false,
+      "is_valid_size": true,
+      "is_duplicate_sha": false,
+      "security_status": "PASS"
+    },
+    {
+      "source_id": "573",
+      "title": "Tales from Shakespeare",
+      "has_null_bytes": false,
+      "has_executable_signature": false,
+      "has_html_residue": false,
+      "is_valid_size": true,
+      "is_duplicate_sha": false,
+      "security_status": "PASS"
+    },
+    {
+      "source_id": "577",
+      "title": "The Works of Samuel Johnson, in Sixteen Volumes. Volume 04",
+      "has_null_bytes": false,
+      "has_executable_signature": false,
+      "has_html_residue": false,
+      "is_valid_size": true,
+      "is_duplicate_sha": false,
+      "security_status": "PASS"
+    },
+    {
+      "source_id": "701",
+      "title": "The King of the Golden River",
+      "has_null_bytes": false,
+      "has_executable_signature": false,
+      "has_html_residue": false,
+      "is_valid_size": true,
+      "is_duplicate_sha": false,
+      "security_status": "PASS"
+    },
+    {
+      "source_id": "751",
+      "title": "The Autocrat of the Breakfast-Table",
+      "has_null_bytes": false,
+      "has_executable_signature": false,
+      "has_html_residue": false,
+      "is_valid_size": true,
+      "is_duplicate_sha": false,
+      "security_status": "PASS"
+    },
+    {
+      "source_id": "993",
+      "title": "Malbone: An Oldport Romance",
+      "has_null_bytes": false,
+      "has_executable_signature": false,
+      "has_html_residue": false,
+      "is_valid_size": true,
+      "is_duplicate_sha": false,
+      "security_status": "PASS"
+    },
+    {
+      "source_id": "2049",
+      "title": "Liber Amoris, Or, The New Pygmalion",
+      "has_null_bytes": false,
+      "has_executable_signature": false,
+      "has_html_residue": false,
+      "is_valid_size": true,
+      "is_duplicate_sha": false,
+      "security_status": "PASS"
+    },
+    {
+      "source_id": "2944",
+      "title": "Essays \u2014 First Series",
+      "has_null_bytes": false,
+      "has_executable_signature": false,
+      "has_html_residue": false,
+      "is_valid_size": true,
+      "is_duplicate_sha": false,
+      "security_status": "PASS"
+    },
+    {
+      "source_id": "4510",
+      "title": "Watersprings",
+      "has_null_bytes": false,
+      "has_executable_signature": false,
+      "has_html_residue": false,
+      "is_valid_size": true,
+      "is_duplicate_sha": false,
+      "security_status": "PASS"
+    },
+    {
+      "source_id": "15866",
+      "title": "Humanly Speaking",
+      "has_null_bytes": false,
+      "has_executable_signature": false,
+      "has_html_residue": false,
+      "is_valid_size": true,
+      "is_duplicate_sha": false,
+      "security_status": "PASS"
+    },
+    {
+      "source_id": "16722",
+      "title": "Americans and Others",
+      "has_null_bytes": false,
+      "has_executable_signature": false,
+      "has_html_residue": false,
+      "is_valid_size": true,
+      "is_duplicate_sha": false,
+      "security_status": "PASS"
+    },
+    {
+      "source_id": "26523",
+      "title": "The Jessica Letters: An Editor's Romance",
+      "has_null_bytes": false,
+      "has_executable_signature": false,
+      "has_html_residue": false,
+      "is_valid_size": true,
+      "is_duplicate_sha": false,
+      "security_status": "PASS"
+    },
+    {
+      "source_id": "30637",
+      "title": "Writings in the United Amateur, 1915-1922",
+      "has_null_bytes": false,
+      "has_executable_signature": false,
+      "has_html_residue": false,
+      "is_valid_size": true,
+      "is_duplicate_sha": false,
+      "security_status": "PASS"
+    },
+    {
+      "source_id": "414",
+      "title": "The Pageant of Summer",
+      "has_null_bytes": false,
+      "has_executable_signature": false,
+      "has_html_residue": false,
+      "is_valid_size": true,
+      "is_duplicate_sha": false,
+      "security_status": "PASS"
+    },
+    {
+      "source_id": "852",
+      "title": "Democracy and Education: An Introduction to the Philosophy of Education",
+      "has_null_bytes": false,
+      "has_executable_signature": false,
+      "has_html_residue": false,
+      "is_valid_size": true,
+      "is_duplicate_sha": false,
+      "security_status": "PASS"
+    },
+    {
+      "source_id": "944",
+      "title": "The Voyage of the Beagle",
+      "has_null_bytes": false,
+      "has_executable_signature": false,
+      "has_html_residue": false,
+      "is_valid_size": true,
+      "is_duplicate_sha": false,
+      "security_status": "PASS"
+    },
+    {
+      "source_id": "1225",
+      "title": "Faraday as a Discoverer",
+      "has_null_bytes": false,
+      "has_executable_signature": false,
+      "has_html_residue": false,
+      "is_valid_size": true,
+      "is_duplicate_sha": false,
+      "security_status": "PASS"
+    },
+    {
+      "source_id": "1315",
+      "title": "Autobiography and Selected Essays",
+      "has_null_bytes": false,
+      "has_executable_signature": false,
+      "has_html_residue": false,
+      "is_valid_size": true,
+      "is_duplicate_sha": false,
+      "security_status": "PASS"
+    },
+    {
+      "source_id": "1889",
+      "title": "Bird Neighbors\nAn Introductory Acquaintance with One Hundred and Fifty Birds Commonly Found in the Gardens, Meadows, and Woods About Our Homes",
+      "has_null_bytes": false,
+      "has_executable_signature": false,
+      "has_html_residue": false,
+      "is_valid_size": true,
+      "is_duplicate_sha": false,
+      "security_status": "PASS"
+    },
+    {
+      "source_id": "2298",
+      "title": "Great Astronomers",
+      "has_null_bytes": false,
+      "has_executable_signature": false,
+      "has_html_residue": false,
+      "is_valid_size": true,
+      "is_duplicate_sha": false,
+      "security_status": "PASS"
+    },
+    {
+      "source_id": "2440",
+      "title": "The Naturalist on the River Amazons",
+      "has_null_bytes": false,
+      "has_executable_signature": false,
+      "has_html_residue": false,
+      "is_valid_size": true,
+      "is_duplicate_sha": false,
+      "security_status": "PASS"
+    },
+    {
+      "source_id": "3772",
+      "title": "The Student's Elements of Geology",
+      "has_null_bytes": false,
+      "has_executable_signature": false,
+      "has_html_residue": false,
+      "is_valid_size": true,
+      "is_duplicate_sha": false,
+      "security_status": "PASS"
+    },
+    {
+      "source_id": "4065",
+      "title": "Side-Lights on Astronomy and Kindred Fields of Popular Science",
+      "has_null_bytes": false,
+      "has_executable_signature": false,
+      "has_html_residue": false,
+      "is_valid_size": true,
+      "is_duplicate_sha": false,
+      "security_status": "PASS"
+    },
+    {
+      "source_id": "4908",
+      "title": "Five of Maxwell's Papers",
+      "has_null_bytes": false,
+      "has_executable_signature": false,
+      "has_html_residue": false,
+      "is_valid_size": true,
+      "is_duplicate_sha": false,
+      "security_status": "PASS"
+    },
+    {
+      "source_id": "14474",
+      "title": "The Chemical History of a Candle",
+      "has_null_bytes": false,
+      "has_executable_signature": false,
+      "has_html_residue": false,
+      "is_valid_size": true,
+      "is_duplicate_sha": false,
+      "security_status": "PASS"
+    },
+    {
+      "source_id": "1",
+      "title": "The Declaration of Independence of the United States of America",
+      "has_null_bytes": false,
+      "has_executable_signature": false,
+      "has_html_residue": false,
+      "is_valid_size": true,
+      "is_duplicate_sha": false,
+      "security_status": "PASS"
+    },
+    {
+      "source_id": "23",
+      "title": "Narrative of the Life of Frederick Douglass, an American Slave",
+      "has_null_bytes": false,
+      "has_executable_signature": false,
+      "has_html_residue": false,
+      "is_valid_size": true,
+      "is_duplicate_sha": false,
+      "security_status": "PASS"
+    },
+    {
+      "source_id": "33",
+      "title": "The Scarlet Letter",
+      "has_null_bytes": false,
+      "has_executable_signature": false,
+      "has_html_residue": false,
+      "is_valid_size": true,
+      "is_duplicate_sha": false,
+      "security_status": "PASS"
+    },
+    {
+      "source_id": "41",
+      "title": "The Legend of Sleepy Hollow",
+      "has_null_bytes": false,
+      "has_executable_signature": false,
+      "has_html_residue": false,
+      "is_valid_size": true,
+      "is_duplicate_sha": false,
+      "security_status": "PASS"
+    },
+    {
+      "source_id": "73",
+      "title": "The Red Badge of Courage: An Episode of the American Civil War",
+      "has_null_bytes": false,
+      "has_executable_signature": false,
+      "has_html_residue": false,
+      "is_valid_size": true,
+      "is_duplicate_sha": false,
+      "security_status": "PASS"
+    },
+    {
+      "source_id": "147",
+      "title": "Common Sense",
+      "has_null_bytes": false,
+      "has_executable_signature": false,
+      "has_html_residue": false,
+      "is_valid_size": true,
+      "is_duplicate_sha": false,
+      "security_status": "PASS"
+    },
+    {
+      "source_id": "148",
+      "title": "The Autobiography of Benjamin Franklin",
+      "has_null_bytes": false,
+      "has_executable_signature": false,
+      "has_html_residue": false,
+      "is_valid_size": true,
+      "is_duplicate_sha": false,
+      "security_status": "PASS"
+    },
+    {
+      "source_id": "174",
+      "title": "The Picture of Dorian Gray",
+      "has_null_bytes": false,
+      "has_executable_signature": false,
+      "has_html_residue": false,
+      "is_valid_size": true,
+      "is_duplicate_sha": false,
+      "security_status": "PASS"
+    },
+    {
+      "source_id": "326",
+      "title": "Steep Trails",
+      "has_null_bytes": false,
+      "has_executable_signature": false,
+      "has_html_residue": false,
+      "is_valid_size": true,
+      "is_duplicate_sha": false,
+      "security_status": "PASS"
+    },
+    {
+      "source_id": "731",
+      "title": "History of the Decline and Fall of the Roman Empire \u2014 Volume 1",
+      "has_null_bytes": false,
+      "has_executable_signature": false,
+      "has_html_residue": false,
+      "is_valid_size": true,
+      "is_duplicate_sha": false,
+      "security_status": "PASS"
+    },
+    {
+      "source_id": "771",
+      "title": "Biographical Notes on the Pseudonymous Bells",
+      "has_null_bytes": false,
+      "has_executable_signature": false,
+      "has_html_residue": false,
+      "is_valid_size": true,
+      "is_duplicate_sha": false,
+      "security_status": "PASS"
+    },
+    {
+      "source_id": "847",
+      "title": "Lays of Ancient Rome",
+      "has_null_bytes": false,
+      "has_executable_signature": false,
+      "has_html_residue": false,
+      "is_valid_size": true,
+      "is_duplicate_sha": false,
+      "security_status": "PASS"
+    },
+    {
+      "source_id": "940",
+      "title": "The Last of the Mohicans; A narrative of 1757",
+      "has_null_bytes": false,
+      "has_executable_signature": false,
+      "has_html_residue": false,
+      "is_valid_size": true,
+      "is_duplicate_sha": false,
+      "security_status": "PASS"
+    },
+    {
+      "source_id": "947",
+      "title": "The Life of Horatio, Lord Nelson",
+      "has_null_bytes": false,
+      "has_executable_signature": false,
+      "has_html_residue": false,
+      "is_valid_size": true,
+      "is_duplicate_sha": false,
+      "security_status": "PASS"
+    },
+    {
+      "source_id": "1015",
+      "title": "The Oregon Trail: Sketches of Prairie and Rocky-Mountain Life",
+      "has_null_bytes": false,
+      "has_executable_signature": false,
+      "has_html_residue": false,
+      "is_valid_size": true,
+      "is_duplicate_sha": false,
+      "security_status": "PASS"
+    },
+    {
+      "source_id": "18",
+      "title": "The Federalist Papers",
+      "has_null_bytes": false,
+      "has_executable_signature": false,
+      "has_html_residue": false,
+      "is_valid_size": true,
+      "is_duplicate_sha": false,
+      "security_status": "PASS"
+    },
+    {
+      "source_id": "71",
+      "title": "On the Duty of Civil Disobedience",
+      "has_null_bytes": false,
+      "has_executable_signature": false,
+      "has_html_residue": false,
+      "is_valid_size": true,
+      "is_duplicate_sha": false,
+      "security_status": "PASS"
+    },
+    {
+      "source_id": "130",
+      "title": "Orthodoxy",
+      "has_null_bytes": false,
+      "has_executable_signature": false,
+      "has_html_residue": false,
+      "is_valid_size": true,
+      "is_duplicate_sha": false,
+      "security_status": "PASS"
+    },
+    {
+      "source_id": "621",
+      "title": "The Varieties of Religious Experience: A Study in Human Nature",
+      "has_null_bytes": false,
+      "has_executable_signature": false,
+      "has_html_residue": false,
+      "is_valid_size": true,
+      "is_duplicate_sha": false,
+      "security_status": "PASS"
+    },
+    {
+      "source_id": "833",
+      "title": "The Theory of the Leisure Class",
+      "has_null_bytes": false,
+      "has_executable_signature": false,
+      "has_html_residue": false,
+      "is_valid_size": true,
+      "is_duplicate_sha": false,
+      "security_status": "PASS"
+    },
+    {
+      "source_id": "1061",
+      "title": "Myths and Myth-Makers\nOld Tales and Superstitions Interpreted by Comparative Mythology",
+      "has_null_bytes": false,
+      "has_executable_signature": false,
+      "has_html_residue": false,
+      "is_valid_size": true,
+      "is_duplicate_sha": false,
+      "security_status": "PASS"
+    },
+    {
+      "source_id": "1270",
+      "title": "In Defense of Women",
+      "has_null_bytes": false,
+      "has_executable_signature": false,
+      "has_html_residue": false,
+      "is_valid_size": true,
+      "is_duplicate_sha": false,
+      "security_status": "PASS"
+    },
+    {
+      "source_id": "3207",
+      "title": "Leviathan",
+      "has_null_bytes": false,
+      "has_executable_signature": false,
+      "has_html_residue": false,
+      "is_valid_size": true,
+      "is_duplicate_sha": false,
+      "security_status": "PASS"
+    },
+    {
+      "source_id": "4212",
+      "title": "Culture and Anarchy",
+      "has_null_bytes": false,
+      "has_executable_signature": false,
+      "has_html_residue": false,
+      "is_valid_size": true,
+      "is_duplicate_sha": false,
+      "security_status": "PASS"
+    },
+    {
+      "source_id": "4320",
+      "title": "An Enquiry Concerning the Principles of Morals",
+      "has_null_bytes": false,
+      "has_executable_signature": false,
+      "has_html_residue": false,
+      "is_valid_size": true,
+      "is_duplicate_sha": false,
+      "security_status": "PASS"
+    },
+    {
+      "source_id": "4350",
+      "title": "Physics and Politics, or, Thoughts on the application of the principles of \"natural selection\" and \"inheritance\" to political society",
+      "has_null_bytes": false,
+      "has_executable_signature": false,
+      "has_html_residue": false,
+      "is_valid_size": true,
+      "is_duplicate_sha": false,
+      "security_status": "PASS"
+    },
+    {
+      "source_id": "717",
+      "title": "Chita: A Memory of Last Island",
+      "has_null_bytes": false,
+      "has_executable_signature": false,
+      "has_html_residue": false,
+      "is_valid_size": true,
+      "is_duplicate_sha": false,
+      "security_status": "PASS"
+    },
+    {
+      "source_id": "942",
+      "title": "Green Mansions: A Romance of the Tropical Forest",
+      "has_null_bytes": false,
+      "has_executable_signature": false,
+      "has_html_residue": false,
+      "is_valid_size": true,
+      "is_duplicate_sha": false,
+      "security_status": "PASS"
+    },
+    {
+      "source_id": "2398",
+      "title": "The Renaissance: Studies in Art and Poetry",
+      "has_null_bytes": false,
+      "has_executable_signature": false,
+      "has_html_residue": false,
+      "is_valid_size": true,
+      "is_duplicate_sha": false,
+      "security_status": "PASS"
+    },
+    {
+      "source_id": "29112",
+      "title": "The Bow, Its History, Manufacture and Use\n'The Strad' Library, No. III.",
+      "has_null_bytes": false,
+      "has_executable_signature": false,
+      "has_html_residue": false,
+      "is_valid_size": true,
+      "is_duplicate_sha": false,
+      "security_status": "PASS"
+    },
+    {
+      "source_id": "11",
+      "title": "Alice's Adventures in Wonderland",
+      "has_null_bytes": false,
+      "has_executable_signature": false,
+      "has_html_residue": false,
+      "is_valid_size": true,
+      "is_duplicate_sha": false,
+      "security_status": "PASS"
+    },
+    {
+      "source_id": "15",
+      "title": "Moby-Dick; or, The Whale",
+      "has_null_bytes": false,
+      "has_executable_signature": false,
+      "has_html_residue": false,
+      "is_valid_size": true,
+      "is_duplicate_sha": false,
+      "security_status": "PASS"
+    },
+    {
+      "source_id": "24",
+      "title": "O Pioneers!",
+      "has_null_bytes": false,
+      "has_executable_signature": false,
+      "has_html_residue": false,
+      "is_valid_size": true,
+      "is_duplicate_sha": false,
+      "security_status": "PASS"
+    },
+    {
+      "source_id": "27",
+      "title": "Far from the Madding Crowd",
+      "has_null_bytes": false,
+      "has_executable_signature": false,
+      "has_html_residue": false,
+      "is_valid_size": true,
+      "is_duplicate_sha": false,
+      "security_status": "PASS"
+    },
+    {
+      "source_id": "35",
+      "title": "The Time Machine",
+      "has_null_bytes": false,
+      "has_executable_signature": false,
+      "has_html_residue": false,
+      "is_valid_size": true,
+      "is_duplicate_sha": false,
+      "security_status": "PASS"
+    },
+    {
+      "source_id": "42",
+      "title": "The strange case of Dr. Jekyll and Mr. Hyde",
+      "has_null_bytes": false,
+      "has_executable_signature": false,
+      "has_html_residue": false,
+      "is_valid_size": true,
+      "is_duplicate_sha": false,
+      "security_status": "PASS"
+    },
+    {
+      "source_id": "46",
+      "title": "A Christmas Carol in Prose; Being a Ghost Story of Christmas",
+      "has_null_bytes": false,
+      "has_executable_signature": false,
+      "has_html_residue": false,
+      "is_valid_size": true,
+      "is_duplicate_sha": false,
+      "security_status": "PASS"
+    },
+    {
+      "source_id": "84",
+      "title": "Frankenstein; or, the modern prometheus",
+      "has_null_bytes": false,
+      "has_executable_signature": false,
+      "has_html_residue": false,
+      "is_valid_size": true,
+      "is_duplicate_sha": false,
+      "security_status": "PASS"
+    },
+    {
+      "source_id": "105",
+      "title": "Persuasion",
+      "has_null_bytes": false,
+      "has_executable_signature": false,
+      "has_html_residue": false,
+      "is_valid_size": true,
+      "is_duplicate_sha": false,
+      "security_status": "PASS"
+    },
+    {
+      "source_id": "108",
+      "title": "The Return of Sherlock Holmes",
+      "has_null_bytes": false,
+      "has_executable_signature": false,
+      "has_html_residue": false,
+      "is_valid_size": true,
+      "is_duplicate_sha": false,
+      "security_status": "PASS"
+    },
+    {
+      "source_id": "133",
+      "title": "The Damnation of Theron Ware",
+      "has_null_bytes": false,
+      "has_executable_signature": false,
+      "has_html_residue": false,
+      "is_valid_size": true,
+      "is_duplicate_sha": false,
+      "security_status": "PASS"
+    },
+    {
+      "source_id": "145",
+      "title": "Middlemarch",
+      "has_null_bytes": false,
+      "has_executable_signature": false,
+      "has_html_residue": false,
+      "is_valid_size": true,
+      "is_duplicate_sha": false,
+      "security_status": "PASS"
+    },
+    {
+      "source_id": "154",
+      "title": "The Rise of Silas Lapham",
+      "has_null_bytes": false,
+      "has_executable_signature": false,
+      "has_html_residue": false,
+      "is_valid_size": true,
+      "is_duplicate_sha": false,
+      "security_status": "PASS"
+    },
+    {
+      "source_id": "155",
+      "title": "The Moonstone",
+      "has_null_bytes": false,
+      "has_executable_signature": false,
+      "has_html_residue": false,
+      "is_valid_size": true,
+      "is_duplicate_sha": false,
+      "security_status": "PASS"
+    },
+    {
+      "source_id": "160",
+      "title": "The Awakening, and Selected Short Stories",
+      "has_null_bytes": false,
+      "has_executable_signature": false,
+      "has_html_residue": false,
+      "is_valid_size": true,
+      "is_duplicate_sha": false,
+      "security_status": "PASS"
+    },
+    {
+      "source_id": "163",
+      "title": "Flower Fables",
+      "has_null_bytes": false,
+      "has_executable_signature": false,
+      "has_html_residue": false,
+      "is_valid_size": true,
+      "is_duplicate_sha": false,
+      "security_status": "PASS"
+    },
+    {
+      "source_id": "165",
+      "title": "McTeague: A Story of San Francisco",
+      "has_null_bytes": false,
+      "has_executable_signature": false,
+      "has_html_residue": false,
+      "is_valid_size": true,
+      "is_duplicate_sha": false,
+      "security_status": "PASS"
+    },
+    {
+      "source_id": "166",
+      "title": "Summer",
+      "has_null_bytes": false,
+      "has_executable_signature": false,
+      "has_html_residue": false,
+      "is_valid_size": true,
+      "is_duplicate_sha": false,
+      "security_status": "PASS"
+    },
+    {
+      "source_id": "25304",
+      "title": "The Shadow On The Dial, and Other Essays",
+      "has_null_bytes": false,
+      "has_executable_signature": false,
+      "has_html_residue": false,
+      "is_valid_size": true,
+      "is_duplicate_sha": false,
+      "security_status": "PASS"
+    },
+    {
+      "source_id": "75294",
+      "title": "History as literature, and other essays",
+      "has_null_bytes": false,
+      "has_executable_signature": false,
+      "has_html_residue": false,
+      "is_valid_size": true,
+      "is_duplicate_sha": false,
+      "security_status": "PASS"
+    }
+  ]
+}

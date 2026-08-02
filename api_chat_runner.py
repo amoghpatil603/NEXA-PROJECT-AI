@@ -10,7 +10,10 @@ sys.path.insert(0, '/app/applet/nexa-model')
 sys.path.insert(0, '/app/applet')
 
 from chat_engine import ChatEngine
+<<<<<<< HEAD
 from execution_engine import ExecutionEngine
+=======
+>>>>>>> origin/main
 
 def get_memory_usage_mb():
     try:
@@ -47,7 +50,10 @@ def main():
 
     try:
         engine = ChatEngine(checkpoint_path=checkpoint_path)
+<<<<<<< HEAD
         exec_engine = ExecutionEngine()
+=======
+>>>>>>> origin/main
     except Exception as e:
         sys.stderr.write(f"Failed to load ChatEngine: {e}\n")
         print(json.dumps({"error": f"Failed to load ChatEngine: {str(e)}"}))
@@ -82,12 +88,19 @@ def main():
             if is_stream:
                 tokens_count = 0
                 full_text = ""
+<<<<<<< HEAD
                 context = exec_engine.process_request(user_msg, trimmed_hist, system_prompt)
                 
                 for chunk, full in engine.stream_generate(
                     user_prompt=context['user_prompt'],
                     system_prompt=context['system_prompt'],
                     previous_messages=context['previous_messages'],
+=======
+                for chunk, full in engine.stream_generate(
+                    user_prompt=user_msg,
+                    system_prompt=system_prompt,
+                    previous_messages=trimmed_hist,
+>>>>>>> origin/main
                     max_new_tokens=max_tokens,
                     temperature=temp,
                     top_k=top_k,
@@ -97,10 +110,13 @@ def main():
                     full_text = full
                     print(json.dumps({"chunk": chunk, "full": full, "tokens_count": tokens_count}), flush=True)
 
+<<<<<<< HEAD
                 # Automatically store assistant responses
                 if full_text and len(full_text) > 20:
                     exec_engine.memory_engine.create_memory("assistant_response", full_text)
                     
+=======
+>>>>>>> origin/main
                 t1 = time.time()
                 dt = max(t1 - t0, 0.001)
                 tps = round(tokens_count / dt, 1)
@@ -113,21 +129,31 @@ def main():
                     "memory_mb": get_memory_usage_mb()
                 }), flush=True)
             else:
+<<<<<<< HEAD
                 context = exec_engine.process_request(user_msg, trimmed_hist, system_prompt)
                 
                 response_text = engine.generate(
                     user_prompt=context['user_prompt'],
                     system_prompt=context['system_prompt'],
                     previous_messages=context['previous_messages'],
+=======
+                response_text = engine.generate(
+                    user_prompt=user_msg,
+                    system_prompt=system_prompt,
+                    previous_messages=trimmed_hist,
+>>>>>>> origin/main
                     max_new_tokens=max_tokens,
                     temperature=temp,
                     top_k=top_k,
                     top_p=top_p
                 )
+<<<<<<< HEAD
                 
                 # Automatically store assistant responses
                 if response_text and len(response_text) > 20:
                     exec_engine.memory_engine.create_memory("assistant_response", response_text)
+=======
+>>>>>>> origin/main
                 t1 = time.time()
                 dt = max(t1 - t0, 0.001)
                 tokens_count = max(len(response_text.split()), 1)

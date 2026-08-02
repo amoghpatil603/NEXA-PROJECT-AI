@@ -1,8 +1,15 @@
+<<<<<<< HEAD
 import multer from "multer";
 import express from "express";
 import path from "path";
 import fs from "fs";
 import { spawn, spawnSync, ChildProcess } from "child_process";
+=======
+import express from "express";
+import path from "path";
+import fs from "fs";
+import { spawn, ChildProcess } from "child_process";
+>>>>>>> origin/main
 import { createServer as createViteServer } from "vite";
 
 async function startServer() {
@@ -10,6 +17,7 @@ async function startServer() {
   const PORT = 3000;
 
   app.use(express.json());
+<<<<<<< HEAD
   const upload = multer({ dest: path.join(process.cwd(), "uploads") });
 
   let _cachedPythonBin: string | null = null;
@@ -36,6 +44,13 @@ async function startServer() {
       }
     }
     _cachedPythonBin = "python3";
+=======
+
+  function getPythonBin(): string {
+    if (fs.existsSync("/usr/bin/python3.11")) return "/usr/bin/python3.11";
+    const venvPy = path.join(process.cwd(), ".venv", "bin", "python");
+    if (fs.existsSync(venvPy)) return venvPy;
+>>>>>>> origin/main
     return "python3";
   }
 
@@ -76,6 +91,7 @@ async function startServer() {
 
     const child = spawn(pythonBin, [scriptPath, task.payload], { cwd: process.cwd() });
 
+<<<<<<< HEAD
     child.on("error", (err) => {
       console.error(`[SPAWN ERROR] Failed to start python:`, err);
       if (!task.res.headersSent) {
@@ -89,6 +105,8 @@ async function startServer() {
       processNextQueueTask();
     });
 
+=======
+>>>>>>> origin/main
     // Watchdog timer
     const watchdogTimer = setTimeout(() => {
       console.warn(`[WATCHDOG TRIGGERED] Task ${task.id} exceeded ${WATCHDOG_TIMEOUT_MS}ms. Terminating process safely.`);
@@ -346,6 +364,7 @@ async function startServer() {
   });
 
   // Health endpoint
+<<<<<<< HEAD
 
   app.post("/api/upload", upload.single("file"), (req, res) => {
     if (!req.file) {
@@ -394,6 +413,8 @@ async function startServer() {
       }
     });
   });
+=======
+>>>>>>> origin/main
   app.get("/api/health", (req, res) => {
     res.json({
       status: "ok",

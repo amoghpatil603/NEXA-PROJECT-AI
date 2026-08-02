@@ -2,7 +2,11 @@ import uuid
 from typing import List, Dict, Any
 
 class ChunkManager:
+<<<<<<< HEAD
     def __init__(self, chunk_size: int = 512, overlap: int = 64):
+=======
+    def __init__(self, chunk_size: int = 500, overlap: int = 50):
+>>>>>>> origin/main
         self.chunk_size = chunk_size
         self.overlap = overlap
 
@@ -15,8 +19,12 @@ class ChunkManager:
         chunks = []
         start = 0
         text_length = len(content)
+<<<<<<< HEAD
         chunk_number = 1
         
+=======
+
+>>>>>>> origin/main
         while start < text_length:
             end = start + self.chunk_size
             chunk_text = content[start:end]
@@ -30,13 +38,21 @@ class ChunkManager:
                     "file_path": file_path,
                     "file_name": file_name,
                     "start_idx": start,
+<<<<<<< HEAD
                     "end_idx": end,
                     "chunk_number": chunk_number
+=======
+                    "end_idx": end
+>>>>>>> origin/main
                 },
                 "embedding": []
             })
             
             start += (self.chunk_size - self.overlap)
+<<<<<<< HEAD
             chunk_number += 1
             
+=======
+
+>>>>>>> origin/main
         return chunks

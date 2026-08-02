@@ -1,0 +1,26 @@
+{
+  "tokenizer_version": "1.0.0",
+  "corpus_version": "NEXA-PD5M-v7",
+  "vocabulary_size": 8000,
+  "merge_count": 7732,
+  "special_tokens": {
+    "<PAD>": 0,
+    "<BOS>": 1,
+    "<EOS>": 2,
+    "<UNK>": 3,
+    "<NEXA_PAD>": 4,
+    "<NEXA_BOS>": 5,
+    "<NEXA_EOS>": 6,
+    "<NEXA_UNK>": 7,
+    "<NEXA_SYSTEM>": 8,
+    "<NEXA_USER>": 9,
+    "<NEXA_ASSISTANT>": 10,
+    "<NEXA_END>": 11
+  },
+  "tokenizer_sha256": "31378293a460ae066753a5da27091f1e1fbc90f0605d2bcaf96e4b64e7af0d2a",
+  "certification_status": "8K_TOKENIZER_CERTIFIED",
+  "certification_report_references": [
+    "data/reports/phase3f2_8k_final_report.md"
+  ],
+  "creation_timestamp": "2026-07-29T17:53:11Z"
+}

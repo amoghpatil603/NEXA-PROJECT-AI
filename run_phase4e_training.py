@@ -128,7 +128,18 @@ class ShardDataset(torch.utils.data.Dataset):
         return self.chunks[idx]
 
 dataset = ShardDataset(chunks)
+<<<<<<< HEAD
 dataloader = torch.utils.data.DataLoader(dataset, batch_size=train_config.micro_batch_size, shuffle=True, num_workers=0)
+=======
+from training.dataloader import collate_nexa
+dataloader = torch.utils.data.DataLoader(
+    dataset, 
+    batch_size=train_config.micro_batch_size, 
+    shuffle=True, 
+    num_workers=0,
+    collate_fn=collate_nexa
+)
+>>>>>>> origin/main
 batch_iter = iter(dataloader)
 
 losses = []

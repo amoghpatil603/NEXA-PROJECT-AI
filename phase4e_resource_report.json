@@ -1,6 +1,12 @@
 {
+<<<<<<< HEAD
   "start_rss_mb": 220.25390625,
   "peak_rss_mb": 1051.85546875,
   "runtime_seconds": 190.59698104858398,
+=======
+  "start_rss_mb": 203.328125,
+  "peak_rss_mb": 880.546875,
+  "runtime_seconds": 166.18255949020386,
+>>>>>>> origin/main
   "status": "PASS"
 }

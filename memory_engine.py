@@ -1,6 +1,7 @@
 import sqlite3
 import json
 import os
+<<<<<<< HEAD
 import numpy as np
 from typing import List, Dict, Any, Optional
 from embedding_service import EmbeddingService
@@ -11,11 +12,23 @@ class MemoryEngine:
     def __init__(self, db_path=DB_PATH):
         self.db_path = db_path
         self.embedding_service = EmbeddingService()
+=======
+from typing import List, Dict, Any, Optional
+
+DB_PATH = os.path.join(os.path.dirname(__file__), 'nexa_memory.db')
+SCHEMA_PATH = os.path.join(os.path.dirname(__file__), 'memory_schema.sql')
+
+class MemoryEngine:
+    def __init__(self, db_path=DB_PATH, schema_path=SCHEMA_PATH):
+        self.db_path = db_path
+        self.schema_path = schema_path
+>>>>>>> origin/main
         self._init_db()
 
     def _init_db(self):
         if not os.path.exists(self.db_path):
             with sqlite3.connect(self.db_path) as conn:
+<<<<<<< HEAD
                 conn.executescript("""
                     CREATE TABLE IF NOT EXISTS memories (
                         id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -48,6 +61,11 @@ class MemoryEngine:
                 with sqlite3.connect(self.db_path) as conn:
                     conn.executescript("ALTER TABLE memories ADD COLUMN embedding BLOB;")
                     conn.commit()
+=======
+                with open(self.schema_path, 'r') as f:
+                    conn.executescript(f.read())
+                conn.commit()
+>>>>>>> origin/main
 
     def _get_connection(self):
         conn = sqlite3.connect(self.db_path)
@@ -56,15 +74,23 @@ class MemoryEngine:
 
     # Basic Memory Engine CRUD
     def create_memory(self, type: str, content: str, metadata: Optional[Dict[str, Any]] = None) -> int:
+<<<<<<< HEAD
         embedding = self.embedding_service.embed_text(content)
         embedding_bytes = embedding.astype(np.float32).tobytes()
 
+=======
+>>>>>>> origin/main
         with self._get_connection() as conn:
             cursor = conn.cursor()
             metadata_str = json.dumps(metadata) if metadata else "{}"
             cursor.execute(
+<<<<<<< HEAD
                 "INSERT INTO memories (type, content, metadata, embedding) VALUES (?, ?, ?, ?)",
                 (type, content, metadata_str, embedding_bytes)
+=======
+                "INSERT INTO memories (type, content, metadata) VALUES (?, ?, ?)",
+                (type, content, metadata_str)
+>>>>>>> origin/main
             )
             conn.commit()
             return cursor.lastrowid
@@ -82,9 +108,13 @@ class MemoryEngine:
         with self._get_connection() as conn:
             cursor = conn.cursor()
             if content:
+<<<<<<< HEAD
                 embedding = self.embedding_service.embed_text(content)
                 embedding_bytes = embedding.astype(np.float32).tobytes()
                 cursor.execute("UPDATE memories SET content = ?, embedding = ?, updated_at = CURRENT_TIMESTAMP WHERE id = ?", (content, embedding_bytes, memory_id))
+=======
+                cursor.execute("UPDATE memories SET content = ?, updated_at = CURRENT_TIMESTAMP WHERE id = ?", (content, memory_id))
+>>>>>>> origin/main
             if metadata:
                 metadata_str = json.dumps(metadata)
                 cursor.execute("UPDATE memories SET metadata = ?, updated_at = CURRENT_TIMESTAMP WHERE id = ?", (metadata_str, memory_id))
@@ -98,6 +128,7 @@ class MemoryEngine:
             conn.commit()
             return cursor.rowcount > 0
 
+<<<<<<< HEAD
     def search_memory(self, query: str, top_k: int = 5) -> List[Dict[str, Any]]:
         query_embedding = self.embedding_service.embed_text(query).astype(np.float32)
         
@@ -119,6 +150,15 @@ class MemoryEngine:
             # Sort by similarity and return top_k
             results.sort(key=lambda x: x['similarity'], reverse=True)
             return results[:top_k]
+=======
+    def search_memory(self, query: str) -> List[Dict[str, Any]]:
+        # Simple keyword fallback implementation for Semantic Search
+        with self._get_connection() as conn:
+            cursor = conn.cursor()
+            like_query = f"%{query}%"
+            cursor.execute("SELECT * FROM memories WHERE content LIKE ? OR metadata LIKE ?", (like_query, like_query))
+            return [dict(row) for row in cursor.fetchall()]
+>>>>>>> origin/main
 
     def pin_memory(self, memory_id: int, is_pinned: bool = True) -> bool:
         with self._get_connection() as conn:
@@ -135,6 +175,10 @@ class MemoryEngine:
             return cursor.rowcount > 0
 
     def merge_duplicates(self) -> int:
+<<<<<<< HEAD
+=======
+        # Placeholder for duplicate merging logic
+>>>>>>> origin/main
         return 0
 
     # User Profile Operations
@@ -161,3 +205,11 @@ class MemoryEngine:
                 query = f"INSERT INTO users ({columns}) VALUES ({placeholders})"
                 cursor.execute(query, params)
             conn.commit()
+<<<<<<< HEAD
+=======
+
+if __name__ == "__main__":
+    engine = MemoryEngine()
+    engine.create_memory("note", "Initialized Memory Engine")
+    print("Memory Engine initialized successfully.")
+>>>>>>> origin/main

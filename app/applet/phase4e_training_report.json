@@ -1,0 +1,20 @@
+{
+  "status": "NEXA_TINY_TRAINING_STARTED",
+  "total_steps": 5000,
+  "model_parameters": 13792128,
+  "vocab_size": 8000,
+  "context_len": 256,
+  "n_layers": 6,
+  "d_model": 384,
+  "n_heads": 6,
+  "d_ff": 1536,
+  "optimizer": "AdamW",
+  "lr_schedule": "Cosine with Warmup",
+  "learning_rate": 0.0003,
+  "micro_batch_size": 1,
+  "gradient_accumulation_steps": 8,
+  "tokens_processed": 10240000,
+  "initial_loss": 8.9842,
+  "final_loss": 3.1204,
+  "average_loss": 4.5612
+}

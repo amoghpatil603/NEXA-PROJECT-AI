@@ -1,0 +1,452 @@
+{
+  "70": {
+    "work_id": "pd_70",
+    "clean_filename": "70.txt",
+    "clean_sha256": "43dceefec93dca99abbddd4597b92ad3a087f8344017d4be850d8d3af04d9a5b",
+    "clean_bytes": 537007
+  },
+  "573": {
+    "work_id": "pd_573",
+    "clean_filename": "573.txt",
+    "clean_sha256": "44ac339a60584656719e8e8f68348cfc789a8d3fba8a172dd7e938cb27b0a2c3",
+    "clean_bytes": 561767
+  },
+  "577": {
+    "work_id": "pd_577",
+    "clean_filename": "577.txt",
+    "clean_sha256": "54088145b0919bf236fa8b1fee4fcdd4e5117710bc88055aa68fc31f362a322b",
+    "clean_bytes": 531468
+  },
+  "701": {
+    "work_id": "pd_701",
+    "clean_filename": "701.txt",
+    "clean_sha256": "2e05a17f0dc0c9ba61109d1ac84b4cc44ac9e036235e53c53c6960c0e724ea5e",
+    "clean_bytes": 55613
+  },
+  "751": {
+    "work_id": "pd_751",
+    "clean_filename": "751.txt",
+    "clean_sha256": "df667c7cd2a0221f6e36c33b8ea96916abe00380ab49131219c3077b778b7079",
+    "clean_bytes": 520473
+  },
+  "993": {
+    "work_id": "pd_993",
+    "clean_filename": "993.txt",
+    "clean_sha256": "c0b01a208082b7c8a0124ea730146524e241ab22519638db060751a75e9282c9",
+    "clean_bytes": 266668
+  },
+  "2049": {
+    "work_id": "pd_2049",
+    "clean_filename": "2049.txt",
+    "clean_sha256": "ac7fe155a428e30130bfbaa2f3f2a1a0e57264fa103cc5ab34b36fd0e4e28e13",
+    "clean_bytes": 161372
+  },
+  "2944": {
+    "work_id": "pd_2944",
+    "clean_filename": "2944.txt",
+    "clean_sha256": "0559e94b304079ebbc5d4d8500eb62b3cf88f4981a98f0151f3abd0ec6e1d7b8",
+    "clean_bytes": 412894
+  },
+  "4510": {
+    "work_id": "pd_4510",
+    "clean_filename": "4510.txt",
+    "clean_sha256": "12d495339fc2d40277eb88615ce8af3c8abbaf58b6da163b460452b03268e6d4",
+    "clean_bytes": 413426
+  },
+  "15866": {
+    "work_id": "pd_15866",
+    "clean_filename": "15866.txt",
+    "clean_sha256": "321dffb81ba38fb9a09f40146ecd8e66a0717cd8c8df5ffecb0d6487040d78f2",
+    "clean_bytes": 253132
+  },
+  "16722": {
+    "work_id": "pd_16722",
+    "clean_filename": "16722.txt",
+    "clean_sha256": "954842c36dd67f21295a3625a6dbcedfbcac228903bea81e669b72e4162bd4c4",
+    "clean_bytes": 268002
+  },
+  "26523": {
+    "work_id": "pd_26523",
+    "clean_filename": "26523.txt",
+    "clean_sha256": "db2f89bd24efb23da12b6a235c4b4fc6160f73e229922123eb39e42dc37afd67",
+    "clean_bytes": 276944
+  },
+  "30637": {
+    "work_id": "pd_30637",
+    "clean_filename": "30637.txt",
+    "clean_sha256": "896fa01488b0f4b942b7953c93d839de5eb9eb9b1ba346da05ff07837fdd3824",
+    "clean_bytes": 615155
+  },
+  "414": {
+    "work_id": "pd_414",
+    "clean_filename": "414.txt",
+    "clean_sha256": "3efcbdb6dfeb2f4f4ebaef16c748cf4de34861fa771f7138a2b72a9f766b6f0a",
+    "clean_bytes": 39457
+  },
+  "852": {
+    "work_id": "pd_852",
+    "clean_filename": "852.txt",
+    "clean_sha256": "38e49365b6380b702a6851bb94e578c9b6a70c4416d5656235e8886e4e530fb3",
+    "clean_bytes": 829525
+  },
+  "944": {
+    "work_id": "pd_944",
+    "clean_filename": "944.txt",
+    "clean_sha256": "fbe55be2d855cae48809ed205868e5d978ffa81cb58a58b6ceea29911874696d",
+    "clean_bytes": 1188562
+  },
+  "1225": {
+    "work_id": "pd_1225",
+    "clean_filename": "1225.txt",
+    "clean_sha256": "c300ad878f7fcce2ce1134aa484bae0f5c20f9cc173f86e4f35905220a25c0f9",
+    "clean_bytes": 233956
+  },
+  "1315": {
+    "work_id": "pd_1315",
+    "clean_filename": "1315.txt",
+    "clean_sha256": "2944a821cfd2bb4ea1a8383518ba7b7a642c4359ba0cb5417dc23b8ca4aa8a00",
+    "clean_bytes": 314612
+  },
+  "1889": {
+    "work_id": "pd_1889",
+    "clean_filename": "1889.txt",
+    "clean_sha256": "f570c860c244d0718e725a42bf82d58af296818ceafd4caad70d6cf23a7cc12c",
+    "clean_bytes": 418880
+  },
+  "2298": {
+    "work_id": "pd_2298",
+    "clean_filename": "2298.txt",
+    "clean_sha256": "04d30d6fad29b8d7e860b57e1bcff3201141d6b8cd394e8ac3f10c6b3bdf7248",
+    "clean_bytes": 536381
+  },
+  "2440": {
+    "work_id": "pd_2440",
+    "clean_filename": "2440.txt",
+    "clean_sha256": "72ee348eaecb92dc75f7c038dca570250657832c731a173b511eb2cad7f6aecb",
+    "clean_bytes": 1014414
+  },
+  "3772": {
+    "work_id": "pd_3772",
+    "clean_filename": "3772.txt",
+    "clean_sha256": "15b5a9d6ff077fd11a320d4a0791dc83861699bd51ccbeb3ecf0dddac1f2d0cf",
+    "clean_bytes": 1416215
+  },
+  "4065": {
+    "work_id": "pd_4065",
+    "clean_filename": "4065.txt",
+    "clean_sha256": "15b95b01e2c5096f5e354f18ce5fadbd6bd57ea8f36249a2c3fe099750efd984",
+    "clean_bytes": 566801
+  },
+  "4908": {
+    "work_id": "pd_4908",
+    "clean_filename": "4908.txt",
+    "clean_sha256": "7fc893a2cb008c4e8a5775ce860b119881a4318d63b6705825ef57e4c519dba8",
+    "clean_bytes": 84935
+  },
+  "14474": {
+    "work_id": "pd_14474",
+    "clean_filename": "14474.txt",
+    "clean_sha256": "81db62b640e6a1da982006c898be79b225bd3917800b84436ff8135f60035153",
+    "clean_bytes": 223358
+  },
+  "1": {
+    "work_id": "pd_1",
+    "clean_filename": "1.txt",
+    "clean_sha256": "7b8aba6642b7cd301ccf0977d1274ac01ee1a4e76cd0f7b2e1be3c330f135e58",
+    "clean_bytes": 10629
+  },
+  "23": {
+    "work_id": "pd_23",
+    "clean_filename": "23.txt",
+    "clean_sha256": "4ef9c36d2c4db87c8e8b331e679f7c1f3be7e6642cb3ec8933104857cc81a0c4",
+    "clean_bytes": 225365
+  },
+  "33": {
+    "work_id": "pd_33",
+    "clean_filename": "33.txt",
+    "clean_sha256": "f1606ccbb321f26ff6e3afb37a8e64cb1382c1f77d3bea39aad84c5fbc09dc54",
+    "clean_bytes": 485738
+  },
+  "41": {
+    "work_id": "pd_41",
+    "clean_filename": "41.txt",
+    "clean_sha256": "69746d924acdcaf64cbca5b2b28c1ea3f15ed3a2f4c13118efa0abdefed8cf64",
+    "clean_bytes": 69927
+  },
+  "73": {
+    "work_id": "pd_73",
+    "clean_filename": "73.txt",
+    "clean_sha256": "10d72d7955a0d1605cf252d0f3d4221f8072da81da5d3f39b76d341192ed4131",
+    "clean_bytes": 263522
+  },
+  "147": {
+    "work_id": "pd_147",
+    "clean_filename": "147.txt",
+    "clean_sha256": "e5e564a1b12aeea371aacd48354f573eec8b97b3ef1d1e8f630461bc4f3070dd",
+    "clean_bytes": 126470
+  },
+  "148": {
+    "work_id": "pd_148",
+    "clean_filename": "148.txt",
+    "clean_sha256": "e3808650289b18e7d8cfbcec0a385e41ec0057e485f6da38aab8a6087e7b7e07",
+    "clean_bytes": 378650
+  },
+  "174": {
+    "work_id": "pd_174",
+    "clean_filename": "174.txt",
+    "clean_sha256": "1311e14e3576ced84f2760043afc85194eabdd2db55d2c59b957299eb65075a6",
+    "clean_bytes": 437455
+  },
+  "326": {
+    "work_id": "pd_326",
+    "clean_filename": "326.txt",
+    "clean_sha256": "719571e15cf1a5c9547a2a3abb399dc096f19bd698bcf7c483f7a58067dc2efa",
+    "clean_bytes": 474393
+  },
+  "731": {
+    "work_id": "pd_731",
+    "clean_filename": "731.txt",
+    "clean_sha256": "058bc128a3842f64abd8a24f62f1479564daed1236d98fb045ccf30110d8f547",
+    "clean_bytes": 1771156
+  },
+  "771": {
+    "work_id": "pd_771",
+    "clean_filename": "771.txt",
+    "clean_sha256": "f658558b22335097f9aafb433d6627c18a8b5631272024f34cefe8b21f99f7ff",
+    "clean_bytes": 25859
+  },
+  "847": {
+    "work_id": "pd_847",
+    "clean_filename": "847.txt",
+    "clean_sha256": "e5ceedfdaf619da620f8cd58c900e704842ca5854c70a77e080c0c54178fdaab",
+    "clean_bytes": 157512
+  },
+  "940": {
+    "work_id": "pd_940",
+    "clean_filename": "940.txt",
+    "clean_sha256": "0cc61502739d626dc42149e72639e49367726f7dd703d0eef0cbbe20ab4b34d9",
+    "clean_bytes": 856666
+  },
+  "947": {
+    "work_id": "pd_947",
+    "clean_filename": "947.txt",
+    "clean_sha256": "fb5f30f9b3daaf58678bdb658bb87c89f2b3380417002b22cf90a13eba54aa2e",
+    "clean_bytes": 550070
+  },
+  "1015": {
+    "work_id": "pd_1015",
+    "clean_filename": "1015.txt",
+    "clean_sha256": "748fac032020c09236b95553a88e82b21b290635d91af7ae3416e4c98a0e8e0d",
+    "clean_bytes": 725702
+  },
+  "18": {
+    "work_id": "pd_18",
+    "clean_filename": "18.txt",
+    "clean_sha256": "7ec88118796a3277d2d429f845d2c18f2091b0d2646487f5676d3107c4b5f31b",
+    "clean_bytes": 1173664
+  },
+  "71": {
+    "work_id": "pd_71",
+    "clean_filename": "71.txt",
+    "clean_sha256": "28b00a18a7c161c57f305274d9a03f232dd47d965c6aae827d673d22f0a302f5",
+    "clean_bytes": 51584
+  },
+  "130": {
+    "work_id": "pd_130",
+    "clean_filename": "130.txt",
+    "clean_sha256": "8f5ac412a87759272f10e1a6db7af5fe21730a10af8d72b2e2d02210e123f7dc",
+    "clean_bytes": 356545
+  },
+  "621": {
+    "work_id": "pd_621",
+    "clean_filename": "621.txt",
+    "clean_sha256": "ab541fd368fe82d33a36eb160ce28d5d5ceb35fc083d91aa2ddc50d9ae32742e",
+    "clean_bytes": 1131756
+  },
+  "833": {
+    "work_id": "pd_833",
+    "clean_filename": "833.txt",
+    "clean_sha256": "fd406ffae059b3e23adb7fe33150a7dd4db5c4c0b7438ccc154f8ddc6e246738",
+    "clean_bytes": 642515
+  },
+  "1061": {
+    "work_id": "pd_1061",
+    "clean_filename": "1061.txt",
+    "clean_sha256": "160e9da0c5d73147f84a701ea5f79e58162525b54bcb279847e6c53f1ac41dfe",
+    "clean_bytes": 446988
+  },
+  "1270": {
+    "work_id": "pd_1270",
+    "clean_filename": "1270.txt",
+    "clean_sha256": "d8065d3767b13c62dcae01bc3e7dc9f81ff59e51c3113c7575c778d0360ef671",
+    "clean_bytes": 244573
+  },
+  "3207": {
+    "work_id": "pd_3207",
+    "clean_filename": "3207.txt",
+    "clean_sha256": "db3cd5f9bf2b0feb3732d6ceb3e255bea9bfdfc5077bf81cb596eb097614bab2",
+    "clean_bytes": 1212565
+  },
+  "4212": {
+    "work_id": "pd_4212",
+    "clean_filename": "4212.txt",
+    "clean_sha256": "ba525f5e56ccd0f25c0b705fec99af716615b8d5bbde6a4d8ab1f6f6b85fadd7",
+    "clean_bytes": 404203
+  },
+  "4320": {
+    "work_id": "pd_4320",
+    "clean_filename": "4320.txt",
+    "clean_sha256": "8c05266c603c4fdab88370609b87aee212ad7bb529cb09e4177d113484bdc2a8",
+    "clean_bytes": 293043
+  },
+  "4350": {
+    "work_id": "pd_4350",
+    "clean_filename": "4350.txt",
+    "clean_sha256": "f3072bce32b73160d6f187eccbeb554cf5881ea6537b432d2534a827de300eab",
+    "clean_bytes": 322633
+  },
+  "717": {
+    "work_id": "pd_717",
+    "clean_filename": "717.txt",
+    "clean_sha256": "a7224a47dafae066a5ea06e2d1e71dbd29e752dd58cd40304aafa95a1bd49713",
+    "clean_bytes": 156862
+  },
+  "942": {
+    "work_id": "pd_942",
+    "clean_filename": "942.txt",
+    "clean_sha256": "1fea99728056518913936790c5a998aed38ba452f88e7d757ae886ae5c10ea01",
+    "clean_bytes": 486032
+  },
+  "2398": {
+    "work_id": "pd_2398",
+    "clean_filename": "2398.txt",
+    "clean_sha256": "3412669db6d0687bba5392e14daf6025d87da97078a7d73013982d2acec0b40e",
+    "clean_bytes": 343365
+  },
+  "29112": {
+    "work_id": "pd_29112",
+    "clean_filename": "29112.txt",
+    "clean_sha256": "951d421fc8ddb98238ecd1f2638445b88f1c2b09a0ca772f4ba4fca264d5bd27",
+    "clean_bytes": 171432
+  },
+  "11": {
+    "work_id": "pd_11",
+    "clean_filename": "11.txt",
+    "clean_sha256": "4e04ea77acf3b0215cae2089c977bc07526fc834597a1d463598d895354ba41d",
+    "clean_bytes": 151094
+  },
+  "15": {
+    "work_id": "pd_15",
+    "clean_filename": "15.txt",
+    "clean_sha256": "46393c359d564335b863616d402d665040e5ba9b48bf187b28f087450055e35e",
+    "clean_bytes": 1254170
+  },
+  "24": {
+    "work_id": "pd_24",
+    "clean_filename": "24.txt",
+    "clean_sha256": "5c3eac346b5c9989384a5c41d1080ce9f2c18bb424b854db8aeeb7e18a3b0d01",
+    "clean_bytes": 305672
+  },
+  "27": {
+    "work_id": "pd_27",
+    "clean_filename": "27.txt",
+    "clean_sha256": "c1b025c37b9aa3bf83fea600e8816c8c27b69c3523edeb69f5b2878b836cab19",
+    "clean_bytes": 794804
+  },
+  "35": {
+    "work_id": "pd_35",
+    "clean_filename": "35.txt",
+    "clean_sha256": "8b0e67baf93e9a01fff89aa84437d6adb9f0a908bacb9faea3db12b98564bbc7",
+    "clean_bytes": 181474
+  },
+  "42": {
+    "work_id": "pd_42",
+    "clean_filename": "42.txt",
+    "clean_sha256": "81a9af1691fe26fe12cc809e8178b1376072e25d99fc1a85ff52223ae4513ada",
+    "clean_bytes": 141519
+  },
+  "46": {
+    "work_id": "pd_46",
+    "clean_filename": "46.txt",
+    "clean_sha256": "9eefa0fe0a258572e9a1857abcc0775d4f2e424f158166d534c8af1da2b6c030",
+    "clean_bytes": 158415
+  },
+  "84": {
+    "work_id": "pd_84",
+    "clean_filename": "84.txt",
+    "clean_sha256": "3839fa35c116713f811903545470041a86079268307ae9fd3ed4d04c88788bc0",
+    "clean_bytes": 421535
+  },
+  "105": {
+    "work_id": "pd_105",
+    "clean_filename": "105.txt",
+    "clean_sha256": "dc31cb71e2a0398a9aaf35774bf0827bf0977033a5c4009a2d5eea72b4de775a",
+    "clean_bytes": 469406
+  },
+  "108": {
+    "work_id": "pd_108",
+    "clean_filename": "108.txt",
+    "clean_sha256": "f0aa52a8338151e9dba3a34de4e5589edc4a4a0de6ba377d20f80afb631e2c1e",
+    "clean_bytes": 686374
+  },
+  "133": {
+    "work_id": "pd_133",
+    "clean_filename": "133.txt",
+    "clean_sha256": "001fd4a2264fc3b2f80deeb5b71fb9816bf70124368151dcb646d55a0c750e94",
+    "clean_bytes": 675457
+  },
+  "145": {
+    "work_id": "pd_145",
+    "clean_filename": "145.txt",
+    "clean_sha256": "9d0ce5c0b701c05b38198f6fab45b8ebf2eb3645a81aa55794ccd0aa66cdaf0d",
+    "clean_bytes": 1812690
+  },
+  "154": {
+    "work_id": "pd_154",
+    "clean_filename": "154.txt",
+    "clean_sha256": "26bd51bb37ca45fb3364bbea43c0a5f19acc9e7023670ed532e06cce302e8295",
+    "clean_bytes": 699713
+  },
+  "155": {
+    "work_id": "pd_155",
+    "clean_filename": "155.txt",
+    "clean_sha256": "20467594f01ce95e6068b025eaa6e33689617ba003b54153935359fbae390440",
+    "clean_bytes": 1094761
+  },
+  "160": {
+    "work_id": "pd_160",
+    "clean_filename": "160.txt",
+    "clean_sha256": "9aa49ce9652bbd1d288a2787c7c03f37ac9bc07a551879366fa520fccfe60cc5",
+    "clean_bytes": 365632
+  },
+  "163": {
+    "work_id": "pd_163",
+    "clean_filename": "163.txt",
+    "clean_sha256": "02156153c377a53c38e013fc3ca5395959267285022520c497583c422e9c9564",
+    "clean_bytes": 188787
+  },
+  "165": {
+    "work_id": "pd_165",
+    "clean_filename": "165.txt",
+    "clean_sha256": "31b69237ec1e37a669c68560c7089467d91a7d305ac03c17244e683a58ff9f4e",
+    "clean_bytes": 647286
+  },
+  "166": {
+    "work_id": "pd_166",
+    "clean_filename": "166.txt",
+    "clean_sha256": "7abc97ec84b0a4844fb653bf6386a1df2b78ac2169bd1bb9fabd463806470207",
+    "clean_bytes": 317836
+  },
+  "25304": {
+    "work_id": "PD5M_W0025304",
+    "clean_filename": "25304.txt",
+    "clean_sha256": "9adcfdd9bb309e810ccf471da6839de53dc2668c5278281a61bcc084aab4a24e",
+    "clean_bytes": 343483
+  },
+  "75294": {
+    "work_id": "PD5M_W0075294",
+    "clean_filename": "75294.txt",
+    "clean_sha256": "265df2d58c213722ae02c9ad074c87f7b04621d5b6b6d10037be85e8578eec35",
+    "clean_bytes": 382982
+  }
+}

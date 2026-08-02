@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import time
 import uuid
 import sys
@@ -366,3 +367,24 @@ class AgentPlanner:
             "total_tasks_generated": self.total_tasks_generated,
             "average_plan_size": avg_plan_size
         }
+=======
+import json
+
+class AgentPlanner:
+    def __init__(self, tool_manager):
+        self.tool_manager = tool_manager
+
+    def plan_execution(self, prompt: str, available_tools: list):
+        # Placeholder for intent detection and tool selection
+        # Returns a sequence of tool calls
+        return []
+
+    def execute_plan(self, plan: list):
+        results = []
+        for step in plan:
+            result = self.tool_manager.execute_tool(step['tool'], step['parameters'])
+            results.append(result)
+            if result['status'] == 'error':
+                break
+        return results
+>>>>>>> origin/main

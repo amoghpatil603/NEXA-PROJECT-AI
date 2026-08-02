@@ -1,0 +1,602 @@
+{
+  "train/doc_0.bin": {
+    "manifest_size": 5006,
+    "disk_size": 7112,
+    "manifest_tokens": 2503,
+    "disk_tokens": 3556,
+    "size_ratio": 1.4206951658010387,
+    "status": "CORRUPTED_BY_UTF8_REWRITE"
+  },
+  "train/doc_1.bin": {
+    "manifest_size": 329048,
+    "disk_size": 466100,
+    "manifest_tokens": 164524,
+    "disk_tokens": 233050,
+    "size_ratio": 1.416510661058569,
+    "status": "CORRUPTED_BY_UTF8_REWRITE"
+  },
+  "train/doc_2.bin": {
+    "manifest_size": 198732,
+    "disk_size": 285608,
+    "manifest_tokens": 99366,
+    "disk_tokens": 142804,
+    "size_ratio": 1.437151540768472,
+    "status": "CORRUPTED_BY_UTF8_REWRITE"
+  },
+  "test/doc_0.bin": {
+    "manifest_size": 217142,
+    "disk_size": 303330,
+    "manifest_tokens": 108571,
+    "disk_tokens": 151665,
+    "size_ratio": 1.3969199878420573,
+    "status": "CORRUPTED_BY_UTF8_REWRITE"
+  },
+  "validation/doc_0.bin": {
+    "manifest_size": 285612,
+    "disk_size": 402914,
+    "manifest_tokens": 142806,
+    "disk_tokens": 201457,
+    "size_ratio": 1.4107040320434716,
+    "status": "CORRUPTED_BY_UTF8_REWRITE"
+  },
+  "train/doc_3.bin": {
+    "manifest_size": 69726,
+    "disk_size": 98754,
+    "manifest_tokens": 34863,
+    "disk_tokens": 49377,
+    "size_ratio": 1.4163152912830221,
+    "status": "CORRUPTED_BY_UTF8_REWRITE"
+  },
+  "train/doc_4.bin": {
+    "manifest_size": 103936,
+    "disk_size": 147914,
+    "manifest_tokens": 51968,
+    "disk_tokens": 73957,
+    "size_ratio": 1.4231257697044335,
+    "status": "CORRUPTED_BY_UTF8_REWRITE"
+  },
+  "train/doc_5.bin": {
+    "manifest_size": 111000,
+    "disk_size": 158512,
+    "manifest_tokens": 55500,
+    "disk_tokens": 79256,
+    "size_ratio": 1.428036036036036,
+    "status": "CORRUPTED_BY_UTF8_REWRITE"
+  },
+  "train/doc_6.bin": {
+    "manifest_size": 159820,
+    "disk_size": 228940,
+    "manifest_tokens": 79910,
+    "disk_tokens": 114470,
+    "size_ratio": 1.4324865473657864,
+    "status": "CORRUPTED_BY_UTF8_REWRITE"
+  },
+  "train/doc_7.bin": {
+    "manifest_size": 141640,
+    "disk_size": 200258,
+    "manifest_tokens": 70820,
+    "disk_tokens": 100129,
+    "size_ratio": 1.4138520192036148,
+    "status": "CORRUPTED_BY_UTF8_REWRITE"
+  },
+  "train/doc_8.bin": {
+    "manifest_size": 305164,
+    "disk_size": 431352,
+    "manifest_tokens": 152582,
+    "disk_tokens": 215676,
+    "size_ratio": 1.4135088018245927,
+    "status": "CORRUPTED_BY_UTF8_REWRITE"
+  },
+  "validation/doc_1.bin": {
+    "manifest_size": 100564,
+    "disk_size": 142998,
+    "manifest_tokens": 50282,
+    "disk_tokens": 71499,
+    "size_ratio": 1.4219601447834216,
+    "status": "CORRUPTED_BY_UTF8_REWRITE"
+  },
+  "train/doc_9.bin": {
+    "manifest_size": 782746,
+    "disk_size": 1120828,
+    "manifest_tokens": 391373,
+    "disk_tokens": 560414,
+    "size_ratio": 1.4319178890725728,
+    "status": "CORRUPTED_BY_UTF8_REWRITE"
+  },
+  "validation/doc_2.bin": {
+    "manifest_size": 55536,
+    "disk_size": 78782,
+    "manifest_tokens": 27768,
+    "disk_tokens": 39391,
+    "size_ratio": 1.4185753385191588,
+    "status": "CORRUPTED_BY_UTF8_REWRITE"
+  },
+  "test/doc_1.bin": {
+    "manifest_size": 168020,
+    "disk_size": 239298,
+    "manifest_tokens": 84010,
+    "disk_tokens": 119649,
+    "size_ratio": 1.4242233067491965,
+    "status": "CORRUPTED_BY_UTF8_REWRITE"
+  },
+  "train/doc_10.bin": {
+    "manifest_size": 610188,
+    "disk_size": 854516,
+    "manifest_tokens": 305094,
+    "disk_tokens": 427258,
+    "size_ratio": 1.4004142985440553,
+    "status": "CORRUPTED_BY_UTF8_REWRITE"
+  },
+  "train/doc_11.bin": {
+    "manifest_size": 315496,
+    "disk_size": 445698,
+    "manifest_tokens": 157748,
+    "disk_tokens": 222849,
+    "size_ratio": 1.4126898597763522,
+    "status": "CORRUPTED_BY_UTF8_REWRITE"
+  },
+  "validation/doc_3.bin": {
+    "manifest_size": 477400,
+    "disk_size": 684840,
+    "manifest_tokens": 238700,
+    "disk_tokens": 342420,
+    "size_ratio": 1.4345203183912862,
+    "status": "CORRUPTED_BY_UTF8_REWRITE"
+  },
+  "train/doc_12.bin": {
+    "manifest_size": 114614,
+    "disk_size": 162490,
+    "manifest_tokens": 57307,
+    "disk_tokens": 81245,
+    "size_ratio": 1.4177151133369397,
+    "status": "CORRUPTED_BY_UTF8_REWRITE"
+  },
+  "train/doc_13.bin": {
+    "manifest_size": 167910,
+    "disk_size": 238482,
+    "manifest_tokens": 83955,
+    "disk_tokens": 119241,
+    "size_ratio": 1.4202965874575666,
+    "status": "CORRUPTED_BY_UTF8_REWRITE"
+  },
+  "train/doc_14.bin": {
+    "manifest_size": 88854,
+    "disk_size": 126908,
+    "manifest_tokens": 44427,
+    "disk_tokens": 63454,
+    "size_ratio": 1.4282755981722826,
+    "status": "CORRUPTED_BY_UTF8_REWRITE"
+  },
+  "train/doc_15.bin": {
+    "manifest_size": 309400,
+    "disk_size": 432966,
+    "manifest_tokens": 154700,
+    "disk_tokens": 216483,
+    "size_ratio": 1.3993729799612153,
+    "status": "CORRUPTED_BY_UTF8_REWRITE"
+  },
+  "train/doc_16.bin": {
+    "manifest_size": 144154,
+    "disk_size": 205228,
+    "manifest_tokens": 72077,
+    "disk_tokens": 102614,
+    "size_ratio": 1.4236719064333976,
+    "status": "CORRUPTED_BY_UTF8_REWRITE"
+  },
+  "train/doc_17.bin": {
+    "manifest_size": 127654,
+    "disk_size": 181086,
+    "manifest_tokens": 63827,
+    "disk_tokens": 90543,
+    "size_ratio": 1.4185689441772291,
+    "status": "CORRUPTED_BY_UTF8_REWRITE"
+  },
+  "train/doc_18.bin": {
+    "manifest_size": 197244,
+    "disk_size": 282284,
+    "manifest_tokens": 98622,
+    "disk_tokens": 141142,
+    "size_ratio": 1.4311411246983432,
+    "status": "CORRUPTED_BY_UTF8_REWRITE"
+  },
+  "train/doc_19.bin": {
+    "manifest_size": 485934,
+    "disk_size": 701860,
+    "manifest_tokens": 242967,
+    "disk_tokens": 350930,
+    "size_ratio": 1.444352525240053,
+    "status": "CORRUPTED_BY_UTF8_REWRITE"
+  },
+  "train/doc_20.bin": {
+    "manifest_size": 224580,
+    "disk_size": 311638,
+    "manifest_tokens": 112290,
+    "disk_tokens": 155819,
+    "size_ratio": 1.387648054145516,
+    "status": "CORRUPTED_BY_UTF8_REWRITE"
+  },
+  "train/doc_21.bin": {
+    "manifest_size": 74886,
+    "disk_size": 107506,
+    "manifest_tokens": 37443,
+    "disk_tokens": 53753,
+    "size_ratio": 1.435595438399701,
+    "status": "CORRUPTED_BY_UTF8_REWRITE"
+  },
+  "test/doc_2.bin": {
+    "manifest_size": 231664,
+    "disk_size": 331304,
+    "manifest_tokens": 115832,
+    "disk_tokens": 165652,
+    "size_ratio": 1.4301056702810968,
+    "status": "CORRUPTED_BY_UTF8_REWRITE"
+  },
+  "train/doc_22.bin": {
+    "manifest_size": 101584,
+    "disk_size": 144694,
+    "manifest_tokens": 50792,
+    "disk_tokens": 72347,
+    "size_ratio": 1.4243778547802803,
+    "status": "CORRUPTED_BY_UTF8_REWRITE"
+  },
+  "train/doc_23.bin": {
+    "manifest_size": 156702,
+    "disk_size": 221194,
+    "manifest_tokens": 78351,
+    "disk_tokens": 110597,
+    "size_ratio": 1.4115582443108576,
+    "status": "CORRUPTED_BY_UTF8_REWRITE"
+  },
+  "test/doc_3.bin": {
+    "manifest_size": 140634,
+    "disk_size": 200840,
+    "manifest_tokens": 70317,
+    "disk_tokens": 100420,
+    "size_ratio": 1.4281041568895145,
+    "status": "CORRUPTED_BY_UTF8_REWRITE"
+  },
+  "train/doc_24.bin": {
+    "manifest_size": 467352,
+    "disk_size": 664566,
+    "manifest_tokens": 233676,
+    "disk_tokens": 332283,
+    "size_ratio": 1.4219817182765881,
+    "status": "CORRUPTED_BY_UTF8_REWRITE"
+  },
+  "train/doc_25.bin": {
+    "manifest_size": 157242,
+    "disk_size": 223750,
+    "manifest_tokens": 78621,
+    "disk_tokens": 111875,
+    "size_ratio": 1.422965874257514,
+    "status": "CORRUPTED_BY_UTF8_REWRITE"
+  },
+  "train/doc_26.bin": {
+    "manifest_size": 127166,
+    "disk_size": 180850,
+    "manifest_tokens": 63583,
+    "disk_tokens": 90425,
+    "size_ratio": 1.4221568658289165,
+    "status": "CORRUPTED_BY_UTF8_REWRITE"
+  },
+  "test/doc_4.bin": {
+    "manifest_size": 364090,
+    "disk_size": 519152,
+    "manifest_tokens": 182045,
+    "disk_tokens": 259576,
+    "size_ratio": 1.4258892032189843,
+    "status": "CORRUPTED_BY_UTF8_REWRITE"
+  },
+  "train/doc_27.bin": {
+    "manifest_size": 85002,
+    "disk_size": 117826,
+    "manifest_tokens": 42501,
+    "disk_tokens": 58913,
+    "size_ratio": 1.3861556198677678,
+    "status": "CORRUPTED_BY_UTF8_REWRITE"
+  },
+  "train/doc_28.bin": {
+    "manifest_size": 186754,
+    "disk_size": 268194,
+    "manifest_tokens": 93377,
+    "disk_tokens": 134097,
+    "size_ratio": 1.436081690352014,
+    "status": "CORRUPTED_BY_UTF8_REWRITE"
+  },
+  "train/doc_29.bin": {
+    "manifest_size": 313382,
+    "disk_size": 437724,
+    "manifest_tokens": 156691,
+    "disk_tokens": 218862,
+    "size_ratio": 1.3967745435283456,
+    "status": "CORRUPTED_BY_UTF8_REWRITE"
+  },
+  "train/doc_30.bin": {
+    "manifest_size": 589914,
+    "disk_size": 835332,
+    "manifest_tokens": 294957,
+    "disk_tokens": 417666,
+    "size_ratio": 1.4160233525564743,
+    "status": "CORRUPTED_BY_UTF8_REWRITE"
+  },
+  "train/doc_31.bin": {
+    "manifest_size": 222082,
+    "disk_size": 314632,
+    "manifest_tokens": 111041,
+    "disk_tokens": 157316,
+    "size_ratio": 1.4167379616538036,
+    "status": "CORRUPTED_BY_UTF8_REWRITE"
+  },
+  "train/doc_32.bin": {
+    "manifest_size": 220296,
+    "disk_size": 314978,
+    "manifest_tokens": 110148,
+    "disk_tokens": 157489,
+    "size_ratio": 1.4297944583651088,
+    "status": "CORRUPTED_BY_UTF8_REWRITE"
+  },
+  "train/doc_33.bin": {
+    "manifest_size": 82006,
+    "disk_size": 117278,
+    "manifest_tokens": 41003,
+    "disk_tokens": 58639,
+    "size_ratio": 1.4301148696436845,
+    "status": "CORRUPTED_BY_UTF8_REWRITE"
+  },
+  "train/doc_34.bin": {
+    "manifest_size": 726452,
+    "disk_size": 1011778,
+    "manifest_tokens": 363226,
+    "disk_tokens": 505889,
+    "size_ratio": 1.3927664869805576,
+    "status": "CORRUPTED_BY_UTF8_REWRITE"
+  },
+  "train/doc_35.bin": {
+    "manifest_size": 236564,
+    "disk_size": 339500,
+    "manifest_tokens": 118282,
+    "disk_tokens": 169750,
+    "size_ratio": 1.435129605519014,
+    "status": "CORRUPTED_BY_UTF8_REWRITE"
+  },
+  "train/doc_36.bin": {
+    "manifest_size": 32844,
+    "disk_size": 46424,
+    "manifest_tokens": 16422,
+    "disk_tokens": 23212,
+    "size_ratio": 1.4134697357203752,
+    "status": "CORRUPTED_BY_UTF8_REWRITE"
+  },
+  "train/doc_37.bin": {
+    "manifest_size": 19122,
+    "disk_size": 26908,
+    "manifest_tokens": 9561,
+    "disk_tokens": 13454,
+    "size_ratio": 1.4071749816964754,
+    "status": "CORRUPTED_BY_UTF8_REWRITE"
+  },
+  "train/doc_38.bin": {
+    "manifest_size": 64016,
+    "disk_size": 91782,
+    "manifest_tokens": 32008,
+    "disk_tokens": 45891,
+    "size_ratio": 1.4337353161709572,
+    "status": "CORRUPTED_BY_UTF8_REWRITE"
+  },
+  "train/doc_39.bin": {
+    "manifest_size": 178588,
+    "disk_size": 255506,
+    "manifest_tokens": 89294,
+    "disk_tokens": 127753,
+    "size_ratio": 1.4307008309628866,
+    "status": "CORRUPTED_BY_UTF8_REWRITE"
+  },
+  "train/doc_40.bin": {
+    "manifest_size": 130118,
+    "disk_size": 185502,
+    "manifest_tokens": 65059,
+    "disk_tokens": 92751,
+    "size_ratio": 1.4256444150693985,
+    "status": "CORRUPTED_BY_UTF8_REWRITE"
+  },
+  "train/doc_41.bin": {
+    "manifest_size": 139026,
+    "disk_size": 199042,
+    "manifest_tokens": 69513,
+    "disk_tokens": 99521,
+    "size_ratio": 1.4316890365830852,
+    "status": "CORRUPTED_BY_UTF8_REWRITE"
+  },
+  "train/doc_42.bin": {
+    "manifest_size": 185180,
+    "disk_size": 261536,
+    "manifest_tokens": 92590,
+    "disk_tokens": 130768,
+    "size_ratio": 1.4123339453504697,
+    "status": "CORRUPTED_BY_UTF8_REWRITE"
+  },
+  "train/doc_43.bin": {
+    "manifest_size": 76332,
+    "disk_size": 106194,
+    "manifest_tokens": 38166,
+    "disk_tokens": 53097,
+    "size_ratio": 1.3912120735733375,
+    "status": "CORRUPTED_BY_UTF8_REWRITE"
+  },
+  "train/doc_44.bin": {
+    "manifest_size": 35338,
+    "disk_size": 50998,
+    "manifest_tokens": 17669,
+    "disk_tokens": 25499,
+    "size_ratio": 1.4431490180542192,
+    "status": "CORRUPTED_BY_UTF8_REWRITE"
+  },
+  "validation/doc_4.bin": {
+    "manifest_size": 263166,
+    "disk_size": 369386,
+    "manifest_tokens": 131583,
+    "disk_tokens": 184693,
+    "size_ratio": 1.4036235683940934,
+    "status": "CORRUPTED_BY_UTF8_REWRITE"
+  },
+  "train/doc_45.bin": {
+    "manifest_size": 244784,
+    "disk_size": 348172,
+    "manifest_tokens": 122392,
+    "disk_tokens": 174086,
+    "size_ratio": 1.4223642068109026,
+    "status": "CORRUPTED_BY_UTF8_REWRITE"
+  },
+  "train/doc_46.bin": {
+    "manifest_size": 510132,
+    "disk_size": 720566,
+    "manifest_tokens": 255066,
+    "disk_tokens": 360283,
+    "size_ratio": 1.412508919260113,
+    "status": "CORRUPTED_BY_UTF8_REWRITE"
+  },
+  "train/doc_47.bin": {
+    "manifest_size": 251726,
+    "disk_size": 357890,
+    "manifest_tokens": 125863,
+    "disk_tokens": 178945,
+    "size_ratio": 1.4217442775080842,
+    "status": "CORRUPTED_BY_UTF8_REWRITE"
+  },
+  "train/doc_48.bin": {
+    "manifest_size": 26822,
+    "disk_size": 37340,
+    "manifest_tokens": 13411,
+    "disk_tokens": 18670,
+    "size_ratio": 1.392140779956752,
+    "status": "CORRUPTED_BY_UTF8_REWRITE"
+  },
+  "train/doc_49.bin": {
+    "manifest_size": 22258,
+    "disk_size": 31972,
+    "manifest_tokens": 11129,
+    "disk_tokens": 15986,
+    "size_ratio": 1.436427351963339,
+    "status": "CORRUPTED_BY_UTF8_REWRITE"
+  },
+  "train/doc_50.bin": {
+    "manifest_size": 80418,
+    "disk_size": 112368,
+    "manifest_tokens": 40209,
+    "disk_tokens": 56184,
+    "size_ratio": 1.3972991121390734,
+    "status": "CORRUPTED_BY_UTF8_REWRITE"
+  },
+  "train/doc_51.bin": {
+    "manifest_size": 122080,
+    "disk_size": 172012,
+    "manifest_tokens": 61040,
+    "disk_tokens": 86006,
+    "size_ratio": 1.4090104849279161,
+    "status": "CORRUPTED_BY_UTF8_REWRITE"
+  },
+  "train/doc_52.bin": {
+    "manifest_size": 785766,
+    "disk_size": 1090900,
+    "manifest_tokens": 392883,
+    "disk_tokens": 545450,
+    "size_ratio": 1.3883268046721289,
+    "status": "CORRUPTED_BY_UTF8_REWRITE"
+  },
+  "train/doc_53.bin": {
+    "manifest_size": 248876,
+    "disk_size": 352568,
+    "manifest_tokens": 124438,
+    "disk_tokens": 176284,
+    "size_ratio": 1.4166412189202655,
+    "status": "CORRUPTED_BY_UTF8_REWRITE"
+  },
+  "train/doc_54.bin": {
+    "manifest_size": 167490,
+    "disk_size": 239838,
+    "manifest_tokens": 83745,
+    "disk_tokens": 119919,
+    "size_ratio": 1.43195414651621,
+    "status": "CORRUPTED_BY_UTF8_REWRITE"
+  },
+  "train/doc_55.bin": {
+    "manifest_size": 12086,
+    "disk_size": 17348,
+    "manifest_tokens": 6043,
+    "disk_tokens": 8674,
+    "size_ratio": 1.4353797782558333,
+    "status": "CORRUPTED_BY_UTF8_REWRITE"
+  },
+  "train/doc_56.bin": {
+    "manifest_size": 266118,
+    "disk_size": 389418,
+    "manifest_tokens": 133059,
+    "disk_tokens": 194709,
+    "size_ratio": 1.4633282979730795,
+    "status": "CORRUPTED_BY_UTF8_REWRITE"
+  },
+  "train/doc_57.bin": {
+    "manifest_size": 184362,
+    "disk_size": 265576,
+    "manifest_tokens": 92181,
+    "disk_tokens": 132788,
+    "size_ratio": 1.4405137718184875,
+    "status": "CORRUPTED_BY_UTF8_REWRITE"
+  },
+  "train/doc_58.bin": {
+    "manifest_size": 77766,
+    "disk_size": 110400,
+    "manifest_tokens": 38883,
+    "disk_tokens": 55200,
+    "size_ratio": 1.4196435460226835,
+    "status": "CORRUPTED_BY_UTF8_REWRITE"
+  },
+  "train/doc_59.bin": {
+    "manifest_size": 342190,
+    "disk_size": 493600,
+    "manifest_tokens": 171095,
+    "disk_tokens": 246800,
+    "size_ratio": 1.4424734796458107,
+    "status": "CORRUPTED_BY_UTF8_REWRITE"
+  },
+  "train/doc_60.bin": {
+    "manifest_size": 374124,
+    "disk_size": 531938,
+    "manifest_tokens": 187062,
+    "disk_tokens": 265969,
+    "size_ratio": 1.4218227111866655,
+    "status": "CORRUPTED_BY_UTF8_REWRITE"
+  },
+  "train/doc_61.bin": {
+    "manifest_size": 215650,
+    "disk_size": 308850,
+    "manifest_tokens": 107825,
+    "disk_tokens": 154425,
+    "size_ratio": 1.432181776025968,
+    "status": "CORRUPTED_BY_UTF8_REWRITE"
+  },
+  "train/doc_62.bin": {
+    "manifest_size": 540600,
+    "disk_size": 768820,
+    "manifest_tokens": 270300,
+    "disk_tokens": 384410,
+    "size_ratio": 1.4221605623381428,
+    "status": "CORRUPTED_BY_UTF8_REWRITE"
+  },
+  "train/doc_63.bin": {
+    "manifest_size": 248540,
+    "disk_size": 352544,
+    "manifest_tokens": 124270,
+    "disk_tokens": 176272,
+    "size_ratio": 1.4184598052627344,
+    "status": "CORRUPTED_BY_UTF8_REWRITE"
+  },
+  "train/doc_64.bin": {
+    "manifest_size": 120496,
+    "disk_size": 171920,
+    "manifest_tokens": 60248,
+    "disk_tokens": 85960,
+    "size_ratio": 1.42676935333953,
+    "status": "CORRUPTED_BY_UTF8_REWRITE"
+  }
+}

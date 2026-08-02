@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 node_modules/
 build/
 dist/
@@ -11,3 +12,33 @@ __pycache__/
 *.pyc
 checkpoints/
 *.pt
+=======
+# Python
+__pycache__/
+*.pyc
+
+# Node
+node_modules/
+
+# Environment
+.env
+venv/
+.venv/
+
+# Training outputs
+checkpoints/
+checkpoints_phase4e/
+*.ckpt
+*.pt
+*.pth
+*.bin
+
+# Logs
+logs/
+wandb/
+
+# Cache
+.cache/
+# Zip backups
+*.zip
+>>>>>>> origin/main

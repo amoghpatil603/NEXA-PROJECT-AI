@@ -12,7 +12,11 @@ from torch.utils.data import Dataset, DataLoader, Sampler
 import numpy as np
 
 # Adjust python path
+<<<<<<< HEAD
 sys.path.append("/app/applet/nexa-model")
+=======
+sys.path.append("/content/NEXA-PROJECT-AI/nexa-model")
+>>>>>>> origin/main
 from model.config import NexaConfig
 from model.transformer import NexaTransformer
 
@@ -192,7 +196,11 @@ report["4. Dataset implementation"] = "NexaDataset using np.frombuffer and f.see
 report["5. Disk-access method"] = "Direct binary read (bounded memory) per sequence"
 report["6. Context length"] = CONTEXT_LEN
 
+<<<<<<< HEAD
 sys.path.append("/app/applet/nexa-model")
+=======
+sys.path.append("/content/NEXA-PROJECT-AI/nexa-model")
+>>>>>>> origin/main
 from training.dataset import NexaDataset
 from training.dataloader import create_dataloader
 

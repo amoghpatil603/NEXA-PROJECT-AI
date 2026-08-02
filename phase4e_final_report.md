@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # NEXA PHASE 4E â€” TINY MODEL TRAINING REPORT
+=======
+# NEXA PHASE 4E — TINY MODEL TRAINING REPORT
+>>>>>>> origin/main
 =====================================================
 
 - **Status**: NEXA_TINY_TRAINING_STARTED

@@ -17,6 +17,7 @@ class DocumentParser:
         if ext.lower() not in self.supported_extensions:
             raise ValueError(f"Unsupported file type: {ext}")
 
+<<<<<<< HEAD
         content = ""
         ext = ext.lower()
         if ext == '.pdf':
@@ -44,6 +45,13 @@ class DocumentParser:
                     content = f.read()
             except UnicodeDecodeError:
                 content = "Binary or unsupported content format."
+=======
+        try:
+            with open(file_path, 'r', encoding='utf-8') as f:
+                content = f.read()
+        except UnicodeDecodeError:
+            content = "Binary or unsupported content format."
+>>>>>>> origin/main
 
         file_name = os.path.basename(file_path)
         doc_id = hashlib.md5(file_path.encode('utf-8')).hexdigest()

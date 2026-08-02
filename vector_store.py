@@ -1,9 +1,13 @@
 import os
 import json
 import sqlite3
+<<<<<<< HEAD
 import numpy as np
 from typing import List, Dict, Any, Optional
 from embedding_service import EmbeddingService
+=======
+from typing import List, Dict, Any, Optional
+>>>>>>> origin/main
 
 DB_PATH = os.path.join(os.path.dirname(__file__), 'nexa_vector_store.db')
 
@@ -11,7 +15,10 @@ class VectorStore:
     def __init__(self, db_path=DB_PATH):
         self.db_path = db_path
         self._init_db()
+<<<<<<< HEAD
         self.embedding_service = EmbeddingService()
+=======
+>>>>>>> origin/main
 
     def _init_db(self):
         if not os.path.exists(self.db_path):
@@ -29,11 +36,16 @@ class VectorStore:
                         doc_id TEXT,
                         content TEXT,
                         metadata TEXT,
+<<<<<<< HEAD
                         embedding BLOB,
+=======
+                        embedding TEXT,
+>>>>>>> origin/main
                         FOREIGN KEY(doc_id) REFERENCES documents(doc_id)
                     );
                 """)
                 conn.commit()
+<<<<<<< HEAD
         else:
             try:
                 with sqlite3.connect(self.db_path) as conn:
@@ -43,6 +55,8 @@ class VectorStore:
                 with sqlite3.connect(self.db_path) as conn:
                     conn.executescript("ALTER TABLE chunks ADD COLUMN embedding BLOB;")
                     conn.commit()
+=======
+>>>>>>> origin/main
 
     def _get_connection(self):
         conn = sqlite3.connect(self.db_path)
@@ -58,12 +72,30 @@ class VectorStore:
             )
             conn.commit()
 
+<<<<<<< HEAD
     def get_document(self, doc_id: str) -> Optional[Dict[str, Any]]:
         with self._get_connection() as conn:
             cursor = conn.cursor()
             cursor.execute("SELECT * FROM documents WHERE doc_id = ?", (doc_id,))
             row = cursor.fetchone()
             return dict(row) if row else None
+=======
+    def add_chunks(self, chunks: List[Dict[str, Any]]):
+        with self._get_connection() as conn:
+            cursor = conn.cursor()
+            for chunk in chunks:
+                cursor.execute(
+                    "INSERT OR REPLACE INTO chunks (chunk_id, doc_id, content, metadata, embedding) VALUES (?, ?, ?, ?, ?)",
+                    (
+                        chunk['chunk_id'], 
+                        chunk['doc_id'], 
+                        chunk['content'], 
+                        json.dumps(chunk.get('metadata', {})),
+                        json.dumps(chunk.get('embedding', []))
+                    )
+                )
+            conn.commit()
+>>>>>>> origin/main
 
     def delete_document(self, doc_id: str):
         with self._get_connection() as conn:
@@ -72,6 +104,7 @@ class VectorStore:
             cursor.execute("DELETE FROM documents WHERE doc_id = ?", (doc_id,))
             conn.commit()
 
+<<<<<<< HEAD
     def clear(self):
         with self._get_connection() as conn:
             cursor = conn.cursor()
@@ -123,10 +156,27 @@ class VectorStore:
             results.sort(key=lambda x: x['similarity'], reverse=True)
             return results[:top_k]
 
+=======
+    def get_document(self, doc_id: str):
+        with self._get_connection() as conn:
+            cursor = conn.cursor()
+            cursor.execute("SELECT * FROM documents WHERE doc_id = ?", (doc_id,))
+            row = cursor.fetchone()
+            return dict(row) if row else None
+
+    def search_chunks(self, query: str, top_k: int = 5) -> List[Dict[str, Any]]:
+        with self._get_connection() as conn:
+            cursor = conn.cursor()
+            like_query = f"%{query}%"
+            cursor.execute("SELECT * FROM chunks WHERE content LIKE ? LIMIT ?", (like_query, top_k))
+            return [dict(row) for row in cursor.fetchall()]
+            
+>>>>>>> origin/main
     def get_stats(self) -> Dict[str, Any]:
         with self._get_connection() as conn:
             cursor = conn.cursor()
             cursor.execute("SELECT COUNT(*) FROM documents")
+<<<<<<< HEAD
             docs = cursor.fetchone()[0]
             cursor.execute("SELECT COUNT(*) FROM chunks")
             chunks = cursor.fetchone()[0]
@@ -136,3 +186,9 @@ class VectorStore:
                 "chunk_count": chunks,
                 "embedding_count": chunks
             }
+=======
+            doc_count = cursor.fetchone()[0]
+            cursor.execute("SELECT COUNT(*) FROM chunks")
+            chunk_count = cursor.fetchone()[0]
+            return {"total_documents": doc_count, "total_chunks": chunk_count}
+>>>>>>> origin/main

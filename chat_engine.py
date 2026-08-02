@@ -12,8 +12,12 @@ sys.path.insert(0, '/app/applet/app/applet')
 from model.config import NexaConfig
 from model.transformer import NexaTransformer
 from training.checkpoint import load_checkpoint
+<<<<<<< HEAD
 from tokenizer.bpe_tokenizer import DEFAULT_SPECIAL_TOKENS
 from tokenizer.incremental_bpe import IncrementalBPETokenizer
+=======
+from tokenizer.bpe_tokenizer import NexaBPETokenizer, DEFAULT_SPECIAL_TOKENS
+>>>>>>> origin/main
 
 class TokenStreamer:
     def __init__(self, tokenizer):
@@ -45,6 +49,7 @@ class ChatEngine:
             self.device = device
 
         try:
+<<<<<<< HEAD
             tok_candidates = [
                 "/app/applet/nexa-model/tokenizer/production/tokenizer.json",
                 "nexa-model/tokenizer/production/tokenizer.json"
@@ -59,6 +64,24 @@ class ChatEngine:
             if not loaded_tok:
                 print("Warning: Tokenizer files not found, using default special tokens.")
                 self.tokenizer = IncrementalBPETokenizer(vocab_size=8000)
+=======
+            self.tokenizer = NexaBPETokenizer()
+            tok_candidates = [
+                (vocab_path, merges_path),
+                ('/app/applet/nexa-model/tokenizer/candidates/8k/bpe_vocab.json', '/app/applet/nexa-model/tokenizer/candidates/8k/bpe_merges.txt'),
+                ('/app/applet/nexa-model/tokenizer/bpe_vocab.json', '/app/applet/nexa-model/tokenizer/bpe_merges.txt'),
+                ('nexa-model/tokenizer/candidates/8k/bpe_vocab.json', 'nexa-model/tokenizer/candidates/8k/bpe_merges.txt'),
+                ('/nexa-model/tokenizer/candidates/8k/bpe_vocab.json', '/nexa-model/tokenizer/candidates/8k/bpe_merges.txt')
+            ]
+            loaded_tok = False
+            for vp, mp in tok_candidates:
+                if vp and mp and os.path.exists(vp) and os.path.exists(mp):
+                    self.tokenizer.load(vp, mp)
+                    loaded_tok = True
+                    break
+            if not loaded_tok:
+                print("Warning: Tokenizer files not found, using default special tokens.")
+>>>>>>> origin/main
         except Exception as e:
             raise RuntimeError(f"Failed to initialize BPE Tokenizer: {e}")
 
