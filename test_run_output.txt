@@ -1,0 +1,7 @@
+=== STARTING NEXA PHASE 4E TINY MODEL TRAINING ===
+Model initialized with 13,792,128 parameters.
+Loaded 5121551 tokens from 65 production shards.
+Created 20006 training chunks of length 256.
+Starting training from step 1 to 500...
+READY TO START TRAINING
+Exit code: 0

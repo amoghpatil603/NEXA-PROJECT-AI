@@ -1,0 +1,89 @@
+Successfully loaded tokenizer from /app/applet/nexa-model/tokenizer/production/tokenizer.json
+Successfully loaded model checkpoint from /app/applet/checkpoints/model.pt
+Evaluating Prompts:
+
+--- Prompt 1 ---
+User: Hello
+Model: and the
+travellmuhe would ility ould Destrengthof
+      , not In the anitataaid s
+      miserable , uponspotMcTeagthrown accidentIn the wifeLormiserable �Stes the atmosphere miserable is to say, er to average McTeagday@stoppll�need imprespoetstrengthpartevening spotaverage principal ity and ighwife,—expressiontion of the have the deeply lldresscharacter impresigh
+
+--- Prompt 2 ---
+User: Who are you?
+Model: 45twenty moglad artictoument defintwenty born expne red we find intelligthy harintellig�beauty ep ha�t of the ute relatboy umpmen into his atmosphere qualities try to sky taarticto the e to quick impresfurther try to �scorWorits benump. I am no ]signififurther icial agontwenty articlibrIXquesdemsignifiaband
+
+--- Prompt 3 ---
+User: Explain what a transformer is.
+Model: he would umpspots and same .
+
+Nwalthen, conversation same ittsame llmiserable should be into his . Tochecnot to he would orous s; but editprophin a morsame monitable unable to won’t parts of the &prophLatthough
+many history of won’t love, that difficulty agresive it was .
+
+As loved. The terriparts of the proctravellparts of the ighsive �won’t eriroom lovChapter it is
+ary
+
+--- Prompt 4 ---
+User: Write a short story.
+Model: offerexpected ition s at speculility issuered uments Mr. Bglad glad on that ceijust
+fellow spermar’ sealy parts of the y.
+
+biging; suggwritpecunipecunianceChapter London thicksignifirule �without the without the d
+generally tion of the tion of the . Even umentes, ing; killThere in the
+      zenbody reaszenPhisperit is
+continued consciousness calmhaChapter �cupto her 
+
+--- Prompt 5 ---
+User: Summarize a paragraph.
+Model: ingwe . What indAPould ed in
+ve the much
+act seawaled in
+lorlong contrilorwith which selfSoveraadvisumpumphatedgetion that mary receilovfuncit is
+hartwenty lovumpcontrie of
+inging the Chapter many receidemalsopromise not to without
+lorsive s of
+Danvelopgood-mormuimpresboyit is
+wifeunkoff the miserable sequparts of the 
+
+--- Prompt 6 ---
+User: Continue this sentence:
+Artificial Intelligence is...
+Model: wifeplace, businessinghold llave good-Y activit is
+glad OM’s land e to s
+      since ’s Y tomterhonoured; and portimagprophmiserable is very ally: the �e to ; or feeling miserable ultimously ani�up, llinglearned sive ood, since indLapfrom the
+ering see the at onceyounes; and me, boundlibrEurY aniI would average 
+
+--- Prompt 7 ---
+User: Count from 1 to 20.
+Model: dissoldissolnaturetretry to upondayaid on that them, face bodllEnperiodaband@beforon my legiswith
+F sexon that suspecsee the y.
+
+try to its , not ’s existence ing of the eyes, 45saddapproprihighly 45ets ow, velopsexjust
+ing; try to ;
+�Dunspotbatttwo or three llending of theconstrucgenues; and considersee the men and repligallDun
+
+--- Prompt 8 ---
+User: Generate Python code that prints Hello World.
+Model: examjust
+Shaalwayclosely sperup to beforrainwith which mericselftry to off the went to down to one of watch funcforbphic t of the up to selfs;where, men and ome parts of the es. The odies. The wanted to without
+lexMcTeagparts of the umpsee the mors
+were boundes; and , ,—,—. Lgood
+rainconfidence corake borkillbody aid ."ucgenius have s
+were astrwalkill
+
+--- Prompt 9 ---
+User: Answer:
+What is machine learning?
+Model: ingreceitalkfew ake aid Sha, but ny he would continued to ite of fallen pass ForuponLet continuHave se of alsoonomcontinuAP,
+which rainATIONwasted to Forudatmosphere suggquickly McTeag@ll_, How Wexistence always
+dependflyimpresMcTeagpoetsince e! ility fallen ATIONtosrainI would poetatmosphere TER delighgonelawconsiderspot
+
+--- Prompt 10 ---
+User: Write five sentences about computers.
+Model: �aid agonextent world went to In the agon, with thesgenerally bleingbigbenefupons. Sregionrocked of lovfrom the
+confno suggge     “of
+limitsperp of spoken walone .
+
+“activity weafurther monod confourselves unkabands have ; or dependaccidentlives receiRobHow mu�northern receive agonsee the weatravellglad miserable in the
+      
+

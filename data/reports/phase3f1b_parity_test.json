@@ -1,0 +1,81 @@
+{
+  "phase": "3F.1B",
+  "description": "IncrementalBPETokenizer Parity and Differential Testing Report",
+  "timestamp": "2026-07-29T17:27:13Z",
+  "unit_tests_run": 19,
+  "unit_tests_passed": true,
+  "differential_tests_passed": true,
+  "overall_parity_certified": true,
+  "synthetic_corpora_results": [
+    {
+      "corpus_name": "ascii_prose",
+      "docs_count": 4,
+      "total_chars": 166,
+      "merges_count": 21,
+      "merges_match": true,
+      "vocab_match": true,
+      "ranks_match": true,
+      "encode_matches": true,
+      "decode_matches": true,
+      "passed": true,
+      "ref_time_sec": 0.0027,
+      "inc_time_sec": 0.0023
+    },
+    {
+      "corpus_name": "utf8_multilingual",
+      "docs_count": 6,
+      "total_chars": 174,
+      "merges_count": 31,
+      "merges_match": true,
+      "vocab_match": true,
+      "ranks_match": true,
+      "encode_matches": true,
+      "decode_matches": true,
+      "passed": true,
+      "ref_time_sec": 0.0057,
+      "inc_time_sec": 0.0024
+    },
+    {
+      "corpus_name": "repetitive_patterns",
+      "docs_count": 5,
+      "total_chars": 3100,
+      "merges_count": 56,
+      "merges_match": true,
+      "vocab_match": true,
+      "ranks_match": true,
+      "encode_matches": true,
+      "decode_matches": true,
+      "passed": true,
+      "ref_time_sec": 0.0254,
+      "inc_time_sec": 0.0206
+    },
+    {
+      "corpus_name": "code_snippets",
+      "docs_count": 3,
+      "total_chars": 251,
+      "merges_count": 43,
+      "merges_match": true,
+      "vocab_match": true,
+      "ranks_match": true,
+      "encode_matches": true,
+      "decode_matches": true,
+      "passed": true,
+      "ref_time_sec": 0.0052,
+      "inc_time_sec": 0.0027
+    },
+    {
+      "corpus_name": "edge_cases",
+      "docs_count": 7,
+      "total_chars": 1093,
+      "merges_count": 21,
+      "merges_match": true,
+      "vocab_match": true,
+      "ranks_match": true,
+      "encode_matches": true,
+      "decode_matches": true,
+      "passed": true,
+      "ref_time_sec": 0.0029,
+      "inc_time_sec": 0.0061
+    }
+  ]
+}

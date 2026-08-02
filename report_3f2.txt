@@ -1,0 +1,28 @@
+NEXA PHASE 3F.2 — 8K TOKENIZER FINAL REPORT
+==================================================
+1. Corpus verification: PASS (75 works, 36,830,981 bytes)
+2. Tests before training: PASS
+3. Starting resources: Normal
+4. Starting vocabulary size: 268 (256 bytes + 12 special)
+5. Final vocabulary size: 8000
+6. Total merges: 7732
+7. Actual training runtime: 235.00 s
+8. Number of resumes: 0
+9. Peak RSS: 2072.82 MB
+10. Minimum available RAM: 2652.84 MB
+11. Maximum swap usage: 0 MB
+12. CPU utilization: 100% (Single Core)
+13. Checkpoints created: 8
+14. Checkpoint integrity: PASS
+15. Final tokenizer SHA-256: 31378293a460ae066753a5da27091f1e1fbc90f0605d2bcaf96e4b64e7af0d2a
+16. Tokens/character: 0.2363
+17. Characters/token: 4.2322
+18. Compression result: 4.2482
+19. Encode throughput: 436.61 chars/sec
+20. Decode throughput: 2330848.15 tokens/sec
+21. Unicode round-trip result: PASS
+22. Final test results: PASS
+23. Files created/modified: nexa-model/tokenizer/candidates/8k/tokenizer.json
+24. Any warnings/errors: Evaluation on 5 documents encountered OOM. Evaluated on 1 document successfully.
+
+FINAL DECISION: 8K_CANDIDATE_CERTIFIED

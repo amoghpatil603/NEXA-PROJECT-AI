@@ -1,0 +1,77 @@
+{
+  "total_prompts_evaluated": 10,
+  "average_latency_ms": 61.38615608215332,
+  "nan_detected": false,
+  "samples": [
+    {
+      "prompt_id": 1,
+      "prompt": "The future of artificial intelligence is",
+      "latency_ms": 107.95426368713379,
+      "has_nan": false,
+      "status": "PASS"
+    },
+    {
+      "prompt_id": 2,
+      "prompt": "Once upon a time in a distant galaxy,",
+      "latency_ms": 85.61468124389648,
+      "has_nan": false,
+      "status": "PASS"
+    },
+    {
+      "prompt_id": 3,
+      "prompt": "To build a robust software system, one must",
+      "latency_ms": 71.78974151611328,
+      "has_nan": false,
+      "status": "PASS"
+    },
+    {
+      "prompt_id": 4,
+      "prompt": "Machine learning models require careful",
+      "latency_ms": 31.86345100402832,
+      "has_nan": false,
+      "status": "PASS"
+    },
+    {
+      "prompt_id": 5,
+      "prompt": "Python is a versatile programming language used for",
+      "latency_ms": 64.99004364013672,
+      "has_nan": false,
+      "status": "PASS"
+    },
+    {
+      "prompt_id": 6,
+      "prompt": "Deep learning has revolutionized the field of",
+      "latency_ms": 27.583837509155273,
+      "has_nan": false,
+      "status": "PASS"
+    },
+    {
+      "prompt_id": 7,
+      "prompt": "Data structures and algorithms are essential for",
+      "latency_ms": 30.617713928222656,
+      "has_nan": false,
+      "status": "PASS"
+    },
+    {
+      "prompt_id": 8,
+      "prompt": "In mathematics, numbers and equations represent",
+      "latency_ms": 71.18606567382812,
+      "has_nan": false,
+      "status": "PASS"
+    },
+    {
+      "prompt_id": 9,
+      "prompt": "The solar system consists of planets orbiting",
+      "latency_ms": 72.46732711791992,
+      "has_nan": false,
+      "status": "PASS"
+    },
+    {
+      "prompt_id": 10,
+      "prompt": "Natural language processing enables computers to understand",
+      "latency_ms": 49.79443550109863,
+      "has_nan": false,
+      "status": "PASS"
+    }
+  ]
+}
