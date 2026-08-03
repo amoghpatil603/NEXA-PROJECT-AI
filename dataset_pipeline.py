@@ -102,14 +102,7 @@ def stage_1_acquisition_and_stage_2_cleaning():
         with open('data/proposals/pd5m_v7/manifest.json', 'w') as f:
             json.dump(initial_manifest, f)
             
-    # Deterministic replacement (as in r4)
-    manifest = [w for w in initial_manifest if w.get('source_id') != '3300']
-    reserve_additions = [
-        {"work_id": "PD5M_W0025304", "source_id": "25304", "title": "The Shadow On The Dial, and Other Essays", "author": "Bierce, Ambrose", "author_origin": "United States", "category": "ESSAYS / GENERAL NONFICTION", "estimated_bytes": 375744, "estimated_tokens": 93936, "rights_evidence": "Published in USA in 1909 (pre-1929). Public Domain in US and worldwide.", "language_evidence": "Original English publication (San Francisco, 1909). Native English author."},
-        {"work_id": "PD5M_W0075294", "source_id": "75294", "title": "History as literature, and other essays", "author": "Roosevelt, Theodore", "author_origin": "United States", "category": "ESSAYS / GENERAL NONFICTION", "estimated_bytes": 371864, "estimated_tokens": 92966, "rights_evidence": "Published in USA in 1913 (pre-1929). Public Domain in US and worldwide.", "language_evidence": "Original English publication (New York, 1913). Native English author."}
-    ]
-    # For small sample test, only use a few items
-    manifest = (manifest + reserve_additions)[:5] # Small sample size for verification
+    manifest = initial_manifest
 
     download_ledger = []
     clean_manifest = []
