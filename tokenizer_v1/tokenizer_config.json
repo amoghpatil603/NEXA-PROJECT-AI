@@ -1,0 +1,18 @@
+{
+  "model_type": "nexa_bpe",
+  "vocab_size": 300,
+  "special_tokens": {
+    "<PAD>": 0,
+    "<BOS>": 1,
+    "<EOS>": 2,
+    "<UNK>": 3,
+    "<NEXA_PAD>": 4,
+    "<NEXA_BOS>": 5,
+    "<NEXA_EOS>": 6,
+    "<NEXA_UNK>": 7,
+    "<NEXA_SYSTEM>": 8,
+    "<NEXA_USER>": 9,
+    "<NEXA_ASSISTANT>": 10,
+    "<NEXA_END>": 11
+  }
+}
