@@ -2,12 +2,15 @@
 
 ## Overview
 - **Files Added**: 
-  - `dataset_validator.py`
-  - `test_dataset.jsonl`
+  - `dataset_certifier.py`
+  - `generate_validated.py`
+  - `validated_dataset.jsonl`
+  - `dataset_manifest.json`
+  - `DATASET_CERTIFICATION_REPORT.md`
+- **Files Modified**: 
   - `DATASET_VALIDATION_REPORT.md`
-- **Files Modified**: 0
 - **Files Deleted**: 0
-- **Commit Hash**: `d70eaef`
+- **Commit Hash**: `23d91a7`
 - **Push Status**: SUCCESS. Pushed to remote branch `master`.
 - **Repository Status**: Workspace index successfully tracked and synchronized with remote repository.
 - **Verification**: Verified that all task artifacts physically exist inside the repository and are tracked.
