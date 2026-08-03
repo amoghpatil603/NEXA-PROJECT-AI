@@ -244,53 +244,63 @@ def stage_5_sharding():
 
     shard_max_tokens = 50000
     current_tokens = []
+    # Simplified splits for sample
+    total_docs = len(manifest)
+    train_end = max(1, int(total_docs*0.8))
+    val_end = train_end + int(total_docs*0.1)
+
+    splits = {
+        "train": manifest[:train_end],
+        "validation": manifest[train_end:val_end],
+        "test": manifest[val_end:]
+    }
+
     shard_idx = 0
     shard_manifest = {}
 
     for split in ["train", "validation", "test"]:
         (SHARDS_DIR / split).mkdir(parents=True, exist_ok=True)
 
-    # Simplified splits for sample
-    total_docs = len(manifest)
-    train_docs = manifest[:max(1, int(total_docs*0.8))]
-    
-    for w in train_docs:
-        logger.info(f"Sharding {w['source_id']}...")
-        text = (CLEAN_DIR / f"{w['source_id']}.txt").read_text(encoding="utf-8")
-        encoded = []
-        block = ""
-        for line in text.splitlines(keepends=True):
-            block += line
-            if len(block) > 500:
+    for split_name, docs in splits.items():
+        current_tokens = []
+        for w in docs:
+            logger.info(f"Sharding {w['source_id']}...")
+            text = (CLEAN_DIR / f"{w['source_id']}.txt").read_text(encoding="utf-8")
+            encoded = []
+            block = ""
+            for line in text.splitlines(keepends=True):
+                block += line
+                if len(block) > 500:
+                    encoded.extend(tok.encode(block))
+                    block = ""
+            if block:
                 encoded.extend(tok.encode(block))
-                block = ""
-        if block:
-            encoded.extend(tok.encode(block))
-        encoded.append(NEXA_EOS)
-        current_tokens.extend(encoded)
+            encoded.append(NEXA_EOS)
+            current_tokens.extend(encoded)
 
-        while len(current_tokens) >= shard_max_tokens:
-            chunk = current_tokens[:shard_max_tokens]
-            arr = array.array("H", chunk)
-            path = SHARDS_DIR / "train" / f"shard_{shard_idx}.bin"
+            while len(current_tokens) >= shard_max_tokens:
+                chunk = current_tokens[:shard_max_tokens]
+                arr = array.array("H", chunk)
+                path = SHARDS_DIR / split_name / f"shard_{shard_idx}.bin"
+                with open(path, "wb") as f:
+                    arr.tofile(f)
+                shard_manifest[f"{split_name}/shard_{shard_idx}.bin"] = {
+                    "tokens": len(chunk),
+                    "sha256": hashlib.sha256(open(path, "rb").read()).hexdigest()
+                }
+                shard_idx += 1
+                current_tokens = current_tokens[shard_max_tokens:]
+
+        if current_tokens:
+            arr = array.array("H", current_tokens)
+            path = SHARDS_DIR / split_name / f"shard_{shard_idx}.bin"
             with open(path, "wb") as f:
                 arr.tofile(f)
-            shard_manifest[f"train/shard_{shard_idx}.bin"] = {
-                "tokens": len(chunk),
+            shard_manifest[f"{split_name}/shard_{shard_idx}.bin"] = {
+                "tokens": len(current_tokens),
                 "sha256": hashlib.sha256(open(path, "rb").read()).hexdigest()
             }
             shard_idx += 1
-            current_tokens = current_tokens[shard_max_tokens:]
-
-    if current_tokens:
-        arr = array.array("H", current_tokens)
-        path = SHARDS_DIR / "train" / f"shard_{shard_idx}.bin"
-        with open(path, "wb") as f:
-            arr.tofile(f)
-        shard_manifest[f"train/shard_{shard_idx}.bin"] = {
-            "tokens": len(current_tokens),
-            "sha256": hashlib.sha256(open(path, "rb").read()).hexdigest()
-        }
 
     with open(SHARDS_DIR / "shard_manifest.json", "w") as f:
         json.dump(shard_manifest, f, indent=2)
