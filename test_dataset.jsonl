@@ -1,0 +1,9 @@
+{"instruction": "What is the capital of France?", "output": "Paris.", "domain": "geography", "difficulty": "easy"}
+{"instruction": "What is the capital of France?", "output": "Paris.", "domain": "geography", "difficulty": "easy"}
+{"instruction": "What is the capital of France?  ", "output": " Paris . ", "domain": "geography", "difficulty": "easy"}
+{"instruction": "Explain quantum computing", "output": "Quantum computing is...", "domain": "science", "difficulty": "hard"}
+{"instruction": "Translate to Spanish", "chosen": "Hola", "rejected": "Hello", "domain": "language", "difficulty": "medium"}
+{"instruction": "", "output": "Paris.", "domain": "geography", "difficulty": "easy"}
+{"instruction": "Too short", "output": "A"}
+{"instruction": "Missing fields", "domain": "general"}
+{"instruction": "Invalid difficulty", "output": "Something", "difficulty": "impossible"}
