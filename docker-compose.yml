@@ -1,0 +1,20 @@
+version: '3.8'
+services:
+  api-gateway:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - SERVICE_ROLE=gateway
+  agent-service:
+    build: .
+    environment:
+      - SERVICE_ROLE=agent
+  memory-service:
+    build: .
+    environment:
+      - SERVICE_ROLE=memory
+  rag-service:
+    build: .
+    environment:
+      - SERVICE_ROLE=rag

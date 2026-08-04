@@ -1,0 +1,50 @@
+{"instruction": "Greet the user and introduce yourself as NEXA.", "input": "", "output": "Hello! I am NEXA, a production-grade 13.8M parameter transformer agent engine ready to assist you."}
+{"instruction": "Answer the question about machine learning.", "input": "What is machine learning?", "output": "Machine learning is a subset of artificial intelligence focused on building systems that learn from data to improve performance without explicit programming."}
+{"instruction": "Explain the transformer architecture in brief.", "input": "", "output": "The transformer architecture relies on multi-head self-attention mechanisms and feed-forward networks, eliminating recurrence and enabling parallel sequence processing."}
+{"instruction": "Write a Python function for binary search.", "input": "List and target", "output": "def binary_search(arr, target):\n    low, high = 0, len(arr) - 1\n    while low <= high:\n        mid = (low + high) // 2\n        if arr[mid] == target: return mid\n        elif arr[mid] < target: low = mid + 1\n        else: high = mid - 1\n    return -1"}
+{"instruction": "Solve the mathematical expression.", "input": "15 * 24 + 100", "output": "460"}
+{"instruction": "Explain the concept of recursion.", "input": "", "output": "Recursion occurs when a function calls itself to solve smaller instances of the same problem until reaching a base case."}
+{"instruction": "Summarize gradient descent.", "input": "", "output": "Gradient descent is an iterative optimization algorithm that updates model parameters in the opposite direction of the gradient to minimize loss."}
+{"instruction": "Retrieve project memory for active model parameters.", "input": "", "output": "Active model parameters: 13.8M (384 d_model, 6 layers, 6 heads)."}
+{"instruction": "Execute RAG search query.", "input": "transformer configuration", "output": "Retrieved document chunk: NexaConfig specifies vocab_size=8000, max_seq_len=256, d_model=384, n_layers=6, n_heads=6."}
+{"instruction": "Execute tool call to write file.", "input": "filename: test.py", "output": "Tool execution successful: created file test.py with boilerplate code."}
+{"instruction": "Follow instruction to output three exact words.", "input": "", "output": "Hello World NEXA"}
+{"instruction": "Provide conversation response.", "input": "How are you?", "output": "I am operating at peak efficiency. How can I help you today?"}
+{"instruction": "Write a Python prime check function.", "input": "number n", "output": "def is_prime(n):\n    if n < 2: return False\n    for i in range(2, int(n**0.5)+1):\n        if n % i == 0: return False\n    return True"}
+{"instruction": "Calculate square root.", "input": "196", "output": "14"}
+{"instruction": "Compare CNN and Transformer.", "input": "", "output": "CNNs use local spatial convolutional kernels ideal for image processing, whereas Transformers use global self-attention mechanisms ideal for sequence modeling."}
+{"instruction": "Summarize BPE tokenization.", "input": "", "output": "Byte-Pair Encoding iteratively merges frequent token pairs to construct an efficient subword vocabulary."}
+{"instruction": "Recall user preference.", "input": "favorite language", "output": "Python"}
+{"instruction": "Search RAG index for API endpoints.", "input": "", "output": "Retrieved API endpoints: GET /api/health and GET /api/chat/stream."}
+{"instruction": "Execute tool call for shell command.", "input": "git status", "output": "Tool execution successful: working tree clean."}
+{"instruction": "Format JSON response.", "input": "status OK", "output": "{\"status\": \"OK\", \"code\": 200}"}
+{"instruction": "Casual conversation greeting.", "input": "Good morning", "output": "Good morning! Ready for productive agent execution."}
+{"instruction": "Write React component for card.", "input": "", "output": "export default function Card({ title, children }) {\n  return <div className=\"p-4 border rounded-lg shadow\"><h2>{title}</h2>{children}</div>;\n}"}
+{"instruction": "Solve linear equation.", "input": "3x - 9 = 12", "output": "x = 7"}
+{"instruction": "Explain over-fitting.", "input": "", "output": "Over-fitting occurs when a model learns training data noise rather than general patterns, leading to poor generalization on unseen data."}
+{"instruction": "Summarize cosine learning rate schedule.", "input": "", "output": "Cosine learning rate scheduling smoothly decays the learning rate following a cosine curve after warmup steps."}
+{"instruction": "Recall system token limit.", "input": "", "output": "System maximum sequence length is 256 tokens."}
+{"instruction": "Retrieve documentation for tool registry.", "input": "", "output": "Tool registry maps string action names to registered executable Python and TypeScript handlers."}
+{"instruction": "Execute tool to run python script.", "input": "script.py", "output": "Tool execution successful: script output 9310."}
+{"instruction": "List numbers 1 to 5.", "input": "", "output": "1, 2, 3, 4, 5"}
+{"instruction": "Friendly assistance offer.", "input": "Can you help me code?", "output": "Yes! I can write, refactor, and debug Python, TypeScript, SQL, and React code."}
+{"instruction": "Write SQL query.", "input": "select all active users", "output": "SELECT * FROM users WHERE status = 'active';"}
+{"instruction": "Calculate percentage.", "input": "20% of 450", "output": "90"}
+{"instruction": "Explain bias-variance tradeoff.", "input": "", "output": "High bias leads to underfitting due to overly simple models; high variance leads to overfitting due to high sensitivity to training fluctuations."}
+{"instruction": "Summarize vector databases.", "input": "", "output": "Vector databases store high-dimensional embeddings and index them for rapid approximate nearest neighbor similarity search."}
+{"instruction": "Recall training dataset name.", "input": "", "output": "PD5M-v7 production corpus shards."}
+{"instruction": "Search RAG for memory engine.", "input": "", "output": "Memory engine maintains structured key-value state with persistence across agent sessions."}
+{"instruction": "Execute memory store tool.", "input": "key: session_id, value: 42", "output": "Tool execution successful: stored session_id = 42."}
+{"instruction": "Acknowledge readiness.", "input": "", "output": "READY FOR SFT PIPELINE EXECUTION"}
+{"instruction": "Explain deep learning.", "input": "", "output": "Deep learning uses multi-layered artificial neural networks to learn hierarchical feature representations from raw data."}
+{"instruction": "Write Python quicksort.", "input": "", "output": "def quicksort(arr):\n    if len(arr) <= 1: return arr\n    pivot = arr[len(arr)//2]\n    return quicksort([x for x in arr if x < pivot]) + [x for x in arr if x == pivot] + quicksort([x for x in arr if x > pivot])"}
+{"instruction": "Calculate factorial.", "input": "6!", "output": "720"}
+{"instruction": "Explain attention mechanism.", "input": "", "output": "Attention computes dynamic weights between token pairs, allowing the model to focus on relevant context regardless of distance."}
+{"instruction": "Summarize RAG.", "input": "", "output": "Retrieval-Augmented Generation combines external document retrieval with LLM generation to ground responses in factual data."}
+{"instruction": "Recall peak RSS memory limit.", "input": "", "output": "Peak RSS target is under 2500 MB."}
+{"instruction": "Search RAG for agent planner.", "input": "", "output": "Agent planner routes user intent into specialized execution pipelines (chat, RAG, coding, tools)."}
+{"instruction": "Execute file read tool.", "input": "README.md", "output": "Tool execution successful: read 385 bytes."}
+{"instruction": "Uppercase JSON output.", "input": "success", "output": "{\"STATUS\": \"SUCCESS\"}"}
+{"instruction": "Conversation farewell.", "input": "Goodbye", "output": "Goodbye! Have a successful day."}
+{"instruction": "Write Express server setup.", "input": "", "output": "const express = require('express');\nconst app = express();\napp.listen(3000, () => console.log('Server active on 3000'));"}
+{"instruction": "Solve quadratic equation.", "input": "x^2 - 7x + 12 = 0", "output": "x = 3, x = 4"}

@@ -1,0 +1,2 @@
+Instruction: Solve problem 76.
+Output: Solution to problem 76.

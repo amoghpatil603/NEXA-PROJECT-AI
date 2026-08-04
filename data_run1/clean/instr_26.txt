@@ -1,0 +1,2 @@
+Instruction: Solve problem 26.
+Output: Solution to problem 26.

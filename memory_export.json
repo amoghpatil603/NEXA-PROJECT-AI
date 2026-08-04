@@ -1,0 +1,53 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Nexa User",
+      "occupation": "Developer",
+      "interests": "AI, Local Models, Privacy",
+      "coding_languages": "Python, TypeScript",
+      "preferred_response_style": "Concise",
+      "favorite_technologies": "SQLite, React"
+    }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "name": "Nexa Phase 5C",
+      "description": "Long-Term Memory System",
+      "goals": "Implement local sqlite memory",
+      "current_phase": "Development"
+    }
+  ],
+  "conversations": [
+    {
+      "id": 1,
+      "conversation_id": "conv_abc123",
+      "summary": "Discussed memory requirements",
+      "important_facts": "Memory must be local, no cloud."
+    }
+  ],
+  "memories": [
+    {
+      "id": 1,
+      "type": "fact",
+      "content": "User prefers concise answers",
+      "is_pinned": true,
+      "is_archived": false
+    }
+  ],
+  "knowledge": [
+    {
+      "id": 1,
+      "title": "SQLite Syntax",
+      "content": "SELECT * FROM table;",
+      "category": "Database"
+    }
+  ],
+  "settings": [
+    {
+      "key": "auto_save_memory",
+      "value": "true"
+    }
+  ]
+}

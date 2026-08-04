@@ -1,0 +1,3 @@
+Instruction: Problem 6
+Chosen: Good 6
+Rejected: Bad 6

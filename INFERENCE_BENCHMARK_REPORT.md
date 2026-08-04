@@ -1,0 +1,4 @@
+# BENCHMARK REPORT
+- TPS: 15.59
+- FTL: 0.0802s
+- GPU Mem: 0MB
