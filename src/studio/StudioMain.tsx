@@ -19,6 +19,7 @@ import { RAGManager } from './pages/RAGManager';
 import { ModelManager } from './pages/ModelManager';
 import { DeploymentManager } from './pages/DeploymentManager';
 import { MonitoringDashboard } from './pages/MonitoringDashboard';
+import { VoiceManager } from './pages/VoiceManager';
 
 type StudioPage = 
   | 'dashboard' 
@@ -29,7 +30,8 @@ type StudioPage =
   | 'rag' 
   | 'models'
   | 'deployment'
-  | 'monitoring';
+  | 'monitoring'
+  | 'voice';
 
 export const StudioMain: React.FC = () => {
   const [activePage, setActivePage] = useState<StudioPage>('dashboard');
@@ -44,6 +46,7 @@ export const StudioMain: React.FC = () => {
     { id: 'models', label: 'Model Manager', icon: <Box size={16} /> },
     { id: 'deployment', label: 'Deployment', icon: <Cloud size={16} /> },
     { id: 'monitoring', label: 'Monitoring', icon: <Activity size={16} /> },
+    { id: 'voice', label: 'Voice Manager', icon: <Mic size={16} /> },
   ];
 
   return (
@@ -83,6 +86,7 @@ export const StudioMain: React.FC = () => {
         {activePage === 'models' && <ModelManager />}
         {activePage === 'deployment' && <DeploymentManager />}
         {activePage === 'monitoring' && <MonitoringDashboard />}
+        {activePage === 'voice' && <VoiceManager />}
       </div>
     </div>
   );
