@@ -1,15 +1,5 @@
 import React, { useState } from 'react';
-import { 
-  LayoutDashboard, 
-  Workflow, 
-  Bot, 
-  Blocks, 
-  Brain, 
-  Database, 
-  Box,
-  Cloud,
-  Activity
-} from 'lucide-react';
+import { LayoutDashboard, Workflow, Bot, Blocks, Brain, Database, Box, Cloud, Activity, Mic } from 'lucide-react';
 import { Dashboard } from './pages/Dashboard';
 import { WorkflowBuilder } from './pages/WorkflowBuilder';
 import { AgentManager } from './pages/AgentManager';
