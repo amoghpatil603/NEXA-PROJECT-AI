@@ -25,6 +25,12 @@ def main():
         # 2. Add to RAG Engine
         engine = RAGEngine()
         doc_id = engine.import_document(file_path, background=False)
+
+        # 3. Add to Memory
+        from memory_engine import MemoryEngine
+        mem_engine = MemoryEngine()
+        mem_content = f"User uploaded document {doc.get('file_name', '')}. Content snippet: {doc.get('content', '')[:1000]}"
+        mem_engine.create_memory("vision_upload", mem_content)
         
         with engine.store._get_connection() as conn:
             cursor = conn.cursor()

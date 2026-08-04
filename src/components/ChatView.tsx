@@ -19,6 +19,7 @@ import {
 } from 'lucide-react';
 import { Chat, Message, Settings } from '../types';
 import { MarkdownMessage } from './MarkdownMessage';
+import { VisionUploader } from './VisionUploader';
 
 interface ChatViewProps {
   chat: Chat;
@@ -338,6 +339,9 @@ export const ChatView: React.FC<ChatViewProps> = ({
       <div className="p-4 border-t border-slate-800/80 bg-slate-950/80 shrink-0">
         <form onSubmit={handleSend} className="max-w-4xl mx-auto flex items-end gap-3">
           <div className="flex-1 bg-slate-900 border border-slate-700/80 focus-within:border-indigo-500 rounded-2xl p-2.5 shadow-inner transition-colors">
+            <div className="flex items-center gap-2 mb-1">
+              <VisionUploader onExtracted={(text) => setInput((prev) => prev ? prev + "\n\n" + text : text)} />
+            </div>
             <textarea
               ref={textareaRef}
               value={input}
