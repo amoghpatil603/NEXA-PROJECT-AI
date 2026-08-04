@@ -1,20 +1,15 @@
 version: '3.8'
+
 services:
-  api-gateway:
+  nexa-platform:
     build: .
     ports:
-      - "8000:8000"
+      - "80:80"
+      - "3000:3000"
     environment:
-      - SERVICE_ROLE=gateway
-  agent-service:
-    build: .
-    environment:
-      - SERVICE_ROLE=agent
-  memory-service:
-    build: .
-    environment:
-      - SERVICE_ROLE=memory
-  rag-service:
-    build: .
-    environment:
-      - SERVICE_ROLE=rag
+      - NODE_ENV=production
+      - PORT=3000
+    restart: unless-stopped
+    volumes:
+      - ./uploads:/app/uploads
+      - ./data:/app/data

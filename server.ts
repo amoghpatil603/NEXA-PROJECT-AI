@@ -1,12 +1,30 @@
 import multer from "multer";
 import express from "express";
 import path from "path";
+import helmet from "helmet";
+import rateLimit from "express-rate-limit";
+import cors from "cors";
 import fs from "fs";
 import { spawn, spawnSync, ChildProcess } from "child_process";
 import { createServer as createViteServer } from "vite";
 
 async function startServer() {
   const app = express();
+  
+  // Security middlewares
+  app.use(helmet({
+    contentSecurityPolicy: false, // Disabled for local development / Vite
+  }));
+  app.use(cors());
+  
+  // Rate limiting
+  const apiLimiter = rateLimit({
+    windowMs: 15 * 60 * 1000, // 15 minutes
+    max: 1000, // Limit each IP to 1000 requests per windowMs
+    standardHeaders: true,
+    legacyHeaders: false,
+  });
+  app.use('/api/', apiLimiter);
   const PORT = 3000;
 
   app.use(express.json());
