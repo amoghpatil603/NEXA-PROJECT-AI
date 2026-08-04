@@ -1,12 +1,19 @@
-# NEXA Administrator Guide
+# NEXA Platform - Administrator Guide
 
-## Role-Based Access Control (RBAC)
-NEXA enforces strict role permissions across five tiers:
-- **Administrator**: Full administrative access across all subsystems, tools, and admin APIs.
-- **Developer**: Access to memory, RAG, tools, Python execution, and agentic workflows.
-- **Standard User**: Access to memory, RAG, tools, and agents.
-- **Read Only**: View-only access to memory and RAG knowledge.
-- **Service Account**: Automated pipeline access to tools, Python, and agents.
+## Deployment & Hosting
+NEXA is designed for isolated Docker deployment. 
+Start the full stack: `docker-compose up -d --build`
 
-## Secret Management
-All API keys, JWT secrets, and database credentials must be injected via environment variables or Kubernetes secrets. Never hardcode credentials.
+## Configuration
+- Environmental secrets must be injected into the `.env` file at the root of the project.
+- Modify the `nginx.conf` file to configure HTTPS (SSL certs), custom domains, and cache rules.
+
+## Monitoring
+Check health status via `/api/health`.
+Use `docker-compose logs -f` to monitor real-time output.
+The Web Studio provides a high-level overview of system functionality and latency.
+
+## Managing Data
+- User uploads are stored in the `./uploads` directory.
+- Model caches and memory DBs are stored in `./data`.
+- To completely reset the environment, delete these mapped volume directories and restart the containers.
