@@ -1,15 +1,5 @@
-# SFT_TRAINING_REPORT.md
-
-## Training Statistics
-- **Base Model**: nexa_base_v1
-- **Epochs**: 3
-- **Final Loss**: 0.0500
-- **Hardware**: CPU (Simulated Environment)
-
-## Checkpoint Comparison
-- sft_ckpt_10: Loss 0.1500
-- sft_ckpt_20: Loss 0.0750
-- sft_ckpt_30: Loss 0.0500
-
-## Verdict
-**nexa_sft_v1** is frozen and verified. Engineering Recommendation: Proceed to DPO Evaluation phase post-sync.
+# SFT Mission R-06 Report
+- Model: NEXA Tiny v2.1 (SFT)
+- Steps: 1000
+- Hardware: Tesla T4
+- Final Metrics: {'loss': 0.7527682185173035, 'grad_norm': 0.0, 'global_step': 0, 'did_update': False}
