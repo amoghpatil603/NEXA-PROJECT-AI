@@ -1,0 +1,8 @@
+batch_size: 32
+eval_interval: 500
+gradient_accumulation_steps: 2
+learning_rate: 0.0006
+max_steps: 5000
+precision: bf16
+save_interval: 1000
+weight_decay: 0.1
