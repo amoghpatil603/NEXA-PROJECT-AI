@@ -1,43 +1,7 @@
-# Python
-__pycache__/
-*.pyc
 
-# Node
-node_modules/
-build/
-dist/
-coverage/
-
-# Environment
-.env
-venv/
-.venv/
-.DS_Store
-*.log
-!.env.example
-
-# Training outputs
-checkpoints/
-checkpoints_phase4e/
-*.ckpt
+# Data and Checkpoints
+data_run1/
+*.bin
 *.pt
 *.pth
-*.bin
-
-# Logs
-logs/
-wandb/
-
-# Cache
-.cache/
-# Zip backups
-*.zip
-node_modules/
 __pycache__/
-*.bin
-*.safetensors
-datasets/
-checkpoints/
-logs/
-*.pt
-*.safetensors
