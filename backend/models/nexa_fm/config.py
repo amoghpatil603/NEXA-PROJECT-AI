@@ -25,3 +25,7 @@ class NexaFMConfig:
     @classmethod
     def large(cls) -> "NexaFMConfig":
         return cls(hidden_size=1536, num_layers=24, num_heads=16)
+
+    @classmethod
+    def tiny(cls) -> "NexaFMConfig":
+        return cls(hidden_size=128, num_layers=4, num_heads=4, max_context_length=128)

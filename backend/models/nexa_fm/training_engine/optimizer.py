@@ -1,7 +1,10 @@
-import torch
+try:
+    import torch
+except ImportError:
+    torch = None
 
 def create_optimizer(model, learning_rate: float, weight_decay: float):
-    if not hasattr(torch.optim, "AdamW"):
+    if torch is None or not hasattr(torch.optim, "AdamW"):
         return None # Graceful failure if torch is a dummy
         
     param_optimizer = list(model.named_parameters())

@@ -1,4 +1,7 @@
-import torch
+try:
+    import torch
+except ImportError:
+    torch = None
 import json
 import os
 from typing import Iterator

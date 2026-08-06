@@ -1,5 +1,8 @@
 import os
-import torch
+try:
+    import torch
+except ImportError:
+    torch = None
 from .config import TrainingConfig
 import json
 
