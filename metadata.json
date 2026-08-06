@@ -1,0 +1,6 @@
+{
+  "name": "NEXA Platform",
+  "description": "NEXA Enterprise Cognitive AI Platform with PostgreSQL pgvector Memory Engine and RAG Storage.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

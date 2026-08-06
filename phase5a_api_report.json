@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "endpoint": "/api/chat",
+  "api_test_results": [
+    {
+      "endpoint": "/api/chat",
+      "status_code": 200,
+      "response": {
+        "response": "<UNK><UNK><UNK><UNK><UNK><UNK>B<UNK><UNK>y<UNK><UNK><UNK><UNK><UNK>\ufffd<UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK>"
+      }
+    }
+  ]
+}

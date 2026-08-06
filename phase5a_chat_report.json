@@ -1,0 +1,85 @@
+{
+  "status": "NEXA_PHASE5A_CHAT_ENGINE_COMPLETED",
+  "checkpoint_loaded": true,
+  "tokenizer_loaded": true,
+  "total_prompts_evaluated": 10,
+  "streaming_verified": true,
+  "temperature_verified": true,
+  "top_k_verified": true,
+  "top_p_verified": true,
+  "nan_detected": false,
+  "peak_rss_mb": 324.17578125,
+  "runtime_seconds": 11.289618015289307,
+  "samples": [
+    {
+      "prompt_id": 1,
+      "prompt": "The future of artificial intelligence is",
+      "response": "carried proporColonel \ufffdcorrupgaing out Colonel they are e, \u201chere which the , as every hundred as to soonfirst time sidplacotheround\npropordangnotice Every share t-is that classa single _\n",
+      "latency_ms": 1018.160343170166,
+      "status": "PASS"
+    },
+    {
+      "prompt_id": 2,
+      "prompt": "Once upon a time in a distant galaxy,",
+      "response": "happover his dangAntiept e, \u201csavage acros. Aholicalarmmewindow lays\nthe Crilike a said\nfoldinstrucfirstone of one of velopinstold holhe was alarmout, a sing",
+      "latency_ms": 941.239595413208,
+      "status": "PASS"
+    },
+    {
+      "prompt_id": 3,
+      "prompt": "To build a robust software system, one must",
+      "response": "broadquirquirond, happpassage passage demandPebetraytremgabetrayis that ceithey are . Some effectif it exactly they are vdangbulxit was ept rificsandianperceiColonel ",
+      "latency_ms": 978.1491756439209,
+      "status": "PASS"
+    },
+    {
+      "prompt_id": 4,
+      "prompt": "Machine learning models require careful",
+      "response": "placplaceverSoSandWe conceinto\nperceiaggerorMiis that fact, soft-nevershould be w called\npresence ann.  \"savage proporclasscontinually Colonel effecWe hear tur",
+      "latency_ms": 892.3747539520264,
+      "status": "PASS"
+    },
+    {
+      "prompt_id": 5,
+      "prompt": "Python is a versatile programming language used for",
+      "response": "icvelopturnsivisible minutthey are e, \u201cain't likaggerWe t-lowe, \u201ce, \u201cColonel lowlowsavage knewobjecdisposa single disposportdangamong  therefore ascsavage op",
+      "latency_ms": 989.2082214355469,
+      "status": "PASS"
+    },
+    {
+      "prompt_id": 6,
+      "prompt": "Deep learning has revolutionized the field of",
+      "response": "ianFrom figure waitbbbbbbbbminutOF pecunisaid, \u201chardly bbnumber luxurgashould be twigonevisible a single visible they are they are edgeue\u0014Vincthey are estemorning",
+      "latency_ms": 934.0052604675293,
+      "status": "PASS"
+    },
+    {
+      "prompt_id": 7,
+      "prompt": "Data structures and algorithms are essential for",
+      "response": "called\na single costCricalled\ncalled\na single said, \u201cMigraned up said, \u201cLydgatewife savage sandess of morningcarried s\nthe CriCriin this spoke We n\nturnt-y; We ept hope ",
+      "latency_ms": 994.572639465332,
+      "status": "PASS"
+    },
+    {
+      "prompt_id": 8,
+      "prompt": "In mathematics, numbers and equations represent",
+      "response": "exercacquired proporwore visible is that popul\u0014admaccustominging Wilthey had is that it is a betrayept especigonee.\nend CridanggaplacPea single trainUShear bed kn",
+      "latency_ms": 960.4394435882568,
+      "status": "PASS"
+    },
+    {
+      "prompt_id": 9,
+      "prompt": "The solar system consists of planets orbiting",
+      "response": "gregsidstopped , the\n. Their four resemblit was ously lowproporproporproportouloud _\nespeciperceiindependit had perceihapppropor. AdoubtXoststockdisciplord savage morning",
+      "latency_ms": 870.1536655426025,
+      "status": "PASS"
+    },
+    {
+      "prompt_id": 10,
+      "prompt": "Natural language processing enables computers to understand",
+      "response": "\u0014portcalled\nn\nportman's renhorizinccivilpoundvisible .\n\n\"they are untiascpeopleColonel plachardly ulibed in\nthe a single one of Crihistory of bbmindevelopment ed up first ",
+      "latency_ms": 988.4366989135742,
+      "status": "PASS"
+    }
+  ]
+}

@@ -1,0 +1,2 @@
+Instruction: Solve problem 95.
+Output: Solution to problem 95.

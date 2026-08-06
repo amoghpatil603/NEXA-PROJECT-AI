@@ -1,0 +1,11 @@
+{
+  "total_documents_indexed": 0,
+  "total_chunks_created": 0,
+  "average_chunk_size": 500,
+  "storage_used_mb": 0.0,
+  "embedding_model": "placeholder",
+  "index_status": "Idle",
+  "supported_formats": [
+    "pdf", "txt", "md", "docx", "csv", "json", "py", "java", "c", "cpp", "js", "ts", "html", "css"
+  ]
+}

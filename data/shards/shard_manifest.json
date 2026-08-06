@@ -1,0 +1,14 @@
+{
+  "train/shard_0.bin": {
+    "tokens": 2412,
+    "sha256": "c9fe11696a0f49c0613d1448fac8581ebf4be8a47e5b43114f4cb67a5b14deb5"
+  },
+  "validation/shard_1.bin": {
+    "tokens": 296,
+    "sha256": "159e2cb8dddf03344522d7586ea4bb72a1d648ffcf4ce3dbdb3d0c57acaff241"
+  },
+  "test/shard_2.bin": {
+    "tokens": 288,
+    "sha256": "1826ab5bc9d4d49522ae2c1657e8f615a21019470d29a00ca9d79276ae153d49"
+  }
+}

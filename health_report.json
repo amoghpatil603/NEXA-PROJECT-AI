@@ -1,0 +1,10 @@
+{
+  "model_status": "OPTIMAL",
+  "memory_database_status": "OPTIMAL",
+  "rag_index_status": "OPTIMAL",
+  "voice_availability": "Local Ready",
+  "tool_availability": "Ready",
+  "cpu_usage_pct": 18,
+  "ram_usage_mb": 298,
+  "queue_status": "0 pending"
+}

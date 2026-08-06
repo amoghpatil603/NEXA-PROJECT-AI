@@ -1,0 +1,17 @@
+{
+  "pipeline_stats": {
+    "total_documents": 11,
+    "processed_documents": 11,
+    "failed_cleaning": 0
+  },
+  "filter_stats": {
+    "total_processed": 11,
+    "rejected_length": 0,
+    "rejected_lang": 0,
+    "rejected_repetition": 0
+  },
+  "deduplicator_stats": {
+    "exact_duplicates": 0,
+    "near_duplicates": 0
+  }
+}

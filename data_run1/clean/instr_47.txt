@@ -1,0 +1,2 @@
+Instruction: Solve problem 47.
+Output: Solution to problem 47.

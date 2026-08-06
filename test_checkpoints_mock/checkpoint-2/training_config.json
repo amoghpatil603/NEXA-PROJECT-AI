@@ -1,0 +1,16 @@
+{
+  "batch_size": 8,
+  "gradient_accumulation_steps": 4,
+  "learning_rate": 0.0003,
+  "weight_decay": 0.1,
+  "warmup_steps": 1000,
+  "max_steps": 5,
+  "save_steps": 2,
+  "log_steps": 1,
+  "max_grad_norm": 1.0,
+  "mixed_precision": true,
+  "checkpoint_dir": "test_checkpoints_mock",
+  "log_dir": "test_logs_mock",
+  "dataset_dir": "datasets/shards",
+  "seed": 42
+}
