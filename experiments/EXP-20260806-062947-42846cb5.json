@@ -1,0 +1,20 @@
+{
+    "experiment_id": "EXP-20260806-062947-42846cb5",
+    "model_version": "v1.0",
+    "dataset_version": "shards_prod",
+    "hyperparameters": {
+        "batch_size": 32,
+        "eval_interval": 500,
+        "gradient_accumulation_steps": 2,
+        "learning_rate": 0.0006,
+        "max_steps": 5000,
+        "precision": "bf16",
+        "save_interval": 1000,
+        "weight_decay": 0.1
+    },
+    "start_time": "2026-08-06T06:29:47.838212",
+    "best_checkpoint": null,
+    "metrics_history": [],
+    "end_time": "2026-08-06T06:29:47.885681",
+    "final_metrics": {}
+}
