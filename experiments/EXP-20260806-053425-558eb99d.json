@@ -1,0 +1,38 @@
+{
+    "experiment_id": "EXP-20260806-053425-558eb99d",
+    "model_version": "v1.0",
+    "dataset_version": "shards_run1",
+    "hyperparameters": {
+        "batch_size": 2,
+        "eval_interval": 5,
+        "gradient_accumulation_steps": 1,
+        "learning_rate": 0.0001,
+        "max_steps": 10,
+        "precision": "fp32",
+        "save_interval": 10,
+        "weight_decay": 0.01
+    },
+    "start_time": "2026-08-06T05:34:25.169076",
+    "best_checkpoint": "/content/NEXA-PROJECT-AI/checkpoints/best_EXP-20260806-053425-558eb99d.pth",
+    "metrics_history": [
+        {
+            "train_loss": 10.49299144744873,
+            "val_loss": 9.968341875076293,
+            "step": 0,
+            "timestamp": "2026-08-06T05:34:26.732026"
+        },
+        {
+            "train_loss": 10.786887168884277,
+            "val_loss": 10.247542810440063,
+            "step": 5,
+            "timestamp": "2026-08-06T05:34:35.016822"
+        }
+    ],
+    "end_time": "2026-08-06T05:34:42.003196",
+    "final_metrics": {
+        "loss": 10.490379333496094,
+        "grad_norm": 0.0,
+        "global_step": 17,
+        "did_update": false
+    }
+}
