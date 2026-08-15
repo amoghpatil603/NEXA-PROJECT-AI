@@ -1,0 +1,634 @@
+[
+  {
+    "filename": "CLEAN_10071_ByWays_of_Bombay.txt",
+    "bytes": 177077,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_10347_Free_from_School.txt",
+    "bytes": 194946,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_10366_Freedoms_BattleBeing_a_Comprehensive_Collection_of_Writings_and_Speeches_on_the_Present_Situation.txt",
+    "bytes": 458499,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_10946_Three_Frenchmen_in_BengalThe_Commercial_Ruin_of_the_French_Settlements_in_1757.txt",
+    "bytes": 296307,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_10999_Tales_of_Bengal.txt",
+    "bytes": 266002,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_11167_Deccan_Nursery_Tales_or_Fairy_Tales_from_the_South.txt",
+    "bytes": 145312,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_11310_Hindu_Tales_from_the_Sanskrit.txt",
+    "bytes": 231893,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_11399_The_Pirates_of_Malabar_and_an_Englishwoman_in_India_Two_Hundred_Years_Ago.txt",
+    "bytes": 424626,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_11738_Hindoo_Tales_Or_the_Adventures_of_Ten_Princes.txt",
+    "bytes": 299852,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_11897_On_the_Indian_Sect_of_the_Jainas.txt",
+    "bytes": 125290,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_11924_The_Loves_of_Krishna_in_Indian_Painting_and_Poetry.txt",
+    "bytes": 338508,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_12169_Sakoontala_Or_The_Lost_Ring_An_Indian_Drama.txt",
+    "bytes": 314151,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_12286_Flowers_and_FlowerGardensWith_an_Appendix_of_Practical_Instructions_and_Useful_Information_Respectin.txt",
+    "bytes": 626928,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_12617_Recollections_of_Calcutta_for_over_Half_a_Century.txt",
+    "bytes": 171125,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_12956_A_History_of_Indian_Philosophy_Volume_1.txt",
+    "bytes": 1358936,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_13539_Dr_Scudders_Tales_for_Little_Readers_About_the_Heathen.txt",
+    "bytes": 211138,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_1470_The_Fall_of_the_Moghul_Empire_of_Hindustan.txt",
+    "bytes": 485710,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_17455_The_Poison_Tree_A_Tale_of_Hindu_Life_in_Bengal.txt",
+    "bytes": 273786,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_2056_The_Life_of_William_Carey_Shoemaker__Missionary.txt",
+    "bytes": 849645,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_20583_The_Tribes_and_Castes_of_the_Central_Provinces_of_India_Volume_1.txt",
+    "bytes": 1123990,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_20668_The_Tribes_and_Castes_of_the_Central_Provinces_of_India_Volume_4.txt",
+    "bytes": 1382374,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_20847_India_What_can_it_teach_usA_Course_of_Lectures_Delivered_before_the_University_Of_Cambridge.txt",
+    "bytes": 530086,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_2124_A_Record_of_Buddhistic_KingdomsBeing_an_account_by_the_Chinese_monk_Fahsien_of_travels_in_India_and_.txt",
+    "bytes": 296055,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_22010_The_Tribes_and_Castes_of_the_Central_Provinces_of_India_Volume_2.txt",
+    "bytes": 1218721,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_23123_Old_Daniel.txt",
+    "bytes": 97045,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_2388_The_Song_Celestial_Or_BhagavadGt_from_the_MahbhrataBeing_a_discourse_between_Arjuna_Prince_of_India_.txt",
+    "bytes": 127479,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_24416_Life_and_Work_in_Benares_and_Kumaon_18391877.txt",
+    "bytes": 659128,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_24461_Third_class_in_Indian_railways.txt",
+    "bytes": 54372,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_24562_The_Panjab_NorthWest_Frontier_Province_and_Kashmir.txt",
+    "bytes": 533186,
+    "status": "CERTIFIED_CLEAN_REPAIRED",
+    "sha256": "a1417f6c2ccc85f03adcdbba9528e8a65a723e5ac9f6b69d3b508772c3a078b9"
+  },
+  {
+    "filename": "CLEAN_2499_Siddhartha_eine_indische_Dichtung.txt",
+    "bytes": 220230,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_2500_Siddhartha.txt",
+    "bytes": 222719,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_2518_The_Hungry_Stones_and_Other_Stories.txt",
+    "bytes": 268408,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_26621_The_Story_of_Madras.txt",
+    "bytes": 193683,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_26781_Letters_on_the_Nicobar_islands_their_natural_productions_and_the_manners_customs_and_superstitions_o.txt",
+    "bytes": 92490,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_27270_Indias_Problem_Krishna_or_Christ.txt",
+    "bytes": 583360,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_28117_India_Its_Life_and_Thought.txt",
+    "bytes": 527282,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_29426_Things_as_they_are.txt",
+    "bytes": 498194,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_29427_Lotus_Buds.txt",
+    "bytes": 448836,
+    "status": "CERTIFIED_CLEAN_REPAIRED",
+    "sha256": "0d784b6495111cfde52e31249cc0fdfc88567948e29aef95a1610bf946aca974"
+  },
+  {
+    "filename": "CLEAN_32231_Among_the_Wild_Tribes_of_the_Afghan_FrontierA_Record_of_Sixteen_Years_Close_Intercourse_with_the_Nat.txt",
+    "bytes": 587777,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_3310_A_Forgotten_Empire_Vijayanagar_A_Contribution_to_the_History_of_India.txt",
+    "bytes": 799942,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_33525_Stories_from_Tagore.txt",
+    "bytes": 278606,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_33536_A_report_of_Major_Harts_case_of_ricefrauds_near_Seringapatam.txt",
+    "bytes": 28128,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_34322_The_Moghul.txt",
+    "bytes": 1287946,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_34493_Draw_Swords_In_the_Horse_Artillery.txt",
+    "bytes": 543308,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_34757_Mashi_and_Other_Stories.txt",
+    "bytes": 208012,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_36373_H_P_Blavatsky_A_Great_Betrayal.txt",
+    "bytes": 194527,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_36696_Old_Deccan_Days_or_Hindoo_Fairy_Legends_Current_in_Southern_India.txt",
+    "bytes": 562616,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_36703_A_Bayard_From_BengalBeing_some_account_of_the_Magnificent_and_Spanking_Career_of_Chunder_Bindabun_Bh.txt",
+    "bytes": 131401,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_36939_Free_Trade_with_IndiaAn_Enquiry_into_the_True_State_of_the_Question_at_Issue_Between_His_Majestys_Mi.txt",
+    "bytes": 26279,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_37000_The_Proper_Limits_of_the_Governments_Interference_with_the_Affairs_of_the_EastIndia_CompanyAttempted.txt",
+    "bytes": 21007,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_37048_A_Caution_to_the_Directors_of_the_EastIndia_CompanyWith_Regard_to_Their_Making_the_Midsummer_Dividen.txt",
+    "bytes": 41342,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_37082_A_Short_View_of_the_Laws_Now_Subsisting_with_Respect_to_the_Powers_of_the_East_India_CompanyTo_Borro.txt",
+    "bytes": 36787,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_37722_The_Hindoos_as_They_AreA_Description_of_the_Manners_Customs_and_the_Inner_Life_of_Hindoo_Society_in_.txt",
+    "bytes": 645445,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_38488_FolkTales_of_Bengal.txt",
+    "bytes": 406215,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_38881_In_Kalis_Country_Tales_from_Sunny_India.txt",
+    "bytes": 263306,
+    "status": "CERTIFIED_CLEAN_REPAIRED",
+    "sha256": "3ab6dd0d7b37c24c755cabc4dc137ec1cf2e9fd6ca4332df0e39b9bda56ea11c"
+  },
+  {
+    "filename": "CLEAN_40162_The_Humour_and_Pathos_of_AngloIndian_LifeExtracts_from_his_brothers_notebook_made_by_Dr_Ticklemore.txt",
+    "bytes": 514289,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_40461_Indian_Home_Rule.txt",
+    "bytes": 169884,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_40517_A_Bottle_in_the_Smoke_A_Tale_of_AngloIndian_Life.txt",
+    "bytes": 589392,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_40920_Nationalismus.txt",
+    "bytes": 176847,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_41190_Chronicles_of_Dustypore_A_Tale_of_Modern_AngloIndian_Society.txt",
+    "bytes": 458429,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_41424_The_Tribes_and_Castes_of_the_Central_Provinces_of_India_Volume_3.txt",
+    "bytes": 1325448,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_41954_The_Wheel_of_Fortune.txt",
+    "bytes": 149808,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_42991_Castes_and_Tribes_of_Southern_India_Vol_1_of_7.txt",
+    "bytes": 806667,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_42992_Castes_and_Tribes_of_Southern_India_Vol_2_of_7.txt",
+    "bytes": 895022,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_42993_Castes_and_Tribes_of_Southern_India_Vol_3_of_7.txt",
+    "bytes": 903325,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_42994_Castes_and_Tribes_of_Southern_India_Vol_4_of_7.txt",
+    "bytes": 901228,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_42995_Castes_and_Tribes_of_Southern_India_Vol_5_of_7.txt",
+    "bytes": 873644,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_42996_Castes_and_Tribes_of_Southern_India_Vol_6_of_7.txt",
+    "bytes": 815747,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_42997_Castes_and_Tribes_of_Southern_India_Vol_7_of_7.txt",
+    "bytes": 783200,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_44306_A_Noble_Queen_A_Romance_of_Indian_History_Volume_1_of_3.txt",
+    "bytes": 410124,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_44583_A_Noble_Queen_A_Romance_of_Indian_History_Volume_2_of_3.txt",
+    "bytes": 397763,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_44789_A_Noble_Queen_A_Romance_of_Indian_History_Volume_3_of_3.txt",
+    "bytes": 404773,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_45247_India_for_IndiansEnlarged_Edition.txt",
+    "bytes": 269344,
+    "status": "CERTIFIED_CLEAN_REPAIRED",
+    "sha256": "c3048a236f618f2c8bc1c9c0dce6d91b9a43ca2f3fa53677e798d89254f8b509"
+  },
+  {
+    "filename": "CLEAN_45430_Tara_A_Mahratta_Tale.txt",
+    "bytes": 1471161,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_46151_India_Under_British_Rule_from_the_Foundation_of_the_East_India_Company.txt",
+    "bytes": 593508,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_46803_Diary_of_Richard_Cocks_Volume_1CapeMerchant_in_the_English_Factory_in_Japan_16151622_with_Correspond.txt",
+    "bytes": 744029,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_47214_Buddhism_in_Its_Connexion_with_Brahmanism_and_Hinduism_and_in_Its_Contrast_with_Christianity.txt",
+    "bytes": 1002212,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_49835_The_Letters_of_Gracchus_on_the_East_India_Question.txt",
+    "bytes": 140393,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_51472_The_East_India_VadeMecum_Volume_2_of_2or_complete_guide_to_gentlemen_intended_for_the_civil_military.txt",
+    "bytes": 740140,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_52518_Memoirs_of_the_Revolution_in_Bengal_Anno_Dom_1757.txt",
+    "bytes": 154246,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_52739_Observations_on_the_Disturbances_in_the_Madras_Army_in_1809.txt",
+    "bytes": 442935,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_53400_The_East_India_VadeMecum_Volume_1_of_2or_complete_guide_to_gentlemen_intended_for_the_civil_military.txt",
+    "bytes": 743406,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_53670_A_Sketch_of_Assam_With_some_account_of_the_Hill_Tribes.txt",
+    "bytes": 296198,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_53717_Through_the_Sikh_War_A_Tale_of_the_Conquest_of_the_Punjaub.txt",
+    "bytes": 724212,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_54027_Nil_Darpan_or_The_Indigo_Planting_Mirror_A_DramaTranslated_from_the_Bengali_by_a_Native.txt",
+    "bytes": 205817,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_54561_The_Old_East_Indiamen.txt",
+    "bytes": 570527,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_54652_History_of_GujartGazetteer_of_the_Bombay_Presidency_Volume_I_Part_I.txt",
+    "bytes": 2015511,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_55465_The_Peoples_of_India.txt",
+    "bytes": 178076,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_55844_Military_Service_and_Adventures_in_the_Far_East_Vol_1_of_2Including_Sketches_of_the_Campaigns_Agains.txt",
+    "bytes": 369775,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_57265_The_Rmyana_Volume_1_Blakndam_and_Ayodhykndam.txt",
+    "bytes": 1002026,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_57350_Military_Service_and_Adventures_in_the_Far_East_Vol_2_of_2Including_Sketches_of_the_Campaigns_Agains.txt",
+    "bytes": 322909,
+    "status": "CERTIFIED_CLEAN_REPAIRED",
+    "sha256": "1fcac225f1b1b950d5c5bdb9cffed2289f8fc5a3271d9941c83b0eb5454904ba"
+  },
+  {
+    "filename": "CLEAN_57826_The_Rmyana_Volume_2_ranya_Kishkindh_and_Sundara_Kndam.txt",
+    "bytes": 1157545,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_57987_The_Present_State_of_the_British_Interest_in_IndiaWith_a_Plan_for_Establishing_a_Regular_System_of_G.txt",
+    "bytes": 204502,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_58344_Siddhartha_A_Poem_of_India.txt",
+    "bytes": 240889,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_58529_HobsonJobsonA_Glossary_of_Colloquial_AngloIndian_Words_and_Phrases_and_of_Kindred_Terms_Etymological.txt",
+    "bytes": 5313639,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_59333_Harolds_Bride_A_Tale.txt",
+    "bytes": 304503,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_59389_Ahnaat_paadet_ynn_muita_kertomuksia.txt",
+    "bytes": 296929,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_59401_Oral_Tradition_from_the_IndusComprised_in_Tales_to_Which_Are_Added_Explanatory_Notes.txt",
+    "bytes": 250706,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_59471_Haaksirikko.txt",
+    "bytes": 594193,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_59595_Memoir_of_the_Services_of_the_Bengal_ArtilleryFrom_the_Formation_of_the_Corps_to_the_Present_Time_wi.txt",
+    "bytes": 859968,
+    "status": "CERTIFIED_CLEAN_REPAIRED",
+    "sha256": "120ad750598e81c1edf645ece8974ac266be49afd36ee5809a1c8a6b99e7588d"
+  },
+  {
+    "filename": "CLEAN_5972_A_Fascinating_Traitor_An_AngloIndian_Story.txt",
+    "bytes": 712896,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_60188_The_Rmyana_Volume_3_Yuddhakndam.txt",
+    "bytes": 862733,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_6145_Tales_of_the_Punjab_Folklore_of_India.txt",
+    "bytes": 453414,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_61834_The_City_of_Dreadful_Night.txt",
+    "bytes": 109404,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_62496_The_Rmyana_Volume_4_Uttara_Knda.txt",
+    "bytes": 553547,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_62798_The_Bombay_City_Police_A_Historical_Sketch_16721916.txt",
+    "bytes": 462995,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_63132_The_Problem_of_the_Rupee_Its_Origin_and_Its_Solution.txt",
+    "bytes": 1005562,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_63231_Castes_In_India.txt",
+    "bytes": 56839,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_64535_A_Record_of_Buddhistic_KingdomsBeing_an_account_by_the_Chinese_monk_Fhien_of_his_travels_in_India_an.txt",
+    "bytes": 381425,
+    "status": "CERTIFIED_CLEAN_REPAIRED",
+    "sha256": "3141e114f8962f01c0011e01886bd6f6310ad949b9a54b83bd8e27f1ce65f7b1"
+  },
+  {
+    "filename": "CLEAN_64952_La_cit_de_lpouvantable_nuit.txt",
+    "bytes": 326673,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_66471_Like_Another_Helen.txt",
+    "bytes": 1056967,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_67691_PharmacographiaA_history_of_the_principal_drugs_of_vegetable_origin_met_with_in_Great_Britain_and_Br.txt",
+    "bytes": 2720880,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_68330_The_Great_White_Hand_Or_the_Tiger_of_Cawnpore_A_story_of_the_Indian_Mutiny.txt",
+    "bytes": 547807,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_69383_In_Old_Madras.txt",
+    "bytes": 530744,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_70057_Koti_ja_maailma.txt",
+    "bytes": 416728,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_70300_Legendary__romantic_tales_of_Indian_history.txt",
+    "bytes": 1111358,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_7166_The_Home_and_the_World.txt",
+    "bytes": 376424,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_73417_The_Great_Indian_Epics.txt",
+    "bytes": 464207,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_73950_Schwartz_of_Tanjore.txt",
+    "bytes": 386119,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_74298_In_furthest_Ind.txt",
+    "bytes": 674560,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_7452_Autobiography_of_a_Yogi.txt",
+    "bytes": 963222,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_74664_A_brief_history_of_the_3rd_Battalion_1st_Punjab_Regiment.txt",
+    "bytes": 90629,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_75863_Memoirs_of_the_Right_Rev_Daniel_Corrie_LLD_first_Bishop_of_Madras.txt",
+    "bytes": 1235844,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_76145_La_jeune_Inde.txt",
+    "bytes": 656301,
+    "status": "CERTIFIED_CLEAN"
+  },
+  {
+    "filename": "CLEAN_7951_Glimpses_of_BengalSelected_from_the_letters_of_Sir_Rabindranath_Tagore_1885_to_1895.txt",
+    "bytes": 139835,
+    "status": "CERTIFIED_CLEAN"
+  }
+]

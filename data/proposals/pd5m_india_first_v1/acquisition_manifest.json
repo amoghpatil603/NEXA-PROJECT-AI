@@ -1,0 +1,567 @@
+{
+  "corpus": "INDIA-FIRST",
+  "version": "1.0",
+  "total_records": 140,
+  "selections": [
+    {
+      "selection_index": 1,
+      "gutenberg_id": "1470"
+    },
+    {
+      "selection_index": 2,
+      "gutenberg_id": "64535"
+    },
+    {
+      "selection_index": 3,
+      "gutenberg_id": "2388"
+    },
+    {
+      "selection_index": 4,
+      "gutenberg_id": "2499"
+    },
+    {
+      "selection_index": 5,
+      "gutenberg_id": "2500"
+    },
+    {
+      "selection_index": 6,
+      "gutenberg_id": "2518"
+    },
+    {
+      "selection_index": 7,
+      "gutenberg_id": "3310"
+    },
+    {
+      "selection_index": 8,
+      "gutenberg_id": "7166"
+    },
+    {
+      "selection_index": 9,
+      "gutenberg_id": "7452"
+    },
+    {
+      "selection_index": 10,
+      "gutenberg_id": "10999"
+    },
+    {
+      "selection_index": 11,
+      "gutenberg_id": "7964"
+    },
+    {
+      "selection_index": 12,
+      "gutenberg_id": "10366"
+    },
+    {
+      "selection_index": 13,
+      "gutenberg_id": "10999"
+    },
+    {
+      "selection_index": 14,
+      "gutenberg_id": "11310"
+    },
+    {
+      "selection_index": 15,
+      "gutenberg_id": "11738"
+    },
+    {
+      "selection_index": 16,
+      "gutenberg_id": "11897"
+    },
+    {
+      "selection_index": 17,
+      "gutenberg_id": "11924"
+    },
+    {
+      "selection_index": 18,
+      "gutenberg_id": "12169"
+    },
+    {
+      "selection_index": 19,
+      "gutenberg_id": "12956"
+    },
+    {
+      "selection_index": 20,
+      "gutenberg_id": "13539"
+    },
+    {
+      "selection_index": 21,
+      "gutenberg_id": "20479"
+    },
+    {
+      "selection_index": 22,
+      "gutenberg_id": "20640"
+    },
+    {
+      "selection_index": 23,
+      "gutenberg_id": "20847"
+    },
+    {
+      "selection_index": 24,
+      "gutenberg_id": "24461"
+    },
+    {
+      "selection_index": 25,
+      "gutenberg_id": "24869"
+    },
+    {
+      "selection_index": 26,
+      "gutenberg_id": "27270"
+    },
+    {
+      "selection_index": 27,
+      "gutenberg_id": "33525"
+    },
+    {
+      "selection_index": 28,
+      "gutenberg_id": "34322"
+    },
+    {
+      "selection_index": 29,
+      "gutenberg_id": "34757"
+    },
+    {
+      "selection_index": 30,
+      "gutenberg_id": "40461"
+    },
+    {
+      "selection_index": 31,
+      "gutenberg_id": "40920"
+    },
+    {
+      "selection_index": 32,
+      "gutenberg_id": "41954"
+    },
+    {
+      "selection_index": 33,
+      "gutenberg_id": "45247"
+    },
+    {
+      "selection_index": 34,
+      "gutenberg_id": "45430"
+    },
+    {
+      "selection_index": 35,
+      "gutenberg_id": "47214"
+    },
+    {
+      "selection_index": 36,
+      "gutenberg_id": "52643"
+    },
+    {
+      "selection_index": 37,
+      "gutenberg_id": "57265"
+    },
+    {
+      "selection_index": 38,
+      "gutenberg_id": "57826"
+    },
+    {
+      "selection_index": 39,
+      "gutenberg_id": "58344"
+    },
+    {
+      "selection_index": 40,
+      "gutenberg_id": "59389"
+    },
+    {
+      "selection_index": 41,
+      "gutenberg_id": "59471"
+    },
+    {
+      "selection_index": 42,
+      "gutenberg_id": "60188"
+    },
+    {
+      "selection_index": 43,
+      "gutenberg_id": "62496"
+    },
+    {
+      "selection_index": 44,
+      "gutenberg_id": "63132"
+    },
+    {
+      "selection_index": 45,
+      "gutenberg_id": "63231"
+    },
+    {
+      "selection_index": 46,
+      "gutenberg_id": "64535"
+    },
+    {
+      "selection_index": 47,
+      "gutenberg_id": "70025"
+    },
+    {
+      "selection_index": 48,
+      "gutenberg_id": "70057"
+    },
+    {
+      "selection_index": 49,
+      "gutenberg_id": "70177"
+    },
+    {
+      "selection_index": 50,
+      "gutenberg_id": "72780"
+    },
+    {
+      "selection_index": 51,
+      "gutenberg_id": "73417"
+    },
+    {
+      "selection_index": 52,
+      "gutenberg_id": "76145"
+    },
+    {
+      "selection_index": 53,
+      "gutenberg_id": "2056"
+    },
+    {
+      "selection_index": 54,
+      "gutenberg_id": "5972"
+    },
+    {
+      "selection_index": 55,
+      "gutenberg_id": "6145"
+    },
+    {
+      "selection_index": 56,
+      "gutenberg_id": "8940"
+    },
+    {
+      "selection_index": 57,
+      "gutenberg_id": "10071"
+    },
+    {
+      "selection_index": 58,
+      "gutenberg_id": "10347"
+    },
+    {
+      "selection_index": 59,
+      "gutenberg_id": "12617"
+    },
+    {
+      "selection_index": 60,
+      "gutenberg_id": "12959"
+    },
+    {
+      "selection_index": 61,
+      "gutenberg_id": "17455"
+    },
+    {
+      "selection_index": 62,
+      "gutenberg_id": "12286"
+    },
+    {
+      "selection_index": 63,
+      "gutenberg_id": "12617"
+    },
+    {
+      "selection_index": 64,
+      "gutenberg_id": "12959"
+    },
+    {
+      "selection_index": 65,
+      "gutenberg_id": "17183"
+    },
+    {
+      "selection_index": 66,
+      "gutenberg_id": "17455"
+    },
+    {
+      "selection_index": 67,
+      "gutenberg_id": "20583"
+    },
+    {
+      "selection_index": 68,
+      "gutenberg_id": "22010"
+    },
+    {
+      "selection_index": 69,
+      "gutenberg_id": "41424"
+    },
+    {
+      "selection_index": 70,
+      "gutenberg_id": "20668"
+    },
+    {
+      "selection_index": 71,
+      "gutenberg_id": "22473"
+    },
+    {
+      "selection_index": 72,
+      "gutenberg_id": "23123"
+    },
+    {
+      "selection_index": 73,
+      "gutenberg_id": "24416"
+    },
+    {
+      "selection_index": 74,
+      "gutenberg_id": "24562"
+    },
+    {
+      "selection_index": 75,
+      "gutenberg_id": "26621"
+    },
+    {
+      "selection_index": 76,
+      "gutenberg_id": "26781"
+    },
+    {
+      "selection_index": 77,
+      "gutenberg_id": "28117"
+    },
+    {
+      "selection_index": 78,
+      "gutenberg_id": "29426"
+    },
+    {
+      "selection_index": 79,
+      "gutenberg_id": "29427"
+    },
+    {
+      "selection_index": 80,
+      "gutenberg_id": "32231"
+    },
+    {
+      "selection_index": 81,
+      "gutenberg_id": "33536"
+    },
+    {
+      "selection_index": 82,
+      "gutenberg_id": "34493"
+    },
+    {
+      "selection_index": 83,
+      "gutenberg_id": "36373"
+    },
+    {
+      "selection_index": 84,
+      "gutenberg_id": "36545"
+    },
+    {
+      "selection_index": 85,
+      "gutenberg_id": "36696"
+    },
+    {
+      "selection_index": 86,
+      "gutenberg_id": "36703"
+    },
+    {
+      "selection_index": 87,
+      "gutenberg_id": "36939"
+    },
+    {
+      "selection_index": 88,
+      "gutenberg_id": "37000"
+    },
+    {
+      "selection_index": 89,
+      "gutenberg_id": "37048"
+    },
+    {
+      "selection_index": 90,
+      "gutenberg_id": "37082"
+    },
+    {
+      "selection_index": 91,
+      "gutenberg_id": "37722"
+    },
+    {
+      "selection_index": 92,
+      "gutenberg_id": "38488"
+    },
+    {
+      "selection_index": 93,
+      "gutenberg_id": "38881"
+    },
+    {
+      "selection_index": 94,
+      "gutenberg_id": "40162"
+    },
+    {
+      "selection_index": 95,
+      "gutenberg_id": "40517"
+    },
+    {
+      "selection_index": 96,
+      "gutenberg_id": "41190"
+    },
+    {
+      "selection_index": 97,
+      "gutenberg_id": "20583"
+    },
+    {
+      "selection_index": 98,
+      "gutenberg_id": "42991"
+    },
+    {
+      "selection_index": 99,
+      "gutenberg_id": "42992"
+    },
+    {
+      "selection_index": 100,
+      "gutenberg_id": "42993"
+    },
+    {
+      "selection_index": 101,
+      "gutenberg_id": "42994"
+    },
+    {
+      "selection_index": 102,
+      "gutenberg_id": "42995"
+    },
+    {
+      "selection_index": 103,
+      "gutenberg_id": "42996"
+    },
+    {
+      "selection_index": 104,
+      "gutenberg_id": "42997"
+    },
+    {
+      "selection_index": 105,
+      "gutenberg_id": "44306"
+    },
+    {
+      "selection_index": 106,
+      "gutenberg_id": "44583"
+    },
+    {
+      "selection_index": 107,
+      "gutenberg_id": "44789"
+    },
+    {
+      "selection_index": 108,
+      "gutenberg_id": "46151"
+    },
+    {
+      "selection_index": 109,
+      "gutenberg_id": "46803"
+    },
+    {
+      "selection_index": 110,
+      "gutenberg_id": "48012"
+    },
+    {
+      "selection_index": 111,
+      "gutenberg_id": "49835"
+    },
+    {
+      "selection_index": 112,
+      "gutenberg_id": "51472"
+    },
+    {
+      "selection_index": 113,
+      "gutenberg_id": "52518"
+    },
+    {
+      "selection_index": 114,
+      "gutenberg_id": "52739"
+    },
+    {
+      "selection_index": 115,
+      "gutenberg_id": "53400"
+    },
+    {
+      "selection_index": 116,
+      "gutenberg_id": "53670"
+    },
+    {
+      "selection_index": 117,
+      "gutenberg_id": "53717"
+    },
+    {
+      "selection_index": 118,
+      "gutenberg_id": "54027"
+    },
+    {
+      "selection_index": 119,
+      "gutenberg_id": "54561"
+    },
+    {
+      "selection_index": 120,
+      "gutenberg_id": "54652"
+    },
+    {
+      "selection_index": 121,
+      "gutenberg_id": "55465"
+    },
+    {
+      "selection_index": 122,
+      "gutenberg_id": "55844"
+    },
+    {
+      "selection_index": 123,
+      "gutenberg_id": "57350"
+    },
+    {
+      "selection_index": 124,
+      "gutenberg_id": "57987"
+    },
+    {
+      "selection_index": 125,
+      "gutenberg_id": "58529"
+    },
+    {
+      "selection_index": 126,
+      "gutenberg_id": "59333"
+    },
+    {
+      "selection_index": 127,
+      "gutenberg_id": "59401"
+    },
+    {
+      "selection_index": 128,
+      "gutenberg_id": "59595"
+    },
+    {
+      "selection_index": 129,
+      "gutenberg_id": "61834"
+    },
+    {
+      "selection_index": 130,
+      "gutenberg_id": "62798"
+    },
+    {
+      "selection_index": 131,
+      "gutenberg_id": "64952"
+    },
+    {
+      "selection_index": 132,
+      "gutenberg_id": "66471"
+    },
+    {
+      "selection_index": 133,
+      "gutenberg_id": "67691"
+    },
+    {
+      "selection_index": 134,
+      "gutenberg_id": "68330"
+    },
+    {
+      "selection_index": 135,
+      "gutenberg_id": "69383"
+    },
+    {
+      "selection_index": 136,
+      "gutenberg_id": "70300"
+    },
+    {
+      "selection_index": 137,
+      "gutenberg_id": "73950"
+    },
+    {
+      "selection_index": 138,
+      "gutenberg_id": "74298"
+    },
+    {
+      "selection_index": 139,
+      "gutenberg_id": "74664"
+    },
+    {
+      "selection_index": 140,
+      "gutenberg_id": "75863"
+    }
+  ]
+}

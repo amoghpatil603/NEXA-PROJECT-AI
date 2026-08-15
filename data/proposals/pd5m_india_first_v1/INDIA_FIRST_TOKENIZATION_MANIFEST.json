@@ -1,0 +1,2514 @@
+{
+  "tokenizer": {
+    "type": "Byte-level BPE",
+    "vocab_size": 8000,
+    "path": "/content/NEXA-PROJECT-AI/backend/models/tokenizer/production/tokenizer.json",
+    "sha256": "31378293a460ae066753a5da27091f1e1fbc90f0605d2bcaf96e4b64e7af0d2a"
+  },
+  "works": [
+    {
+      "gutenberg_id": "1470",
+      "selection_numbers": [
+        1
+      ],
+      "original_titles": [
+        "The Fall of the Moghul Empire of Hindustan"
+      ],
+      "catalog_title": "The Fall of the Moghul Empire of Hindustan",
+      "author": "Keene, H. G. (Henry George), 1825-1915",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/1470/pg1470.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/1470_The_Fall_of_the_Moghul_Empire_of_Hindustan.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "83f8a9be11aa1f0966865110e1a3cdd5b934ecfc174e2bc84d8b5148a3a920f0",
+      "bytes": 505604
+    },
+    {
+      "gutenberg_id": "2056",
+      "selection_numbers": [
+        53
+      ],
+      "original_titles": [
+        "The Life of William Carey, Shoemaker & Missionary"
+      ],
+      "catalog_title": "The Life of William Carey, Shoemaker & Missionary",
+      "author": "Smith, George, 1833-1919",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/2056/pg2056.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/2056_The_Life_of_William_Carey_Shoemaker__Missionary.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "eadaf0884dcc6330a9fad43272ee478c76222776674b7fc6f2950c818d5e4466",
+      "bytes": 869588
+    },
+    {
+      "gutenberg_id": "2124",
+      "selection_numbers": [
+        2
+      ],
+      "original_titles": [
+        "A Record of Buddhistic Kingdoms\nBeing an account by the Chinese monk Fa-hsien of travels in India and Ceylon (A.D. 399-414) in search of the Buddhist books of discipline"
+      ],
+      "catalog_title": "A Record of Buddhistic Kingdoms\nBeing an account by the Chinese monk Fa-hsien of travels in India and Ceylon (A.D. 399-414) in search of the Buddhist books of discipline",
+      "author": "Faxian, 337?-422?; Legge, James, 1815-1897 [Translator]",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/2124/pg2124.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/2124_A_Record_of_Buddhistic_KingdomsBeing_an_account_by_the_Chinese_monk_Fahsien_of_travels_in_India_and_.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "6cd2afe97685a22ce00c5245dde67d6ffee547290009bdf17b2bc0f522d1e235",
+      "bytes": 315934
+    },
+    {
+      "gutenberg_id": "2388",
+      "selection_numbers": [
+        3
+      ],
+      "original_titles": [
+        "The Song Celestial; Or, Bhagavad-G\u00eet\u00e2 (from the Mah\u00e2bh\u00e2rata)\nBeing a discourse between Arjuna, Prince of India, and the Supreme Being under the form of Krishna"
+      ],
+      "catalog_title": "The Song Celestial; Or, Bhagavad-G\u00eet\u00e2 (from the Mah\u00e2bh\u00e2rata)\nBeing a discourse between Arjuna, Prince of India, and the Supreme Being under the form of Krishna",
+      "author": "Arnold, Edwin, Sir, 1832-1904 [Translator]",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/2388/pg2388.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/2388_The_Song_Celestial_Or_BhagavadGt_from_the_MahbhrataBeing_a_discourse_between_Arjuna_Prince_of_India_.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "85b22401a9d256179f9a2e407215eb516da9b8213f23c32e03d66709d839a9e0",
+      "bytes": 147501
+    },
+    {
+      "gutenberg_id": "2499",
+      "selection_numbers": [
+        4
+      ],
+      "original_titles": [
+        "Siddhartha: eine indische Dichtung"
+      ],
+      "catalog_title": "Siddhartha: eine indische Dichtung",
+      "author": "Hesse, Hermann, 1877-1962",
+      "language": "de",
+      "url": "https://www.gutenberg.org/cache/epub/2499/pg2499.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/2499_Siddhartha_eine_indische_Dichtung.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "4abd9cdc1e98e880229eab7a4b565e8867b0438b007117780078626e8a200102",
+      "bytes": 240238
+    },
+    {
+      "gutenberg_id": "2500",
+      "selection_numbers": [
+        5
+      ],
+      "original_titles": [
+        "Siddhartha"
+      ],
+      "catalog_title": "Siddhartha",
+      "author": "Hesse, Hermann, 1877-1962",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/2500/pg2500.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/2500_Siddhartha.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "345b21d95cb61c0756d482230ae4cb8c1858a0cef1835e1ba89d18cd471343a3",
+      "bytes": 242505
+    },
+    {
+      "gutenberg_id": "2518",
+      "selection_numbers": [
+        6
+      ],
+      "original_titles": [
+        "The Hungry Stones, and Other Stories"
+      ],
+      "catalog_title": "The Hungry Stones, and Other Stories",
+      "author": "Tagore, Rabindranath, 1861-1941",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/2518/pg2518.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/2518_The_Hungry_Stones_and_Other_Stories.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "b998f1c836608d9c524da499f05b0e699103f8a9d28cceb3c57b0c4211340b10",
+      "bytes": 288301
+    },
+    {
+      "gutenberg_id": "3310",
+      "selection_numbers": [
+        7
+      ],
+      "original_titles": [
+        "A Forgotten Empire (Vijayanagar): A Contribution to the History of India"
+      ],
+      "catalog_title": "A Forgotten Empire (Vijayanagar): A Contribution to the History of India",
+      "author": "Sewell, Robert, 1845-1925; Nunes, Fern\u00e3o, active 16th century; Paes, Domingos, active 16th century",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/3310/pg3310.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/3310_A_Forgotten_Empire_Vijayanagar_A_Contribution_to_the_History_of_India.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "0204690aff103f15b4892ad349ae0c9f4a06a0b7c657f0c2a697b10158951b7f",
+      "bytes": 820054
+    },
+    {
+      "gutenberg_id": "5972",
+      "selection_numbers": [
+        54
+      ],
+      "original_titles": [
+        "A Fascinating Traitor: An Anglo-Indian Story"
+      ],
+      "catalog_title": "A Fascinating Traitor: An Anglo-Indian Story",
+      "author": "Savage, Richard, 1846-1903",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/5972/pg5972.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/5972_A_Fascinating_Traitor_An_AngloIndian_Story.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "e35579c8517c89617f127bb86749485b5ad5b2dc408ffdad75180b4979cdddbc",
+      "bytes": 732808
+    },
+    {
+      "gutenberg_id": "6145",
+      "selection_numbers": [
+        55
+      ],
+      "original_titles": [
+        "Tales of the Punjab: Folklore of India"
+      ],
+      "catalog_title": "Tales of the Punjab: Folklore of India",
+      "author": "Steel, Flora Annie Webster, 1847-1929; Temple, Richard Carnac, Sir, 1850-1931 [Commentator]",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/6145/pg6145.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/6145_Tales_of_the_Punjab_Folklore_of_India.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "6f1e7eacb1aef6e776215a2dea11471a4f9b73306b29a34d333746337132520e",
+      "bytes": 473399
+    },
+    {
+      "gutenberg_id": "7166",
+      "selection_numbers": [
+        8
+      ],
+      "original_titles": [
+        "The Home and the World"
+      ],
+      "catalog_title": "The Home and the World",
+      "author": "Tagore, Rabindranath, 1861-1941; Tagore, Surendranath, 1872-1940 [Translator]",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/7166/pg7166.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/7166_The_Home_and_the_World.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "21fb3a8b6e600fb4ce9c50d5c00eee9e8669c0f7f2c151a12a838e020c7874c1",
+      "bytes": 396398
+    },
+    {
+      "gutenberg_id": "7452",
+      "selection_numbers": [
+        9
+      ],
+      "original_titles": [
+        "Autobiography of a Yogi"
+      ],
+      "catalog_title": "Autobiography of a Yogi",
+      "author": "Yogananda, Paramahansa, 1893-1952",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/7452/pg7452.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/7452_Autobiography_of_a_Yogi.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "1299580d5017a3b63194d739394ffec7a63145e6789c04cfc95be3241a0d7d79",
+      "bytes": 983099
+    },
+    {
+      "gutenberg_id": "7951",
+      "selection_numbers": [
+        10
+      ],
+      "original_titles": [
+        "Glimpses of Bengal\nSelected from the letters of Sir Rabindranath Tagore, 1885 to 1895"
+      ],
+      "catalog_title": "Glimpses of Bengal\nSelected from the letters of Sir Rabindranath Tagore, 1885 to 1895",
+      "author": "Tagore, Rabindranath, 1861-1941",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/7951/pg7951.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/7951_Glimpses_of_BengalSelected_from_the_letters_of_Sir_Rabindranath_Tagore_1885_to_1895.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "559aa6bafe2250411f9c7311643ed158dd2adeb54957cddb26a956a851865bda",
+      "bytes": 159747
+    },
+    {
+      "gutenberg_id": "7964",
+      "selection_numbers": [
+        11
+      ],
+      "original_titles": [
+        "The mystery of Cloomber"
+      ],
+      "catalog_title": "The mystery of Cloomber",
+      "author": "Doyle, Arthur Conan, 1859-1930",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/7964/pg7964.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/7964_The_mystery_of_Cloomber.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "2bc35d875b1ac0fe3c89f5528f7c96723283d208f7fe3a9b478bb19aef248fce",
+      "bytes": 295128
+    },
+    {
+      "gutenberg_id": "8940",
+      "selection_numbers": [
+        56
+      ],
+      "original_titles": [
+        "An Essay on the Evils of Popular Ignorance"
+      ],
+      "catalog_title": "An Essay on the Evils of Popular Ignorance",
+      "author": "Foster, John, 1770-1843",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/8940/pg8940.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/8940_An_Essay_on_the_Evils_of_Popular_Ignorance.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "cb930e3a23c6b07f261131a980e635c7d1509f91e4b7986461615fc1c225933d",
+      "bytes": 579253
+    },
+    {
+      "gutenberg_id": "10071",
+      "selection_numbers": [
+        57
+      ],
+      "original_titles": [
+        "By-Ways of Bombay"
+      ],
+      "catalog_title": "By-Ways of Bombay",
+      "author": "Edwardes, S. M. (Stephen Meredyth), 1873-1927",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/10071/pg10071.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/10071_ByWays_of_Bombay.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "9949b0e43edfade4f8b8ec651868e011c4b811b55a9bdb2f48fbd762ffab21c2",
+      "bytes": 196922
+    },
+    {
+      "gutenberg_id": "10347",
+      "selection_numbers": [
+        58
+      ],
+      "original_titles": [
+        "Free from School"
+      ],
+      "catalog_title": "Free from School",
+      "author": "Alvares, Rahul",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/10347/pg10347.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/10347_Free_from_School.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "c0f5f437774d8a3ec5dbfb6228014fbad94f00279826663c400a645d32d6f20e",
+      "bytes": 215272
+    },
+    {
+      "gutenberg_id": "10366",
+      "selection_numbers": [
+        12
+      ],
+      "original_titles": [
+        "Freedom's Battle\nBeing a Comprehensive Collection of Writings and Speeches on the Present Situation"
+      ],
+      "catalog_title": "Freedom's Battle\nBeing a Comprehensive Collection of Writings and Speeches on the Present Situation",
+      "author": "Gandhi, Mahatma, 1869-1948",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/10366/pg10366.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/10366_Freedoms_BattleBeing_a_Comprehensive_Collection_of_Writings_and_Speeches_on_the_Present_Situation.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "abf94075995dfe3c22792b5de72285433037436eebf68665dc3a6416f8118b84",
+      "bytes": 478305
+    },
+    {
+      "gutenberg_id": "10946",
+      "selection_numbers": [
+        59
+      ],
+      "original_titles": [
+        "Three Frenchmen in Bengal\nThe Commercial Ruin of the French Settlements in 1757"
+      ],
+      "catalog_title": "Three Frenchmen in Bengal\nThe Commercial Ruin of the French Settlements in 1757",
+      "author": "Hill, Samuel Charles, 1857-1926",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/10946/pg10946.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/10946_Three_Frenchmen_in_BengalThe_Commercial_Ruin_of_the_French_Settlements_in_1757.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "ef5a2bb78dd9ebf6d9244a263162d20ad5d08d5a9dbeb93ce412dd51d1f9db1f",
+      "bytes": 316183
+    },
+    {
+      "gutenberg_id": "10999",
+      "selection_numbers": [
+        13
+      ],
+      "original_titles": [
+        "Tales of Bengal"
+      ],
+      "catalog_title": "Tales of Bengal",
+      "author": "Banerjea, S. B.; Skrine, Francis Henry, 1847-1933 [Editor]",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/10999/pg10999.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/10999_Tales_of_Bengal.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "430882175e7bd8dfb344ce4eaa8f1ff341aa566ded55ba7425c987f6c6d091f0",
+      "bytes": 286050
+    },
+    {
+      "gutenberg_id": "11167",
+      "selection_numbers": [
+        60
+      ],
+      "original_titles": [
+        "Deccan Nursery Tales; or, Fairy Tales from the South"
+      ],
+      "catalog_title": "Deccan Nursery Tales; or, Fairy Tales from the South",
+      "author": "Kincaid, C. A. (Charles Augustus), 1870-1954; Dhurandhar, M. V. (Mahadev Visvanath), 1867-1944 [Illustrator]",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/11167/pg11167.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/11167_Deccan_Nursery_Tales_or_Fairy_Tales_from_the_South.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "7db4531d7923836876e57adb2f173d803f175a6be7d57dec30a868a4cd818810",
+      "bytes": 165382
+    },
+    {
+      "gutenberg_id": "11310",
+      "selection_numbers": [
+        14
+      ],
+      "original_titles": [
+        "Hindu Tales from the Sanskrit"
+      ],
+      "catalog_title": "Hindu Tales from the Sanskrit",
+      "author": "D'Anvers, N., 1844-1933 [Editor]; Mitra, Siddha Mohana, 1856-1925 [Translator]",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/11310/pg11310.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/11310_Hindu_Tales_from_the_Sanskrit.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "3fa083505719904e15c6d6dfd16330598b2f1526fc8c9cad7e40558fc077d2d1",
+      "bytes": 251719
+    },
+    {
+      "gutenberg_id": "11399",
+      "selection_numbers": [
+        61
+      ],
+      "original_titles": [
+        "The Pirates of Malabar, and an Englishwoman in India Two Hundred Years Ago"
+      ],
+      "catalog_title": "The Pirates of Malabar, and an Englishwoman in India Two Hundred Years Ago",
+      "author": "Biddulph, J. (John), 1840-1921",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/11399/pg11399.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/11399_The_Pirates_of_Malabar_and_an_Englishwoman_in_India_Two_Hundred_Years_Ago.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "a45245037e50d05cf79f75054c6da182e3a863e455327732f6d1b595e1fd42df",
+      "bytes": 444671
+    },
+    {
+      "gutenberg_id": "11738",
+      "selection_numbers": [
+        15
+      ],
+      "original_titles": [
+        "Hindoo Tales; Or, the Adventures of Ten Princes"
+      ],
+      "catalog_title": "Hindoo Tales; Or, the Adventures of Ten Princes",
+      "author": "Dandin, active 7th century; Jacob, Philip Whittington, 1805-1889 [Translator]",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/11738/pg11738.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/11738_Hindoo_Tales_Or_the_Adventures_of_Ten_Princes.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "7fbf558599468e0a5c8a5fdc7fc90e927af7e08f37991be7eca10f6769d351c6",
+      "bytes": 319866
+    },
+    {
+      "gutenberg_id": "11897",
+      "selection_numbers": [
+        16
+      ],
+      "original_titles": [
+        "On the Indian Sect of the Jainas"
+      ],
+      "catalog_title": "On the Indian Sect of the Jainas",
+      "author": "B\u00fchler, Georg, 1837-1898; Burgess, James, 1832-1916 [Editor]",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/11897/pg11897.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/11897_On_the_Indian_Sect_of_the_Jainas.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "5760100492dc233f80a276d39196ddff17711d8e653399bbe50b62773e45482d",
+      "bytes": 145304
+    },
+    {
+      "gutenberg_id": "11924",
+      "selection_numbers": [
+        17
+      ],
+      "original_titles": [
+        "The Loves of Krishna in Indian Painting and Poetry"
+      ],
+      "catalog_title": "The Loves of Krishna in Indian Painting and Poetry",
+      "author": "Archer, W. G. (William George), 1907-1979",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/11924/pg11924.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/11924_The_Loves_of_Krishna_in_Indian_Painting_and_Poetry.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "9c9b3e134e4b43f9d3fb5c957366324f2344965ba381a456ad5c3315e61b9d59",
+      "bytes": 358485
+    },
+    {
+      "gutenberg_id": "12169",
+      "selection_numbers": [
+        18
+      ],
+      "original_titles": [
+        "Sakoontala; Or, The Lost Ring: An Indian Drama"
+      ],
+      "catalog_title": "Sakoontala; Or, The Lost Ring: An Indian Drama",
+      "author": "K\u0101lid\u0101sa; Monier-Williams, Monier, Sir, 1819-1899 [Translator]",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/12169/pg12169.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/12169_Sakoontala_Or_The_Lost_Ring_An_Indian_Drama.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "c981c06dc98f4753937345baaff1d1a6a907a4ba8b5320f68799448e30d83f81",
+      "bytes": 334197
+    },
+    {
+      "gutenberg_id": "12286",
+      "selection_numbers": [
+        62
+      ],
+      "original_titles": [
+        "Flowers and Flower-Gardens\nWith an Appendix of Practical Instructions and Useful Information Respecting the Anglo-Indian Flower-Garden"
+      ],
+      "catalog_title": "Flowers and Flower-Gardens\nWith an Appendix of Practical Instructions and Useful Information Respecting the Anglo-Indian Flower-Garden",
+      "author": "Richardson, David Lester, 1801-1865",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/12286/pg12286.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/12286_Flowers_and_FlowerGardensWith_an_Appendix_of_Practical_Instructions_and_Useful_Information_Respectin.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "c3a2a1b7695d5bd79a34e9554cfc8220435529e8b867af19b4c005a749c39cf1",
+      "bytes": 646874
+    },
+    {
+      "gutenberg_id": "12617",
+      "selection_numbers": [
+        63
+      ],
+      "original_titles": [
+        "Recollections of Calcutta for over Half a Century"
+      ],
+      "catalog_title": "Recollections of Calcutta for over Half a Century",
+      "author": "Massey, Montague",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/12617/pg12617.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/12617_Recollections_of_Calcutta_for_over_Half_a_Century.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "83f61fac996c3bd21c44e7ba6d750fed919a7ffec8dc994d03567cd590d5edf8",
+      "bytes": 191147
+    },
+    {
+      "gutenberg_id": "12956",
+      "selection_numbers": [
+        19
+      ],
+      "original_titles": [
+        "A History of Indian Philosophy, Volume 1"
+      ],
+      "catalog_title": "A History of Indian Philosophy, Volume 1",
+      "author": "Dasgupta, Surendranath, 1885-1952",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/12956/pg12956.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/12956_A_History_of_Indian_Philosophy_Volume_1.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "dab6389ae58141c80f42500638b11ae94379c4750e2d48b660f4d042bc35922c",
+      "bytes": 1378893
+    },
+    {
+      "gutenberg_id": "12959",
+      "selection_numbers": [
+        64
+      ],
+      "original_titles": [
+        "Newton Forster"
+      ],
+      "catalog_title": "Newton Forster",
+      "author": "Marryat, Frederick, 1792-1848",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/12959/pg12959.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/12959_Newton_Forster.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "92ea91e228f31d8989dfe77a2584645cef3af3e8010e45b69a6adb99679c79d2",
+      "bytes": 805074
+    },
+    {
+      "gutenberg_id": "13539",
+      "selection_numbers": [
+        20
+      ],
+      "original_titles": [
+        "Dr. Scudder's Tales for Little Readers, About the Heathen."
+      ],
+      "catalog_title": "Dr. Scudder's Tales for Little Readers, About the Heathen.",
+      "author": "Scudder, John, 1793-1855",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/13539/pg13539.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/13539_Dr_Scudders_Tales_for_Little_Readers_About_the_Heathen.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "3fa2a74b83e6d97f73c2ea03a190c09ecabae0e3870aa99340ba27bb8ad83610",
+      "bytes": 231161
+    },
+    {
+      "gutenberg_id": "17183",
+      "selection_numbers": [
+        65
+      ],
+      "original_titles": [
+        "Atm\u00e2\nA Romance"
+      ],
+      "catalog_title": "Atm\u00e2\nA Romance",
+      "author": "Frazer, C. A. (Caroline Augusta)",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/17183/pg17183.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/17183_AtmA_Romance.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "49498e73d49763c46a3497dc3b9273e0d7ee62a0c7775c784b044bdbbed36c7c",
+      "bytes": 166131
+    },
+    {
+      "gutenberg_id": "17455",
+      "selection_numbers": [
+        66
+      ],
+      "original_titles": [
+        "The Poison Tree: A Tale of Hindu Life in Bengal"
+      ],
+      "catalog_title": "The Poison Tree: A Tale of Hindu Life in Bengal",
+      "author": "Cattopadhyaya, Bankimacandra, 1838-1894; Knight, Miriam S. [Translator]",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/17455/pg17455.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/17455_The_Poison_Tree_A_Tale_of_Hindu_Life_in_Bengal.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "a2341c5a3967c55af6e42c8c81745ba9712d83a8df690f1c0fe52602c30a6166",
+      "bytes": 293947
+    },
+    {
+      "gutenberg_id": "20479",
+      "selection_numbers": [
+        21
+      ],
+      "original_titles": [
+        "Le R\u00e2m\u00e2yana - tome premier\nPo\u00e8me sanscrit de Valmiky"
+      ],
+      "catalog_title": "Le R\u00e2m\u00e2yana - tome premier\nPo\u00e8me sanscrit de Valmiky",
+      "author": "Valmiki; Fauche, Hippolyte, 1797-1869 [Translator]",
+      "language": "fr",
+      "url": "https://www.gutenberg.org/cache/epub/20479/pg20479.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/20479_Le_Rmyana__tome_premierPome_sanscrit_de_Valmiky.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "cbb1eff23df25d94747c2a00260a7278372d26b22369f07f716c6a5ab0bfcf6b",
+      "bytes": 686911
+    },
+    {
+      "gutenberg_id": "20583",
+      "selection_numbers": [
+        67
+      ],
+      "original_titles": [
+        "The Tribes and Castes of the Central Provinces of India, Volume 1"
+      ],
+      "catalog_title": "The Tribes and Castes of the Central Provinces of India, Volume 1",
+      "author": "Russell, R. V. (Robert Vane), 1873-1915",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/20583/pg20583.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/20583_The_Tribes_and_Castes_of_the_Central_Provinces_of_India_Volume_1.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "3b29b7e6955a02196ba4ab2a461979da3d94207bfa9a01b58ae017720521499c",
+      "bytes": 1144007
+    },
+    {
+      "gutenberg_id": "20640",
+      "selection_numbers": [
+        22
+      ],
+      "original_titles": [
+        "Le R\u00e2m\u00e2yana - tome second\nPo\u00e8me sanscrit de Valmiky"
+      ],
+      "catalog_title": "Le R\u00e2m\u00e2yana - tome second\nPo\u00e8me sanscrit de Valmiky",
+      "author": "Valmiki; Fauche, Hippolyte, 1797-1869 [Translator]",
+      "language": "fr",
+      "url": "https://www.gutenberg.org/cache/epub/20640/pg20640.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/20640_Le_Rmyana__tome_secondPome_sanscrit_de_Valmiky.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "ed4a01eccb6cbcd656ccaa459fbf43faf73dbbd60b9ff691f723a1724604a008",
+      "bytes": 611975
+    },
+    {
+      "gutenberg_id": "20668",
+      "selection_numbers": [
+        70,
+        97
+      ],
+      "original_titles": [
+        "The Tribes and Castes of the Central Provinces of India, Volume 4",
+        "The Tribes and Castes of the Central Provinces of India, Volume 4"
+      ],
+      "catalog_title": "The Tribes and Castes of the Central Provinces of India, Volume 4",
+      "author": "Russell, R. V. (Robert Vane), 1873-1915",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/20668/pg20668.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/20668_The_Tribes_and_Castes_of_the_Central_Provinces_of_India_Volume_4.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "0a2429638a2e6397bb78332efce8fa79a879a7ffd96f9eda7607ec4d162f56db",
+      "bytes": 1402522
+    },
+    {
+      "gutenberg_id": "20847",
+      "selection_numbers": [
+        23
+      ],
+      "original_titles": [
+        "India: What can it teach us?\nA Course of Lectures Delivered before the University Of Cambridge"
+      ],
+      "catalog_title": "India: What can it teach us?\nA Course of Lectures Delivered before the University Of Cambridge",
+      "author": "M\u00fcller, F. Max (Friedrich Max), 1823-1900; Wilder, Alexander, 1823-1908 [Commentator]",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/20847/pg20847.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/20847_India_What_can_it_teach_usA_Course_of_Lectures_Delivered_before_the_University_Of_Cambridge.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "47f77e7b5285d399ce063bc13e3d03e425fcd816eadfbce3515fc377aa36edc4",
+      "bytes": 550070
+    },
+    {
+      "gutenberg_id": "22010",
+      "selection_numbers": [
+        68
+      ],
+      "original_titles": [
+        "The Tribes and Castes of the Central Provinces of India, Volume 2"
+      ],
+      "catalog_title": "The Tribes and Castes of the Central Provinces of India, Volume 2",
+      "author": "Russell, R. V. (Robert Vane), 1873-1915",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/22010/pg22010.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/22010_The_Tribes_and_Castes_of_the_Central_Provinces_of_India_Volume_2.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "75f8b32599655c22944a42fb5818e0bb727b9246e4ac5a709e1ea0058e5df6f7",
+      "bytes": 1238790
+    },
+    {
+      "gutenberg_id": "22473",
+      "selection_numbers": [
+        71
+      ],
+      "original_titles": [
+        "Onder de wilde stammen op de grenzen van Afghanistan\nDe Aarde en haar Volken, 1917"
+      ],
+      "catalog_title": "Onder de wilde stammen op de grenzen van Afghanistan\nDe Aarde en haar Volken, 1917",
+      "author": "Pennell, T. L. (Theodore Leighton), 1867-1912",
+      "language": "nl",
+      "url": "https://www.gutenberg.org/cache/epub/22473/pg22473.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/22473_Onder_de_wilde_stammen_op_de_grenzen_van_AfghanistanDe_Aarde_en_haar_Volken_1917.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "6843b16f31315b242dd6531a1d1dadc1149a8502d2881c9e4f83cd3a106053c4",
+      "bytes": 194843
+    },
+    {
+      "gutenberg_id": "23123",
+      "selection_numbers": [
+        72
+      ],
+      "original_titles": [
+        "Old Daniel"
+      ],
+      "catalog_title": "Old Daniel",
+      "author": "Hodson, Thomas",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/23123/pg23123.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/23123_Old_Daniel.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "64b24b0c0b3e2f3f6f3d6fbcd8672db6f864d72d3bd3c0966da4302ab635aacd",
+      "bytes": 116776
+    },
+    {
+      "gutenberg_id": "24416",
+      "selection_numbers": [
+        73
+      ],
+      "original_titles": [
+        "Life and Work in Benares and Kumaon, 1839-1877"
+      ],
+      "catalog_title": "Life and Work in Benares and Kumaon, 1839-1877",
+      "author": "Kennedy, James, 1815-1899",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/24416/pg24416.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/24416_Life_and_Work_in_Benares_and_Kumaon_18391877.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "1c7e13e1ab569acfe76527a3490e9812721f2bf27f25695f6047fae08fcfd319",
+      "bytes": 679065
+    },
+    {
+      "gutenberg_id": "24461",
+      "selection_numbers": [
+        24
+      ],
+      "original_titles": [
+        "Third class in Indian railways"
+      ],
+      "catalog_title": "Third class in Indian railways",
+      "author": "Gandhi, Mahatma, 1869-1948",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/24461/pg24461.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/24461_Third_class_in_Indian_railways.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "eb3a86dead887c3d1f501c847eedb23943ca6f19800f956408713d5f7af90bbb",
+      "bytes": 74428
+    },
+    {
+      "gutenberg_id": "24562",
+      "selection_numbers": [
+        74
+      ],
+      "original_titles": [
+        "The Panjab, North-West Frontier Province, and Kashmir"
+      ],
+      "catalog_title": "The Panjab, North-West Frontier Province, and Kashmir",
+      "author": "Douie, James McCrone, Sir, 1854-1935",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/24562/pg24562.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/24562_The_Panjab_NorthWest_Frontier_Province_and_Kashmir.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "d48625966e21acf3142220623d74c7a7dbaed4a7878366a5e6299e9bc70864e0",
+      "bytes": 564054
+    },
+    {
+      "gutenberg_id": "24869",
+      "selection_numbers": [
+        25
+      ],
+      "original_titles": [
+        "The R\u00e1m\u00e1yan of V\u00e1lm\u00edki, translated into English verse"
+      ],
+      "catalog_title": "The R\u00e1m\u00e1yan of V\u00e1lm\u00edki, translated into English verse",
+      "author": "Valmiki; Griffith, Ralph T. H. (Ralph Thomas Hotchkin), 1826-1906 [Translator]",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/24869/pg24869.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/24869_The_Rmyan_of_Vlmki_translated_into_English_verse.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "4310b710a9c6942490bf8270a8a6620f314dcc2adf7b413833596ca9aaebca6f",
+      "bytes": 2395956
+    },
+    {
+      "gutenberg_id": "26621",
+      "selection_numbers": [
+        75
+      ],
+      "original_titles": [
+        "The Story of Madras"
+      ],
+      "catalog_title": "The Story of Madras",
+      "author": "Barlow, Glyn",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/26621/pg26621.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/26621_The_Story_of_Madras.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "c8d42e460a92bc3260613424b0e734b8b6a8b8dddce84f8f6e2c52112d7e4205",
+      "bytes": 213697
+    },
+    {
+      "gutenberg_id": "26781",
+      "selection_numbers": [
+        76
+      ],
+      "original_titles": [
+        "Letters on the Nicobar islands, their natural productions, and the manners, customs, and superstitions of the natives\nwith an account of an attempt made by the Church of the\nUnited Brethren, to convert them to Christianity"
+      ],
+      "catalog_title": "Letters on the Nicobar islands, their natural productions, and the manners, customs, and superstitions of the natives\nwith an account of an attempt made by the Church of the\nUnited Brethren, to convert them to Christianity",
+      "author": "Haensel, Johann Gottfried; Latrobe, Christian Ignatius, 1758-1836 [Editor]",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/26781/pg26781.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/26781_Letters_on_the_Nicobar_islands_their_natural_productions_and_the_manners_customs_and_superstitions_o.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "dd2316d42d8d4573928f932a1840d2334037e67779bffd1846206bfe2693392f",
+      "bytes": 112919
+    },
+    {
+      "gutenberg_id": "27270",
+      "selection_numbers": [
+        26
+      ],
+      "original_titles": [
+        "India's Problem, Krishna or Christ"
+      ],
+      "catalog_title": "India's Problem, Krishna or Christ",
+      "author": "Jones, John P. (John Peter), 1847-1916",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/27270/pg27270.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/27270_Indias_Problem_Krishna_or_Christ.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "94eb3830f508e6006d1ece30626fa3d47246382fd65dc896190b3fb8463f8079",
+      "bytes": 603216
+    },
+    {
+      "gutenberg_id": "28117",
+      "selection_numbers": [
+        77
+      ],
+      "original_titles": [
+        "India, Its Life and Thought"
+      ],
+      "catalog_title": "India, Its Life and Thought",
+      "author": "Jones, John P. (John Peter), 1847-1916",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/28117/pg28117.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/28117_India_Its_Life_and_Thought.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "be1da72d438a4d783008c69dedfe75b132aa5abf563da2a43b471de07595f4b7",
+      "bytes": 547157
+    },
+    {
+      "gutenberg_id": "29426",
+      "selection_numbers": [
+        78
+      ],
+      "original_titles": [
+        "Things as they are"
+      ],
+      "catalog_title": "Things as they are",
+      "author": "Carmichael, Amy, 1867-1951",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/29426/pg29426.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/29426_Things_as_they_are.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "09b55fe9fcf737c41cfa87e41ab38d4ee3ba312a633f2b4faf7c3c2d14bbd842",
+      "bytes": 518174
+    },
+    {
+      "gutenberg_id": "29427",
+      "selection_numbers": [
+        79
+      ],
+      "original_titles": [
+        "Lotus Buds"
+      ],
+      "catalog_title": "Lotus Buds",
+      "author": "Carmichael, Amy, 1867-1951",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/29427/pg29427.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/29427_Lotus_Buds.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "c24d2ebe7cefcce06993264b865b9f12905bbc0150e8c8fc1f3a0ad54ea2a905",
+      "bytes": 476914
+    },
+    {
+      "gutenberg_id": "32231",
+      "selection_numbers": [
+        80
+      ],
+      "original_titles": [
+        "Among the Wild Tribes of the Afghan Frontier\nA Record of Sixteen Years' Close Intercourse with the Natives of the Indian Marches"
+      ],
+      "catalog_title": "Among the Wild Tribes of the Afghan Frontier\nA Record of Sixteen Years' Close Intercourse with the Natives of the Indian Marches",
+      "author": "Pennell, T. L. (Theodore Leighton), 1867-1912",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/32231/pg32231.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/32231_Among_the_Wild_Tribes_of_the_Afghan_FrontierA_Record_of_Sixteen_Years_Close_Intercourse_with_the_Nat.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "e4e0822908a3a31e36dca16fcd97ec23eac1c74331ba502c61f4910aa71137ab",
+      "bytes": 607777
+    },
+    {
+      "gutenberg_id": "33525",
+      "selection_numbers": [
+        27
+      ],
+      "original_titles": [
+        "Stories from Tagore"
+      ],
+      "catalog_title": "Stories from Tagore",
+      "author": "Tagore, Rabindranath, 1861-1941",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/33525/pg33525.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/33525_Stories_from_Tagore.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "d0771a5490e4b54131714c4792b04800c299c747799edcf80f0d55698c4d9400",
+      "bytes": 298445
+    },
+    {
+      "gutenberg_id": "33536",
+      "selection_numbers": [
+        81
+      ],
+      "original_titles": [
+        "A report of Major Hart's case, of rice-frauds, near Seringapatam"
+      ],
+      "catalog_title": "A report of Major Hart's case, of rice-frauds, near Seringapatam",
+      "author": "Inglis, W. H.",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/33536/pg33536.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/33536_A_report_of_Major_Harts_case_of_ricefrauds_near_Seringapatam.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "540ff7559121e8a2b3b21b7919b653b7fd4938560b3f3196e58d3fe21aaad875",
+      "bytes": 48295
+    },
+    {
+      "gutenberg_id": "34322",
+      "selection_numbers": [
+        28
+      ],
+      "original_titles": [
+        "The Moghul"
+      ],
+      "catalog_title": "The Moghul",
+      "author": "Hoover, Thomas, 1941-",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/34322/pg34322.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/34322_The_Moghul.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "2af72b2013d14891674f40b0b1af18077beea508110cba0ec53cd0f6febbc636",
+      "bytes": 1308198
+    },
+    {
+      "gutenberg_id": "34493",
+      "selection_numbers": [
+        82
+      ],
+      "original_titles": [
+        "Draw Swords! In the Horse Artillery"
+      ],
+      "catalog_title": "Draw Swords! In the Horse Artillery",
+      "author": "Fenn, George Manville, 1831-1909; Groome, William H. C., 1860-1914 [Illustrator]",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/34493/pg34493.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/34493_Draw_Swords_In_the_Horse_Artillery.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "ef1882b2ea304a608bb194f4921e73692b3572d348ca58445500713d4ed22a83",
+      "bytes": 563220
+    },
+    {
+      "gutenberg_id": "34757",
+      "selection_numbers": [
+        29
+      ],
+      "original_titles": [
+        "Mashi, and Other Stories"
+      ],
+      "catalog_title": "Mashi, and Other Stories",
+      "author": "Tagore, Rabindranath, 1861-1941",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/34757/pg34757.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/34757_Mashi_and_Other_Stories.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "c8d36a4d6301194a8eb1a353ab5adc25eec20b6a2e6b818f790fa29c2f666214",
+      "bytes": 228041
+    },
+    {
+      "gutenberg_id": "36373",
+      "selection_numbers": [
+        83
+      ],
+      "original_titles": [
+        "H. P. Blavatsky; A Great Betrayal"
+      ],
+      "catalog_title": "H. P. Blavatsky; A Great Betrayal",
+      "author": "Cleather, Alice Leighton, 1854-1938",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/36373/pg36373.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/36373_H_P_Blavatsky_A_Great_Betrayal.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "b272ed05cccb409334882abcaebe395ee6e8b570762661c224bab29d6e9a0b35",
+      "bytes": 214618
+    },
+    {
+      "gutenberg_id": "36545",
+      "selection_numbers": [
+        84
+      ],
+      "original_titles": [
+        "In the Andamans and Nicobars: The Narrative of a Cruise in the Schooner \"Terrapin\""
+      ],
+      "catalog_title": "In the Andamans and Nicobars: The Narrative of a Cruise in the Schooner \"Terrapin\"",
+      "author": "Kloss, C. Boden (Cecil Boden), 1877-",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/36545/pg36545.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/36545_In_the_Andamans_and_Nicobars_The_Narrative_of_a_Cruise_in_the_Schooner_Terrapin.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "30b147bf03e5c41aa654a024c87bc08d5a1a971a3c823a78e813684fd1e3abd6",
+      "bytes": 843085
+    },
+    {
+      "gutenberg_id": "36696",
+      "selection_numbers": [
+        85
+      ],
+      "original_titles": [
+        "Old Deccan Days; or, Hindoo Fairy Legends Current in Southern India"
+      ],
+      "catalog_title": "Old Deccan Days; or, Hindoo Fairy Legends Current in Southern India",
+      "author": "Frere, Mary, 1845-1911 [Compiler]; Frere, Bartle, 1815-1884 [Contributor]",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/36696/pg36696.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/36696_Old_Deccan_Days_or_Hindoo_Fairy_Legends_Current_in_Southern_India.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "9a6a359848b1c773cc0e511ec2139114c57a31b02b91e35c14b798ee25a422a1",
+      "bytes": 582771
+    },
+    {
+      "gutenberg_id": "36703",
+      "selection_numbers": [
+        86
+      ],
+      "original_titles": [
+        "A Bayard From Bengal\nBeing some account of the Magnificent and Spanking Career of Chunder Bindabun Bhosh,..."
+      ],
+      "catalog_title": "A Bayard From Bengal\nBeing some account of the Magnificent and Spanking Career of Chunder Bindabun Bhosh,...",
+      "author": "Anstey, F., 1856-1934; Partridge, Bernard, 1861-1945 [Illustrator]",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/36703/pg36703.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/36703_A_Bayard_From_BengalBeing_some_account_of_the_Magnificent_and_Spanking_Career_of_Chunder_Bindabun_Bh.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "88e8dcc32490deefdbffb7cdea6d6437d6270f55f0be24bbbe52d70ac34aceff",
+      "bytes": 151370
+    },
+    {
+      "gutenberg_id": "36939",
+      "selection_numbers": [
+        87
+      ],
+      "original_titles": [
+        "Free Trade with India\nAn Enquiry into the True State of the Question at Issue Between His Majesty's Ministers, the Honorable the East India Company, and the Public at Large, on the Justice and Policy of a Free Trade to India"
+      ],
+      "catalog_title": "Free Trade with India\nAn Enquiry into the True State of the Question at Issue Between His Majesty's Ministers, the Honorable the East India Company, and the Public at Large, on the Justice and Policy of a Free Trade to India",
+      "author": "Common sense (Writer), active 1813",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/36939/pg36939.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/36939_Free_Trade_with_IndiaAn_Enquiry_into_the_True_State_of_the_Question_at_Issue_Between_His_Majestys_Mi.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "5bd80493d1a44a27a07b2221628c47aa9984898f31e3c590c8ad9305b541ec66",
+      "bytes": 46284
+    },
+    {
+      "gutenberg_id": "37000",
+      "selection_numbers": [
+        88
+      ],
+      "original_titles": [
+        "The Proper Limits of the Government's Interference with the Affairs of the East-India Company\nAttempted to be Assigned with some few Reflections Extorted by, and on, the Distracted State of the Times"
+      ],
+      "catalog_title": "The Proper Limits of the Government's Interference with the Affairs of the East-India Company\nAttempted to be Assigned with some few Reflections Extorted by, and on, the Distracted State of the Times",
+      "author": "Stair, John Dalrymple, Earl of, 1720-1789",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/37000/pg37000.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/37000_The_Proper_Limits_of_the_Governments_Interference_with_the_Affairs_of_the_EastIndia_CompanyAttempted.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "1e11549c96234adb4e90c310ba103a57c8e309de90528f290982ff96c7d6485f",
+      "bytes": 41274
+    },
+    {
+      "gutenberg_id": "37048",
+      "selection_numbers": [
+        89
+      ],
+      "original_titles": [
+        "A Caution to the Directors of the East-India Company\nWith Regard to Their Making the Midsummer Dividend of Five Per Cent. Without Due Attention to a Late Act of Parliament, and a By-law of Their Own"
+      ],
+      "catalog_title": "A Caution to the Directors of the East-India Company\nWith Regard to Their Making the Midsummer Dividend of Five Per Cent. Without Due Attention to a Late Act of Parliament, and a By-law of Their Own",
+      "author": "Anonymous",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/37048/pg37048.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/37048_A_Caution_to_the_Directors_of_the_EastIndia_CompanyWith_Regard_to_Their_Making_the_Midsummer_Dividen.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "6844715c1484f7711e6462b829679a376aa8011236da56f13b4fd1ecee9674a5",
+      "bytes": 61427
+    },
+    {
+      "gutenberg_id": "37082",
+      "selection_numbers": [
+        90
+      ],
+      "original_titles": [
+        "A Short View of the Laws Now Subsisting with Respect to the Powers of the East India Company\nTo Borrow Money under their Seal, and to Incur Debts in the Course of their Trade, by the Purchase of Goods on Credit, and by Freighting Ships or other Mercantile Transactions"
+      ],
+      "catalog_title": "A Short View of the Laws Now Subsisting with Respect to the Powers of the East India Company\nTo Borrow Money under their Seal, and to Incur Debts in the Course of their Trade, by the Purchase of Goods on Credit, and by Freighting Ships or other Mercantile Transactions",
+      "author": "Pulteney, William, 1729-1805; Stewart, John, 1749-1822",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/37082/pg37082.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/37082_A_Short_View_of_the_Laws_Now_Subsisting_with_Respect_to_the_Powers_of_the_East_India_CompanyTo_Borro.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "eab5c48a34db766c13f52184b3699eb20b229eca4bb9ed65dc06b3ddac057806",
+      "bytes": 57061
+    },
+    {
+      "gutenberg_id": "37722",
+      "selection_numbers": [
+        91
+      ],
+      "original_titles": [
+        "The Hindoos as They Are\nA Description of the Manners, Customs and the Inner Life of Hindoo Society in Bengal"
+      ],
+      "catalog_title": "The Hindoos as They Are\nA Description of the Manners, Customs and the Inner Life of Hindoo Society in Bengal",
+      "author": "Sivachandra Vasu",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/37722/pg37722.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/37722_The_Hindoos_as_They_AreA_Description_of_the_Manners_Customs_and_the_Inner_Life_of_Hindoo_Society_in_.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "c083bc01dba0b9027235fcb98117ace42ab2ca152f1496ca38552fb8131ec9f9",
+      "bytes": 665295
+    },
+    {
+      "gutenberg_id": "38488",
+      "selection_numbers": [
+        92
+      ],
+      "original_titles": [
+        "Folk-Tales of Bengal"
+      ],
+      "catalog_title": "Folk-Tales of Bengal",
+      "author": "Day, Lal Behari, 1826-1894; Goble, Warwick, 1862-1943 [Illustrator]",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/38488/pg38488.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/38488_FolkTales_of_Bengal.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "bb050c97a53dfc42afece4cf4c2a3799d1ecf15cfd0e2752c87419b5df1eac9e",
+      "bytes": 426229
+    },
+    {
+      "gutenberg_id": "38881",
+      "selection_numbers": [
+        93
+      ],
+      "original_titles": [
+        "In Kali's Country: Tales from Sunny India"
+      ],
+      "catalog_title": "In Kali's Country: Tales from Sunny India",
+      "author": "Sheets, Emily Churchill Thompson, 1875-; Childs, Elma McNeal [Illustrator]",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/38881/pg38881.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/38881_In_Kalis_Country_Tales_from_Sunny_India.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "32bc52f3c1d898f356e9690297b22c127680c4f0d89c09b02ef701dd53733a7c",
+      "bytes": 288963
+    },
+    {
+      "gutenberg_id": "40162",
+      "selection_numbers": [
+        94
+      ],
+      "original_titles": [
+        "The Humour and Pathos of Anglo-Indian Life\nExtracts from his brother's note-book, made by Dr. Ticklemore"
+      ],
+      "catalog_title": "The Humour and Pathos of Anglo-Indian Life\nExtracts from his brother's note-book, made by Dr. Ticklemore",
+      "author": "Mayer, J. E.",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/40162/pg40162.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/40162_The_Humour_and_Pathos_of_AngloIndian_LifeExtracts_from_his_brothers_notebook_made_by_Dr_Ticklemore.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "5886c9f779c57f2398f31e0f7432b3ed54e39cb3d1da7749a3e051776d1d8dcb",
+      "bytes": 534363
+    },
+    {
+      "gutenberg_id": "40461",
+      "selection_numbers": [
+        30
+      ],
+      "original_titles": [
+        "Indian Home Rule"
+      ],
+      "catalog_title": "Indian Home Rule",
+      "author": "Gandhi, Mahatma, 1869-1948",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/40461/pg40461.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/40461_Indian_Home_Rule.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "fa2a144d2bad65991b2a9feb773ff9ad1d9d4c130a7b94c7a30eb8042d19a2d0",
+      "bytes": 189877
+    },
+    {
+      "gutenberg_id": "40517",
+      "selection_numbers": [
+        95
+      ],
+      "original_titles": [
+        "A Bottle in the Smoke: A Tale of Anglo-Indian Life"
+      ],
+      "catalog_title": "A Bottle in the Smoke: A Tale of Anglo-Indian Life",
+      "author": "Rae, Janet Milne, 1844-1933",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/40517/pg40517.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/40517_A_Bottle_in_the_Smoke_A_Tale_of_AngloIndian_Life.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "c682a0a68e27d08f8b89a6b81d7a93e513a3eea747c0da089cf7def748ea6854",
+      "bytes": 609531
+    },
+    {
+      "gutenberg_id": "40920",
+      "selection_numbers": [
+        31
+      ],
+      "original_titles": [
+        "Nationalismus"
+      ],
+      "catalog_title": "Nationalismus",
+      "author": "Tagore, Rabindranath, 1861-1941; Meyer-Franck, Helene, 1873-1946 [Translator]",
+      "language": "de",
+      "url": "https://www.gutenberg.org/cache/epub/40920/pg40920.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/40920_Nationalismus.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "8d22d7da327bf5295546669a02f81a286b1576d72774954c6f584cd750f47f47",
+      "bytes": 196725
+    },
+    {
+      "gutenberg_id": "41190",
+      "selection_numbers": [
+        96
+      ],
+      "original_titles": [
+        "Chronicles of Dustypore: A Tale of Modern Anglo-Indian Society"
+      ],
+      "catalog_title": "Chronicles of Dustypore: A Tale of Modern Anglo-Indian Society",
+      "author": "Cunningham, H. S. (Henry Stewart), Sir, 1832-1920",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/41190/pg41190.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/41190_Chronicles_of_Dustypore_A_Tale_of_Modern_AngloIndian_Society.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "4914ce36806b2da0f82a5949e0f6289ffb891cedeb76174066703c3df610e631",
+      "bytes": 478588
+    },
+    {
+      "gutenberg_id": "41424",
+      "selection_numbers": [
+        69
+      ],
+      "original_titles": [
+        "The Tribes and Castes of the Central Provinces of India, Volume 3"
+      ],
+      "catalog_title": "The Tribes and Castes of the Central Provinces of India, Volume 3",
+      "author": "Russell, R. V. (Robert Vane), 1873-1915",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/41424/pg41424.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/41424_The_Tribes_and_Castes_of_the_Central_Provinces_of_India_Volume_3.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "b575f5b97f8a2ec3e6c7a9d285df360a767141d3f3d3f88101758674e495d642",
+      "bytes": 1345556
+    },
+    {
+      "gutenberg_id": "41954",
+      "selection_numbers": [
+        32
+      ],
+      "original_titles": [
+        "The Wheel of Fortune"
+      ],
+      "catalog_title": "The Wheel of Fortune",
+      "author": "Gandhi, Mahatma, 1869-1948; Thakura, Dvijendranatha, 1840-1926 [Commentator]",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/41954/pg41954.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/41954_The_Wheel_of_Fortune.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "f0a734e0e81b700615e07ae0e0eac140421982fcc111fb86813f12c8c61d2e15",
+      "bytes": 169833
+    },
+    {
+      "gutenberg_id": "42991",
+      "selection_numbers": [
+        98
+      ],
+      "original_titles": [
+        "Castes and Tribes of Southern India. Vol. 1 of 7"
+      ],
+      "catalog_title": "Castes and Tribes of Southern India. Vol. 1 of 7",
+      "author": "Thurston, Edgar, 1855-1935; Rangachari, K. [Contributor]",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/42991/pg42991.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/42991_Castes_and_Tribes_of_Southern_India_Vol_1_of_7.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "75f419200130c377da5c8d23fca8e8333e8e75276bc81317457b3fc49c682269",
+      "bytes": 826753
+    },
+    {
+      "gutenberg_id": "42992",
+      "selection_numbers": [
+        99
+      ],
+      "original_titles": [
+        "Castes and Tribes of Southern India. Vol. 2 of 7"
+      ],
+      "catalog_title": "Castes and Tribes of Southern India. Vol. 2 of 7",
+      "author": "Thurston, Edgar, 1855-1935; Rangachari, K. [Contributor]",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/42992/pg42992.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/42992_Castes_and_Tribes_of_Southern_India_Vol_2_of_7.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "bcc34be0085e54901d390afd7428891946bb22aa18c2b60b9c0b7c773be2f6f2",
+      "bytes": 915108
+    },
+    {
+      "gutenberg_id": "42993",
+      "selection_numbers": [
+        100
+      ],
+      "original_titles": [
+        "Castes and Tribes of Southern India. Vol. 3 of 7"
+      ],
+      "catalog_title": "Castes and Tribes of Southern India. Vol. 3 of 7",
+      "author": "Thurston, Edgar, 1855-1935; Rangachari, K. [Contributor]",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/42993/pg42993.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/42993_Castes_and_Tribes_of_Southern_India_Vol_3_of_7.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "05221fe6ce8deae30e68de157b30fdd4dac1560c111fccc5c65d4da7556b404f",
+      "bytes": 923411
+    },
+    {
+      "gutenberg_id": "42994",
+      "selection_numbers": [
+        101
+      ],
+      "original_titles": [
+        "Castes and Tribes of Southern India. Vol. 4 of 7"
+      ],
+      "catalog_title": "Castes and Tribes of Southern India. Vol. 4 of 7",
+      "author": "Thurston, Edgar, 1855-1935; Rangachari, K. [Contributor]",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/42994/pg42994.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/42994_Castes_and_Tribes_of_Southern_India_Vol_4_of_7.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "8f3059bc06e9fa2870a3f5b6eaf1e7bec630107ed094142eb0605a683feb2099",
+      "bytes": 921314
+    },
+    {
+      "gutenberg_id": "42995",
+      "selection_numbers": [
+        102
+      ],
+      "original_titles": [
+        "Castes and Tribes of Southern India. Vol. 5 of 7"
+      ],
+      "catalog_title": "Castes and Tribes of Southern India. Vol. 5 of 7",
+      "author": "Thurston, Edgar, 1855-1935; Rangachari, K. [Contributor]",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/42995/pg42995.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/42995_Castes_and_Tribes_of_Southern_India_Vol_5_of_7.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "bdacf36f72106a57e35080dda81be3f7c75b3650438ebd4803913c790e0ba127",
+      "bytes": 893730
+    },
+    {
+      "gutenberg_id": "42996",
+      "selection_numbers": [
+        103
+      ],
+      "original_titles": [
+        "Castes and Tribes of Southern India. Vol. 6 of 7"
+      ],
+      "catalog_title": "Castes and Tribes of Southern India. Vol. 6 of 7",
+      "author": "Thurston, Edgar, 1855-1935; Rangachari, K. [Contributor]",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/42996/pg42996.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/42996_Castes_and_Tribes_of_Southern_India_Vol_6_of_7.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "2030927f0c8cef18200114090ef9b394b8c4f266bda6b402b08d2a16882c8542",
+      "bytes": 835833
+    },
+    {
+      "gutenberg_id": "42997",
+      "selection_numbers": [
+        104
+      ],
+      "original_titles": [
+        "Castes and Tribes of Southern India. Vol. 7 of 7"
+      ],
+      "catalog_title": "Castes and Tribes of Southern India. Vol. 7 of 7",
+      "author": "Thurston, Edgar, 1855-1935; Rangachari, K. [Contributor]",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/42997/pg42997.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/42997_Castes_and_Tribes_of_Southern_India_Vol_7_of_7.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "e8094d10ab2791fc0c687c4731213ee7bc61cbe1098a199d3631a36a0cb152f3",
+      "bytes": 803286
+    },
+    {
+      "gutenberg_id": "44306",
+      "selection_numbers": [
+        105
+      ],
+      "original_titles": [
+        "A Noble Queen: A Romance of Indian History (Volume 1 of 3)"
+      ],
+      "catalog_title": "A Noble Queen: A Romance of Indian History (Volume 1 of 3)",
+      "author": "Taylor, Meadows, 1808-1876",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/44306/pg44306.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/44306_A_Noble_Queen_A_Romance_of_Indian_History_Volume_1_of_3.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "834c6f387ab1cd2bc4299c523f8c2cc2e284d584daaf3ffdb82e47644363af73",
+      "bytes": 430266
+    },
+    {
+      "gutenberg_id": "44583",
+      "selection_numbers": [
+        106
+      ],
+      "original_titles": [
+        "A Noble Queen: A Romance of Indian History (Volume 2 of 3)"
+      ],
+      "catalog_title": "A Noble Queen: A Romance of Indian History (Volume 2 of 3)",
+      "author": "Taylor, Meadows, 1808-1876",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/44583/pg44583.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/44583_A_Noble_Queen_A_Romance_of_Indian_History_Volume_2_of_3.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "3f26998e50267cdba4f4eb3c102c8482eaa55f47ed8a38fbb37f9b29a3ec9d50",
+      "bytes": 417901
+    },
+    {
+      "gutenberg_id": "44789",
+      "selection_numbers": [
+        107
+      ],
+      "original_titles": [
+        "A Noble Queen: A Romance of Indian History (Volume 3 of 3)"
+      ],
+      "catalog_title": "A Noble Queen: A Romance of Indian History (Volume 3 of 3)",
+      "author": "Taylor, Meadows, 1808-1876",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/44789/pg44789.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/44789_A_Noble_Queen_A_Romance_of_Indian_History_Volume_3_of_3.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "44370924db3c681bd42e6981d4d7002383227ee95da5f71954ea7850bfd6be1d",
+      "bytes": 424912
+    },
+    {
+      "gutenberg_id": "45247",
+      "selection_numbers": [
+        33
+      ],
+      "original_titles": [
+        "India for Indians\nEnlarged Edition"
+      ],
+      "catalog_title": "India for Indians\nEnlarged Edition",
+      "author": "Das, Chitta Ranjan, 1870-1925; Ghose, Moti Lal, 1847-1922 [Author of introduction, etc.]; Patrika, A. B. [Editor]",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/45247/pg45247.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/45247_India_for_IndiansEnlarged_Edition.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "e0558191cb3c9725feb59884715c8b184979dc7d35b9a89632381446de6deff5",
+      "bytes": 294276
+    },
+    {
+      "gutenberg_id": "45430",
+      "selection_numbers": [
+        34
+      ],
+      "original_titles": [
+        "Tara: A Mahratta Tale"
+      ],
+      "catalog_title": "Tara: A Mahratta Tale",
+      "author": "Taylor, Meadows, 1808-1876",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/45430/pg45430.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/45430_Tara_A_Mahratta_Tale.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "81fa3506d4475463c2412b2e380e6f2d594aeb016e41cfee8b9371ddc2b649db",
+      "bytes": 1491155
+    },
+    {
+      "gutenberg_id": "46151",
+      "selection_numbers": [
+        108
+      ],
+      "original_titles": [
+        "India Under British Rule from the Foundation of the East India Company"
+      ],
+      "catalog_title": "India Under British Rule from the Foundation of the East India Company",
+      "author": "Wheeler, James Talboys, 1824-1897",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/46151/pg46151.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/46151_India_Under_British_Rule_from_the_Foundation_of_the_East_India_Company.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "5b4c62a861cc75b0e3ef503c8bd4f88f3af9cc28b69b80ac0ae6a6d880239007",
+      "bytes": 613673
+    },
+    {
+      "gutenberg_id": "46803",
+      "selection_numbers": [
+        109
+      ],
+      "original_titles": [
+        "Diary of Richard Cocks, Volume 1\nCape-Merchant in the English Factory in Japan, 1615-1622, with Correspondence"
+      ],
+      "catalog_title": "Diary of Richard Cocks, Volume 1\nCape-Merchant in the English Factory in Japan, 1615-1622, with Correspondence",
+      "author": "Cocks, Richard, -1624; Thompson, Edward Maunde, Sir, 1840-1929 [Editor]",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/46803/pg46803.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/46803_Diary_of_Richard_Cocks_Volume_1CapeMerchant_in_the_English_Factory_in_Japan_16151622_with_Correspond.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "6906a3693b2370b12c73d0e88a2ffb6cdc305e7bc212dcb32e643dfabf594da8",
+      "bytes": 764029
+    },
+    {
+      "gutenberg_id": "47214",
+      "selection_numbers": [
+        35
+      ],
+      "original_titles": [
+        "Buddhism, in Its Connexion with Brahmanism and Hinduism, and in Its Contrast with Christianity"
+      ],
+      "catalog_title": "Buddhism, in Its Connexion with Brahmanism and Hinduism, and in Its Contrast with Christianity",
+      "author": "Monier-Williams, Monier, Sir, 1819-1899",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/47214/pg47214.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/47214_Buddhism_in_Its_Connexion_with_Brahmanism_and_Hinduism_and_in_Its_Contrast_with_Christianity.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "d525b17cfbdc613763e32804952101dcedd497f9268e72fd6ba109e91ebd00f9",
+      "bytes": 1022539
+    },
+    {
+      "gutenberg_id": "48012",
+      "selection_numbers": [
+        110
+      ],
+      "original_titles": [
+        "Diary of Richard Cocks, Volume 2\nCape-Merchant in the English Factory in Japan, 1615-1622, with Correspondence"
+      ],
+      "catalog_title": "Diary of Richard Cocks, Volume 2\nCape-Merchant in the English Factory in Japan, 1615-1622, with Correspondence",
+      "author": "Cocks, Richard, -1624; Thompson, Edward Maunde, Sir, 1840-1929 [Editor]",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/48012/pg48012.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/48012_Diary_of_Richard_Cocks_Volume_2CapeMerchant_in_the_English_Factory_in_Japan_16151622_with_Correspond.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "6f412d61cf654aa3c7df3f17ba6bb944d05a668309234b1837effa75bc9af6c2",
+      "bytes": 743547
+    },
+    {
+      "gutenberg_id": "49835",
+      "selection_numbers": [
+        111
+      ],
+      "original_titles": [
+        "The Letters of Gracchus on the East India Question"
+      ],
+      "catalog_title": "The Letters of Gracchus on the East India Question",
+      "author": "Miles, William Augustus, 1753?-1817",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/49835/pg49835.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/49835_The_Letters_of_Gracchus_on_the_East_India_Question.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "90e24fa9a7510aa95a40e8c4af4f690230b4199eec5a9a5d06c9d5e542060317",
+      "bytes": 160506
+    },
+    {
+      "gutenberg_id": "51472",
+      "selection_numbers": [
+        112
+      ],
+      "original_titles": [
+        "The East India Vade-Mecum, Volume 2 (of 2)\nor, complete guide to gentlemen intended for the civil, military, or naval service of the East India Company."
+      ],
+      "catalog_title": "The East India Vade-Mecum, Volume 2 (of 2)\nor, complete guide to gentlemen intended for the civil, military, or naval service of the East India Company.",
+      "author": "Williamson, Thomas, 1759?-1817",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/51472/pg51472.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/51472_The_East_India_VadeMecum_Volume_2_of_2or_complete_guide_to_gentlemen_intended_for_the_civil_military.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "6fe88dfa7425320f89e44c19d2e7985d646e2eb4d2c48f8d9f353a3469dc07ea",
+      "bytes": 760221
+    },
+    {
+      "gutenberg_id": "52518",
+      "selection_numbers": [
+        113
+      ],
+      "original_titles": [
+        "Memoirs of the Revolution in Bengal, Anno Dom. 1757"
+      ],
+      "catalog_title": "Memoirs of the Revolution in Bengal, Anno Dom. 1757",
+      "author": "Watts, William, active 1737-1758",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/52518/pg52518.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/52518_Memoirs_of_the_Revolution_in_Bengal_Anno_Dom_1757.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "087080e44c071d4285323c94f0f3abf10da285ba250703371d2f83f4a3bca3a4",
+      "bytes": 174421
+    },
+    {
+      "gutenberg_id": "52643",
+      "selection_numbers": [
+        36
+      ],
+      "original_titles": [
+        "Das Heim und die Welt"
+      ],
+      "catalog_title": "Das Heim und die Welt",
+      "author": "Tagore, Rabindranath, 1861-1941; Meyer-Franck, Helene, 1873-1946 [Translator]",
+      "language": "de",
+      "url": "https://www.gutenberg.org/cache/epub/52643/pg52643.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/52643_Das_Heim_und_die_Welt.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "b39426d39b1d0e7150b4a6d7ec5395b543edf6281af445e31c1359c1b09f0c95",
+      "bytes": 456333
+    },
+    {
+      "gutenberg_id": "52739",
+      "selection_numbers": [
+        114
+      ],
+      "original_titles": [
+        "Observations on the Disturbances in the Madras Army in 1809"
+      ],
+      "catalog_title": "Observations on the Disturbances in the Madras Army in 1809",
+      "author": "Malcolm, John, 1769-1833",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/52739/pg52739.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/52739_Observations_on_the_Disturbances_in_the_Madras_Army_in_1809.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "ec0f8d98d940b83b26ddc2d73f6296bc5a714056525e365735b4c239aae0ba3a",
+      "bytes": 463105
+    },
+    {
+      "gutenberg_id": "53400",
+      "selection_numbers": [
+        115
+      ],
+      "original_titles": [
+        "The East India Vade-Mecum, Volume 1 (of 2)\nor, complete guide to gentlemen intended for the civil, military, or naval service of the East India Company."
+      ],
+      "catalog_title": "The East India Vade-Mecum, Volume 1 (of 2)\nor, complete guide to gentlemen intended for the civil, military, or naval service of the East India Company.",
+      "author": "Williamson, Thomas, 1759?-1817",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/53400/pg53400.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/53400_The_East_India_VadeMecum_Volume_1_of_2or_complete_guide_to_gentlemen_intended_for_the_civil_military.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "e740207373c9cc94dd642d10a3f179907a54b4622db96c9789f40e142fe518e3",
+      "bytes": 763396
+    },
+    {
+      "gutenberg_id": "53670",
+      "selection_numbers": [
+        116
+      ],
+      "original_titles": [
+        "A Sketch of Assam: With some account of the Hill Tribes"
+      ],
+      "catalog_title": "A Sketch of Assam: With some account of the Hill Tribes",
+      "author": "Butler, John, Major",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/53670/pg53670.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/53670_A_Sketch_of_Assam_With_some_account_of_the_Hill_Tribes.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "7b60e6d5f5ea9bfb3a49d915aa958094818e2ee3678efa80213517c0dc6857af",
+      "bytes": 316458
+    },
+    {
+      "gutenberg_id": "53717",
+      "selection_numbers": [
+        117
+      ],
+      "original_titles": [
+        "Through the Sikh War: A Tale of the Conquest of the Punjaub"
+      ],
+      "catalog_title": "Through the Sikh War: A Tale of the Conquest of the Punjaub",
+      "author": "Henty, G. A. (George Alfred), 1832-1902; Hurst, Hal, 1865-1938 [Illustrator]",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/53717/pg53717.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/53717_Through_the_Sikh_War_A_Tale_of_the_Conquest_of_the_Punjaub.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "aa8f7504e839f73d9d1eba72fa14bac50dcbfc3ac3028739a119a39cfadce188",
+      "bytes": 744142
+    },
+    {
+      "gutenberg_id": "54027",
+      "selection_numbers": [
+        118
+      ],
+      "original_titles": [
+        "Nil Darpan; or, The Indigo Planting Mirror, A Drama.\nTranslated from the Bengali by a Native."
+      ],
+      "catalog_title": "Nil Darpan; or, The Indigo Planting Mirror, A Drama.\nTranslated from the Bengali by a Native.",
+      "author": "Mitra, Dinabandhu, 1829-1874; Dutt, Michael Madhusudan, 1824-1873 [Translator]",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/54027/pg54027.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/54027_Nil_Darpan_or_The_Indigo_Planting_Mirror_A_DramaTranslated_from_the_Bengali_by_a_Native.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "2a4a381ef4353c1178c9cb5d100638b8c7338119db810478e6c5400d4f9e8fa4",
+      "bytes": 226001
+    },
+    {
+      "gutenberg_id": "54561",
+      "selection_numbers": [
+        119
+      ],
+      "original_titles": [
+        "The Old East Indiamen"
+      ],
+      "catalog_title": "The Old East Indiamen",
+      "author": "Chatterton, E. Keble (Edward Keble), 1878-1944",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/54561/pg54561.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/54561_The_Old_East_Indiamen.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "3fa2cc82cb7155a7e233862470dd160847ad9c2c0d34ec2d1ed3ea396e0f8a78",
+      "bytes": 590536
+    },
+    {
+      "gutenberg_id": "54652",
+      "selection_numbers": [
+        120
+      ],
+      "original_titles": [
+        "History of Gujar\u00e1t\nGazetteer of the Bombay Presidency, Volume I, Part I."
+      ],
+      "catalog_title": "History of Gujar\u00e1t\nGazetteer of the Bombay Presidency, Volume I, Part I.",
+      "author": "Campbell, James M., 1846-1903",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/54652/pg54652.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/54652_History_of_GujartGazetteer_of_the_Bombay_Presidency_Volume_I_Part_I.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "80a075d295ade1e445d043fbbbe417fbf5e98fc9929819d10ed73b8136216563",
+      "bytes": 2035654
+    },
+    {
+      "gutenberg_id": "55465",
+      "selection_numbers": [
+        121
+      ],
+      "original_titles": [
+        "The Peoples of India"
+      ],
+      "catalog_title": "The Peoples of India",
+      "author": "Anderson, J. D. (James Drummond), 1852-1920",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/55465/pg55465.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/55465_The_Peoples_of_India.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "f558ea32387f42debeb27ee3bbcd719b2dad2743f9ae387c80051d12bdb35450",
+      "bytes": 198065
+    },
+    {
+      "gutenberg_id": "55844",
+      "selection_numbers": [
+        122
+      ],
+      "original_titles": [
+        "Military Service and Adventures in the Far East: Vol. 1 (of 2)\nIncluding Sketches of the Campaigns Against the Afghans in 1839, and the Sikhs in 1845-6."
+      ],
+      "catalog_title": "Military Service and Adventures in the Far East: Vol. 1 (of 2)\nIncluding Sketches of the Campaigns Against the Afghans in 1839, and the Sikhs in 1845-6.",
+      "author": "MacKinnon, Daniel Henry, 1813-1884",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/55844/pg55844.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/55844_Military_Service_and_Adventures_in_the_Far_East_Vol_1_of_2Including_Sketches_of_the_Campaigns_Agains.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "7d751e284e8831e56deef015dc6247033d8c5916ede5b0ae1e9b25d809d56364",
+      "bytes": 389952
+    },
+    {
+      "gutenberg_id": "57265",
+      "selection_numbers": [
+        37
+      ],
+      "original_titles": [
+        "The R\u0101m\u0101yana, Volume 1. B\u0101lak\u0101ndam and Ayodhy\u0101k\u0101ndam"
+      ],
+      "catalog_title": "The R\u0101m\u0101yana, Volume 1. B\u0101lak\u0101ndam and Ayodhy\u0101k\u0101ndam",
+      "author": "Valmiki; Dutt, Manmatha Nath, 1855-1912 [Translator]",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/57265/pg57265.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/57265_The_Rmyana_Volume_1_Blakndam_and_Ayodhykndam.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "7d3b9e1613d60dfacea39f2564243e943cf38703eadb7245d92337b238082034",
+      "bytes": 1021947
+    },
+    {
+      "gutenberg_id": "57350",
+      "selection_numbers": [
+        123
+      ],
+      "original_titles": [
+        "Military Service and Adventures in the Far East: Vol. 1 (of 2)\nIncluding Sketches of the Campaigns Against the Afghans in 1839, and the Sikhs in 1845-6."
+      ],
+      "catalog_title": "Military Service and Adventures in the Far East: Vol. 2 (of 2)\nIncluding Sketches of the Campaigns Against the Afghans in 1839, and the Sikhs in 1845-6.",
+      "author": "MacKinnon, Daniel Henry, 1813-1884",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/57350/pg57350.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/57350_Military_Service_and_Adventures_in_the_Far_East_Vol_2_of_2Including_Sketches_of_the_Campaigns_Agains.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "277f089ae4a2c866ecf08e67fcd2955b729d3e0511e2f00f78affbf3269e45f2",
+      "bytes": 349160
+    },
+    {
+      "gutenberg_id": "57826",
+      "selection_numbers": [
+        38
+      ],
+      "original_titles": [
+        "The R\u0101m\u0101yana, Volume 2. \u0100ranya, Kishkindh\u0101, and Sundara K\u0101ndam"
+      ],
+      "catalog_title": "The R\u0101m\u0101yana, Volume 2. \u0100ranya, Kishkindh\u0101, and Sundara K\u0101ndam",
+      "author": "Valmiki; Dutt, Manmatha Nath, 1855-1912 [Translator]",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/57826/pg57826.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/57826_The_Rmyana_Volume_2_ranya_Kishkindh_and_Sundara_Kndam.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "c3ef74a07ef0cf016eb0428deb76d6036d13be343c65225946471113a2da475b",
+      "bytes": 1177505
+    },
+    {
+      "gutenberg_id": "57987",
+      "selection_numbers": [
+        124
+      ],
+      "original_titles": [
+        "The Present State of the British Interest in India\nWith a Plan for Establishing a Regular System of Government in That Country"
+      ],
+      "catalog_title": "The Present State of the British Interest in India\nWith a Plan for Establishing a Regular System of Government in That Country",
+      "author": "Anonymous",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/57987/pg57987.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/57987_The_Present_State_of_the_British_Interest_in_IndiaWith_a_Plan_for_Establishing_a_Regular_System_of_G.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "e44bfbbda26696c643fcd7ec6672f02762c2f5cbedd214a9443e6b12d40bc055",
+      "bytes": 224553
+    },
+    {
+      "gutenberg_id": "58344",
+      "selection_numbers": [
+        39
+      ],
+      "original_titles": [
+        "Siddhartha: A Poem of India"
+      ],
+      "catalog_title": "Siddhartha: A Poem of India",
+      "author": "Hesse, Hermann, 1877-1962; Wyllie, David (Translator) [Translator]",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/58344/pg58344.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/58344_Siddhartha_A_Poem_of_India.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "e966b4a44ffc3693a578ba52176cf29ed52bfaadc4a8bd007b776e12294b1391",
+      "bytes": 261211
+    },
+    {
+      "gutenberg_id": "58529",
+      "selection_numbers": [
+        125
+      ],
+      "original_titles": [
+        "Hobson-Jobson\nA Glossary of Colloquial Anglo-Indian Words and Phrases, and of Kindred Terms, Etymological, Historical, Geographical and Discursive"
+      ],
+      "catalog_title": "Hobson-Jobson\nA Glossary of Colloquial Anglo-Indian Words and Phrases, and of Kindred Terms, Etymological, Historical, Geographical and Discursive",
+      "author": "Yule, Henry, Sir, 1820-1889; Burnell, A. C. (Arthur Coke), 1840-1882; Crooke, William, 1848-1923 [Editor]",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/58529/pg58529.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/58529_HobsonJobsonA_Glossary_of_Colloquial_AngloIndian_Words_and_Phrases_and_of_Kindred_Terms_Etymological.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "1bc61d96f931f18fe9c896902364fe76e072c3000943157d4651e9d5d1e80c55",
+      "bytes": 5333624
+    },
+    {
+      "gutenberg_id": "59333",
+      "selection_numbers": [
+        126
+      ],
+      "original_titles": [
+        "Harold's Bride: A Tale"
+      ],
+      "catalog_title": "Harold's Bride: A Tale",
+      "author": "A. L. O. E., 1821-1893",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/59333/pg59333.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/59333_Harolds_Bride_A_Tale.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "88f02d975189c2dede28bfaefa2de655633bbbe777ca826de9f646b8d3aaade4",
+      "bytes": 324538
+    },
+    {
+      "gutenberg_id": "59389",
+      "selection_numbers": [
+        40
+      ],
+      "original_titles": [
+        "Ahnaat paadet ynn\u00e4 muita kertomuksia"
+      ],
+      "catalog_title": "Ahnaat paadet ynn\u00e4 muita kertomuksia",
+      "author": "Tagore, Rabindranath, 1861-1941; Hollo, J. A. (Juho Aukusti), 1885-1967 [Translator]",
+      "language": "fi",
+      "url": "https://www.gutenberg.org/cache/epub/59389/pg59389.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/59389_Ahnaat_paadet_ynn_muita_kertomuksia.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "815e295562993a85e743a7fd20f101e15f15eff498a2cb724d6712921d03296c",
+      "bytes": 316795
+    },
+    {
+      "gutenberg_id": "59401",
+      "selection_numbers": [
+        127
+      ],
+      "original_titles": [
+        "Oral Tradition from the Indus\nComprised in Tales to Which Are Added Explanatory Notes"
+      ],
+      "catalog_title": "Oral Tradition from the Indus\nComprised in Tales to Which Are Added Explanatory Notes",
+      "author": "McNair, John Frederick Adolphus, 1828-1910; Barlow, Thomas Lambert, 1831-1910; Fenn, L. [Illustrator]",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/59401/pg59401.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/59401_Oral_Tradition_from_the_IndusComprised_in_Tales_to_Which_Are_Added_Explanatory_Notes.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "513f9f408a5876f838fd4eda3e5c8f9172037b5189fd42c467bcbac073315224",
+      "bytes": 270665
+    },
+    {
+      "gutenberg_id": "59471",
+      "selection_numbers": [
+        41
+      ],
+      "original_titles": [
+        "Haaksirikko"
+      ],
+      "catalog_title": "Haaksirikko",
+      "author": "Tagore, Rabindranath, 1861-1941; Hollo, J. A. (Juho Aukusti), 1885-1967 [Translator]",
+      "language": "fi",
+      "url": "https://www.gutenberg.org/cache/epub/59471/pg59471.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/59471_Haaksirikko.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "490fc5af66d37bbfac3dfbcd5cb106c12676da20455eefe84c70aa5992dc4376",
+      "bytes": 613968
+    },
+    {
+      "gutenberg_id": "59595",
+      "selection_numbers": [
+        128
+      ],
+      "original_titles": [
+        "Memoir of the Services of the Bengal Artillery\nFrom the Formation of the Corps to the Present Time, with Some Account of Its Internal Organization"
+      ],
+      "catalog_title": "Memoir of the Services of the Bengal Artillery\nFrom the Formation of the Corps to the Present Time, with Some Account of Its Internal Organization",
+      "author": "Buckle, E. (Edmond), 1808-1846; Kaye, John William, Sir, 1814-1876 [Editor]",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/59595/pg59595.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/59595_Memoir_of_the_Services_of_the_Bengal_ArtilleryFrom_the_Formation_of_the_Corps_to_the_Present_Time_wi.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "3373869bca900b57323747eb9824ed7965bc205299742b9b6268265a8cc69b18",
+      "bytes": 895138
+    },
+    {
+      "gutenberg_id": "60188",
+      "selection_numbers": [
+        42
+      ],
+      "original_titles": [
+        "The R\u0101m\u0101yana, Volume 3. Yuddhak\u0101ndam"
+      ],
+      "catalog_title": "The R\u0101m\u0101yana, Volume 3. Yuddhak\u0101ndam",
+      "author": "Valmiki; Dutt, Manmatha Nath, 1855-1912 [Translator]",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/60188/pg60188.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/60188_The_Rmyana_Volume_3_Yuddhakndam.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "8d1b8901823f5b5bd8b3207370991ddf95e5c76cb30ad5271aef835c9708464b",
+      "bytes": 882581
+    },
+    {
+      "gutenberg_id": "61834",
+      "selection_numbers": [
+        129
+      ],
+      "original_titles": [
+        "The City of Dreadful Night"
+      ],
+      "catalog_title": "The City of Dreadful Night",
+      "author": "Kipling, Rudyard, 1865-1936; Farrand, Charles D., 1865- [Illustrator]",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/61834/pg61834.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/61834_The_City_of_Dreadful_Night.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "9fe63ab875040e83c5f0e554c9a72d413f1bb64908749a856f7d12e49475b450",
+      "bytes": 129480
+    },
+    {
+      "gutenberg_id": "62496",
+      "selection_numbers": [
+        43
+      ],
+      "original_titles": [
+        "The R\u0101m\u0101yana, Volume 4. Uttara K\u0101nda"
+      ],
+      "catalog_title": "The R\u0101m\u0101yana, Volume 4. Uttara K\u0101nda",
+      "author": "Valmiki; Dutt, Manmatha Nath, 1855-1912 [Translator]",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/62496/pg62496.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/62496_The_Rmyana_Volume_4_Uttara_Knda.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "076d03a68387f8ccd43b0cc211829f017ef120746d7b0f68a401f1c6fb4b221d",
+      "bytes": 573393
+    },
+    {
+      "gutenberg_id": "62798",
+      "selection_numbers": [
+        130
+      ],
+      "original_titles": [
+        "The Bombay City Police: A Historical Sketch, 1672-1916"
+      ],
+      "catalog_title": "The Bombay City Police: A Historical Sketch, 1672-1916",
+      "author": "Edwardes, S. M. (Stephen Meredyth), 1873-1927",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/62798/pg62798.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/62798_The_Bombay_City_Police_A_Historical_Sketch_16721916.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "335cfe36cdaa325d45f59d2c75fb43640cfe4c63358d3d9fa869a332e39bf092",
+      "bytes": 483129
+    },
+    {
+      "gutenberg_id": "63132",
+      "selection_numbers": [
+        44
+      ],
+      "original_titles": [
+        "The Problem of the Rupee, Its Origin and Its Solution"
+      ],
+      "catalog_title": "The Problem of the Rupee, Its Origin and Its Solution",
+      "author": "Ambedkar, B. R. (Bhimrao Ramji), 1891-1956",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/63132/pg63132.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/63132_The_Problem_of_the_Rupee_Its_Origin_and_Its_Solution.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "56bf279c21d18b8bfd534ccfe2d3bf89d675b60ce24f3107275acd1a6accfa3c",
+      "bytes": 1025446
+    },
+    {
+      "gutenberg_id": "63231",
+      "selection_numbers": [
+        45
+      ],
+      "original_titles": [
+        "Castes In India"
+      ],
+      "catalog_title": "Castes In India",
+      "author": "Ambedkar, B. R. (Bhimrao Ramji), 1891-1956",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/63231/pg63231.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/63231_Castes_In_India.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "d3937d8ce381002f40a9ff0c6f59075966562dec1b1dd5b93a995e598ba6edfa",
+      "bytes": 76572
+    },
+    {
+      "gutenberg_id": "64535",
+      "selection_numbers": [
+        46
+      ],
+      "original_titles": [
+        "A Record of Buddhistic Kingdoms\nBeing an account by the Chinese monk F\u00e2-hien of his travels in India and Ceylon (A.D. 399-414) in search of the Buddhist books of discipline"
+      ],
+      "catalog_title": "A Record of Buddhistic Kingdoms\nBeing an account by the Chinese monk F\u00e2-hien of his travels in India and Ceylon (A.D. 399-414) in search of the Buddhist books of discipline",
+      "author": "Faxian, 337?-422?; Legge, James, 1815-1897 [Translator]",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/64535/pg64535.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/64535_A_Record_of_Buddhistic_KingdomsBeing_an_account_by_the_Chinese_monk_Fhien_of_his_travels_in_India_an.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "ee0248df67a9c4f3ef4c4855bbf130ac275179b656e52e7c0c795cf9649c39e8",
+      "bytes": 409167
+    },
+    {
+      "gutenberg_id": "64952",
+      "selection_numbers": [
+        131
+      ],
+      "original_titles": [
+        "La cit\u00e9 de l'\u00e9pouvantable nuit"
+      ],
+      "catalog_title": "La cit\u00e9 de l'\u00e9pouvantable nuit",
+      "author": "Kipling, Rudyard, 1865-1936; Savine, Albert, 1859-1927 [Translator]",
+      "language": "fr",
+      "url": "https://www.gutenberg.org/cache/epub/64952/pg64952.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/64952_La_cit_de_lpouvantable_nuit.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "8148686ed99992ed00df9cb66b2ac446d9f4691b38308bcda8beec131e37f4f8",
+      "bytes": 346746
+    },
+    {
+      "gutenberg_id": "66471",
+      "selection_numbers": [
+        132
+      ],
+      "original_titles": [
+        "Like Another Helen"
+      ],
+      "catalog_title": "Like Another Helen",
+      "author": "Grier, Sydney C., 1868-1933",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/66471/pg66471.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/66471_Like_Another_Helen.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "2830d75efeb9b363c76e0ada5d478f92be3a92219d6979851a42521c2d9d940b",
+      "bytes": 1076771
+    },
+    {
+      "gutenberg_id": "67691",
+      "selection_numbers": [
+        133
+      ],
+      "original_titles": [
+        "Pharmacographia\nA history of the principal drugs of vegetable origin, met with in Great Britain and British India"
+      ],
+      "catalog_title": "Pharmacographia\nA history of the principal drugs of vegetable origin, met with in Great Britain and British India",
+      "author": "Fl\u00fcckiger, Friedrich A. (Friedrich August), 1828-1894; Hanbury, Daniel, 1825-1875",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/67691/pg67691.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/67691_PharmacographiaA_history_of_the_principal_drugs_of_vegetable_origin_met_with_in_Great_Britain_and_Br.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "a59cc17b0f46106743a7ebde0b24154a717b98c02dc02afaab98dd3628ccbb0a",
+      "bytes": 2740808
+    },
+    {
+      "gutenberg_id": "68330",
+      "selection_numbers": [
+        134
+      ],
+      "original_titles": [
+        "The Great White Hand; Or, the Tiger of Cawnpore: A story of the Indian Mutiny"
+      ],
+      "catalog_title": "The Great White Hand; Or, the Tiger of Cawnpore: A story of the Indian Mutiny",
+      "author": "Muddock, J. E. (Joyce Emmerson), 1843-1934",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/68330/pg68330.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/68330_The_Great_White_Hand_Or_the_Tiger_of_Cawnpore_A_story_of_the_Indian_Mutiny.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "67f1b741308348ffcb2d08f0e7d4cbf60755baade969baea237ecae2d61b13a8",
+      "bytes": 568051
+    },
+    {
+      "gutenberg_id": "69383",
+      "selection_numbers": [
+        135
+      ],
+      "original_titles": [
+        "In Old Madras"
+      ],
+      "catalog_title": "In Old Madras",
+      "author": "Croker, B. M. (Bithia Mary), 1849?-1920",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/69383/pg69383.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/69383_In_Old_Madras.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "0c1d203a71a3cd6b6d53c752f3545dea8d0cdb34a1d91c967174c083413743ca",
+      "bytes": 550771
+    },
+    {
+      "gutenberg_id": "70025",
+      "selection_numbers": [
+        47
+      ],
+      "original_titles": [
+        "Gora I"
+      ],
+      "catalog_title": "Gora I",
+      "author": "Tagore, Rabindranath, 1861-1941; Hollo, J. A. (Juho Aukusti), 1885-1967 [Translator]",
+      "language": "fi",
+      "url": "https://www.gutenberg.org/cache/epub/70025/pg70025.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/70025_Gora_I.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "932249462149e77fd3ac86fd4394449939e4db12df000999448035969cf6d2eb",
+      "bytes": 548824
+    },
+    {
+      "gutenberg_id": "70057",
+      "selection_numbers": [
+        48
+      ],
+      "original_titles": [
+        "Koti ja maailma"
+      ],
+      "catalog_title": "Koti ja maailma",
+      "author": "Tagore, Rabindranath, 1861-1941; Hollo, J. A. (Juho Aukusti), 1885-1967 [Translator]",
+      "language": "fi",
+      "url": "https://www.gutenberg.org/cache/epub/70057/pg70057.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/70057_Koti_ja_maailma.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "f83128345b736a6f37059aea5a5f7d04a951624bf7983acee482a89aca1a9c43",
+      "bytes": 436529
+    },
+    {
+      "gutenberg_id": "70177",
+      "selection_numbers": [
+        49
+      ],
+      "original_titles": [
+        "Gora II"
+      ],
+      "catalog_title": "Gora II",
+      "author": "Tagore, Rabindranath, 1861-1941; Hollo, J. A. (Juho Aukusti), 1885-1967 [Translator]",
+      "language": "fi",
+      "url": "https://www.gutenberg.org/cache/epub/70177/pg70177.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/70177_Gora_II.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "9d6d601e137c7ceb0996b9627a1323646224d51226b6bd144889a23c13d66ea7",
+      "bytes": 534308
+    },
+    {
+      "gutenberg_id": "70300",
+      "selection_numbers": [
+        136
+      ],
+      "original_titles": [
+        "Legendary & romantic tales of Indian history"
+      ],
+      "catalog_title": "Legendary & romantic tales of Indian history",
+      "author": "Caunter, Hobart, 1794-1851",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/70300/pg70300.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/70300_Legendary__romantic_tales_of_Indian_history.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "25fc993242973eb5d25900d130451fc7b21f5535db919fc2e8fd53e65d8f902d",
+      "bytes": 1131359
+    },
+    {
+      "gutenberg_id": "72780",
+      "selection_numbers": [
+        50
+      ],
+      "original_titles": [
+        "Cloomber Hallin salaisuus"
+      ],
+      "catalog_title": "Cloomber Hallin salaisuus",
+      "author": "Doyle, Arthur Conan, 1859-1930",
+      "language": "fi",
+      "url": "https://www.gutenberg.org/cache/epub/72780/pg72780.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/72780_Cloomber_Hallin_salaisuus.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "578040f641615a9807ce30021d71f866305fc6979e35ba3e2af0e812ee1257d8",
+      "bytes": 277164
+    },
+    {
+      "gutenberg_id": "73417",
+      "selection_numbers": [
+        51
+      ],
+      "original_titles": [
+        "The Great Indian Epics"
+      ],
+      "catalog_title": "The Great Indian Epics",
+      "author": "Oman, John Campbell, 1841-1911 [Adapter]; Valmiki [Contributor]",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/73417/pg73417.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/73417_The_Great_Indian_Epics.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "67bac9a657be686fd03bb42c88ff69bbe9faf6a18c0825ec7f0c0cd8e252e9c9",
+      "bytes": 484316
+    },
+    {
+      "gutenberg_id": "73950",
+      "selection_numbers": [
+        137
+      ],
+      "original_titles": [
+        "Schwartz of Tanjore"
+      ],
+      "catalog_title": "Schwartz of Tanjore",
+      "author": "Page, Jesse",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/73950/pg73950.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/73950_Schwartz_of_Tanjore.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "cb1145318430991161999fb7511b5bbaeb8860b4ff9aff9240ff13fbd2dfa435",
+      "bytes": 406111
+    },
+    {
+      "gutenberg_id": "74298",
+      "selection_numbers": [
+        138
+      ],
+      "original_titles": [
+        "In furthest Ind"
+      ],
+      "catalog_title": "In furthest Ind",
+      "author": "Grier, Sydney C., 1868-1933",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/74298/pg74298.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/74298_In_furthest_Ind.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "c12490428ee47cd624cde6c3d66c3aa1f4752ea74bab242154804dc71a58f4aa",
+      "bytes": 694470
+    },
+    {
+      "gutenberg_id": "74664",
+      "selection_numbers": [
+        139
+      ],
+      "original_titles": [
+        "A brief history of the 3rd Battalion, 1st Punjab Regiment"
+      ],
+      "catalog_title": "A brief history of the 3rd Battalion, 1st Punjab Regiment",
+      "author": "Anonymous",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/74664/pg74664.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/74664_A_brief_history_of_the_3rd_Battalion_1st_Punjab_Regiment.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "15f3f46da13dd01af4857b1657427c5e95f481dc655299d08919584a2a06278d",
+      "bytes": 110905
+    },
+    {
+      "gutenberg_id": "75863",
+      "selection_numbers": [
+        140
+      ],
+      "original_titles": [
+        "Memoirs of the Right Rev. Daniel Corrie, LL.D., first Bishop of Madras"
+      ],
+      "catalog_title": "Memoirs of the Right Rev. Daniel Corrie, LL.D., first Bishop of Madras",
+      "author": "Corrie, Daniel, 1777-1837; Corrie, George Elwes, 1793-1885 [Editor]; Corrie, Richard [Editor]",
+      "language": "en",
+      "url": "https://www.gutenberg.org/cache/epub/75863/pg75863.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/75863_Memoirs_of_the_Right_Rev_Daniel_Corrie_LLD_first_Bishop_of_Madras.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "dd62f3240c92613f8afa6751ecbefe45906013b586e24884567428c6e63b32fc",
+      "bytes": 1256118
+    },
+    {
+      "gutenberg_id": "76145",
+      "selection_numbers": [
+        52
+      ],
+      "original_titles": [
+        "La jeune Inde"
+      ],
+      "catalog_title": "La jeune Inde",
+      "author": "Gandhi, Mahatma, 1869-1948; Rolland, Romain, 1866-1944 [Author of introduction, etc.]; Hart, H\u00e9l\u00e8ne [Translator]",
+      "language": "fr",
+      "url": "https://www.gutenberg.org/cache/epub/76145/pg76145.txt",
+      "path": "/content/NEXA-PROJECT-AI/data/proposals/pd5m_india_first_v1/raw_downloads/76145_La_jeune_Inde.txt",
+      "status": "DOWNLOADED",
+      "http_status": 200,
+      "sha256": "db9ae2f3c0f36fc98dee6a210d9d44cd82116deefda0c65bb783955d7a277a5a",
+      "bytes": 676293
+    }
+  ]
+}
