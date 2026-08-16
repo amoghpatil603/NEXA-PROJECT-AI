@@ -1,0 +1,11 @@
+{
+    "version": "1.0",
+    "tokenizer_version": "NexaBPETokenizer-v1",
+    "creation_date": "2026-08-06T08:39:57.975703",
+    "estimated_token_count": 2640000,
+    "split_ratio": {
+        "training": 0.95,
+        "validation": 0.05
+    },
+    "format": "uint32_binary"
+}

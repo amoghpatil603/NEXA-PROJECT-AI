@@ -1,0 +1,9 @@
+{
+  "notes": "Large binaries and corpora excluded to maintain repository performance.",
+  "rules_applied": [
+    "extension: .bin, .pt, .pth, .ckpt",
+    "path_contains: raw, clean, checkpoints"
+  ],
+  "reconstruction_required": "True",
+  "source_drive_path": "/content/drive/MyDrive/NEXA"
+}

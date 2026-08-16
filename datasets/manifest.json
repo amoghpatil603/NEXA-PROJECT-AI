@@ -1,0 +1,218 @@
+{
+    "dataset_name": "NEXA_PRODUCTION_DATA",
+    "shard_count": 53,
+    "shards": [
+        {
+            "name": "nexa_production_00000.bin",
+            "size": 200000
+        },
+        {
+            "name": "nexa_production_00001.bin",
+            "size": 200000
+        },
+        {
+            "name": "nexa_production_00002.bin",
+            "size": 200000
+        },
+        {
+            "name": "nexa_production_00003.bin",
+            "size": 200000
+        },
+        {
+            "name": "nexa_production_00004.bin",
+            "size": 200000
+        },
+        {
+            "name": "nexa_production_00005.bin",
+            "size": 200000
+        },
+        {
+            "name": "nexa_production_00006.bin",
+            "size": 200000
+        },
+        {
+            "name": "nexa_production_00007.bin",
+            "size": 200000
+        },
+        {
+            "name": "nexa_production_00008.bin",
+            "size": 200000
+        },
+        {
+            "name": "nexa_production_00009.bin",
+            "size": 200000
+        },
+        {
+            "name": "nexa_production_00010.bin",
+            "size": 200000
+        },
+        {
+            "name": "nexa_production_00011.bin",
+            "size": 200000
+        },
+        {
+            "name": "nexa_production_00012.bin",
+            "size": 200000
+        },
+        {
+            "name": "nexa_production_00013.bin",
+            "size": 200000
+        },
+        {
+            "name": "nexa_production_00014.bin",
+            "size": 200000
+        },
+        {
+            "name": "nexa_production_00015.bin",
+            "size": 200000
+        },
+        {
+            "name": "nexa_production_00016.bin",
+            "size": 200000
+        },
+        {
+            "name": "nexa_production_00017.bin",
+            "size": 200000
+        },
+        {
+            "name": "nexa_production_00018.bin",
+            "size": 200000
+        },
+        {
+            "name": "nexa_production_00019.bin",
+            "size": 200000
+        },
+        {
+            "name": "nexa_production_00020.bin",
+            "size": 200000
+        },
+        {
+            "name": "nexa_production_00021.bin",
+            "size": 200000
+        },
+        {
+            "name": "nexa_production_00022.bin",
+            "size": 200000
+        },
+        {
+            "name": "nexa_production_00023.bin",
+            "size": 200000
+        },
+        {
+            "name": "nexa_production_00024.bin",
+            "size": 200000
+        },
+        {
+            "name": "nexa_production_00025.bin",
+            "size": 200000
+        },
+        {
+            "name": "nexa_production_00026.bin",
+            "size": 200000
+        },
+        {
+            "name": "nexa_production_00027.bin",
+            "size": 200000
+        },
+        {
+            "name": "nexa_production_00028.bin",
+            "size": 200000
+        },
+        {
+            "name": "nexa_production_00029.bin",
+            "size": 200000
+        },
+        {
+            "name": "nexa_production_00030.bin",
+            "size": 200000
+        },
+        {
+            "name": "nexa_production_00031.bin",
+            "size": 200000
+        },
+        {
+            "name": "nexa_production_00032.bin",
+            "size": 200000
+        },
+        {
+            "name": "nexa_production_00033.bin",
+            "size": 200000
+        },
+        {
+            "name": "nexa_production_00034.bin",
+            "size": 200000
+        },
+        {
+            "name": "nexa_production_00035.bin",
+            "size": 200000
+        },
+        {
+            "name": "nexa_production_00036.bin",
+            "size": 200000
+        },
+        {
+            "name": "nexa_production_00037.bin",
+            "size": 200000
+        },
+        {
+            "name": "nexa_production_00038.bin",
+            "size": 200000
+        },
+        {
+            "name": "nexa_production_00039.bin",
+            "size": 200000
+        },
+        {
+            "name": "nexa_production_00040.bin",
+            "size": 200000
+        },
+        {
+            "name": "nexa_production_00041.bin",
+            "size": 200000
+        },
+        {
+            "name": "nexa_production_00042.bin",
+            "size": 200000
+        },
+        {
+            "name": "nexa_production_00043.bin",
+            "size": 200000
+        },
+        {
+            "name": "nexa_production_00044.bin",
+            "size": 200000
+        },
+        {
+            "name": "nexa_production_00045.bin",
+            "size": 200000
+        },
+        {
+            "name": "nexa_production_00046.bin",
+            "size": 200000
+        },
+        {
+            "name": "nexa_production_00047.bin",
+            "size": 200000
+        },
+        {
+            "name": "nexa_production_00048.bin",
+            "size": 200000
+        },
+        {
+            "name": "nexa_production_00049.bin",
+            "size": 200000
+        },
+        {
+            "name": "nexa_production_00050.bin",
+            "size": 200000
+        },
+        {
+            "name": "nexa_production_00051.bin",
+            "size": 200000
+        },
+        {
+            "name": "nexa_production_00052.bin",
+            "size": 160000
+        }
+    ]
+}
