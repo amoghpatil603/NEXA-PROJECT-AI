@@ -18,12 +18,13 @@ def deterministic_split(data_ids: List[Any], train_ratio: float = 0.9, seed: int
     return {'train': sorted_ids[:split_idx], 'val': sorted_ids[split_idx:]}
 
 def generate_manifest(stats: Dict[str, Any]) -> str:
-    # Now uses the 'content_hash' calculated by our real function
     manifest = {
         "dataset_name": "NEXA",
         "dataset_version": "1.0.0",
         "tokenizer_version": "nexa-bpe-v1",
         "vocab_size": stats.get('vocab_size', 0),
+        "train_documents": stats.get('train_documents', 0), # Added missing field
+        "validation_documents": stats.get('val_documents', 0), # Added missing field
         "train_tokens": stats.get('train_tokens', 0),
         "validation_tokens": stats.get('val_tokens', 0),
         "shard_format": "uint16_binary",

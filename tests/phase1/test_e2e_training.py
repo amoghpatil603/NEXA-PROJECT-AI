@@ -13,7 +13,7 @@ class TestE2E(unittest.TestCase):
     def test_optimizer_step_delta(self):
         test_dir = Path('/tmp/e2e_reverify')
         test_dir.mkdir(parents=True, exist_ok=True)
-        tokens = [i % 100 for i in range(1000)]
+        tokens = [(i % 100) + 1 for i in range(1000)]
         sharder = DatasetSharder(str(test_dir), shard_size=100)
         sharder.write(tokens)
         sharder.close()
@@ -24,19 +24,23 @@ class TestE2E(unittest.TestCase):
 
         loader = ShardDataLoader(str(test_dir), batch_size=2, max_length=16)
         param = next(model.parameters())
+        param.requires_grad = True
         initial_val = param.clone().detach()
 
-        # Set accumulation steps to 1 to force optimizer step at step 1
+        # Force a massive learning rate to ensure float change is visible
         train_cfg = TrainingConfig(
             max_steps=1,
             gradient_accumulation_steps=1,
-            learning_rate=1.0,
+            learning_rate=10.0,
             checkpoint_dir='/tmp/e2e_ckpt',
             log_dir='/tmp/e2e_log'
         )
         trainer = Trainer(model, train_cfg, loader)
         trainer.train()
 
+        # Check if gradient was computed
+        self.assertIsNotNone(param.grad, "Gradients were not computed.")
+        
         delta = torch.abs(param - initial_val).sum().item()
         print(f'Optimizer Parameter Delta: {delta}')
-        self.assertGreater(delta, 0.0, "Model parameters did not update.")
+        self.assertGreater(delta, 0.0, "Model parameters did not update after optimizer step.")
