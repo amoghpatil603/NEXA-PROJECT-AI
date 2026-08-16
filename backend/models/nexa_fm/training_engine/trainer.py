@@ -72,7 +72,18 @@ class Trainer:
             with torch.autocast(device_type=self.device.type, enabled=self.config.mixed_precision and self.device.type == 'cuda') if hasattr(torch, "autocast") else torch.no_grad():
                 # For standard causal LM, inputs and labels are the same
                 outputs = self.model(input_ids=batch) 
-                loss = outputs[0] if isinstance(outputs, tuple) else outputs.loss
+                if hasattr(outputs, 'loss'):
+                    loss = outputs.loss
+                elif isinstance(outputs, (tuple, list)):
+                    loss = outputs[0]
+                else:
+                    # Handle raw tensor outputs (logits)
+                    logits = outputs
+                    # Assuming batch is (B, T) and logits are (B, T, V)
+                    shift_logits = logits[..., :-1, :].contiguous()
+                    shift_labels = batch[..., 1:].contiguous()
+                    import torch.nn.functional as F
+                    loss = F.cross_entropy(shift_logits.view(-1, shift_logits.size(-1)), shift_labels.view(-1))
                 loss = loss / self.config.gradient_accumulation_steps
                 
             # Backward pass
