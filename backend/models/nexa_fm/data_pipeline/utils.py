@@ -28,7 +28,9 @@ def generate_manifest(stats: Dict[str, Any]) -> str:
         "train_tokens": stats.get('train_tokens', 0),
         "validation_tokens": stats.get('validation_tokens', 0),
         "shard_format": "uint16_binary",
-        "shard_count": stats.get('shard_count', 0), # Re-added missing field
+        "shard_count": stats.get('shard_count', 0),
+        "sequence_length": stats.get('max_length', 2048),
+        "split_seed": stats.get('seed', 42),
         "content_hash": stats.get('content_hash', 'UNDEFINED')
     }
     return json.dumps(manifest, indent=2)

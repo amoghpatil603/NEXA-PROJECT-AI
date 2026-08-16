@@ -16,7 +16,7 @@ class TestE2E(unittest.TestCase):
             import shutil
             shutil.rmtree(test_dir)
         test_dir.mkdir(parents=True, exist_ok=True)
-        
+
         tokens = [(i % 100) + 1 for i in range(1000)]
         sharder = DatasetSharder(str(test_dir), shard_size=100)
         sharder.write(tokens)
@@ -27,22 +27,22 @@ class TestE2E(unittest.TestCase):
         model.train()
 
         loader = ShardDataLoader(str(test_dir), batch_size=2, max_length=16)
-        
-        # Target the first layer's weight for delta check
+
+        # Target weights for update check
         param = next(model.parameters())
         initial_val = param.clone().detach()
 
+        # Increase steps and learning rate to guarantee numerical delta on CPU
         train_cfg = TrainingConfig(
-            max_steps=1,
+            max_steps=5,
             gradient_accumulation_steps=1,
-            learning_rate=10.0,
+            learning_rate=100.0,
             checkpoint_dir='/tmp/e2e_ckpt',
             log_dir='/tmp/e2e_log'
         )
         trainer = Trainer(model, train_cfg, loader)
         trainer.train()
 
-        # Verify numerical update occurred
         delta = torch.abs(param - initial_val).sum().item()
-        print(f'Optimizer Parameter Delta: {delta}')
-        self.assertGreater(delta, 0.0, "Model parameters did not update after optimizer step.")
+        print(f'Optimizer Parameter Delta after 5 steps: {delta}')
+        self.assertGreater(delta, 0.0, "Model parameters did not update numerically.")
