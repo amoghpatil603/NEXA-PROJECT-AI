@@ -31,6 +31,6 @@ def generate_manifest(stats: Dict[str, Any]) -> str:
         "shard_count": stats.get('shard_count', 0),
         "sequence_length": stats.get('max_length', 2048),
         "split_seed": stats.get('seed', 42),
-        "content_hash": stats.get('content_hash', 'UNDEFINED')
+        "content_hash": stats.get('hash', stats.get('content_hash', 'UNDEFINED'))
     }
     return json.dumps(manifest, indent=2)
