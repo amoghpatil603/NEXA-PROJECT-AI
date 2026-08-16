@@ -23,11 +23,12 @@ def generate_manifest(stats: Dict[str, Any]) -> str:
         "dataset_version": "1.0.0",
         "tokenizer_version": "nexa-bpe-v1",
         "vocab_size": stats.get('vocab_size', 0),
-        "train_documents": stats.get('train_documents', 0), # Added missing field
-        "validation_documents": stats.get('val_documents', 0), # Added missing field
+        "train_documents": stats.get('train_documents', 0),
+        "validation_documents": stats.get('validation_documents', 0),
         "train_tokens": stats.get('train_tokens', 0),
-        "validation_tokens": stats.get('val_tokens', 0),
+        "validation_tokens": stats.get('validation_tokens', 0),
         "shard_format": "uint16_binary",
+        "shard_count": stats.get('shard_count', 0), # Re-added missing field
         "content_hash": stats.get('content_hash', 'UNDEFINED')
     }
     return json.dumps(manifest, indent=2)
