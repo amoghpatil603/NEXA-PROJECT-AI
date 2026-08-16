@@ -1,37 +1,40 @@
-try:
-    import torch
-except ImportError:
-    torch = None
-import json
+import torch
+import numpy as np
 import os
+from pathlib import Path
 from typing import Iterator
 
 class ShardDataLoader:
-    def __init__(self, shard_dir: str, tokenizer, batch_size: int, max_length: int):
-        self.shard_dir = shard_dir
-        self.tokenizer = tokenizer
+    """
+    Production DataLoader: Reads uint16 binary shards using memory-mapping.
+    Produces (batch_size, sequence_length) torch.long tensors.
+    """
+    def __init__(self, shard_dir: str, batch_size: int = 1, max_length: int = 2048, shuffle: bool = True, seed: int = 42):
+        self.shard_dir = Path(shard_dir)
         self.batch_size = batch_size
         self.max_length = max_length
-        self.shard_files = sorted([os.path.join(shard_dir, f) for f in os.listdir(shard_dir) if f.endswith('.jsonl')]) if os.path.exists(shard_dir) else []
+        self.shuffle = shuffle
+        self.seed = seed
+        self.shards = sorted(list(self.shard_dir.glob("*.bin")))
+        if not self.shards:
+            raise FileNotFoundError(f"No shards found in {shard_dir}")
 
-    def __iter__(self):
-        batch_input_ids = []
-        for shard_file in self.shard_files:
-            with open(shard_file, 'r', encoding='utf-8') as f:
-                for line in f:
-                    if not line.strip():
-                        continue
-                    item = json.loads(line)
-                    text = item.get("text", "")
-                    tokens = self.tokenizer.encode(text, add_special_tokens=True)
-                    # chunking
-                    for i in range(0, len(tokens), self.max_length):
-                        chunk = tokens[i:i + self.max_length]
-                        if len(chunk) < self.max_length:
-                            chunk += [self.tokenizer.special_tokens["<PAD>"]] * (self.max_length - len(chunk))
-                        
-                        batch_input_ids.append(chunk)
-                        
-                        if len(batch_input_ids) == self.batch_size:
-                            yield torch.tensor(batch_input_ids, dtype=torch.long)
-                            batch_input_ids = []
+    def __iter__(self) -> Iterator[torch.Tensor]:
+        indices = np.arange(len(self.shards))
+        if self.shuffle:
+            rng = np.random.default_rng(self.seed)
+            rng.shuffle(indices)
+
+        for idx in indices:
+            shard_path = self.shards[idx]
+            # Zero-copy memory mapping
+            data = np.memmap(shard_path, dtype=np.uint16, mode='r')
+            num_tokens = len(data)
+            num_sequences = num_tokens // self.max_length
+            if num_sequences == 0: continue
+
+            sequences = np.array(data[:num_sequences * self.max_length]).reshape(-1, self.max_length)
+            for i in range(0, len(sequences), self.batch_size):
+                batch = sequences[i:i + self.batch_size]
+                if len(batch) < self.batch_size: continue
+                yield torch.from_numpy(batch.astype(np.int64))

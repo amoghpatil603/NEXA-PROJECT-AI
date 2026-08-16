@@ -1,44 +1,45 @@
 import os
-import json
-from typing import Dict, Any, Iterator, List
+import numpy as np
+from pathlib import Path
+from typing import List, Dict, Any
 
 class DatasetSharder:
-    def __init__(self, output_dir: str, shard_size: int = 10000):
-        self.output_dir = output_dir
+    """
+    Production Binary Sharder: Writes tokenized sequences into uint16 binary shards.
+    Ensures memory efficiency, deterministic naming, and input validation.
+    """
+    def __init__(self, output_dir: str, shard_size: int = 100000):
+        self.output_dir = Path(output_dir)
+        self.output_dir.mkdir(parents=True, exist_ok=True)
         self.shard_size = shard_size
-        self.current_shard = 0
-        self.current_buffer = []
-        os.makedirs(output_dir, exist_ok=True)
+        self.current_shard_idx = 0
+        self.buffer = []
+        self.total_tokens = 0
 
-    def write(self, item: Dict[str, Any]):
-        self.current_buffer.append(item)
-        if len(self.current_buffer) >= self.shard_size:
+    def write(self, tokens: List[int]):
+        if any(t < 0 or t > 65535 for t in tokens):
+            raise ValueError("Token IDs must fit in uint16 (0-65535)")
+        self.buffer.extend(tokens)
+        self.total_tokens += len(tokens)
+        while len(self.buffer) >= self.shard_size:
             self._flush()
 
     def _flush(self):
-        if not self.current_buffer:
-            return
-        
-        shard_path = os.path.join(self.output_dir, f"shard_{self.current_shard:05d}.jsonl")
-        with open(shard_path, 'w', encoding='utf-8') as f:
-            for item in self.current_buffer:
-                f.write(json.dumps(item) + "\n")
-                
-        self.current_buffer = []
-        self.current_shard += 1
+        shard_path = self.output_dir / f"shard_{self.current_shard_idx:05d}.bin"
+        data = np.array(self.buffer[:self.shard_size], dtype=np.uint16)
+        data.tofile(shard_path)
+        self.buffer = self.buffer[self.shard_size:]
+        self.current_shard_idx += 1
 
-    def close(self):
-        self._flush()
-
-    @staticmethod
-    def stream_shards(output_dir: str) -> Iterator[Dict[str, Any]]:
-        if not os.path.exists(output_dir):
-            return
-            
-        shard_files = sorted([f for f in os.listdir(output_dir) if f.endswith('.jsonl')])
-        for shard_file in shard_files:
-            shard_path = os.path.join(output_dir, shard_file)
-            with open(shard_path, 'r', encoding='utf-8') as f:
-                for line in f:
-                    if line.strip():
-                        yield json.loads(line)
+    def close(self) -> Dict[str, Any]:
+        if self.buffer:
+            shard_path = self.output_dir / f"shard_{self.current_shard_idx:05d}.bin"
+            data = np.array(self.buffer, dtype=np.uint16)
+            data.tofile(shard_path)
+            self.current_shard_idx += 1
+            self.buffer = []
+        return {
+            "shard_count": self.current_shard_idx,
+            "total_tokens": self.total_tokens,
+            "shard_format": "uint16_binary"
+        }
