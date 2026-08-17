@@ -11,7 +11,8 @@ from pathlib import Path
 from collections import Counter, defaultdict
 
 # Add nexa-model to sys.path
-sys.path.insert(0, str(Path(__file__).resolve().parent / "nexa-model"))
+sys.path.insert(0, str(Path(__file__).resolve().parent / "backend/models"))
+sys.path.insert(0, str(Path(__file__).resolve().parent / "backend/models/nexa_fm"))
 from tokenizer.bpe_tokenizer import DEFAULT_SPECIAL_TOKENS
 from tokenizer.incremental_bpe import IncrementalBPETokenizer
 
@@ -234,7 +235,7 @@ def stage_5_sharding():
     with open(VALIDATED_DIR / "validated_manifest.json", "r") as f:
         manifest = json.load(f)
 
-    tok_path = Path("nexa-model/tokenizer/production/tokenizer.json")
+    tok_path = Path(__file__).resolve().parent / "backend/models/tokenizer/production/tokenizer.json"
     if not tok_path.exists():
         logger.error("Tokenizer missing!")
         return
@@ -242,30 +243,27 @@ def stage_5_sharding():
     tok = IncrementalBPETokenizer.load(tok_path)
     NEXA_EOS = tok.special_tokens["<NEXA_EOS>"]
 
-    shard_max_tokens = 50000
-    current_tokens = []
-    # Simplified splits for sample
-    total_docs = len(manifest)
-    train_end = max(1, int(total_docs*0.8))
-    val_end = train_end + int(total_docs*0.1)
+    from backend.models.nexa_fm.data_pipeline.utils import deterministic_split
+    splits = deterministic_split(manifest, train_ratio=0.8)
 
-    splits = {
-        "train": manifest[:train_end],
-        "validation": manifest[train_end:val_end],
-        "test": manifest[val_end:]
-    }
-
-    shard_idx = 0
+    from backend.models.nexa_fm.data_pipeline.sharding import DatasetSharder
+    
     shard_manifest = {}
-
-    for split in ["train", "validation", "test"]:
-        (SHARDS_DIR / split).mkdir(parents=True, exist_ok=True)
-
+    
+    total_shard_count = 0
     for split_name, docs in splits.items():
-        current_tokens = []
+        if not docs:
+            continue
+            
+        split_dir = SHARDS_DIR / split_name
+        split_dir.mkdir(parents=True, exist_ok=True)
+        
+        sharder = DatasetSharder(str(split_dir), shard_size=50000)
+        
         for w in docs:
             logger.info(f"Sharding {w['source_id']}...")
             text = (CLEAN_DIR / f"{w['source_id']}.txt").read_text(encoding="utf-8")
+            
             encoded = []
             block = ""
             for line in text.splitlines(keepends=True):
@@ -276,32 +274,29 @@ def stage_5_sharding():
             if block:
                 encoded.extend(tok.encode(block))
             encoded.append(NEXA_EOS)
-            current_tokens.extend(encoded)
-
-            while len(current_tokens) >= shard_max_tokens:
-                chunk = current_tokens[:shard_max_tokens]
-                arr = array.array("H", chunk)
-                path = SHARDS_DIR / split_name / f"shard_{shard_idx}.bin"
-                with open(path, "wb") as f:
-                    arr.tofile(f)
-                shard_manifest[f"{split_name}/shard_{shard_idx}.bin"] = {
-                    "tokens": len(chunk),
-                    "sha256": hashlib.sha256(open(path, "rb").read()).hexdigest()
+            
+            sharder.write(encoded)
+            
+        stats = sharder.close()
+        
+        
+        for idx in range(stats['shard_count']):
+            shard_file = split_dir / f"shard_{idx:05d}.bin"
+            if shard_file.exists():
+                sha256 = hashlib.sha256(shard_file.read_bytes()).hexdigest()
+                rel_path = f"{split_name}/{shard_file.name}"
+                shard_manifest[rel_path] = {
+                    "sha256": sha256
                 }
-                shard_idx += 1
-                current_tokens = current_tokens[shard_max_tokens:]
 
-        if current_tokens:
-            arr = array.array("H", current_tokens)
-            path = SHARDS_DIR / split_name / f"shard_{shard_idx}.bin"
-            with open(path, "wb") as f:
-                arr.tofile(f)
-            shard_manifest[f"{split_name}/shard_{shard_idx}.bin"] = {
-                "tokens": len(current_tokens),
-                "sha256": hashlib.sha256(open(path, "rb").read()).hexdigest()
-            }
-            shard_idx += 1
-
+            
+        total_shard_count += stats['shard_count']
+        
+        state.state["data"][f"{split_name}_tokens"] = stats['total_tokens']
+        state.state["data"][f"{split_name}_documents"] = len(docs)
+        
+    state.state["data"]["shard_count"] = total_shard_count
+    
     with open(SHARDS_DIR / "shard_manifest.json", "w") as f:
         json.dump(shard_manifest, f, indent=2)
 
@@ -326,15 +321,36 @@ def stage_7_manifest():
 
     with open(VALIDATED_DIR / "validated_manifest.json", "r") as f:
         docs = json.load(f)
-
-    final_manifest = {
-        "version": "1.0",
-        "date": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
-        "sample_counts": len(docs)
+        
+    from backend.models.nexa_fm.data_pipeline.utils import generate_content_hash, generate_manifest
+    
+    data_ids = [d['source_id'] for d in docs]
+    config = {
+        "shard_size": 50000,
+        "train_ratio": 0.8,
+        "seed": 42
     }
+    
+    content_hash = generate_content_hash(data_ids, config)
+    
+    stats = {
+        "vocab_size": 32000,
+        "train_documents": state.state.get("data", {}).get("train_documents", 0),
+        "validation_documents": state.state.get("data", {}).get("validation_documents", 0),
+        "test_documents": state.state.get("data", {}).get("test_documents", 0),
+        "train_tokens": state.state.get("data", {}).get("train_tokens", 0),
+        "validation_tokens": state.state.get("data", {}).get("validation_tokens", 0),
+        "test_tokens": state.state.get("data", {}).get("test_tokens", 0),
+        "shard_count": state.state.get("data", {}).get("shard_count", 0),
+        "max_length": 2048,
+        "seed": 42,
+        "content_hash": content_hash
+    }
+    
+    manifest_str = generate_manifest(stats)
 
     with open(MANIFEST_DIR / "final_manifest.json", "w") as f:
-        json.dump(final_manifest, f, indent=2)
+        f.write(manifest_str)
 
     state.mark_completed(stage_name)
 
