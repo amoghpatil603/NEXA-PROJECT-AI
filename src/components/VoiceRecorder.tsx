@@ -49,16 +49,31 @@ export const VoiceRecorder: React.FC<{ onTranscript: (text: string) => void }> =
         setInterimResult('');
       };
     }
-  }, [onTranscript, wsStatus, setIsRecording, setInterimResult]);
+    return () => {
+      if (recognitionRef.current) {
+        recognitionRef.current.abort();
+      }
+    };
+  }, [setIsRecording, setInterimResult]);
 
-  const toggleRecording = () => {
+  const toggleRecording = async () => {
     if (isRecording) {
       recognitionRef.current?.stop();
       setIsRecording(false);
     } else {
+      try {
+        await navigator.mediaDevices.getUserMedia({ audio: true });
+      } catch (err) {
+        console.error('Microphone permission denied', err);
+        return;
+      }
       setInterimResult('');
-      recognitionRef.current?.start();
-      setIsRecording(true);
+      try {
+        recognitionRef.current?.start();
+        setIsRecording(true);
+      } catch (e) {
+        console.error('Speech recognition error', e);
+      }
     }
   };
 
