@@ -22,6 +22,47 @@ GLOBAL_DOC_IDS = []
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger("DatasetPipeline")
 
+def get_tokenizer_sha256() -> str:
+    tok_path = Path(__file__).resolve().parent / "backend/tokenizer_v1/tokenizer.json"
+    candidates = [
+        tok_path,
+        Path("backend/tokenizer_v1/tokenizer.json"),
+        Path("tokenizer_v1/tokenizer.json")
+    ]
+    for c in candidates:
+        if c.exists():
+            return hashlib.sha256(c.read_bytes()).hexdigest()
+    raise FileNotFoundError("Authoritative tokenizer.json not found to establish identity!")
+
+def get_tokenizer_config_sha256() -> str:
+    tok_config_path = Path(__file__).resolve().parent / "backend/tokenizer_v1/tokenizer_config.json"
+    candidates = [
+        tok_config_path,
+        Path("backend/tokenizer_v1/tokenizer_config.json"),
+        Path("tokenizer_v1/tokenizer_config.json")
+    ]
+    for c in candidates:
+        if c.exists():
+            return hashlib.sha256(c.read_bytes()).hexdigest()
+    raise FileNotFoundError("Authoritative tokenizer_config.json not found to establish configuration identity!")
+
+# Enforce authoritative identities
+TOKENIZER_SHA256 = get_tokenizer_sha256()
+TOKENIZER_CONFIG_SHA256 = get_tokenizer_config_sha256()
+
+# Canonical configuration driving all dataset pipeline steps
+PIPELINE_CONFIG = {
+    "train_ratio": 0.8,
+    "validation_ratio": 0.1,
+    "test_ratio": 0.1,
+    "split_seed": 42,
+    "shard_size": 50000,
+    "sequence_length": 2048,
+    "tokenizer_identity": TOKENIZER_SHA256,
+    "tokenizer_config_identity": TOKENIZER_CONFIG_SHA256,
+    "cleaning_version": "gutenberg_cleaning_v1"
+}
+
 STATE_FILE = "pipeline_state.json"
 DATA_DIR = Path("data")
 RAW_DIR = DATA_DIR / "raw"
@@ -248,26 +289,31 @@ def stage_5_sharding():
     NEXA_EOS = tok.special_tokens["<NEXA_EOS>"]
 
     from backend.models.nexa_fm.data_pipeline.utils import deterministic_split
-    splits = deterministic_split(manifest, train_ratio=0.8, validation_ratio=0.1)
+    splits = deterministic_split(
+        manifest,
+        train_ratio=PIPELINE_CONFIG["train_ratio"],
+        validation_ratio=PIPELINE_CONFIG["validation_ratio"],
+        seed=PIPELINE_CONFIG["split_seed"]
+    )
 
     from backend.models.nexa_fm.data_pipeline.sharding import DatasetSharder
-    
+
     shard_manifest = {}
-    
+
     total_shard_count = 0
     for split_name, docs in splits.items():
         if not docs:
             continue
-            
+
         split_dir = SHARDS_DIR / split_name
         split_dir.mkdir(parents=True, exist_ok=True)
-        
-        sharder = DatasetSharder(str(split_dir), shard_size=50000)
-        
+
+        sharder = DatasetSharder(str(split_dir), shard_size=PIPELINE_CONFIG["shard_size"])
+
         for w in docs:
             logger.info(f"Sharding {w['source_id']}...")
             text = (CLEAN_DIR / f"{w['source_id']}.txt").read_text(encoding="utf-8")
-            
+
             encoded = []
             block = ""
             for line in text.splitlines(keepends=True):
@@ -278,12 +324,11 @@ def stage_5_sharding():
             if block:
                 encoded.extend(tok.encode(block))
             encoded.append(NEXA_EOS)
-            
+
             sharder.write(encoded)
-            
+
         stats = sharder.close()
-        
-        
+
         for idx in range(stats['shard_count']):
             shard_file = split_dir / f"shard_{idx:05d}.bin"
             if shard_file.exists():
@@ -293,14 +338,14 @@ def stage_5_sharding():
                     "sha256": sha256
                 }
 
-            
         total_shard_count += stats['shard_count']
-        
+
         state.state["data"][f"{split_name}_tokens"] = stats['total_tokens']
         state.state["data"][f"{split_name}_documents"] = len(docs)
-        
+
     state.state["data"]["shard_count"] = total_shard_count
-    
+    state.state["data"]["shard_checksums"] = shard_manifest
+
     with open(SHARDS_DIR / "shard_manifest.json", "w") as f:
         json.dump(shard_manifest, f, indent=2)
 
@@ -312,7 +357,7 @@ def stage_6_metadata():
         return
     state.start_stage(stage_name)
     logger.info("Generating Metadata...")
-    
+
     # Just aggregate simple stats
     state.mark_completed(stage_name)
 
@@ -325,18 +370,11 @@ def stage_7_manifest():
 
     with open(VALIDATED_DIR / "validated_manifest.json", "r") as f:
         docs = json.load(f)
-        
-    from backend.models.nexa_fm.data_pipeline.utils import generate_content_hash, generate_manifest
-    
+
+    from backend.models.nexa_fm.data_pipeline.utils import generate_manifest
+
     data_ids = [d['source_id'] for d in docs]
-    config = {
-        "shard_size": 50000,
-        "train_ratio": 0.8,
-        "seed": 42
-    }
-    
-    content_hash = generate_content_hash(data_ids, config)
-    
+
     tok_path = Path(__file__).resolve().parent / "backend/tokenizer_v1/tokenizer.json"
     vocab_size = 300
     if tok_path.exists():
@@ -346,7 +384,7 @@ def stage_7_manifest():
                 vocab_size = tok_data.get("vocab_size", 300)
         except Exception:
             pass
-            
+
     stats = {
         "vocab_size": vocab_size,
         "train_documents": state.state.get("data", {}).get("train_documents", 0),
@@ -356,12 +394,10 @@ def stage_7_manifest():
         "validation_tokens": state.state.get("data", {}).get("validation_tokens", 0),
         "test_tokens": state.state.get("data", {}).get("test_tokens", 0),
         "shard_count": state.state.get("data", {}).get("shard_count", 0),
-        "max_length": 2048,
-        "seed": 42,
-        "content_hash": content_hash
+        "shard_checksums": state.state.get("data", {}).get("shard_checksums", {}),
     }
-    
-    manifest_str = generate_manifest(stats, data_ids, config)
+
+    manifest_str = generate_manifest(stats, data_ids, PIPELINE_CONFIG)
 
     with open(MANIFEST_DIR / "final_manifest.json", "w") as f:
         f.write(manifest_str)
