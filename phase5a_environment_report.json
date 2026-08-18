@@ -1,0 +1,9 @@
+{
+  "python_version": "3.11.2 (main, May 12 2026, 05:17:27) [GCC 12.2.0]",
+  "torch_version": "2.5.1+cpu",
+  "cuda_available": false,
+  "device": "cpu",
+  "checkpoint_exists": true,
+  "checkpoint_size": 167120866,
+  "status": "PASS"
+}

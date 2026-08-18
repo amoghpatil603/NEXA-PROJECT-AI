@@ -1,0 +1,842 @@
+[
+  {
+    "source_id": "instr_1",
+    "title": "Instruction 1",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_1"
+  },
+  {
+    "source_id": "instr_2",
+    "title": "Instruction 2",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_2"
+  },
+  {
+    "source_id": "instr_3",
+    "title": "Instruction 3",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_3"
+  },
+  {
+    "source_id": "instr_4",
+    "title": "Instruction 4",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_4"
+  },
+  {
+    "source_id": "instr_5",
+    "title": "Instruction 5",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_5"
+  },
+  {
+    "source_id": "instr_6",
+    "title": "Instruction 6",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_6"
+  },
+  {
+    "source_id": "instr_7",
+    "title": "Instruction 7",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_7"
+  },
+  {
+    "source_id": "instr_8",
+    "title": "Instruction 8",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_8"
+  },
+  {
+    "source_id": "instr_9",
+    "title": "Instruction 9",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_9"
+  },
+  {
+    "source_id": "instr_10",
+    "title": "Instruction 10",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_10"
+  },
+  {
+    "source_id": "instr_11",
+    "title": "Instruction 11",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_11"
+  },
+  {
+    "source_id": "instr_12",
+    "title": "Instruction 12",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_12"
+  },
+  {
+    "source_id": "instr_13",
+    "title": "Instruction 13",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_13"
+  },
+  {
+    "source_id": "instr_14",
+    "title": "Instruction 14",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_14"
+  },
+  {
+    "source_id": "instr_15",
+    "title": "Instruction 15",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_15"
+  },
+  {
+    "source_id": "instr_16",
+    "title": "Instruction 16",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_16"
+  },
+  {
+    "source_id": "instr_17",
+    "title": "Instruction 17",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_17"
+  },
+  {
+    "source_id": "instr_18",
+    "title": "Instruction 18",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_18"
+  },
+  {
+    "source_id": "instr_19",
+    "title": "Instruction 19",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_19"
+  },
+  {
+    "source_id": "instr_20",
+    "title": "Instruction 20",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_20"
+  },
+  {
+    "source_id": "instr_21",
+    "title": "Instruction 21",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_21"
+  },
+  {
+    "source_id": "instr_22",
+    "title": "Instruction 22",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_22"
+  },
+  {
+    "source_id": "instr_23",
+    "title": "Instruction 23",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_23"
+  },
+  {
+    "source_id": "instr_24",
+    "title": "Instruction 24",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_24"
+  },
+  {
+    "source_id": "instr_25",
+    "title": "Instruction 25",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_25"
+  },
+  {
+    "source_id": "instr_26",
+    "title": "Instruction 26",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_26"
+  },
+  {
+    "source_id": "instr_27",
+    "title": "Instruction 27",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_27"
+  },
+  {
+    "source_id": "instr_28",
+    "title": "Instruction 28",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_28"
+  },
+  {
+    "source_id": "instr_29",
+    "title": "Instruction 29",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_29"
+  },
+  {
+    "source_id": "instr_30",
+    "title": "Instruction 30",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_30"
+  },
+  {
+    "source_id": "instr_31",
+    "title": "Instruction 31",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_31"
+  },
+  {
+    "source_id": "instr_32",
+    "title": "Instruction 32",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_32"
+  },
+  {
+    "source_id": "instr_33",
+    "title": "Instruction 33",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_33"
+  },
+  {
+    "source_id": "instr_34",
+    "title": "Instruction 34",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_34"
+  },
+  {
+    "source_id": "instr_35",
+    "title": "Instruction 35",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_35"
+  },
+  {
+    "source_id": "instr_36",
+    "title": "Instruction 36",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_36"
+  },
+  {
+    "source_id": "instr_37",
+    "title": "Instruction 37",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_37"
+  },
+  {
+    "source_id": "instr_38",
+    "title": "Instruction 38",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_38"
+  },
+  {
+    "source_id": "instr_39",
+    "title": "Instruction 39",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_39"
+  },
+  {
+    "source_id": "instr_40",
+    "title": "Instruction 40",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_40"
+  },
+  {
+    "source_id": "instr_41",
+    "title": "Instruction 41",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_41"
+  },
+  {
+    "source_id": "instr_42",
+    "title": "Instruction 42",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_42"
+  },
+  {
+    "source_id": "instr_43",
+    "title": "Instruction 43",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_43"
+  },
+  {
+    "source_id": "instr_44",
+    "title": "Instruction 44",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_44"
+  },
+  {
+    "source_id": "instr_45",
+    "title": "Instruction 45",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_45"
+  },
+  {
+    "source_id": "instr_46",
+    "title": "Instruction 46",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_46"
+  },
+  {
+    "source_id": "instr_47",
+    "title": "Instruction 47",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_47"
+  },
+  {
+    "source_id": "instr_48",
+    "title": "Instruction 48",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_48"
+  },
+  {
+    "source_id": "instr_49",
+    "title": "Instruction 49",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_49"
+  },
+  {
+    "source_id": "instr_50",
+    "title": "Instruction 50",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_50"
+  },
+  {
+    "source_id": "instr_51",
+    "title": "Instruction 51",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_51"
+  },
+  {
+    "source_id": "instr_52",
+    "title": "Instruction 52",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_52"
+  },
+  {
+    "source_id": "instr_53",
+    "title": "Instruction 53",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_53"
+  },
+  {
+    "source_id": "instr_54",
+    "title": "Instruction 54",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_54"
+  },
+  {
+    "source_id": "instr_55",
+    "title": "Instruction 55",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_55"
+  },
+  {
+    "source_id": "instr_56",
+    "title": "Instruction 56",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_56"
+  },
+  {
+    "source_id": "instr_57",
+    "title": "Instruction 57",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_57"
+  },
+  {
+    "source_id": "instr_58",
+    "title": "Instruction 58",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_58"
+  },
+  {
+    "source_id": "instr_59",
+    "title": "Instruction 59",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_59"
+  },
+  {
+    "source_id": "instr_60",
+    "title": "Instruction 60",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_60"
+  },
+  {
+    "source_id": "instr_61",
+    "title": "Instruction 61",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_61"
+  },
+  {
+    "source_id": "instr_62",
+    "title": "Instruction 62",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_62"
+  },
+  {
+    "source_id": "instr_63",
+    "title": "Instruction 63",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_63"
+  },
+  {
+    "source_id": "instr_64",
+    "title": "Instruction 64",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_64"
+  },
+  {
+    "source_id": "instr_65",
+    "title": "Instruction 65",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_65"
+  },
+  {
+    "source_id": "instr_66",
+    "title": "Instruction 66",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_66"
+  },
+  {
+    "source_id": "instr_67",
+    "title": "Instruction 67",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_67"
+  },
+  {
+    "source_id": "instr_68",
+    "title": "Instruction 68",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_68"
+  },
+  {
+    "source_id": "instr_69",
+    "title": "Instruction 69",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_69"
+  },
+  {
+    "source_id": "instr_70",
+    "title": "Instruction 70",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_70"
+  },
+  {
+    "source_id": "instr_71",
+    "title": "Instruction 71",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_71"
+  },
+  {
+    "source_id": "instr_72",
+    "title": "Instruction 72",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_72"
+  },
+  {
+    "source_id": "instr_73",
+    "title": "Instruction 73",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_73"
+  },
+  {
+    "source_id": "instr_74",
+    "title": "Instruction 74",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_74"
+  },
+  {
+    "source_id": "instr_75",
+    "title": "Instruction 75",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_75"
+  },
+  {
+    "source_id": "instr_76",
+    "title": "Instruction 76",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_76"
+  },
+  {
+    "source_id": "instr_77",
+    "title": "Instruction 77",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_77"
+  },
+  {
+    "source_id": "instr_78",
+    "title": "Instruction 78",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_78"
+  },
+  {
+    "source_id": "instr_79",
+    "title": "Instruction 79",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_79"
+  },
+  {
+    "source_id": "instr_80",
+    "title": "Instruction 80",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_80"
+  },
+  {
+    "source_id": "instr_81",
+    "title": "Instruction 81",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_81"
+  },
+  {
+    "source_id": "instr_82",
+    "title": "Instruction 82",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_82"
+  },
+  {
+    "source_id": "instr_83",
+    "title": "Instruction 83",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_83"
+  },
+  {
+    "source_id": "instr_84",
+    "title": "Instruction 84",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_84"
+  },
+  {
+    "source_id": "instr_85",
+    "title": "Instruction 85",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_85"
+  },
+  {
+    "source_id": "instr_86",
+    "title": "Instruction 86",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_86"
+  },
+  {
+    "source_id": "instr_87",
+    "title": "Instruction 87",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_87"
+  },
+  {
+    "source_id": "instr_88",
+    "title": "Instruction 88",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_88"
+  },
+  {
+    "source_id": "instr_89",
+    "title": "Instruction 89",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_89"
+  },
+  {
+    "source_id": "instr_90",
+    "title": "Instruction 90",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_90"
+  },
+  {
+    "source_id": "instr_91",
+    "title": "Instruction 91",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_91"
+  },
+  {
+    "source_id": "instr_92",
+    "title": "Instruction 92",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_92"
+  },
+  {
+    "source_id": "instr_93",
+    "title": "Instruction 93",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_93"
+  },
+  {
+    "source_id": "instr_94",
+    "title": "Instruction 94",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_94"
+  },
+  {
+    "source_id": "instr_95",
+    "title": "Instruction 95",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_95"
+  },
+  {
+    "source_id": "instr_96",
+    "title": "Instruction 96",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_96"
+  },
+  {
+    "source_id": "instr_97",
+    "title": "Instruction 97",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_97"
+  },
+  {
+    "source_id": "instr_98",
+    "title": "Instruction 98",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_98"
+  },
+  {
+    "source_id": "instr_99",
+    "title": "Instruction 99",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_99"
+  },
+  {
+    "source_id": "instr_100",
+    "title": "Instruction 100",
+    "author": "Synthetic",
+    "category": "INSTRUCTION",
+    "work_id": "W_instr_100"
+  },
+  {
+    "source_id": "pref_1",
+    "title": "Preference 1",
+    "author": "Synthetic",
+    "category": "PREFERENCE",
+    "work_id": "W_pref_1"
+  },
+  {
+    "source_id": "pref_2",
+    "title": "Preference 2",
+    "author": "Synthetic",
+    "category": "PREFERENCE",
+    "work_id": "W_pref_2"
+  },
+  {
+    "source_id": "pref_3",
+    "title": "Preference 3",
+    "author": "Synthetic",
+    "category": "PREFERENCE",
+    "work_id": "W_pref_3"
+  },
+  {
+    "source_id": "pref_4",
+    "title": "Preference 4",
+    "author": "Synthetic",
+    "category": "PREFERENCE",
+    "work_id": "W_pref_4"
+  },
+  {
+    "source_id": "pref_5",
+    "title": "Preference 5",
+    "author": "Synthetic",
+    "category": "PREFERENCE",
+    "work_id": "W_pref_5"
+  },
+  {
+    "source_id": "pref_6",
+    "title": "Preference 6",
+    "author": "Synthetic",
+    "category": "PREFERENCE",
+    "work_id": "W_pref_6"
+  },
+  {
+    "source_id": "pref_7",
+    "title": "Preference 7",
+    "author": "Synthetic",
+    "category": "PREFERENCE",
+    "work_id": "W_pref_7"
+  },
+  {
+    "source_id": "pref_8",
+    "title": "Preference 8",
+    "author": "Synthetic",
+    "category": "PREFERENCE",
+    "work_id": "W_pref_8"
+  },
+  {
+    "source_id": "pref_9",
+    "title": "Preference 9",
+    "author": "Synthetic",
+    "category": "PREFERENCE",
+    "work_id": "W_pref_9"
+  },
+  {
+    "source_id": "pref_10",
+    "title": "Preference 10",
+    "author": "Synthetic",
+    "category": "PREFERENCE",
+    "work_id": "W_pref_10"
+  },
+  {
+    "source_id": "pref_11",
+    "title": "Preference 11",
+    "author": "Synthetic",
+    "category": "PREFERENCE",
+    "work_id": "W_pref_11"
+  },
+  {
+    "source_id": "pref_12",
+    "title": "Preference 12",
+    "author": "Synthetic",
+    "category": "PREFERENCE",
+    "work_id": "W_pref_12"
+  },
+  {
+    "source_id": "pref_13",
+    "title": "Preference 13",
+    "author": "Synthetic",
+    "category": "PREFERENCE",
+    "work_id": "W_pref_13"
+  },
+  {
+    "source_id": "pref_14",
+    "title": "Preference 14",
+    "author": "Synthetic",
+    "category": "PREFERENCE",
+    "work_id": "W_pref_14"
+  },
+  {
+    "source_id": "pref_15",
+    "title": "Preference 15",
+    "author": "Synthetic",
+    "category": "PREFERENCE",
+    "work_id": "W_pref_15"
+  },
+  {
+    "source_id": "pref_16",
+    "title": "Preference 16",
+    "author": "Synthetic",
+    "category": "PREFERENCE",
+    "work_id": "W_pref_16"
+  },
+  {
+    "source_id": "pref_17",
+    "title": "Preference 17",
+    "author": "Synthetic",
+    "category": "PREFERENCE",
+    "work_id": "W_pref_17"
+  },
+  {
+    "source_id": "pref_18",
+    "title": "Preference 18",
+    "author": "Synthetic",
+    "category": "PREFERENCE",
+    "work_id": "W_pref_18"
+  },
+  {
+    "source_id": "pref_19",
+    "title": "Preference 19",
+    "author": "Synthetic",
+    "category": "PREFERENCE",
+    "work_id": "W_pref_19"
+  },
+  {
+    "source_id": "pref_20",
+    "title": "Preference 20",
+    "author": "Synthetic",
+    "category": "PREFERENCE",
+    "work_id": "W_pref_20"
+  }
+]

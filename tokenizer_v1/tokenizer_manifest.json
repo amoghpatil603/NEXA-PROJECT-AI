@@ -1,0 +1,14 @@
+{
+  "version": "1.0.0",
+  "creation_timestamp": "2026-08-03T15:03:46.739876+00:00",
+  "sha256_checksum": "267870a26a483f86b2543acfc863773fabb13d802c8085baad475487ab0f11c8",
+  "vocab_size": 300,
+  "algorithm": "BPE",
+  "status": "READY FOR PRETRAINING",
+  "artifacts": [
+    "tokenizer.json",
+    "tokenizer_config.json",
+    "vocab.json",
+    "merges.txt"
+  ]
+}

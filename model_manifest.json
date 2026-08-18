@@ -1,0 +1,9 @@
+{
+    "version": "nexa_base_v1",
+    "checkpoint_name": "ckpt_5000",
+    "sha256": "513db363517f722dc9336c98433c23a7deae08144b43b683949f52c243812e80",
+    "training_step": 5000,
+    "parameter_count": "~128^2 (MLP Layer)",
+    "tokenizer_version": "production_v1",
+    "certification_timestamp": "Mon Aug  3 17:19:57 2026"
+}

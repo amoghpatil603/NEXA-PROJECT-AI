@@ -1,0 +1,1 @@
+{"type": "heartbeat", "system": {"timestamp": "2026-08-04T08:02:41.188592", "cpu_usage_pct": 52.6, "ram_usage_pct": 19.6, "disk_usage_pct": 26.8}, "health": {"device": "cpu", "model": "nexa_dpo_v1", "status": "READY"}}

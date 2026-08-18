@@ -1,0 +1,9 @@
+{
+  "stride": 256,
+  "pad_id": 4,
+  "eos_id": 6,
+  "context_len": 256,
+  "train_samples": 28182,
+  "val_samples": 2306,
+  "test_samples": 2189
+}

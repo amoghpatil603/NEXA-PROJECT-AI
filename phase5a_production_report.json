@@ -1,0 +1,79 @@
+{
+  "status": "CERTIFIED",
+  "checkpoint_path": "/app/applet/checkpoints/model.pt",
+  "prompts_tested": 10,
+  "nan_detected": false,
+  "total_inference_time_seconds": 17.8761,
+  "results": [
+    {
+      "prompt_index": 1,
+      "prompt": "Hello NEXA, introduce yourself.",
+      "response": "<UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK>.<UNK><UNK><UNK><UNK><UNK>\ufffd<UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK>\ufffd<UNK><UNK><UNK><UNK>",
+      "stream_chunks_count": 16,
+      "latency_seconds": 1.3345
+    },
+    {
+      "prompt_index": 2,
+      "prompt": "What is the capital of France?",
+      "response": "<UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK>.<UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK>",
+      "stream_chunks_count": 16,
+      "latency_seconds": 1.3692
+    },
+    {
+      "prompt_index": 3,
+      "prompt": "Explain machine learning in simple terms.",
+      "response": ".<UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK>.<UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK>\ufffd<UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK>",
+      "stream_chunks_count": 16,
+      "latency_seconds": 1.4105
+    },
+    {
+      "prompt_index": 4,
+      "prompt": "Count from 1 to 5.",
+      "response": "<UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK>\ufffd<UNK><UNK><UNK><UNK><UNK>",
+      "stream_chunks_count": 16,
+      "latency_seconds": 1.2446
+    },
+    {
+      "prompt_index": 5,
+      "prompt": "Write a short poem about stars.",
+      "response": "<UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK>.<UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK>\ufffd<UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK>\ufffd<UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK>",
+      "stream_chunks_count": 16,
+      "latency_seconds": 1.2829
+    },
+    {
+      "prompt_index": 6,
+      "prompt": "What is 15 + 27?",
+      "response": "<UNK><UNK>.<UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK>J<UNK>",
+      "stream_chunks_count": 16,
+      "latency_seconds": 1.2297
+    },
+    {
+      "prompt_index": 7,
+      "prompt": "Summarize the goal of NEXA architecture.",
+      "response": "<UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK>y<UNK>BB<UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK>B<UNK><UNK><UNK><UNK>B<UNK>\ufffd<UNK><UNK><UNK><UNK><UNK><UNK><UNK>\ufffd<UNK><UNK>",
+      "stream_chunks_count": 16,
+      "latency_seconds": 1.409
+    },
+    {
+      "prompt_index": 8,
+      "prompt": "Name three primary colors.",
+      "response": "<UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK>\ufffd<UNK><UNK>\ufffd<UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK>B<UNK><UNK><UNK><UNK><UNK>",
+      "stream_chunks_count": 16,
+      "latency_seconds": 1.4443
+    },
+    {
+      "prompt_index": 9,
+      "prompt": "How does BPE tokenization work?",
+      "response": "<UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK>\ufffd<UNK><UNK><UNK><UNK>\ufffd<UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK>",
+      "stream_chunks_count": 16,
+      "latency_seconds": 1.287
+    },
+    {
+      "prompt_index": 10,
+      "prompt": "Say goodbye and wish me luck.",
+      "response": "<UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK>.<UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK>\ufffd<UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK><UNK>",
+      "stream_chunks_count": 16,
+      "latency_seconds": 1.3912
+    }
+  ]
+}

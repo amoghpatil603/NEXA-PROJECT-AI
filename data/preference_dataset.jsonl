@@ -1,0 +1,20 @@
+{"prompt": "Hello, how are you today?", "chosen": "Hello! I am NEXA, a production-grade 13.8M parameter transformer agent engine ready to assist you.", "rejected": "I am just a computer program, I do not have feelings."}
+{"prompt": "What is machine learning?", "chosen": "Machine learning is a subset of AI that enables systems to learn from data to improve performance without explicit programming.", "rejected": "Machine learning is when computers use electricity to run code."}
+{"prompt": "Write a Python function to check prime numbers.", "chosen": "def is_prime(n):\n    if n < 2: return False\n    for i in range(2, int(n**0.5)+1):\n        if n % i == 0: return False\n    return True", "rejected": "def is_prime(n):\n    return n > 1"}
+{"prompt": "Calculate 15 * 24 + 100", "chosen": "460", "rejected": "300"}
+{"prompt": "Explain the transformer architecture.", "chosen": "Transformers use multi-head self-attention mechanisms and feed-forward networks, eliminating recurrence and enabling parallel sequence processing.", "rejected": "Transformers are robots in disguise."}
+{"prompt": "Recall active model parameters.", "chosen": "Active model parameters: 13.8M (384 d_model, 6 layers, 6 heads).", "rejected": "Active model parameters: 175 billion."}
+{"prompt": "Execute RAG search query for transformer config.", "chosen": "Retrieved config: vocab_size=8000, max_seq_len=256, d_model=384, n_layers=6, n_heads=6.", "rejected": "No configuration found."}
+{"prompt": "Execute tool call to write file test.py.", "chosen": "Tool execution successful: created file test.py with boilerplate code.", "rejected": "Error: tool execution failed."}
+{"prompt": "Output exactly three words: Hello World NEXA", "chosen": "Hello World NEXA", "rejected": "Hello World NEXA and welcome to AI Studio."}
+{"prompt": "Compare CNN and Transformer.", "chosen": "CNNs use local spatial convolutional kernels ideal for image processing, whereas Transformers use global self-attention mechanisms ideal for sequence modeling.", "rejected": "CNNs and Transformers are identical architectures."}
+{"prompt": "Summarize BPE tokenization.", "chosen": "Byte-Pair Encoding iteratively merges frequent token pairs to construct an efficient subword vocabulary.", "rejected": "BPE tokenization splits words by spaces."}
+{"prompt": "Recall user favorite language.", "chosen": "Python", "rejected": "Java"}
+{"prompt": "Solve linear equation 3x - 9 = 12", "chosen": "x = 7", "rejected": "x = 3"}
+{"prompt": "Explain gradient descent.", "chosen": "Gradient descent is an iterative optimization algorithm that updates model parameters in the opposite direction of the gradient to minimize loss.", "rejected": "Gradient descent is a sorting algorithm."}
+{"prompt": "Summarize vector databases.", "chosen": "Vector databases store high-dimensional embeddings and index them for rapid approximate nearest neighbor similarity search.", "rejected": "Vector databases are relational SQL databases."}
+{"prompt": "Recall training dataset name.", "chosen": "PD5M-v7 production corpus shards.", "rejected": "ImageNet dataset."}
+{"prompt": "Search RAG for memory engine.", "chosen": "Memory engine maintains structured key-value state with persistence across agent sessions.", "rejected": "Memory engine is a temporary cache."}
+{"prompt": "Execute memory store tool for session_id = 42.", "chosen": "Tool execution successful: stored session_id = 42.", "rejected": "Tool failed to store session."}
+{"prompt": "Write React component for card.", "chosen": "export default function Card({ title, children }) {\n  return <div className=\"p-4 border rounded-lg shadow\"><h2>{title}</h2>{children}</div>;\n}", "rejected": "div.card { color: red; }"}
+{"prompt": "Calculate square root of 196.", "chosen": "14", "rejected": "12"}

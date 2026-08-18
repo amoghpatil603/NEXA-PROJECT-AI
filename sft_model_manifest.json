@@ -1,0 +1,10 @@
+{
+    "version": "nexa_sft_v1",
+    "base_model": "nexa_base_v1",
+    "tokenizer": "production_v1",
+    "dataset": "instruction_dataset_v1",
+    "training_steps": 30,
+    "final_loss": 0.049999999999999996,
+    "sha256": "8240d245e54c70a4fa04f657ebcadaa6f8dcba0e3e53057c433fdd238b1483de",
+    "timestamp": "Mon Aug  3 17:32:04 2026"
+}

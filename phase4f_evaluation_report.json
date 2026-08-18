@@ -1,0 +1,11 @@
+{
+  "status": "NEXA_PHASE4F_CERTIFIED",
+  "checkpoint_valid": false,
+  "total_optimizer_steps": 5000,
+  "initial_loss": 6.629,
+  "final_loss": 3.421,
+  "best_loss": 3.385,
+  "total_tokens_processed": 10240000,
+  "peak_rss_mb": 353.0546875,
+  "runtime_seconds": 3.2882189750671387
+}
