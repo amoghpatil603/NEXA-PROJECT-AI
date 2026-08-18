@@ -16,6 +16,11 @@ sys.path.insert(0, str(Path(__file__).resolve().parent / "backend/models/nexa_fm
 from tokenizer.bpe_tokenizer import DEFAULT_SPECIAL_TOKENS
 from tokenizer.incremental_bpe import IncrementalBPETokenizer
 
+# Global document ID tracker for manifest consistency across resumed stages
+GLOBAL_DOC_IDS = []
+
+
+
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger("DatasetPipeline")
 
@@ -347,7 +352,7 @@ def stage_7_manifest():
         "content_hash": content_hash
     }
     
-    manifest_str = generate_manifest(stats)
+    manifest_str = generate_manifest(stats, GLOBAL_DOC_IDS, {'text_len': 2048})
 
     with open(MANIFEST_DIR / "final_manifest.json", "w") as f:
         f.write(manifest_str)
