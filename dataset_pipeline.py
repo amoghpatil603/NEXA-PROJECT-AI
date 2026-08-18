@@ -15,6 +15,9 @@ sys.path.insert(0, str(Path(__file__).resolve().parent / "backend/models"))
 sys.path.insert(0, str(Path(__file__).resolve().parent / "backend/models/nexa_fm"))
 from tokenizer.bpe_tokenizer import DEFAULT_SPECIAL_TOKENS
 from tokenizer.incremental_bpe import IncrementalBPETokenizer
+ 
+# Global document ID tracker for manifest consistency across resumed stages
+GLOBAL_DOC_IDS = []
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger("DatasetPipeline")
@@ -235,7 +238,7 @@ def stage_5_sharding():
     with open(VALIDATED_DIR / "validated_manifest.json", "r") as f:
         manifest = json.load(f)
 
-    tok_path = Path(__file__).resolve().parent / "backend/models/tokenizer/production/tokenizer.json"
+    tok_path = Path(__file__).resolve().parent / "backend/tokenizer_v1/tokenizer.json"
     if not tok_path.exists():
         logger.error("Tokenizer missing!")
         return
@@ -244,7 +247,7 @@ def stage_5_sharding():
     NEXA_EOS = tok.special_tokens["<NEXA_EOS>"]
 
     from backend.models.nexa_fm.data_pipeline.utils import deterministic_split
-    splits = deterministic_split(manifest, train_ratio=0.8)
+    splits = deterministic_split(manifest, train_ratio=0.8, val_ratio=0.1)
 
     from backend.models.nexa_fm.data_pipeline.sharding import DatasetSharder
     
@@ -333,8 +336,18 @@ def stage_7_manifest():
     
     content_hash = generate_content_hash(data_ids, config)
     
+    tok_path = Path(__file__).resolve().parent / "backend/tokenizer_v1/tokenizer.json"
+    vocab_size = 300
+    if tok_path.exists():
+        try:
+            with open(tok_path, "r", encoding="utf-8") as f:
+                tok_data = json.load(f)
+                vocab_size = tok_data.get("vocab_size", 300)
+        except Exception:
+            pass
+            
     stats = {
-        "vocab_size": 32000,
+        "vocab_size": vocab_size,
         "train_documents": state.state.get("data", {}).get("train_documents", 0),
         "validation_documents": state.state.get("data", {}).get("validation_documents", 0),
         "test_documents": state.state.get("data", {}).get("test_documents", 0),
@@ -347,7 +360,7 @@ def stage_7_manifest():
         "content_hash": content_hash
     }
     
-    manifest_str = generate_manifest(stats)
+    manifest_str = generate_manifest(stats, data_ids, config)
 
     with open(MANIFEST_DIR / "final_manifest.json", "w") as f:
         f.write(manifest_str)

@@ -19,6 +19,8 @@ if torch is not None:
             self.max_seq_len = max_seq_len
             
         def forward(self, x, seq_len):
+            if seq_len > self.max_seq_len:
+                raise ValueError(f"Sequence length {seq_len} exceeds maximum context length of {self.max_seq_len}")
             t = torch.arange(seq_len, device=x.device, dtype=self.inv_freq.dtype)
             freqs = torch.einsum("i,j->ij", t, self.inv_freq)
             emb = torch.cat((freqs, freqs), dim=-1)
@@ -34,8 +36,14 @@ if torch is not None:
     class MultiHeadSelfAttention(nn.Module):
         def __init__(self, config: NexaFMConfig):
             super().__init__()
+            if config.hidden_size % config.num_heads != 0:
+                raise ValueError(f"hidden_size ({config.hidden_size}) must be divisible by num_heads ({config.num_heads})")
+            
             self.num_heads = config.num_heads
             self.head_dim = config.hidden_size // config.num_heads
+            
+            if self.head_dim % 2 != 0:
+                raise ValueError(f"head_dim ({self.head_dim}) must be even")
             
             self.q_proj = nn.Linear(config.hidden_size, config.hidden_size, bias=False)
             self.k_proj = nn.Linear(config.hidden_size, config.hidden_size, bias=False)
@@ -122,12 +130,28 @@ if torch is not None:
                 positions = torch.arange(0, t, dtype=torch.long, device=input_ids.device)
                 x = x + self.embed_positions(positions)
                 
+            # 1. Create a causal mask of shape (1, 1, t, t)
+            # True values represent positions we want to attend to, False represents masked positions.
+            causal_mask = torch.tril(torch.ones((t, t), device=input_ids.device, dtype=torch.bool)).view(1, 1, t, t)
+            
             if attention_mask is not None:
-                # Add causal mask logic if provided
-                pass
+                # attention_mask is typically (b, t) padding mask where 1/True represents valid, 0/False is padding
+                if attention_mask.dtype == torch.bool:
+                    padding_mask = attention_mask.view(b, 1, 1, t)
+                else:
+                    padding_mask = (attention_mask != 0.0).view(b, 1, 1, t)
+                combined_mask = causal_mask & padding_mask
+            else:
+                combined_mask = causal_mask
+                
+            # 2. Convert boolean mask to float additive attention mask
+            # Use negative infinity for fp32, or large negative number for fp16
+            mask_value = float("-inf") if x.dtype == torch.float32 else -1e4
+            combined_attention_mask = torch.zeros((b, 1, t, t), device=input_ids.device, dtype=x.dtype)
+            combined_attention_mask = combined_attention_mask.masked_fill(~combined_mask, mask_value)
                 
             for layer in self.layers:
-                x = layer(x, attention_mask=attention_mask)
+                x = layer(x, attention_mask=combined_attention_mask)
                 
             x = self.ln_f(x)
             logits = self.lm_head(x)

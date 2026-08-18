@@ -1,9 +1,28 @@
+import json
+import os
+from pathlib import Path
 from dataclasses import dataclass
 from typing import Optional
 
+def _get_default_vocab_size() -> int:
+    candidates = [
+        Path(__file__).resolve().parent.parent.parent.parent / "tokenizer_v1/tokenizer_config.json",
+        Path("backend/tokenizer_v1/tokenizer_config.json"),
+        Path("tokenizer_v1/tokenizer_config.json")
+    ]
+    for c in candidates:
+        if c.exists():
+            try:
+                with open(c, "r", encoding="utf-8") as f:
+                    data = json.load(f)
+                    return data["vocab_size"]
+            except Exception:
+                pass
+    return 300
+
 @dataclass
 class NexaFMConfig:
-    vocab_size: int = 50257
+    vocab_size: int = _get_default_vocab_size()
     hidden_size: int = 768
     num_layers: int = 12
     num_heads: int = 12
@@ -13,6 +32,7 @@ class NexaFMConfig:
     initializer_range: float = 0.02
     layer_norm_eps: float = 1e-5
     use_rotary_embeddings: bool = True
+
 
     @classmethod
     def small(cls) -> "NexaFMConfig":

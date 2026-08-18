@@ -8,6 +8,8 @@ from .optimizer import create_optimizer, create_scheduler
 from .checkpoints import CheckpointManager
 from .metrics import MetricsLogger
 
+import contextlib
+
 class Trainer:
     def __init__(self, model, config: TrainingConfig, dataloader):
         self.model = model
@@ -23,7 +25,8 @@ class Trainer:
         
         self.scaler = torch.cuda.amp.GradScaler(enabled=self.config.mixed_precision and self.device.type == 'cuda') if torch and hasattr(torch, "cuda") and hasattr(torch.cuda, "amp") and hasattr(torch.cuda.amp, "GradScaler") else None
         
-        self.global_step = 0
+        self.micro_step = 0
+        self.optimizer_step = 0
         self.epoch = 0
 
     def _detect_device(self):
@@ -39,22 +42,26 @@ class Trainer:
         latest = self.checkpoint_manager.get_latest_checkpoint()
         if latest:
             print(f"Resuming from checkpoint {latest}")
-            self.global_step, self.epoch = self.checkpoint_manager.load(latest, self.model, self.optimizer, self.scheduler)
+            self.optimizer_step, self.micro_step, self.epoch = self.checkpoint_manager.load(
+                latest, self.model, self.optimizer, self.scheduler, self.dataloader, self.scaler
+            )
             
     def train(self):
         self.model.train()
         
         print(f"Starting training on {self.device}")
         
-        # We simulate the loop here for validation if torch is dummy
-        if self.optimizer is None:
-            print("Torch optimizer unavailable. Running simulated loop.")
-            self._simulated_loop()
-            return
+        if torch is None or self.optimizer is None:
+            if os.environ.get("NEXA_RUN_MOCK_TRAINING") == "1":
+                print("Torch optimizer unavailable. Running simulated loop.")
+                self._simulated_loop()
+                return
+            raise RuntimeError("Required ML runtime (PyTorch/Optimizer) is unavailable for production training.")
             
         data_iter = iter(self.dataloader)
+        self.optimizer.zero_grad()
         
-        while self.global_step < self.config.max_steps:
+        while self.optimizer_step < self.config.max_steps:
             try:
                 batch = next(data_iter)
             except StopIteration:
@@ -68,8 +75,10 @@ class Trainer:
                     
             batch = batch.to(self.device)
             
-            # Forward pass
-            with torch.autocast(device_type=self.device.type, enabled=self.config.mixed_precision and self.device.type == 'cuda') if hasattr(torch, "autocast") else torch.no_grad():
+            # Forward pass with proper autocast context
+            autocast_context = torch.autocast(device_type=self.device.type, enabled=self.config.mixed_precision and self.device.type == 'cuda') if hasattr(torch, "autocast") else contextlib.nullcontext()
+            
+            with autocast_context:
                 # For standard causal LM, inputs and labels are the same
                 outputs = self.model(input_ids=batch) 
                 if hasattr(outputs, 'loss'):
@@ -92,7 +101,9 @@ class Trainer:
             else:
                 loss.backward()
                 
-            if (self.global_step + 1) % self.config.gradient_accumulation_steps == 0:
+            self.micro_step += 1
+            
+            if self.micro_step % self.config.gradient_accumulation_steps == 0:
                 if self.scaler:
                     self.scaler.unscale_(self.optimizer)
                 
@@ -107,24 +118,36 @@ class Trainer:
                 self.scheduler.step()
                 self.optimizer.zero_grad()
                 
-                if self.global_step % self.config.log_steps == 0:
+                self.optimizer_step += 1
+                
+                if self.optimizer_step % self.config.log_steps == 0:
                     self.logger.log({
-                        "step": self.global_step,
+                        "step": self.optimizer_step,
+                        "micro_step": self.micro_step,
                         "epoch": self.epoch,
                         "loss": loss.item() * self.config.gradient_accumulation_steps,
                         "lr": self.scheduler.get_last_lr()[0]
                     })
                     
-                if self.global_step % self.config.save_steps == 0 and self.global_step > 0:
-                    self.checkpoint_manager.save(self.model, self.optimizer, self.scheduler, self.global_step, self.epoch, self.config)
-                    
-            self.global_step += 1
+                if self.optimizer_step % self.config.save_steps == 0 and self.optimizer_step > 0:
+                    self.checkpoint_manager.save(
+                        model=self.model,
+                        optimizer=self.optimizer,
+                        scheduler=self.scheduler,
+                        step=self.optimizer_step,
+                        micro_step=self.micro_step,
+                        epoch=self.epoch,
+                        dataloader=self.dataloader,
+                        config=self.config,
+                        scaler=self.scaler
+                    )
 
     def _simulated_loop(self):
         # Used for testing environments where torch fails to run real optimization
-        self.global_step += 1
-        self.logger.log({"step": self.global_step, "epoch": self.epoch, "loss": 0.5, "lr": 1e-4})
-        self.checkpoint_manager.save(self.model, None, None, self.global_step, self.epoch, self.config)
+        self.optimizer_step += 1
+        self.micro_step += self.config.gradient_accumulation_steps
+        self.logger.log({"step": self.optimizer_step, "epoch": self.epoch, "loss": 0.5, "lr": 1e-4})
+        self.checkpoint_manager.save(self.model, self.optimizer, self.scheduler, self.optimizer_step, self.micro_step, self.epoch, self.dataloader, self.config, self.scaler)
 
     def dry_run(self):
         print(f"Starting dry-run validation on {self.device}")
