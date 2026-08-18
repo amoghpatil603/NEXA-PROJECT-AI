@@ -97,13 +97,14 @@ def stage_1_acquisition_and_stage_2_cleaning():
     # For verification, we just test on a subset if requested or standard data.
     # We will use the existing manifest.
     try:
-        with open('data/proposals/pd5m_v7/manifest.json', 'r') as f:
+        manifest_path = DATA_DIR / "proposals" / "pd5m_v7" / "manifest.json"
+        with open(manifest_path, 'r') as f:
             initial_manifest = json.load(f)
     except FileNotFoundError:
         # Fallback for verification step
         initial_manifest = [{"source_id": "1", "title": "Test", "author": "Test", "category": "FICTION", "work_id": "W1", "author_origin": "US", "rights_evidence": "Yes", "language_evidence": "Yes"}]
         (DATA_DIR / "proposals" / "pd5m_v7").mkdir(parents=True, exist_ok=True)
-        with open('data/proposals/pd5m_v7/manifest.json', 'w') as f:
+        with open(DATA_DIR / "proposals" / "pd5m_v7" / "manifest.json", 'w') as f:
             json.dump(initial_manifest, f)
             
     manifest = initial_manifest
@@ -128,8 +129,8 @@ def stage_1_acquisition_and_stage_2_cleaning():
         if os.path.exists(raw_path):
             raw_content_bytes = open(raw_path, 'rb').read()
             chosen_url = urls_template[0].format(sid=sid)
-        elif os.path.exists(f"data/recovery/raw/{sid}.txt"):
-            raw_content_bytes = open(f"data/recovery/raw/{sid}.txt", 'rb').read()
+        elif os.path.exists(DATA_DIR / f"recovery/raw/{sid}.txt"):
+            raw_content_bytes = open(DATA_DIR / f"recovery/raw/{sid}.txt", 'rb').read()
             with open(raw_path, 'wb') as f:
                 f.write(raw_content_bytes)
             chosen_url = urls_template[0].format(sid=sid)
@@ -247,7 +248,7 @@ def stage_5_sharding():
     NEXA_EOS = tok.special_tokens["<NEXA_EOS>"]
 
     from backend.models.nexa_fm.data_pipeline.utils import deterministic_split
-    splits = deterministic_split(manifest, train_ratio=0.8, val_ratio=0.1)
+    splits = deterministic_split(manifest, train_ratio=0.8, validation_ratio=0.1)
 
     from backend.models.nexa_fm.data_pipeline.sharding import DatasetSharder
     

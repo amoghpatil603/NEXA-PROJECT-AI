@@ -8,13 +8,13 @@ class TestManifest(unittest.TestCase):
         stats = {
             'vocab_size': 8000,
             'train_tokens': 15000,
-            'val_tokens': 1500,
+            'validation_tokens': 1500,
             'shard_count': 5,
             'max_length': 2048,
             'seed': 42,
             'hash': 'abc123hash',
             'train_documents': 10,
-            'val_documents': 2
+            'validation_documents': 2
         }
         
         manifest_json_str = generate_manifest(stats)
