@@ -70,5 +70,18 @@ class TestRAGContracts(unittest.TestCase):
         results_empty = retriever.retrieve("completely unrelated words")
         self.assertEqual(len(results_empty), 0)
 
+    def test_invalid_retrieval_result(self):
+        valid_chunk = DocumentChunk(
+            chunk_id="chunk-1",
+            document_id="doc-1",
+            text="valid chunk text"
+        )
+        with self.assertRaises(ValueError):
+            RetrievalResult(chunk="not-a-chunk", score=0.9, citation="doc-1")
+        with self.assertRaises(ValueError):
+            RetrievalResult(chunk=valid_chunk, score="high", citation="doc-1")
+        with self.assertRaises(ValueError):
+            RetrievalResult(chunk=valid_chunk, score=0.9, citation="")
+
 if __name__ == "__main__":
     unittest.main()
