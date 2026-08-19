@@ -1,7 +1,25 @@
-
 # Data and Checkpoints
 data_run1/
 *.bin
 *.pt
 *.pth
+
+# Cache and temporary files
 __pycache__/
+.pytest_cache/
+.ipynb_checkpoints/
+*.log
+test_logs/
+test_logs_mock/
+test_checkpoints/
+test_checkpoints_mock/
+tmp_canonical_e2e/
+
+# Environment files
+.env
+.env.local
+
+# Virtual environments
+venv/
+.venv/
+env/
