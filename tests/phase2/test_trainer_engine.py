@@ -258,6 +258,14 @@ class TestTrainerEngine(unittest.TestCase):
         self.assertEqual(loaded.tokenizer_identity, self.config.tokenizer_identity)
         self.assertEqual(loaded.tokenizer_config_identity, self.config.tokenizer_config_identity)
 
+    def test_authoritative_dataset_identity_fresh_process(self):
+        # Verify that a fresh parameters-free config resolves dataset identity from the real manifest
+        fresh_config = TrainingConfig()
+        self.assertIsNotNone(fresh_config.dataset_version)
+        self.assertNotEqual(fresh_config.dataset_version, "")
+        self.assertIsNotNone(fresh_config.dataset_content_hash)
+        self.assertNotEqual(fresh_config.dataset_content_hash, "")
+
     def test_checkpoint_metadata_and_roundtrip(self):
         # Run a training step to change parameters
         self.trainer.train()

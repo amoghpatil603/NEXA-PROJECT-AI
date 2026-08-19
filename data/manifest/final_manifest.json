@@ -1,5 +1,46 @@
 {
-  "version": "1.0",
-  "date": "2026-08-03T14:27:32Z",
-  "sample_counts": 120
+  "dataset_name": "NEXA",
+  "dataset_version": "1.0.0-70a3eafa",
+  "tokenizer_version": "fa341d67a1b1737455c787d5b7c49e3847184e52101074375b76970edbd7eb73",
+  "tokenizer_identity": "fa341d67a1b1737455c787d5b7c49e3847184e52101074375b76970edbd7eb73",
+  "vocab_size": 300,
+  "train_documents": 96,
+  "validation_documents": 12,
+  "test_documents": 12,
+  "train_tokens": 5600,
+  "validation_tokens": 699,
+  "test_tokens": 698,
+  "shard_format": "uint16_binary",
+  "shard_count": 3,
+  "sequence_length": 2048,
+  "split_seed": 42,
+  "content_hash": "70a3eafab036a28ce72575f1a05abbcb5ef2d39ee41962dc5ca488cb8ceb8a91",
+  "shard_checksums": {
+    "train/shard_00000.bin": {
+      "sha256": "fdacab9cd61111c84a2adc958d8fa50dfd500fa9b79aab9d683933321a64b8af"
+    },
+    "validation/shard_00000.bin": {
+      "sha256": "66bcaac03a7ea2a5a8258eebb5a99e5d5f0f10fbaf9f6100d0e37a9a8ce256fa"
+    },
+    "test/shard_00000.bin": {
+      "sha256": "39cb3de3a052be52d3c8b5e002e33700999e26d3761c2f354be4a89b203a1b2b"
+    }
+  },
+  "dataset_config_identity": "5deb24bbc5c5a63e3352ffe7164b8acdf828b967d075354272f455c2eb3af0cc",
+  "metadata": {
+    "seed": 42,
+    "content_hash": "70a3eafab036a28ce72575f1a05abbcb5ef2d39ee41962dc5ca488cb8ceb8a91",
+    "dataset_config": {
+      "train_ratio": 0.8,
+      "validation_ratio": 0.1,
+      "test_ratio": 0.1,
+      "split_seed": 42,
+      "shard_size": 50000,
+      "sequence_length": 2048,
+      "tokenizer_identity": "fa341d67a1b1737455c787d5b7c49e3847184e52101074375b76970edbd7eb73",
+      "tokenizer_config_identity": "283d35990d4a790efae0a119449ff7d0af957cef070115d4cd0a0a7a435c13b2",
+      "cleaning_version": "gutenberg_cleaning_v1"
+    },
+    "dataset_config_identity": "5deb24bbc5c5a63e3352ffe7164b8acdf828b967d075354272f455c2eb3af0cc"
+  }
 }

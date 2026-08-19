@@ -1,14 +1,11 @@
 {
-  "train/shard_0.bin": {
-    "tokens": 2412,
-    "sha256": "c9fe11696a0f49c0613d1448fac8581ebf4be8a47e5b43114f4cb67a5b14deb5"
+  "train/shard_00000.bin": {
+    "sha256": "fdacab9cd61111c84a2adc958d8fa50dfd500fa9b79aab9d683933321a64b8af"
   },
-  "validation/shard_1.bin": {
-    "tokens": 296,
-    "sha256": "159e2cb8dddf03344522d7586ea4bb72a1d648ffcf4ce3dbdb3d0c57acaff241"
+  "validation/shard_00000.bin": {
+    "sha256": "66bcaac03a7ea2a5a8258eebb5a99e5d5f0f10fbaf9f6100d0e37a9a8ce256fa"
   },
-  "test/shard_2.bin": {
-    "tokens": 288,
-    "sha256": "1826ab5bc9d4d49522ae2c1657e8f615a21019470d29a00ca9d79276ae153d49"
+  "test/shard_00000.bin": {
+    "sha256": "39cb3de3a052be52d3c8b5e002e33700999e26d3761c2f354be4a89b203a1b2b"
   }
 }
