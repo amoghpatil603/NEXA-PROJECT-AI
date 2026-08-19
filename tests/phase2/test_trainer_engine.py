@@ -431,10 +431,28 @@ class TestTrainerEngine(unittest.TestCase):
         np_val2_actual = np.random.rand()
         torch_val2_actual = torch.rand(1).item()
 
-        # Verify that loaded state exactly reproduces the expected sequence
         self.assertEqual(py_val2_actual, py_val2_expected)
         self.assertEqual(np_val2_actual, np_val2_expected)
         self.assertEqual(torch_val2_actual, torch_val2_expected)
+
+    def test_mixed_precision_cpu_compatibility(self):
+        import unittest.mock as mock
+        with mock.patch("torch.cuda.is_available", return_value=False):
+            config = TrainingConfig(
+                mixed_precision=True,
+                batch_size=1,
+                gradient_accumulation_steps=1,
+                max_steps=1,
+                checkpoint_dir=os.path.join(self.test_dir, "mp_cpu_checkpoints")
+            )
+            from backend.models.nexa_fm.training_engine.trainer import Trainer
+            trainer = Trainer(model=self.model, config=config, dataloader=self.dataset)
+            self.assertEqual(trainer.device.type, "cpu")
+            if trainer.scaler is not None:
+                if hasattr(trainer.scaler, "is_enabled"):
+                    self.assertFalse(trainer.scaler.is_enabled())
+                elif hasattr(trainer.scaler, "_enabled"):
+                    self.assertFalse(trainer.scaler._enabled)
 
 if __name__ == "__main__":
     unittest.main()
