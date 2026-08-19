@@ -87,5 +87,26 @@ class TestEvalScaffold(unittest.TestCase):
         self.assertEqual(benchmark.benchmark_name, "Translation Benchmark")
         self.assertEqual(len(benchmark.cases), 2)
 
+    def test_eval_case_serialization_and_missing_output(self):
+        with self.assertRaises(ValueError):
+            EvaluationCase(case_id="case-1", input="in", expected_output=None)
+        with self.assertRaises(ValueError):
+            EvaluationCase(case_id="case-1", input="in", expected_output=123)
+
+        case = EvaluationCase(
+            case_id="c1",
+            input="in1",
+            expected_output="out1",
+            metadata={"priority": "high"}
+        )
+        from dataclasses import asdict
+        d = asdict(case)
+        self.assertEqual(d["case_id"], "c1")
+        self.assertEqual(d["metadata"]["priority"], "high")
+
+        case2 = EvaluationCase(**d)
+        self.assertEqual(case2.case_id, case.case_id)
+        self.assertEqual(case2.expected_output, case.expected_output)
+
 if __name__ == "__main__":
     unittest.main()
