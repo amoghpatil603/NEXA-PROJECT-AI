@@ -43,7 +43,7 @@ class Trainer:
         if latest:
             print(f"Resuming from checkpoint {latest}")
             self.optimizer_step, self.micro_step, self.epoch = self.checkpoint_manager.load(
-                latest, self.model, self.optimizer, self.scheduler, self.dataloader, self.scaler
+                latest, self.model, self.optimizer, self.scheduler, self.dataloader, self.scaler, config=self.config
             )
 
     def train(self):

@@ -208,5 +208,163 @@ class TestTrainerEngine(unittest.TestCase):
         self.assertLess(final_loss, initial_loss)
         self.assertTrue(np.isfinite(final_loss))
 
+    def test_invalid_config_validation_exceptions(self):
+        # Validate that invalid values raise ValueError
+        invalid_params = [
+            {"batch_size": 0},
+            {"gradient_accumulation_steps": -1},
+            {"learning_rate": -1e-5},
+            {"weight_decay": -0.1},
+            {"warmup_steps": -5},
+            {"max_steps": 0},
+            {"save_steps": 0},
+            {"log_steps": 0},
+            {"max_grad_norm": -1.0},
+            {"seed": -2}
+        ]
+        for p in invalid_params:
+            with self.assertRaises(ValueError):
+                # Copy setup base config parameters and override with invalid one
+                kwargs = {
+                    "batch_size": self.config.batch_size,
+                    "gradient_accumulation_steps": self.config.gradient_accumulation_steps,
+                    "learning_rate": self.config.learning_rate,
+                    "weight_decay": self.config.weight_decay,
+                    "warmup_steps": self.config.warmup_steps,
+                    "max_steps": self.config.max_steps,
+                    "save_steps": self.config.save_steps,
+                    "log_steps": self.config.log_steps,
+                    "max_grad_norm": self.config.max_grad_norm,
+                    "checkpoint_dir": self.config.checkpoint_dir,
+                    "log_dir": self.config.log_dir,
+                    "seed": self.config.seed
+                }
+                kwargs.update(p)
+                TrainingConfig(**kwargs)
+
+    def test_tokenizer_and_dataset_identity_persistence(self):
+        # Verify that identities are populated and saved/loaded properly
+        self.assertNotEqual(self.config.dataset_version, "")
+        self.assertNotEqual(self.config.dataset_content_hash, "")
+        self.assertNotEqual(self.config.tokenizer_identity, "")
+        self.assertNotEqual(self.config.tokenizer_config_identity, "")
+
+        config_path = os.path.join(self.test_dir, "test_identity_config.json")
+        self.config.save(config_path)
+        loaded = TrainingConfig.load(config_path)
+
+        self.assertEqual(loaded.dataset_version, self.config.dataset_version)
+        self.assertEqual(loaded.dataset_content_hash, self.config.dataset_content_hash)
+        self.assertEqual(loaded.tokenizer_identity, self.config.tokenizer_identity)
+        self.assertEqual(loaded.tokenizer_config_identity, self.config.tokenizer_config_identity)
+
+    def test_checkpoint_metadata_and_roundtrip(self):
+        # Run a training step to change parameters
+        self.trainer.train()
+
+        # Save checkpoint
+        self.trainer.checkpoint_manager.save(
+            self.model, self.trainer.optimizer, self.trainer.scheduler,
+            step=10, micro_step=10, epoch=2, dataloader=self.dataset, config=self.config
+        )
+
+        checkpoint_path = os.path.join(self.config.checkpoint_dir, "checkpoint-10")
+
+        # Create new model and check load matches parameters exactly
+        new_model = TinyModel()
+        from backend.models.nexa_fm.training_engine.optimizer import create_optimizer, create_scheduler
+        new_optimizer = create_optimizer(new_model, self.config.learning_rate, self.config.weight_decay)
+        new_scheduler = create_scheduler(new_optimizer, self.config.warmup_steps, self.config.max_steps)
+
+        step, micro_step, epoch = self.trainer.checkpoint_manager.load(
+            checkpoint_path, new_model, new_optimizer, new_scheduler, config=self.config
+        )
+
+        self.assertEqual(step, 10)
+        self.assertEqual(micro_step, 10)
+        self.assertEqual(epoch, 2)
+
+        # Verify parameter values match exactly
+        for p1, p2 in zip(self.model.parameters(), new_model.parameters()):
+            self.assertTrue(torch.equal(p1, p2))
+
+    def test_checkpoint_compatibility_guards(self):
+        # Save a checkpoint
+        self.trainer.checkpoint_manager.save(
+            self.model, self.trainer.optimizer, self.trainer.scheduler,
+            step=20, micro_step=20, epoch=3, dataloader=self.dataset, config=self.config
+        )
+
+        checkpoint_path = os.path.join(self.config.checkpoint_dir, "checkpoint-20")
+
+        # Test each compatibility mismatch raises ValueError
+        mismatches = [
+            {"dataset_version": "mismatched_version"},
+            {"dataset_content_hash": "mismatched_content_hash"},
+            {"tokenizer_identity": "mismatched_tokenizer_identity"},
+            {"tokenizer_config_identity": "mismatched_tokenizer_config_identity"}
+        ]
+        for mismatch in mismatches:
+            bad_config = TrainingConfig(
+                batch_size=1,
+                gradient_accumulation_steps=1,
+                learning_rate=1e-3,
+                max_steps=5,
+                checkpoint_dir=os.path.join(self.test_dir, "checkpoints"),
+                log_dir=os.path.join(self.test_dir, "logs")
+            )
+            for k, v in mismatch.items():
+                setattr(bad_config, k, v)
+
+            with self.assertRaises(ValueError):
+                self.trainer.checkpoint_manager.load(
+                    checkpoint_path, self.model, config=bad_config
+                )
+
+    def test_cpu_rng_restoration(self):
+        import random
+        # 1. Seed RNGs
+        seed = 42
+        random.seed(seed)
+        np.random.seed(seed)
+        torch.manual_seed(seed)
+
+        # 2. Generate values
+        py_val1 = random.random()
+        np_val1 = np.random.rand()
+        torch_val1 = torch.rand(1).item()
+
+        # 3. Save checkpoint
+        self.trainer.checkpoint_manager.save(
+            self.model, self.trainer.optimizer, self.trainer.scheduler,
+            step=30, micro_step=30, epoch=1, dataloader=self.dataset, config=self.config
+        )
+        checkpoint_path = os.path.join(self.config.checkpoint_dir, "checkpoint-30")
+
+        # Generate expected uninterrupted sequence
+        py_val2_expected = random.random()
+        np_val2_expected = np.random.rand()
+        torch_val2_expected = torch.rand(1).item()
+
+        # 4. Advance RNGs (scramble state)
+        random.random()
+        np.random.rand()
+        torch.rand(5)
+
+        # 5. Load checkpoint
+        self.trainer.checkpoint_manager.load(
+            checkpoint_path, self.model, config=self.config
+        )
+
+        # 6. Generate values again after restoration
+        py_val2_actual = random.random()
+        np_val2_actual = np.random.rand()
+        torch_val2_actual = torch.rand(1).item()
+
+        # Verify that loaded state exactly reproduces the expected sequence
+        self.assertEqual(py_val2_actual, py_val2_expected)
+        self.assertEqual(np_val2_actual, np_val2_expected)
+        self.assertEqual(torch_val2_actual, torch_val2_expected)
+
 if __name__ == "__main__":
     unittest.main()
