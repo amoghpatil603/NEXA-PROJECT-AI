@@ -1,4 +1,5 @@
 import unittest
+import json
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -382,6 +383,14 @@ class TestTrainerEngine(unittest.TestCase):
         np_val1 = np.random.rand()
         torch_val1 = torch.rand(1).item()
 
+        # Run 1 step to update model parameters and optimizer state
+        self.trainer.train()
+
+        # Capture model parameters, optimizer state, scheduler state before saving
+        orig_params = [p.clone() for p in self.model.parameters()]
+        orig_opt_state = json.dumps(self.trainer.optimizer.state_dict(), default=str)
+        orig_sched_state = json.dumps(self.trainer.scheduler.state_dict(), default=str)
+
         # 3. Save checkpoint
         self.trainer.checkpoint_manager.save(
             self.model, self.trainer.optimizer, self.trainer.scheduler,
@@ -394,17 +403,30 @@ class TestTrainerEngine(unittest.TestCase):
         np_val2_expected = np.random.rand()
         torch_val2_expected = torch.rand(1).item()
 
-        # 4. Advance RNGs (scramble state)
+        # 4. Advance RNGs (scramble state), and modify model + optimizer + scheduler state
         random.random()
         np.random.rand()
         torch.rand(5)
 
-        # 5. Load checkpoint
+        with torch.no_grad():
+            for p in self.model.parameters():
+                p.add_(1.0) # change weights
+
+        # 5. Load checkpoint (restoring model, optimizer, scheduler, and RNGs)
         self.trainer.checkpoint_manager.load(
-            checkpoint_path, self.model, config=self.config
+            checkpoint_path, self.model, self.trainer.optimizer, self.trainer.scheduler, config=self.config
         )
 
-        # 6. Generate values again after restoration
+        # 6. Verify model, optimizer, scheduler states are restored exactly
+        for p_orig, p_curr in zip(orig_params, self.model.parameters()):
+            self.assertTrue(torch.equal(p_orig, p_curr))
+
+        curr_opt_state = json.dumps(self.trainer.optimizer.state_dict(), default=str)
+        curr_sched_state = json.dumps(self.trainer.scheduler.state_dict(), default=str)
+        self.assertEqual(curr_opt_state, orig_opt_state)
+        self.assertEqual(curr_sched_state, orig_sched_state)
+
+        # 7. Generate values again after restoration
         py_val2_actual = random.random()
         np_val2_actual = np.random.rand()
         torch_val2_actual = torch.rand(1).item()
