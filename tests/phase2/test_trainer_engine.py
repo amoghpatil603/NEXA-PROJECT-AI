@@ -329,6 +329,46 @@ class TestTrainerEngine(unittest.TestCase):
                     checkpoint_path, self.model, config=bad_config
                 )
 
+        # Test malformed checkpoint is rejected (e.g. missing model_state_dict)
+        malformed_path = os.path.join(self.test_dir, "checkpoint-malformed")
+        os.makedirs(malformed_path, exist_ok=True)
+        torch.save({"bad_key": 123}, os.path.join(malformed_path, "training_state.pt"))
+        with self.assertRaises(ValueError):
+            self.trainer.checkpoint_manager.load(malformed_path, self.model, config=self.config)
+
+        # Test missing metadata in checkpoint is rejected (e.g. missing dataset_version)
+        missing_metadata_path = os.path.join(self.test_dir, "checkpoint-missing-metadata")
+        os.makedirs(missing_metadata_path, exist_ok=True)
+        torch.save({
+            "model_state_dict": self.model.state_dict(),
+            "dataset_content_hash": self.config.dataset_content_hash,
+            "tokenizer_identity": self.config.tokenizer_identity,
+            "tokenizer_config_identity": self.config.tokenizer_config_identity
+            # dataset_version is missing
+        }, os.path.join(missing_metadata_path, "training_state.pt"))
+        with self.assertRaises(ValueError):
+            self.trainer.checkpoint_manager.load(missing_metadata_path, self.model, config=self.config)
+
+        # Test incompatible checkpoint does not partially load model state (parameters are not modified)
+        # 1. Save original model weights
+        original_weights = [p.clone() for p in self.model.parameters()]
+        # 2. Modify bad_config to trigger mismatch
+        bad_config = TrainingConfig(
+            batch_size=1,
+            gradient_accumulation_steps=1,
+            learning_rate=1e-3,
+            max_steps=5,
+            checkpoint_dir=os.path.join(self.test_dir, "checkpoints"),
+            log_dir=os.path.join(self.test_dir, "logs")
+        )
+        bad_config.dataset_version = "totally_different_version"
+        # 3. Attempt to load checkpoint-20 with bad_config, which will raise ValueError
+        with self.assertRaises(ValueError):
+            self.trainer.checkpoint_manager.load(checkpoint_path, self.model, config=bad_config)
+        # 4. Assert model weights are unchanged
+        for orig, current in zip(original_weights, self.model.parameters()):
+            self.assertTrue(torch.equal(orig, current))
+
     def test_cpu_rng_restoration(self):
         import random
         # 1. Seed RNGs

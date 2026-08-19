@@ -66,6 +66,14 @@ class CheckpointManager:
         checkpoint = torch.load(state_path, map_location="cpu", weights_only=False)
 
         # Enforce compatibility guards
+        if not isinstance(checkpoint, dict) or 'model_state_dict' not in checkpoint:
+            raise ValueError("Malformed checkpoint: missing 'model_state_dict'")
+
+        required_metadata = ['dataset_version', 'dataset_content_hash', 'tokenizer_identity', 'tokenizer_config_identity']
+        for key in required_metadata:
+            if key not in checkpoint or checkpoint[key] is None or checkpoint[key] == "":
+                raise ValueError(f"Malformed checkpoint: missing or empty metadata key '{key}'")
+
         if config is not None:
             if checkpoint.get('dataset_version') != config.dataset_version:
                 raise ValueError(f"Dataset version mismatch: checkpoint has '{checkpoint.get('dataset_version')}', config has '{config.dataset_version}'")
