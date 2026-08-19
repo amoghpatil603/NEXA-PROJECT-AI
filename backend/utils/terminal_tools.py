@@ -14,6 +14,10 @@ class ExecuteCommandTool(BaseTool):
             if operator in command:
                 return {"error": f"Security restriction: command contains restricted shell operator '{operator}'"}
 
+        # Security check: prevent directory traversal
+        if ".." in command:
+            return {"error": "Security restriction: command contains directory traversal sequence '..'"}
+
         parts = command.strip().split()
         if not parts:
             return {"error": "Empty command"}

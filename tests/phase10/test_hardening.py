@@ -43,5 +43,17 @@ class TestHardening(unittest.TestCase):
             self.assertIn("error", res)
             self.assertIn("blocked", res["error"])
 
+    def test_execute_command_directory_traversal(self):
+        tool = ExecuteCommandTool()
+        bad_commands = [
+            "cat ../../secret.txt",
+            "ls -la ../etc",
+            "grep -r text .."
+        ]
+        for cmd in bad_commands:
+            res = tool.execute(cmd)
+            self.assertIn("error", res)
+            self.assertIn("directory traversal", res["error"])
+
 if __name__ == "__main__":
     unittest.main()
