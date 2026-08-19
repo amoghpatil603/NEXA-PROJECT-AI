@@ -45,5 +45,26 @@ class TestMultimodalContracts(unittest.TestCase):
         with self.assertRaises(ValueError):
             MultimodalRequest(prompt="", images=[img])
 
+    def test_unsupported_modality_rejection(self):
+        with self.assertRaises(ValueError):
+            MultimodalRequest(prompt=123)
+        img = ImageInput(mime_type="image/jpeg", payload_ref="img.jpg")
+        with self.assertRaises(ValueError):
+            MultimodalRequest(prompt="Test prompt", images="not-a-list")
+        with self.assertRaises(ValueError):
+            MultimodalRequest(prompt="Test prompt", images=[img, "not-an-image-input"])
+        with self.assertRaises(ValueError):
+            MultimodalRequest(prompt="Test prompt", audios=["not-an-audio-input"])
+
+    def test_multimodal_metadata_serialization(self):
+        img = ImageInput(mime_type="image/png", payload_ref="img.png", metadata={"channels": 3})
+        from dataclasses import asdict
+        d = asdict(img)
+        self.assertEqual(d["mime_type"], "image/png")
+        self.assertEqual(d["metadata"]["channels"], 3)
+        img2 = ImageInput(**d)
+        self.assertEqual(img2.mime_type, img.mime_type)
+        self.assertEqual(img2.metadata["channels"], 3)
+
 if __name__ == "__main__":
     unittest.main()
