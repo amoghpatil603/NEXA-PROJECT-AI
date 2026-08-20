@@ -57,6 +57,9 @@ class ChatEngine:
 
         try:
             tok_candidates = [
+                "backend/tokenizer_v1/tokenizer.json",
+                "tokenizer_v1/tokenizer.json",
+                "/app/applet/backend/tokenizer_v1/tokenizer.json",
                 "/app/applet/nexa-model/tokenizer/production/tokenizer.json",
                 "nexa-model/tokenizer/production/tokenizer.json"
             ]

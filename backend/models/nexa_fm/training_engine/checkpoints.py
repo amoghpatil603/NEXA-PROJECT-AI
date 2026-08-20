@@ -1,4 +1,7 @@
 import os
+import re
+import uuid
+import shutil
 try:
     import torch
 except ImportError:
@@ -9,15 +12,37 @@ import random
 import numpy as np
 
 class CheckpointManager:
+    """
+    Manages atomic checkpoint saving, robust latest checkpoint discovery,
+    and exact state restoration with identity integrity guards.
+    """
     def __init__(self, checkpoint_dir: str):
         self.checkpoint_dir = checkpoint_dir
         os.makedirs(self.checkpoint_dir, exist_ok=True)
+        self._cleanup_stale_temp_dirs()
+
+    def _cleanup_stale_temp_dirs(self):
+        """Remove any abandoned temporary checkpoint directories from past interrupted runs."""
+        if not os.path.exists(self.checkpoint_dir):
+            return
+        for item in os.listdir(self.checkpoint_dir):
+            if item.startswith(".tmp_checkpoint_"):
+                tmp_path = os.path.join(self.checkpoint_dir, item)
+                try:
+                    if os.path.isdir(tmp_path):
+                        shutil.rmtree(tmp_path, ignore_errors=True)
+                    else:
+                        os.remove(tmp_path)
+                except Exception:
+                    pass
 
     def save(self, model, optimizer, scheduler, step: int, micro_step: int, epoch: int, dataloader, config: TrainingConfig, scaler=None):
-        if optimizer is None: return
+        if optimizer is None or torch is None:
+            return
 
-        path = os.path.join(self.checkpoint_dir, f"checkpoint-{step}")
-        os.makedirs(path, exist_ok=True)
+        final_path = os.path.join(self.checkpoint_dir, f"checkpoint-{step}")
+        tmp_path = os.path.join(self.checkpoint_dir, f".tmp_checkpoint_{step}_{uuid.uuid4().hex[:8]}")
+        os.makedirs(tmp_path, exist_ok=True)
 
         # Capture RNG states
         rng_states = {
@@ -36,6 +61,10 @@ class CheckpointManager:
         # Capture scaler state if exists
         scaler_state = scaler.state_dict() if scaler is not None else None
 
+        # Write state to temporary directory
+        state_file = os.path.join(tmp_path, "training_state.pt")
+        config_file = os.path.join(tmp_path, "training_config.json")
+
         torch.save({
             'model_state_dict': model.state_dict(),
             'optimizer_state_dict': optimizer.state_dict(),
@@ -51,9 +80,84 @@ class CheckpointManager:
             'dataset_content_hash': config.dataset_content_hash,
             'tokenizer_identity': config.tokenizer_identity,
             'tokenizer_config_identity': config.tokenizer_config_identity
-        }, os.path.join(path, "training_state.pt"))
+        }, state_file)
 
-        config.save(os.path.join(path, "training_config.json"))
+        config.save(config_file)
+
+        # Atomic promotion to final path
+        if os.path.exists(final_path):
+            backup_path = os.path.join(self.checkpoint_dir, f".old_checkpoint_{step}_{uuid.uuid4().hex[:8]}")
+            try:
+                os.rename(final_path, backup_path)
+                shutil.rmtree(backup_path, ignore_errors=True)
+            except Exception:
+                shutil.rmtree(final_path, ignore_errors=True)
+
+        try:
+            os.rename(tmp_path, final_path)
+        except OSError:
+            # Fallback on platforms where atomic directory rename over existing fails
+            if os.path.exists(final_path):
+                shutil.rmtree(final_path, ignore_errors=True)
+            shutil.move(tmp_path, final_path)
+
+    def is_checkpoint_valid(self, path: str) -> bool:
+        """Verify that a checkpoint directory is structurally complete and readable."""
+        if not os.path.isdir(path):
+            return False
+
+        state_path = os.path.join(path, "training_state.pt")
+        config_path = os.path.join(path, "training_config.json")
+
+        if not os.path.isfile(state_path) or not os.path.isfile(config_path):
+            return False
+
+        # File size check (must not be zero bytes or empty stub)
+        if os.path.getsize(state_path) < 128 or os.path.getsize(config_path) == 0:
+            return False
+
+        # Quick structural load check
+        if torch is not None:
+            try:
+                ckpt = torch.load(state_path, map_location="cpu", weights_only=False)
+                if not isinstance(ckpt, dict) or 'model_state_dict' not in ckpt:
+                    return False
+            except Exception:
+                return False
+
+        return True
+
+    def get_latest_checkpoint(self):
+        """
+        Discovers the latest valid checkpoint, sorted numerically by step.
+        Incomplete temporary directories or corrupted checkpoints are automatically skipped.
+        """
+        if not os.path.exists(self.checkpoint_dir):
+            return None
+
+        candidates = []
+        for entry in os.listdir(self.checkpoint_dir):
+            if entry.startswith(".") or entry.startswith("tmp"):
+                continue
+            match = re.match(r"^checkpoint-(\d+)$", entry)
+            if match:
+                step_val = int(match.group(1))
+                candidates.append((step_val, entry))
+
+        if not candidates:
+            return None
+
+        # Sort descending by step number
+        candidates.sort(key=lambda x: x[0], reverse=True)
+
+        for step_val, entry in candidates:
+            full_path = os.path.join(self.checkpoint_dir, entry)
+            if self.is_checkpoint_valid(full_path):
+                return full_path
+            else:
+                print(f"Warning: Checkpoint at '{full_path}' is corrupted or incomplete; skipping to previous valid checkpoint.")
+
+        return None
 
     def load(self, path: str, model, optimizer=None, scheduler=None, dataloader=None, scaler=None, config: TrainingConfig = None):
         if not os.path.exists(path):
@@ -144,12 +248,3 @@ class CheckpointManager:
                 print(f"Warning: Failed to restore AMP GradScaler state: {e}")
 
         return checkpoint.get('step', 0), checkpoint.get('micro_step', 0), checkpoint.get('epoch', 0)
-
-    def get_latest_checkpoint(self):
-        if not os.path.exists(self.checkpoint_dir):
-            return None
-        checkpoints = [d for d in os.listdir(self.checkpoint_dir) if d.startswith("checkpoint-")]
-        if not checkpoints:
-            return None
-        checkpoints.sort(key=lambda x: int(x.split("-")[1]))
-        return os.path.join(self.checkpoint_dir, checkpoints[-1])
