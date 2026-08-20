@@ -56,7 +56,7 @@ class TrainingConfig:
     mixed_precision: bool = True
     checkpoint_dir: str = "checkpoints"
     log_dir: str = "logs"
-    dataset_dir: str = "datasets/shards"
+    dataset_dir: str = "data/shards"
     seed: int = 42
     dataset_version: str = ""
     dataset_content_hash: str = ""

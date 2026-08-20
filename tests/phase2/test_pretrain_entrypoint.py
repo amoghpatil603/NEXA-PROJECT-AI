@@ -28,3 +28,17 @@ class TestPretrainEntrypoint(unittest.TestCase):
         self.assertEqual(config.max_steps, 500)
         self.assertEqual(model.config.vocab_size, 8000)
         self.assertEqual(model.config.d_model, 512)
+
+    def test_minimal_cpu_integration_dry_run(self):
+        from backend.models.nexa_fm.training_engine.trainer import Trainer
+        parser = build_parser()
+        args = parser.parse_args(["--dry-run", "--batch-size", "2", "--dataset-dir", "data/shards"])
+        model, config, dataloader = create_pretraining_setup(args)
+
+        self.assertIsNotNone(dataloader)
+        trainer = Trainer(model, config, dataloader)
+        success = trainer.dry_run()
+        self.assertTrue(success, "Dry run execution of Trainer forward/backward/step must succeed")
+
+if __name__ == "__main__":
+    unittest.main()

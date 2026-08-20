@@ -9,6 +9,10 @@ import sys
 import torch
 from pathlib import Path
 
+REPO_ROOT = Path(__file__).resolve().parent.parent
+if str(REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(REPO_ROOT))
+
 from backend.models.model.config import NexaConfig
 from backend.models.model.transformer import NexaTransformer
 from backend.models.nexa_fm.training_engine.config import TrainingConfig
@@ -27,7 +31,7 @@ def build_parser():
     parser.add_argument("--log-steps", type=int, default=10, help="Logging interval")
     parser.add_argument("--checkpoint-dir", type=str, default="checkpoints/pretrain", help="Checkpoint directory")
     parser.add_argument("--log-dir", type=str, default="logs/pretrain", help="Log directory")
-    parser.add_argument("--dataset-dir", type=str, default="datasets/shards", help="Binary shard dataset directory")
+    parser.add_argument("--dataset-dir", type=str, default="data/shards", help="Binary shard dataset directory")
     parser.add_argument("--seed", type=int, default=42, help="RNG seed")
     parser.add_argument("--dry-run", action="store_true", help="Execute single-step validation without full loop")
     return parser
@@ -55,7 +59,8 @@ def create_pretraining_setup(args=None):
     model = NexaTransformer(model_config)
 
     # Initialize dataloader if dataset dir exists, otherwise empty placeholder for dry run
-    if Path(args.dataset_dir).exists() and list(Path(args.dataset_dir).glob("*.bin")):
+    shard_path = Path(args.dataset_dir)
+    if shard_path.exists() and (list(shard_path.glob("*.bin")) or list(shard_path.glob("**/*.bin"))):
         dataloader = ShardDataLoader(
             shard_dir=args.dataset_dir,
             batch_size=config.batch_size,

@@ -97,17 +97,28 @@ class Trainer:
                     outputs = self.model(**batch)
                     labels = batch.get("labels", batch.get("input_ids"))
                 else:
-                    outputs = self.model(batch)
+                    try:
+                        outputs = self.model(batch, targets=batch)
+                    except TypeError:
+                        outputs = self.model(batch)
                     labels = batch
 
-                if hasattr(outputs, 'loss'):
+                if hasattr(outputs, 'loss') and outputs.loss is not None:
                     loss = outputs.loss
                 elif isinstance(outputs, (tuple, list)):
-                    loss = outputs[0]
+                    if len(outputs) > 1 and outputs[1] is not None and isinstance(outputs[1], torch.Tensor) and outputs[1].numel() == 1:
+                        loss = outputs[1]
+                    elif isinstance(outputs[0], torch.Tensor) and outputs[0].numel() == 1:
+                        loss = outputs[0]
+                    else:
+                        logits = outputs[0]
+                        shift_logits = logits[..., :-1, :].contiguous()
+                        shift_labels = labels[..., 1:].contiguous()
+                        import torch.nn.functional as F
+                        loss = F.cross_entropy(shift_logits.view(-1, shift_logits.size(-1)), shift_labels.view(-1))
                 else:
                     # Handle raw tensor outputs (logits)
                     logits = outputs
-                    # Assuming batch is (B, T) and logits are (B, T, V)
                     shift_logits = logits[..., :-1, :].contiguous()
                     shift_labels = labels[..., 1:].contiguous()
                     import torch.nn.functional as F
@@ -201,13 +212,25 @@ class Trainer:
                     outputs = self.model(**batch)
                     labels = batch.get("labels", batch.get("input_ids"))
                 else:
-                    outputs = self.model(batch)
+                    try:
+                        outputs = self.model(batch, targets=batch)
+                    except TypeError:
+                        outputs = self.model(batch)
                     labels = batch
 
-                if hasattr(outputs, "loss"):
+                if hasattr(outputs, "loss") and outputs.loss is not None:
                     loss = outputs.loss
-                elif isinstance(outputs, tuple):
-                    loss = outputs[0]
+                elif isinstance(outputs, (tuple, list)):
+                    if len(outputs) > 1 and outputs[1] is not None and isinstance(outputs[1], torch.Tensor) and outputs[1].numel() == 1:
+                        loss = outputs[1]
+                    elif isinstance(outputs[0], torch.Tensor) and outputs[0].numel() == 1:
+                        loss = outputs[0]
+                    else:
+                        logits = outputs[0]
+                        shift_logits = logits[..., :-1, :].contiguous()
+                        shift_labels = labels[..., 1:].contiguous()
+                        import torch.nn.functional as F
+                        loss = F.cross_entropy(shift_logits.view(-1, shift_logits.size(-1)), shift_labels.view(-1))
                 else:
                     # outputs are logits
                     logits = outputs

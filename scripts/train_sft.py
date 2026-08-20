@@ -8,6 +8,10 @@ import sys
 from pathlib import Path
 import torch
 
+REPO_ROOT = Path(__file__).resolve().parent.parent
+if str(REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(REPO_ROOT))
+
 from backend.models.model.config import NexaConfig
 from backend.models.model.transformer import NexaTransformer
 from backend.models.nexa_fm.training_engine.config import TrainingConfig
