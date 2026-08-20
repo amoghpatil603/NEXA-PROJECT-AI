@@ -1,4 +1,5 @@
 import unittest
+import json
 from backend.eval.interfaces import EvaluationCase, EvaluationResult, MetricResult, BenchmarkDefinition
 
 class TestEvalScaffold(unittest.TestCase):
@@ -108,5 +109,48 @@ class TestEvalScaffold(unittest.TestCase):
         self.assertEqual(case2.case_id, case.case_id)
         self.assertEqual(case2.expected_output, case.expected_output)
 
+    def test_evaluation_runner_execution(self):
+        from backend.eval.evaluator import EvaluationRunner
+        import tempfile
+        import os
+        
+        benchmark = BenchmarkDefinition(
+            benchmark_name="Arithmetic Benchmark",
+            description="Simple arithmetic evaluation",
+            cases=[
+                EvaluationCase(case_id="q1", input="2+2", expected_output="4"),
+                EvaluationCase(case_id="q2", input="3*3", expected_output="9"),
+                EvaluationCase(case_id="q3", input="5-1", expected_output="4")
+            ]
+        )
+
+        def mock_model(prompt: str) -> str:
+            if prompt == "2+2": return "4"
+            if prompt == "3*3": return "9"
+            return "unknown" # q3 fails
+
+        runner = EvaluationRunner()
+        summary = runner.run_benchmark(benchmark, mock_model)
+        
+        self.assertEqual(summary["total_cases"], 3)
+        self.assertEqual(summary["passed_cases"], 2)
+        self.assertEqual(summary["failed_cases"], 1)
+        self.assertAlmostEqual(summary["mean_accuracy"], 2/3, places=2)
+
+        # Test report saving
+        with tempfile.NamedTemporaryFile(suffix=".json", delete=False) as tf:
+            report_path = tf.name
+
+        try:
+            runner.save_report(summary, report_path)
+            self.assertTrue(os.path.exists(report_path))
+            with open(report_path, "r", encoding="utf-8") as f:
+                loaded = json.load(f)
+            self.assertEqual(loaded["benchmark_name"], "Arithmetic Benchmark")
+        finally:
+            if os.path.exists(report_path):
+                os.unlink(report_path)
+
 if __name__ == "__main__":
     unittest.main()
+
