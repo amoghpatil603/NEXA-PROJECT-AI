@@ -143,7 +143,72 @@ class TestAgentContracts(unittest.TestCase):
         self.assertEqual(state_fail_handoff.state, AgentState.FAILED)
         self.assertEqual(len(state_fail_handoff.history), 1)
 
+    def test_agent_planner_coordinator_integration(self):
+        from backend.agents.agent_planner import AgentPlanner, Task, ExecutionPlan
+        from backend.agents.coordination import AgentRegistry, MultiAgentCoordinator
+        from backend.agents.multi_agent_system import BaseAgent, AgentMessage
+        from backend.agents.interfaces import AgentState
+
+        class MockRagAgent(BaseAgent):
+            def __init__(self):
+                super().__init__("RagAgent")
+
+            def process(self, message: AgentMessage) -> AgentMessage:
+                return AgentMessage(
+                    sender=self.agent_id,
+                    receiver=message.sender,
+                    task_id=message.task_id,
+                    status="SUCCESS",
+                    payload={"documents": ["NEXA architecture doc", "API guidelines"]}
+                )
+
+        class FailingAgent(BaseAgent):
+            def __init__(self):
+                super().__init__("BrokenAgent")
+
+            def process(self, message: AgentMessage) -> AgentMessage:
+                return AgentMessage(
+                    sender=self.agent_id,
+                    receiver=message.sender,
+                    task_id=message.task_id,
+                    status="FAILED",
+                    payload={"error": "Remote agent unreachable"}
+                )
+
+        registry = AgentRegistry()
+        rag_agent = MockRagAgent()
+        failing_agent = FailingAgent()
+        registry.register(rag_agent, capabilities=["rag_search", "documentation"])
+        registry.register(failing_agent, capabilities=["broken_task"])
+
+        coordinator = MultiAgentCoordinator(registry)
+        planner = AgentPlanner(coordinator=coordinator)
+
+        # 1. Real planner path -> plan execution -> coordinator -> registered agent -> result
+        plan = planner.plan_execution("search documentation for README.md")
+        self.assertEqual(plan.tasks[0].task_type, "rag_search")
+
+        results = planner.execute_plan(plan)
+        self.assertEqual(len(results), 1)
+        self.assertEqual(results[0]["status"], "success")
+        self.assertIn("documents", results[0]["result"])
+        self.assertIn("NEXA architecture doc", results[0]["result"]["documents"])
+
+        # 2. Direct route_to_coordinator integration
+        state = planner.route_to_coordinator("documentation", "find API guidelines")
+        self.assertEqual(state.state, AgentState.COMPLETED)
+        self.assertIn("documents", state.context)
+
+        # 3. Failure propagation through planner execution
+        fail_task = Task(task_id="t_err", task_type="broken_task", description="fail now")
+        fail_plan = ExecutionPlan(plan_id="p_fail", plan_type="test", status="pending", created_at=0.0, tasks=[fail_task])
+        fail_results = planner.execute_plan(fail_plan)
+        self.assertEqual(len(fail_results), 1)
+        self.assertEqual(fail_results[0]["status"], "error")
+        self.assertIn("Remote agent unreachable", fail_results[0]["message"])
+
     def test_invalid_plan_step(self):
+        from backend.agents.interfaces import ToolAction, PlanStep
         action = ToolAction(tool_name="tool", arguments={})
         with self.assertRaises(ValueError):
             PlanStep(step_id="", action=action)

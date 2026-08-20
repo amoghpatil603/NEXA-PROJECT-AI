@@ -62,12 +62,22 @@ class ExecutionPlan:
         return len(self.tasks)
 
 class AgentPlanner:
-    def __init__(self, tool_manager=None):
+    def __init__(self, tool_manager=None, coordinator=None):
         self.tool_manager = tool_manager
+        self.coordinator = coordinator
         self.last_planning_latency = 0.0
         self.last_memory_consumption = 0.0
         self.total_plans_generated = 0
         self.total_tasks_generated = 0
+
+    def route_to_coordinator(self, task_type: str, description: str, context: Optional[Dict[str, Any]] = None):
+        if not self.coordinator:
+            raise RuntimeError("No coordinator attached to AgentPlanner")
+        from backend.agents.interfaces import AgentTask
+        from backend.agents.coordination import SharedTaskState
+        task = AgentTask(task_id=f"plan_task_{uuid.uuid4().hex[:6]}", task_type=task_type, description=description)
+        shared_state = SharedTaskState(task_id=task.task_id, initial_context=context)
+        return self.coordinator.route_task(task, shared_state=shared_state)
 
     def classify_intent(self, prompt: str) -> str:
         if not prompt or not isinstance(prompt, str):
@@ -336,7 +346,31 @@ class AgentPlanner:
 
                 if deps_satisfied:
                     progress_made = True
-                    if tool and self.tool_manager:
+                    task_type = task.get('task_type') if isinstance(task, dict) else getattr(task, 'task_type', None)
+                    desc = task.get('description', '') if isinstance(task, dict) else getattr(task, 'description', '')
+
+                    if self.coordinator and task_type and self.coordinator.registry.find_agent_for_task(task_type):
+                        from backend.agents.interfaces import AgentTask, AgentState
+                        agent_task = AgentTask(task_id=task_id, task_type=task_type, description=desc)
+                        state = self.coordinator.route_task(agent_task)
+                        if state.state == AgentState.FAILED:
+                            results.append({
+                                "task_id": task_id,
+                                "tool": tool,
+                                "status": "error",
+                                "message": state.error or "Coordinator agent execution failed",
+                                "state": "failed"
+                            })
+                            return results
+                        else:
+                            results.append({
+                                "task_id": task_id,
+                                "tool": tool,
+                                "status": "success",
+                                "result": state.context,
+                                "state": "completed"
+                            })
+                    elif tool and self.tool_manager:
                         try:
                             res = self.tool_manager.execute_tool(tool, params)
                             results.append({"task_id": task_id, "tool": tool, "status": res.get('status', 'success'), "result": res})
