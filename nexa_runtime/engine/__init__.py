@@ -5,11 +5,13 @@ from .interfaces import (
     CheckpointLoader,
     InferenceEngine
 )
+from .engine import NexaInferenceEngine
 
 __all__ = [
     "GenerationConfig",
     "GenerationRequest",
     "GenerationResult",
     "CheckpointLoader",
-    "InferenceEngine"
+    "InferenceEngine",
+    "NexaInferenceEngine"
 ]

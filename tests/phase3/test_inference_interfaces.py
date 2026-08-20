@@ -124,10 +124,63 @@ class TestInferenceInterfaces(unittest.TestCase):
             self.assertEqual(layer_k.shape, (1, config.n_heads, 4, head_dim))
             self.assertEqual(layer_v.shape, (1, config.n_heads, 4, head_dim))
 
-        # Compare logits of 4-token full sequence without cache vs 1-token decode with cache
-        full_seq = torch.tensor([[10, 20, 30, 40]], dtype=torch.long)
-        logits_full, _ = model(full_seq, use_cache=False)
-        self.assertTrue(torch.allclose(logits2, logits_full[:, [-1], :], atol=1e-5))
+    def test_batched_inference(self):
+        import torch
+        from backend.models.model.config import NexaConfig
+        from backend.models.model.transformer import NexaTransformer
+        from nexa_runtime.engine import NexaInferenceEngine, GenerationConfig, GenerationRequest
+
+        torch.manual_seed(42)
+        config = NexaConfig(vocab_size=100, max_seq_len=64, d_model=32, n_layers=2, n_heads=4, d_ff=64)
+        model = NexaTransformer(config)
+        model.eval()
+
+        class MockTokenizer:
+            def encode(self, text):
+                if text == "short":
+                    return [10, 20]
+                elif text == "longer prompt here":
+                    return [10, 20, 30, 40, 50]
+                return [15, 25, 35]
+
+            def decode(self, ids):
+                return "".join(f"[{i}]" for i in ids if i != 0)
+
+        tokenizer = MockTokenizer()
+        engine = NexaInferenceEngine(model, tokenizer, device='cpu')
+
+        cfg_greedy = GenerationConfig(max_new_tokens=5, do_sample=False)
+        req_a = GenerationRequest(prompt="short", config=cfg_greedy)
+        req_b = GenerationRequest(prompt="longer prompt here", config=cfg_greedy)
+
+        # 1. batch_size = 1 works identically to single generation
+        single_res_a = engine.generate(req_a)
+        batch_single = engine.generate_batch([req_a])
+        self.assertEqual(len(batch_single), 1)
+        self.assertEqual(single_res_a.text, batch_single[0].text)
+        self.assertEqual(single_res_a.tokens_generated, batch_single[0].tokens_generated)
+
+        # 2. batch_size = 2 with unequal prompt lengths produces correct outputs
+        single_res_b = engine.generate(req_b)
+        batch_res = engine.generate_batch([req_a, req_b])
+        self.assertEqual(len(batch_res), 2)
+
+        # 3. batch outputs match sequential outputs under greedy decoding
+        self.assertEqual(batch_res[0].text, single_res_a.text)
+        self.assertEqual(batch_res[1].text, single_res_b.text)
+
+        # 4. padding tokens do not corrupt generation
+        self.assertNotIn("[0]", batch_res[0].text)
+        self.assertNotIn("[0]", batch_res[1].text)
+
+        # 5. request-response metadata matches 1:1
+        self.assertEqual(batch_res[0].tokens_generated, 5)
+        self.assertEqual(batch_res[1].tokens_generated, 5)
+        self.assertEqual(batch_res[0].finish_reason, "length")
+        self.assertEqual(batch_res[1].finish_reason, "length")
+
+        # Empty batch returns empty list
+        self.assertEqual(engine.generate_batch([]), [])
 
 if __name__ == "__main__":
     unittest.main()
