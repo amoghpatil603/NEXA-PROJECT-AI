@@ -58,7 +58,7 @@ class MockPgCursor:
 
         # MEMORIES
         if "MEMORIES" in sql_str:
-            if "INSERT" in sql_str:
+            if "INSERT INTO" in sql_str or "INSERT " in sql_str:
                 mem_id = len(self.db_store["memories"]) + 1
                 if "MEMORY_UUID" in sql_str:
                     uuid_val = params[0] if len(params) > 0 else f"uuid-{mem_id}"
@@ -82,31 +82,54 @@ class MockPgCursor:
                 rec = get_default_record(mem_id, type_val, content_val, meta_obj)
                 self.db_store["memories"].append(rec)
                 self.last_result = [rec]
-            elif "UPDATE" in sql_str:
+            elif sql_str.startswith("UPDATE ") or " UPDATE " in sql_str:
                 if "CONTENT =" in sql_str and params:
                     new_content = params[0]
                     target_id = params[1] if len(params) > 1 else 1
                     for m in self.db_store["memories"]:
                         if m["id"] == target_id or str(m["id"]) == str(target_id):
                             m["content"] = new_content
+                if "METADATA =" in sql_str and params:
+                    meta_raw = params[0]
+                    target_id = params[1] if len(params) > 1 else 1
+                    try:
+                        meta_obj = json.loads(meta_raw) if isinstance(meta_raw, str) else meta_raw
+                    except Exception:
+                        meta_obj = {}
+                    for m in self.db_store["memories"]:
+                        if m["id"] == target_id or str(m["id"]) == str(target_id):
+                            m["metadata"] = meta_obj
+                if "IS_PINNED =" in sql_str and params:
+                    pinned_val = params[0]
+                    target_id = params[1] if len(params) > 1 else 1
+                    for m in self.db_store["memories"]:
+                        if m["id"] == target_id or str(m["id"]) == str(target_id):
+                            m["is_pinned"] = pinned_val
+                if "IS_ARCHIVED =" in sql_str and params:
+                    archived_val = params[0]
+                    target_id = params[1] if len(params) > 1 else 1
+                    for m in self.db_store["memories"]:
+                        if m["id"] == target_id or str(m["id"]) == str(target_id):
+                            m["is_archived"] = archived_val
                 self.last_result = []
                 self.rowcount = 1
-            elif "DELETE" in sql_str:
+            elif "DELETE FROM" in sql_str or "DELETE " in sql_str:
+                target_id = params[0] if params else None
+                before_len = len(self.db_store["memories"])
+                self.db_store["memories"] = [m for m in self.db_store["memories"] if m.get("id") != target_id and str(m.get("id")) != str(target_id)]
+                self.rowcount = 1 if len(self.db_store["memories"]) < before_len else 0
                 self.last_result = []
-                self.rowcount = 1
-            elif "SELECT" in sql_str:
-                matches = []
-                if params:
-                    for p in params:
-                        for m in self.db_store["memories"]:
-                            if m.get("id") == p or str(m.get("id")) == str(p) or m.get("memory_uuid") == p:
-                                matches.append(m)
-                if matches:
-                    self.last_result = matches
-                elif self.db_store["memories"]:
-                    self.last_result = [self.db_store["memories"][-1]]
+            elif "SELECT " in sql_str or sql_str.startswith("SELECT"):
+                if "ORDER BY" in sql_str:
+                    self.last_result = list(self.db_store["memories"])
                 else:
-                    self.last_result = [get_default_record(1)]
+                    matches = []
+                    if params:
+                        for p in params:
+                            for m in self.db_store["memories"]:
+                                if m.get("id") == p or str(m.get("id")) == str(p) or m.get("memory_uuid") == p:
+                                    matches.append(m)
+                    self.last_result = matches
             else:
                 self.last_result = [get_default_record(1)]
 

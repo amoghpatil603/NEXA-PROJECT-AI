@@ -20,11 +20,21 @@ class MemoryEngine:
         except Exception as e:
             logger.error(f"Error initializing PostgreSQL schema in MemoryEngine: {e}")
 
-    # Basic Memory Engine CRUD using PostgreSQL & pgvector
-    def create_memory(self, type: str, content: str, metadata: Optional[Dict[str, Any]] = None) -> int:
+    def _validate_user_id(self, user_id: str) -> str:
+        if not isinstance(user_id, str) or not user_id.strip():
+            raise ValueError("user_id must be a non-empty string")
+        return user_id.strip()
+
+    # Basic Memory Engine CRUD using PostgreSQL & pgvector with Strict Isolation
+    def create_memory(self, type: str, content: str, user_id: str, metadata: Optional[Dict[str, Any]] = None, session_id: Optional[str] = None) -> int:
+        user_id = self._validate_user_id(user_id)
         embedding = self.embedding_service.embed_text(content)
         vec_str = vector_to_sql_str(embedding)
-        meta_json = json.dumps(metadata) if metadata else "{}"
+        meta = dict(metadata) if metadata else {}
+        meta["user_id"] = user_id
+        if session_id:
+            meta["session_id"] = str(session_id).strip()
+        meta_json = json.dumps(meta)
 
         conn = get_connection()
         try:
@@ -43,7 +53,8 @@ class MemoryEngine:
         finally:
             conn.close()
 
-    def get_memory(self, memory_id: int) -> Optional[Dict[str, Any]]:
+    def get_memory(self, memory_id: int, user_id: str) -> Optional[Dict[str, Any]]:
+        user_id = self._validate_user_id(user_id)
         conn = get_connection()
         try:
             with conn.cursor(cursor_factory=RealDictCursor) as cursor:
@@ -54,11 +65,16 @@ class MemoryEngine:
                 row = cursor.fetchone()
                 if row:
                     res = dict(row)
-                    if isinstance(res.get('metadata'), str):
+                    meta = res.get('metadata')
+                    if isinstance(meta, str):
                         try:
-                            res['metadata'] = json.loads(res['metadata'])
+                            meta = json.loads(meta)
                         except Exception:
-                            pass
+                            meta = {}
+                    res['metadata'] = meta or {}
+                    # Strict isolation check
+                    if res['metadata'].get('user_id') != user_id:
+                        return None
                     res['created_at'] = str(res['created_at']) if res.get('created_at') else None
                     res['updated_at'] = str(res['updated_at']) if res.get('updated_at') else None
                     return res
@@ -66,7 +82,13 @@ class MemoryEngine:
         finally:
             conn.close()
 
-    def update_memory(self, memory_id: int, content: Optional[str] = None, metadata: Optional[Dict[str, Any]] = None) -> bool:
+    def update_memory(self, memory_id: int, user_id: str, content: Optional[str] = None, metadata: Optional[Dict[str, Any]] = None) -> bool:
+        user_id = self._validate_user_id(user_id)
+        # First verify ownership
+        existing = self.get_memory(memory_id, user_id)
+        if not existing:
+            return False
+
         conn = get_connection()
         try:
             updated = False
@@ -80,7 +102,10 @@ class MemoryEngine:
                     )
                     updated = cursor.rowcount > 0 or updated
                 if metadata:
-                    meta_json = json.dumps(metadata)
+                    new_meta = dict(existing.get('metadata', {}))
+                    new_meta.update(metadata)
+                    new_meta['user_id'] = user_id
+                    meta_json = json.dumps(new_meta)
                     cursor.execute(
                         "UPDATE memories SET metadata = %s, updated_at = CURRENT_TIMESTAMP WHERE id = %s",
                         (meta_json, memory_id)
@@ -95,7 +120,13 @@ class MemoryEngine:
         finally:
             conn.close()
 
-    def delete_memory(self, memory_id: int) -> bool:
+    def delete_memory(self, memory_id: int, user_id: str) -> bool:
+        user_id = self._validate_user_id(user_id)
+        # Verify ownership before deletion
+        existing = self.get_memory(memory_id, user_id)
+        if not existing:
+            return False
+
         conn = get_connection()
         try:
             with conn.cursor() as cursor:
@@ -105,7 +136,8 @@ class MemoryEngine:
         finally:
             conn.close()
 
-    def search_memory(self, query: str, top_k: int = 5) -> List[Dict[str, Any]]:
+    def search_memory(self, query: str, user_id: str, top_k: int = 5, session_id: Optional[str] = None) -> List[Dict[str, Any]]:
+        user_id = self._validate_user_id(user_id)
         query_vec = self.embedding_service.embed_text(query)
         vec_str = vector_to_sql_str(query_vec)
 
@@ -121,21 +153,32 @@ class MemoryEngine:
                     ORDER BY embedding <=> %s::vector ASC
                     LIMIT %s
                     """,
-                    (vec_str, vec_str, top_k)
+                    (vec_str, vec_str, top_k * 5)
                 )
                 rows = cursor.fetchall()
                 results = []
                 for row in rows:
                     d = dict(row)
                     d['similarity'] = float(d.get('similarity', 0.0))
-                    if isinstance(d.get('metadata'), str):
+                    meta = d.get('metadata')
+                    if isinstance(meta, str):
                         try:
-                            d['metadata'] = json.loads(d['metadata'])
+                            meta = json.loads(meta)
                         except Exception:
-                            pass
+                            meta = {}
+                    d['metadata'] = meta or {}
+
+                    # Strict isolation filter
+                    if d['metadata'].get('user_id') != user_id:
+                        continue
+                    if session_id and d['metadata'].get('session_id') != session_id:
+                        continue
+
                     d['created_at'] = str(d['created_at']) if d.get('created_at') else None
                     d['updated_at'] = str(d['updated_at']) if d.get('updated_at') else None
                     results.append(d)
+                    if len(results) >= top_k:
+                        break
                 return results
         except Exception as e:
             logger.error(f"Error in search_memory pgvector query: {e}")
@@ -143,7 +186,12 @@ class MemoryEngine:
         finally:
             conn.close()
 
-    def pin_memory(self, memory_id: int, is_pinned: bool = True) -> bool:
+    def pin_memory(self, memory_id: int, user_id: str, is_pinned: bool = True) -> bool:
+        user_id = self._validate_user_id(user_id)
+        existing = self.get_memory(memory_id, user_id)
+        if not existing:
+            return False
+
         conn = get_connection()
         try:
             with conn.cursor() as cursor:
@@ -156,7 +204,12 @@ class MemoryEngine:
         finally:
             conn.close()
 
-    def archive_memory(self, memory_id: int, is_archived: bool = True) -> bool:
+    def archive_memory(self, memory_id: int, user_id: str, is_archived: bool = True) -> bool:
+        user_id = self._validate_user_id(user_id)
+        existing = self.get_memory(memory_id, user_id)
+        if not existing:
+            return False
+
         conn = get_connection()
         try:
             with conn.cursor() as cursor:

@@ -43,14 +43,14 @@ class MemoryItem:
 @dataclass
 class MemoryQuery:
     query: str
-    scope: Optional[str] = None
+    scope: str
     top_k: int = 5
 
     def __post_init__(self):
         if not isinstance(self.query, str) or not self.query.strip():
             raise ValueError("query must be a non-empty string")
-        if self.scope is not None and (not isinstance(self.scope, str) or not self.scope.strip()):
-            raise ValueError("scope must be a non-empty string if provided")
+        if not isinstance(self.scope, str) or not self.scope.strip():
+            raise ValueError("scope must be a non-empty string")
         if not isinstance(self.top_k, int) or self.top_k <= 0:
             raise ValueError("top_k must be an integer > 0")
 
