@@ -45,7 +45,7 @@ class NexaTransformer(nn.Module):
         elif isinstance(module, nn.Embedding):
             torch.nn.init.normal_(module.weight, mean=0.0, std=0.02)
 
-    def forward(self, idx, targets=None, past_key_values=None, use_cache=False):
+    def forward(self, idx, targets=None, past_key_values=None, use_cache=False, attention_mask=None):
         B, T = idx.size()
         max_seq_len = self.config.max_seq_len
 
@@ -84,7 +84,7 @@ class NexaTransformer(nn.Module):
         presents = [] if use_cache else None
         for i, block in enumerate(self.transformer.h):
             layer_past = past_key_values[i] if past_key_values is not None else None
-            x, present = block(x, layer_past=layer_past)
+            x, present = block(x, layer_past=layer_past, attention_mask=attention_mask)
             if use_cache:
                 presents.append(present)
 

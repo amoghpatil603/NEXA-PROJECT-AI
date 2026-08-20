@@ -57,7 +57,7 @@ class CausalSelfAttention(nn.Module):
             torch.tril(torch.ones(config.max_seq_len, config.max_seq_len)).view(1, 1, config.max_seq_len, config.max_seq_len)
         )
 
-    def forward(self, x, layer_past=None):
+    def forward(self, x, layer_past=None, attention_mask=None):
         B, T, C = x.size()
         qkv = self.c_attn(x)
         q, k, v = qkv.split(self.d_model, dim=2)
@@ -92,13 +92,18 @@ class CausalSelfAttention(nn.Module):
         present = (k, v)
 
         att = (q @ k.transpose(-2, -1)) * (1.0 / math.sqrt(self.head_dim))
-        if layer_past is not None and T == 1:
+        if attention_mask is not None:
+            if attention_mask.dtype == torch.bool:
+                att = att.masked_fill(~attention_mask, float('-inf'))
+            else:
+                att = att.masked_fill(attention_mask == 0, float('-inf'))
+        elif layer_past is not None and T == 1:
             pass
         else:
             mask = self.bias[:, :, past_len:total_len, :total_len]
             att = att.masked_fill(mask == 0, float('-inf'))
 
-        att = F.softmax(att, dim=-1)
+        att = torch.nan_to_num(F.softmax(att, dim=-1), 0.0)
         att = self.attn_dropout(att)
 
         y = att @ v
