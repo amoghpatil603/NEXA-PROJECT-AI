@@ -132,6 +132,17 @@ class Trainer:
                 else:
                     loss.backward()
 
+                # VRAM Safety Guard: prevent runaway memory exceeding 70% ceiling
+                if torch.cuda.is_available() and self.device.type == 'cuda':
+                    total_vram = torch.cuda.get_device_properties(self.device).total_memory
+                    allocated_vram = torch.cuda.memory_allocated(self.device)
+                    if allocated_vram > 0.70 * total_vram:
+                        torch.cuda.empty_cache()
+                        raise RuntimeError(
+                            f"VRAM safety ceiling exceeded! Allocated {allocated_vram / 1e9:.2f} GB "
+                            f"(> 70% of total {total_vram / 1e9:.2f} GB). Aborting to prevent OOM."
+                        )
+
                 self.micro_step += 1
 
                 if self.micro_step % self.config.gradient_accumulation_steps == 0:
