@@ -23,7 +23,15 @@ class Trainer:
         self.checkpoint_manager = CheckpointManager(self.config.checkpoint_dir)
         self.logger = MetricsLogger(self.config.log_dir)
         
-        self.scaler = torch.cuda.amp.GradScaler(enabled=self.config.mixed_precision and self.device.type == 'cuda') if torch and hasattr(torch, "cuda") and hasattr(torch.cuda, "amp") and hasattr(torch.cuda.amp, "GradScaler") else None
+        if torch and hasattr(torch, "amp") and hasattr(torch.amp, "GradScaler"):
+            try:
+                self.scaler = torch.amp.GradScaler('cuda', enabled=self.config.mixed_precision and self.device.type == 'cuda')
+            except Exception:
+                self.scaler = torch.cuda.amp.GradScaler(enabled=self.config.mixed_precision and self.device.type == 'cuda') if hasattr(torch, "cuda") and hasattr(torch.cuda, "amp") and hasattr(torch.cuda.amp, "GradScaler") else None
+        elif torch and hasattr(torch, "cuda") and hasattr(torch.cuda, "amp") and hasattr(torch.cuda.amp, "GradScaler"):
+            self.scaler = torch.cuda.amp.GradScaler(enabled=self.config.mixed_precision and self.device.type == 'cuda')
+        else:
+            self.scaler = None
         
         self.micro_step = 0
         self.optimizer_step = 0
@@ -73,14 +81,25 @@ class Trainer:
                     print("Dataloader is empty. Stopping.")
                     break
 
-            batch = batch.to(self.device)
+            if hasattr(batch, "to"):
+                batch = batch.to(self.device)
+            elif isinstance(batch, dict):
+                batch = {k: v.to(self.device) for k, v in batch.items()}
+            elif isinstance(batch, (list, tuple)):
+                batch = batch[0].to(self.device) if hasattr(batch[0], "to") else batch[0]
 
             # Forward pass with proper autocast context
             autocast_context = torch.autocast(device_type=self.device.type, enabled=self.config.mixed_precision and self.device.type == 'cuda') if hasattr(torch, "autocast") else contextlib.nullcontext()
 
             with autocast_context:
                 # For standard causal LM, inputs and labels are the same
-                outputs = self.model(input_ids=batch)
+                if isinstance(batch, dict):
+                    outputs = self.model(**batch)
+                    labels = batch.get("labels", batch.get("input_ids"))
+                else:
+                    outputs = self.model(batch)
+                    labels = batch
+
                 if hasattr(outputs, 'loss'):
                     loss = outputs.loss
                 elif isinstance(outputs, (tuple, list)):
@@ -90,7 +109,7 @@ class Trainer:
                     logits = outputs
                     # Assuming batch is (B, T) and logits are (B, T, V)
                     shift_logits = logits[..., :-1, :].contiguous()
-                    shift_labels = batch[..., 1:].contiguous()
+                    shift_labels = labels[..., 1:].contiguous()
                     import torch.nn.functional as F
                     loss = F.cross_entropy(shift_logits.view(-1, shift_logits.size(-1)), shift_labels.view(-1))
                 loss = loss / self.config.gradient_accumulation_steps
