@@ -65,9 +65,15 @@ class CausalSelfAttention(nn.Module):
         k = k.view(B, T, self.n_heads, self.head_dim).transpose(1, 2)
         v = v.view(B, T, self.n_heads, self.head_dim).transpose(1, 2)
 
-        if layer_past is not None:
+        if layer_past is not None and layer_past[0] is not None:
             past_k, past_v = layer_past
             past_len = past_k.size(-2)
+            max_buf_len = self.bias.size(-1)
+            if past_len + T > max_buf_len:
+                keep_len = max(0, max_buf_len - T)
+                past_k = past_k[:, :, -keep_len:, :]
+                past_v = past_v[:, :, -keep_len:, :]
+                past_len = keep_len
             total_len = past_len + T
             if self.is_rope:
                 cos, sin = self.rotary_emb(v, total_len)

@@ -47,9 +47,31 @@ class NexaTransformer(nn.Module):
 
     def forward(self, idx, targets=None, past_key_values=None, use_cache=False):
         B, T = idx.size()
-        past_len = past_key_values[0][0].size(-2) if (past_key_values is not None and len(past_key_values) > 0 and past_key_values[0] is not None) else 0
+        max_seq_len = self.config.max_seq_len
+
+        # If input exceeds max_seq_len, truncate to last max_seq_len tokens
+        if T > max_seq_len:
+            idx = idx[:, -max_seq_len:]
+            T = max_seq_len
+            past_key_values = None
+
+        if past_key_values is not None and len(past_key_values) > 0 and past_key_values[0] is not None and past_key_values[0][0] is not None:
+            past_len = past_key_values[0][0].size(-2)
+            if past_len + T > max_seq_len:
+                keep_len = max(0, max_seq_len - T)
+                if keep_len > 0:
+                    past_key_values = tuple(
+                        (k[:, :, -keep_len:, :], v[:, :, -keep_len:, :])
+                        for (k, v) in past_key_values
+                    )
+                    past_len = keep_len
+                else:
+                    past_key_values = None
+                    past_len = 0
+        else:
+            past_len = 0
+
         total_len = past_len + T
-        assert total_len <= self.config.max_seq_len, f"Cannot forward sequence of length {total_len}, max {self.config.max_seq_len}"
 
         tok_emb = self.transformer.wte(idx)
         if not self.is_rope:

@@ -18,18 +18,19 @@ class NexaGenerator:
                  repetition_penalty=1.2,
                  use_cache=False):
         
+        max_seq_len = getattr(self.model.config, 'max_seq_len', 256)
         input_ids = torch.tensor([self.tokenizer.encode(prompt)], dtype=torch.long).to(self.device)
         past_key_values = None
         
         for step in range(max_new_tokens):
             if use_cache:
                 if past_key_values is None:
-                    curr_input = input_ids[:, -256:]
+                    curr_input = input_ids[:, -max_seq_len:]
                 else:
                     curr_input = input_ids[:, -1:]
                 logits, past_key_values = self.model(curr_input, past_key_values=past_key_values, use_cache=True)
             else:
-                curr_input = input_ids[:, -256:]
+                curr_input = input_ids[:, -max_seq_len:]
                 logits, _ = self.model(curr_input)
 
             if temperature < 1e-5:

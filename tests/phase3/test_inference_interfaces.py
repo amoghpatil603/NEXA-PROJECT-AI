@@ -124,6 +124,57 @@ class TestInferenceInterfaces(unittest.TestCase):
             self.assertEqual(layer_k.shape, (1, config.n_heads, 4, head_dim))
             self.assertEqual(layer_v.shape, (1, config.n_heads, 4, head_dim))
 
+    def test_kv_cache_sliding_window_context_limits(self):
+        import torch
+        from backend.models.model.config import NexaConfig
+        from backend.models.model.transformer import NexaTransformer
+        from backend.nexa.inference.generator import NexaGenerator
+
+        # Tiny model with small max_seq_len = 8
+        torch.manual_seed(42)
+        config = NexaConfig(vocab_size=50, max_seq_len=8, d_model=16, n_layers=2, n_heads=2, d_ff=32)
+        model = NexaTransformer(config)
+        model.eval()
+
+        class MockTokenizer:
+            def encode(self, text):
+                return [5, 10, 15]
+            def decode(self, ids):
+                return "".join(f"[{i}]" for i in ids)
+
+        tokenizer = MockTokenizer()
+        generator = NexaGenerator(model, tokenizer, device='cpu')
+
+        # 1. Equality below context limit
+        torch.manual_seed(99)
+        tokens_no_cache = list(generator.generate("prompt", max_new_tokens=4, temperature=0.0, use_cache=False))
+        torch.manual_seed(99)
+        tokens_cache = list(generator.generate("prompt", max_new_tokens=4, temperature=0.0, use_cache=True))
+        self.assertEqual(tokens_no_cache, tokens_cache)
+
+        # 2. Generation beyond context limit (prompt len 3 + 12 generated tokens = 15 > max_seq_len 8)
+        # Verify it generates successfully without raising any shape or index error
+        torch.manual_seed(99)
+        tokens_extended = list(generator.generate("prompt", max_new_tokens=12, temperature=0.0, use_cache=True))
+        self.assertEqual(len(tokens_extended), 12)
+
+        # 3. Cache length never exceeds max_seq_len=8 at any step
+        input_ids = torch.tensor([[5, 10, 15]], dtype=torch.long)
+        _, past_kv = model(input_ids, use_cache=True)
+        for step in range(15):
+            next_tok = torch.tensor([[step % 50]], dtype=torch.long)
+            _, past_kv = model(next_tok, past_key_values=past_kv, use_cache=True)
+            for k, v in past_kv:
+                self.assertLessEqual(k.size(-2), config.max_seq_len)
+                self.assertLessEqual(v.size(-2), config.max_seq_len)
+
+        # 4. Cache reset between requests
+        torch.manual_seed(99)
+        run_a = list(generator.generate("prompt", max_new_tokens=5, temperature=0.0, use_cache=True))
+        torch.manual_seed(99)
+        run_b = list(generator.generate("prompt", max_new_tokens=5, temperature=0.0, use_cache=True))
+        self.assertEqual(run_a, run_b)
+
     def test_batched_inference(self):
         import torch
         from backend.models.model.config import NexaConfig
