@@ -21,12 +21,13 @@ class Block(nn.Module):
         self.mlp = MLP(config)
         self.gradient_checkpointing = getattr(config, "gradient_checkpointing", False)
 
-    def _forward_block(self, x):
-        x = x + self.attn(self.ln_1(x))
+    def _forward_block(self, x, layer_past=None):
+        attn_out, present = self.attn(self.ln_1(x), layer_past=layer_past)
+        x = x + attn_out
         x = x + self.mlp(self.ln_2(x))
-        return x
+        return x, present
 
-    def forward(self, x):
+    def forward(self, x, layer_past=None):
         if self.training and self.gradient_checkpointing:
-            return checkpoint(self._forward_block, x)
-        return self._forward_block(x)
+            return checkpoint(self._forward_block, x, layer_past)
+        return self._forward_block(x, layer_past=layer_past)

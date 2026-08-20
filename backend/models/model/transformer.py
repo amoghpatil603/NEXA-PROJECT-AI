@@ -45,27 +45,37 @@ class NexaTransformer(nn.Module):
         elif isinstance(module, nn.Embedding):
             torch.nn.init.normal_(module.weight, mean=0.0, std=0.02)
 
-    def forward(self, idx, targets=None):
+    def forward(self, idx, targets=None, past_key_values=None, use_cache=False):
         B, T = idx.size()
-        assert T <= self.config.max_seq_len, f"Cannot forward sequence of length {T}, max {self.config.max_seq_len}"
+        past_len = past_key_values[0][0].size(-2) if (past_key_values is not None and len(past_key_values) > 0 and past_key_values[0] is not None) else 0
+        total_len = past_len + T
+        assert total_len <= self.config.max_seq_len, f"Cannot forward sequence of length {total_len}, max {self.config.max_seq_len}"
 
         tok_emb = self.transformer.wte(idx)
         if not self.is_rope:
-            pos = torch.arange(0, T, dtype=torch.long, device=idx.device)
+            pos = torch.arange(past_len, total_len, dtype=torch.long, device=idx.device)
             pos_emb = self.transformer.wpe(pos)
             x = self.transformer.drop(tok_emb + pos_emb)
         else:
             x = self.transformer.drop(tok_emb)
 
-        for block in self.transformer.h:
-            x = block(x)
+        presents = [] if use_cache else None
+        for i, block in enumerate(self.transformer.h):
+            layer_past = past_key_values[i] if past_key_values is not None else None
+            x, present = block(x, layer_past=layer_past)
+            if use_cache:
+                presents.append(present)
 
         x = self.transformer.ln_f(x)
 
         if targets is not None:
             logits = self.lm_head(x)
             loss = F.cross_entropy(logits.view(-1, logits.size(-1)), targets.view(-1), ignore_index=-100)
+            if use_cache:
+                return logits, loss, tuple(presents)
             return logits, loss
         else:
             logits = self.lm_head(x[:, [-1], :])
+            if use_cache:
+                return logits, tuple(presents)
             return logits, None

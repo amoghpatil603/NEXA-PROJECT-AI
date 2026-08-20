@@ -15,24 +15,37 @@ class NexaGenerator:
                  temperature=1.0,
                  top_k=50,
                  top_p=0.9,
-                 repetition_penalty=1.2):
+                 repetition_penalty=1.2,
+                 use_cache=False):
         
         input_ids = torch.tensor([self.tokenizer.encode(prompt)], dtype=torch.long).to(self.device)
+        past_key_values = None
         
-        for _ in range(max_new_tokens):
-            # Truncate context if necessary (Nexa Tiny context is 256)
-            curr_input = input_ids[:, -256:]
-            
-            logits, _ = self.model(curr_input)
-            next_token_logits = logits[:, -1, :] / (temperature if temperature > 0 else 1.0)
-            
-            # Repetition penalty
-            for token_id in set(input_ids[0].tolist()):
-                next_token_logits[0, token_id] /= repetition_penalty
+        for step in range(max_new_tokens):
+            if use_cache:
+                if past_key_values is None:
+                    curr_input = input_ids[:, -256:]
+                else:
+                    curr_input = input_ids[:, -1:]
+                logits, past_key_values = self.model(curr_input, past_key_values=past_key_values, use_cache=True)
+            else:
+                curr_input = input_ids[:, -256:]
+                logits, _ = self.model(curr_input)
 
-            filtered_logits = top_k_top_p_filtering(next_token_logits, top_k=top_k, top_p=top_p)
-            probs = F.softmax(filtered_logits, dim=-1)
-            next_token = torch.multinomial(probs, num_samples=1)
+            if temperature < 1e-5:
+                next_token_logits = logits[:, -1, :]
+                if repetition_penalty != 1.0:
+                    for token_id in set(input_ids[0].tolist()):
+                        next_token_logits[0, token_id] /= repetition_penalty
+                next_token = torch.argmax(next_token_logits, dim=-1, keepdim=True)
+            else:
+                next_token_logits = logits[:, -1, :] / (temperature if temperature > 0 else 1.0)
+                if repetition_penalty != 1.0:
+                    for token_id in set(input_ids[0].tolist()):
+                        next_token_logits[0, token_id] /= repetition_penalty
+                filtered_logits = top_k_top_p_filtering(next_token_logits, top_k=top_k, top_p=top_p)
+                probs = F.softmax(filtered_logits, dim=-1)
+                next_token = torch.multinomial(probs, num_samples=1)
             
             input_ids = torch.cat([input_ids, next_token], dim=-1)
             

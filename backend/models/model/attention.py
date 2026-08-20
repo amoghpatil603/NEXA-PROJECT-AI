@@ -57,7 +57,7 @@ class CausalSelfAttention(nn.Module):
             torch.tril(torch.ones(config.max_seq_len, config.max_seq_len)).view(1, 1, config.max_seq_len, config.max_seq_len)
         )
 
-    def forward(self, x):
+    def forward(self, x, layer_past=None):
         B, T, C = x.size()
         qkv = self.c_attn(x)
         q, k, v = qkv.split(self.d_model, dim=2)
@@ -65,16 +65,37 @@ class CausalSelfAttention(nn.Module):
         k = k.view(B, T, self.n_heads, self.head_dim).transpose(1, 2)
         v = v.view(B, T, self.n_heads, self.head_dim).transpose(1, 2)
 
-        if self.is_rope:
-            cos, sin = self.rotary_emb(v, T)
-            q, k = apply_rotary_pos_emb(q, k, cos, sin)
+        if layer_past is not None:
+            past_k, past_v = layer_past
+            past_len = past_k.size(-2)
+            total_len = past_len + T
+            if self.is_rope:
+                cos, sin = self.rotary_emb(v, total_len)
+                cos = cos[:, :, past_len:total_len, :]
+                sin = sin[:, :, past_len:total_len, :]
+                q, k = apply_rotary_pos_emb(q, k, cos, sin)
+            k = torch.cat([past_k, k], dim=-2)
+            v = torch.cat([past_v, v], dim=-2)
+        else:
+            total_len = T
+            past_len = 0
+            if self.is_rope:
+                cos, sin = self.rotary_emb(v, T)
+                q, k = apply_rotary_pos_emb(q, k, cos, sin)
+
+        present = (k, v)
 
         att = (q @ k.transpose(-2, -1)) * (1.0 / math.sqrt(self.head_dim))
-        att = att.masked_fill(self.bias[:, :, :T, :T] == 0, float('-inf'))
+        if layer_past is not None and T == 1:
+            pass
+        else:
+            mask = self.bias[:, :, past_len:total_len, :total_len]
+            att = att.masked_fill(mask == 0, float('-inf'))
+
         att = F.softmax(att, dim=-1)
         att = self.attn_dropout(att)
 
         y = att @ v
         y = y.transpose(1, 2).contiguous().view(B, T, C)
         y = self.resid_dropout(self.c_proj(y))
-        return y
+        return y, present
