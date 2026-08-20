@@ -34,6 +34,8 @@ def build_parser():
     parser.add_argument("--dataset-dir", type=str, default="data/shards", help="Binary shard dataset directory")
     parser.add_argument("--seed", type=int, default=42, help="RNG seed")
     parser.add_argument("--dry-run", action="store_true", help="Execute single-step validation without full loop")
+    parser.add_argument("--allow-cpu-smoke", action="store_true", help="Allow CPU execution for smoke testing")
+    parser.add_argument("--allow-cpu-long-training", action="store_true", help="Explicitly allow long CPU training override (not recommended for 100k foundation pretraining)")
     return parser
 
 def create_pretraining_setup(args=None):
@@ -76,6 +78,17 @@ def create_pretraining_setup(args=None):
 def main():
     parser = build_parser()
     args = parser.parse_args()
+
+    # CPU safeguard: prevent accidental long CPU pretraining
+    cuda_available = torch.cuda.is_available() if torch else False
+    if not cuda_available and not args.dry_run:
+        if args.max_steps > 10 and not (args.allow_cpu_smoke or args.allow_cpu_long_training):
+            print(
+                f"Error: CUDA is unavailable and max_steps={args.max_steps}. "
+                "CPU execution is permitted only for smoke testing (max_steps <= 10, --dry-run, or --allow-cpu-smoke). "
+                "Specify --allow-cpu-long-training explicitly if you intentionally wish to override this safeguard."
+            )
+            sys.exit(1)
 
     model, config, dataloader = create_pretraining_setup(args)
     if dataloader is None:
