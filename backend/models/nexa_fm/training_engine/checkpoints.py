@@ -214,28 +214,31 @@ class CheckpointManager:
             curr_shard = dataloader_state.get('current_shard_idx', 0)
             curr_batch = dataloader_state.get('current_batch_idx', 0)
 
-            # We must resume from the NEXT batch index
-            next_batch = curr_batch + dataloader.batch_size
-
-            # Check length of sequences in the shard to see if we should advance to the next shard
-            if curr_shard < len(dataloader.shards):
-                shard_path = dataloader.shards[curr_shard]
-                try:
-                    data = np.memmap(shard_path, dtype=np.uint16, mode='r')
-                    num_tokens = len(data)
-                    num_sequences = num_tokens // dataloader.max_length
-                    if next_batch >= num_sequences:
-                        dataloader.start_shard_idx = curr_shard + 1
-                        dataloader.start_batch_idx = 0
-                    else:
+            if hasattr(dataloader, 'advance_cursor'):
+                next_shard, next_batch = dataloader.advance_cursor(curr_shard, curr_batch)
+                dataloader.start_shard_idx = next_shard
+                dataloader.start_batch_idx = next_batch
+            else:
+                next_batch = curr_batch + getattr(dataloader, 'batch_size', 1)
+                num_shards = len(getattr(dataloader, 'shards', []))
+                if curr_shard < num_shards:
+                    shard_path = dataloader.shards[curr_shard]
+                    try:
+                        data = np.memmap(shard_path, dtype=np.uint16, mode='r')
+                        num_tokens = len(data)
+                        num_sequences = num_tokens // getattr(dataloader, 'max_length', 2048)
+                        if next_batch >= num_sequences:
+                            dataloader.start_shard_idx = curr_shard + 1
+                            dataloader.start_batch_idx = 0
+                        else:
+                            dataloader.start_shard_idx = curr_shard
+                            dataloader.start_batch_idx = next_batch
+                    except Exception:
                         dataloader.start_shard_idx = curr_shard
                         dataloader.start_batch_idx = next_batch
-                except Exception:
+                else:
                     dataloader.start_shard_idx = curr_shard
-                    dataloader.start_batch_idx = next_batch
-            else:
-                dataloader.start_shard_idx = curr_shard
-                dataloader.start_batch_idx = 0
+                    dataloader.start_batch_idx = 0
 
             dataloader.current_shard_idx = dataloader.start_shard_idx
             dataloader.current_batch_idx = dataloader.start_batch_idx

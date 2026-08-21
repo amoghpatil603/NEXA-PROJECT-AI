@@ -34,6 +34,8 @@ def main():
         print(f"Loading checkpoint weights from {args.checkpoint}...")
         state = torch.load(args.checkpoint, map_location="cpu")
         model.load_state_dict(state.get("model_state_dict", state))
+    else:
+        print(f"Notice: Source checkpoint '{args.checkpoint}' not found on disk. Exporting initialized architecture and manifest.")
 
     result = export_model_checkpoint(model, config, args.output_dir, args.filename)
     print(f"Model exported successfully to {result['output_dir']} ({result['total_parameters']:,} parameters).")

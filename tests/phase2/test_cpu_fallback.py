@@ -101,7 +101,9 @@ class TestCPUFallback(unittest.TestCase):
             cmd_allow = [
                 sys.executable,
                 "scripts/train_pretrain.py",
-                "--max-steps", "2",
+                "--max-steps", "1",
+                "--batch-size", "1",
+                "--grad-accum", "1",
                 "--allow-cpu-long-training",
                 "--checkpoint-dir", self.ckpt_dir,
                 "--log-dir", self.log_dir

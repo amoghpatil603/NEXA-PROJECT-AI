@@ -1,8 +1,9 @@
 """
 NEXA Real T4 Memory & Resume Certification Script
-Automates the exact 1-step, 2-step, checkpoint, and fresh-process resume validation on an NVIDIA Tesla T4 GPU.
+Automates the exact 1-step, 2-step, checkpoint, tensor equality, and fresh-process resume validation on an NVIDIA Tesla T4 GPU.
 """
 
+import argparse
 import os
 import sys
 import psutil
@@ -22,7 +23,16 @@ from backend.models.nexa_fm.training_engine.config import TrainingConfig
 from backend.models.nexa_fm.training_engine.dataloader import ShardDataLoader
 from backend.models.nexa_fm.training_engine.trainer import Trainer
 
+def parse_args():
+    parser = argparse.ArgumentParser(description="NEXA Real T4 Certification")
+    parser.add_argument("--dataset-dir", type=str, default="data/shards", help="Path to binary shard directory (local or Drive)")
+    parser.add_argument("--batch-size", type=int, default=1, help="Batch size for certification run")
+    parser.add_argument("--seq-len", type=int, default=2048, help="Sequence length")
+    return parser.parse_args()
+
 def run_certification():
+    args = parse_args()
+
     print("=" * 60)
     print("NEXA — REAL T4 MEMORY + RESUME CERTIFICATION")
     print("=" * 60)
@@ -38,11 +48,12 @@ def run_certification():
     print(f"Total VRAM: {total_vram_gb:.2f} GB")
     print(f"System RAM: {sys_ram_gb:.2f} GB")
 
-    if not cuda_avail or "T4" not in gpu_name:
-        print("\n[WARNING] This script is designed for an NVIDIA Tesla T4 GPU.")
-        if not cuda_avail:
-            print("[ERROR] CUDA is not available. Exiting.")
-            sys.exit(1)
+    if not cuda_avail:
+        print("\n[ERROR] CUDA is not available. T4 Certification CANNOT run or pass on CPU.")
+        sys.exit(1)
+
+    if "T4" not in gpu_name:
+        print(f"\n[WARNING] Detected GPU '{gpu_name}' instead of Tesla T4. Proceeding with CUDA verification.")
 
     device = torch.device("cuda")
 
@@ -62,36 +73,52 @@ def run_certification():
     assert params == 49721856, f"Expected 49,721,856 parameters, got {params}"
 
     # 3. Data Check
-    shards = list(Path("data/shards").glob("**/*.bin"))
+    dataset_path = Path(args.dataset_dir).resolve()
+    if not dataset_path.exists():
+        print(f"\n[ERROR] Dataset path '{dataset_path}' does not exist.")
+        sys.exit(1)
+
+    try:
+        dl_ref = ShardDataLoader(str(dataset_path), batch_size=args.batch_size, max_length=cfg.max_seq_len, shuffle=False)
+    except Exception as e:
+        print(f"\n[ERROR] Failed to initialize ShardDataLoader at '{dataset_path}': {e}")
+        sys.exit(1)
+
+    shards = dl_ref.shards
     print(f"\nDataset Validation:")
+    print(f" - Dataset Path: {dataset_path}")
     print(f" - Shard count: {len(shards)}")
     sample = shards[0]
     data = np.memmap(sample, dtype=np.uint16, mode='r')
-    print(f" - Sample tokens: {len(data)}, dtype: {data.dtype}, max token: {int(np.max(data))}")
-    assert np.max(data) < cfg.vocab_size, "Token ID exceeds vocab size!"
+    print(f" - Sample tokens in first shard: {len(data)}, dtype: {data.dtype}, max token: {int(np.max(data))}")
+    assert np.max(data) < cfg.vocab_size, f"Token ID {np.max(data)} exceeds vocab size {cfg.vocab_size}!"
 
-    dl = ShardDataLoader("data/shards", batch_size=1, max_length=cfg.max_seq_len, shuffle=False)
-    batch = next(iter(dl))
-    print(f" - Single batch shape: {list(batch.shape)}, dtype: {batch.dtype}")
+    # Collect ground-truth uninterrupted batches for exact comparison
+    ref_iter = iter(dl_ref)
+    batch_0 = next(ref_iter)
+    batch_1 = next(ref_iter)
+    batch_2 = next(ref_iter)
+    print(f" - Single batch shape: {list(batch_0.shape)}, dtype: {batch_0.dtype}")
 
     # 4. One-Step Execution
     print("\n--- STEP 1: ONE-STEP T4 TRAINING ---")
     tmp_dir1 = tempfile.mkdtemp()
     t_config1 = TrainingConfig(
-        batch_size=1,
+        batch_size=args.batch_size,
         gradient_accumulation_steps=1,
         learning_rate=3e-4,
         max_steps=1,
         save_steps=1,
         checkpoint_dir=os.path.join(tmp_dir1, "ckpts"),
         log_dir=os.path.join(tmp_dir1, "logs"),
-        dataset_dir="data/shards",
+        dataset_dir=str(dataset_path),
         seed=42
     )
     torch.cuda.empty_cache()
     torch.cuda.reset_peak_memory_stats()
-    
-    trainer1 = Trainer(model, t_config1, dl)
+
+    dl1 = ShardDataLoader(str(dataset_path), batch_size=args.batch_size, max_length=cfg.max_seq_len, shuffle=False)
+    trainer1 = Trainer(model, t_config1, dl1)
     trainer1.train()
 
     one_step_allocated = torch.cuda.memory_allocated(device) / 1e9
@@ -99,6 +126,7 @@ def run_certification():
     one_step_peak = torch.cuda.max_memory_allocated(device) / 1e9
     one_step_peak_pct = (one_step_peak / total_vram_gb) * 100
 
+    print(f"One-Step Allocated: {one_step_allocated:.2f} GB")
     print(f"One-Step Peak VRAM: {one_step_peak:.2f} GB ({one_step_peak_pct:.2f}%)")
     assert one_step_peak_pct < 70.0, f"Peak VRAM exceeded 70% limit! ({one_step_peak_pct:.2f}%)"
 
@@ -106,18 +134,18 @@ def run_certification():
     print("\n--- STEP 2: TWO-STEP T4 TRAINING ---")
     tmp_dir2 = tempfile.mkdtemp()
     t_config2 = TrainingConfig(
-        batch_size=1,
+        batch_size=args.batch_size,
         gradient_accumulation_steps=1,
         learning_rate=3e-4,
         max_steps=2,
         save_steps=1,
         checkpoint_dir=os.path.join(tmp_dir2, "ckpts"),
         log_dir=os.path.join(tmp_dir2, "logs"),
-        dataset_dir="data/shards",
+        dataset_dir=str(dataset_path),
         seed=42
     )
     model2 = NexaTransformer(cfg).to(device)
-    dl2 = ShardDataLoader("data/shards", batch_size=1, max_length=cfg.max_seq_len, shuffle=False)
+    dl2 = ShardDataLoader(str(dataset_path), batch_size=args.batch_size, max_length=cfg.max_seq_len, shuffle=False)
 
     torch.cuda.empty_cache()
     torch.cuda.reset_peak_memory_stats()
@@ -131,8 +159,9 @@ def run_certification():
     assert os.path.exists(os.path.join(tmp_dir2, "ckpts", "checkpoint-1")), "checkpoint-1 missing!"
     assert os.path.exists(os.path.join(tmp_dir2, "ckpts", "checkpoint-2")), "checkpoint-2 missing!"
 
-    # 6. Fresh-Process Resume Subprocess Execution
-    print("\n--- STEP 3: FRESH-PROCESS RESUME & STEP 3 ---")
+    # 6. Fresh-Process Resume Subprocess Execution with Exact Tensor Verification
+    print("\n--- STEP 3: FRESH-PROCESS RESUME & TENSOR EQUALITY ---")
+    sub_batch_file = os.path.join(tmp_dir2, "resumed_batch.pt")
     sub_script = f"""
 import sys
 from pathlib import Path
@@ -147,21 +176,26 @@ from backend.models.nexa_fm.training_engine.trainer import Trainer
 cfg = NexaConfig.tiny()
 model = NexaTransformer(cfg).cuda()
 t_config = TrainingConfig(
-    batch_size=1,
+    batch_size={args.batch_size},
     gradient_accumulation_steps=1,
     learning_rate=3e-4,
     max_steps=3,
     save_steps=1,
     checkpoint_dir=r"{os.path.join(tmp_dir2, 'ckpts')}",
     log_dir=r"{os.path.join(tmp_dir2, 'logs')}",
-    dataset_dir="data/shards",
+    dataset_dir=r"{dataset_path}",
     seed=42
 )
-dl = ShardDataLoader("data/shards", batch_size=1, max_length=cfg.max_seq_len, shuffle=False)
+dl = ShardDataLoader(r"{dataset_path}", batch_size={args.batch_size}, max_length=cfg.max_seq_len, shuffle=False)
 trainer = Trainer(model, t_config, dl)
 resumed = trainer.resume_from_checkpoint()
 if not resumed or trainer.optimizer_step != 2:
     sys.exit(1)
+
+# Capture first batch produced after resume
+resumed_iter = iter(dl)
+first_batch = next(resumed_iter)
+torch.save(first_batch.cpu(), r"{sub_batch_file}")
 
 trainer.train()
 if trainer.optimizer_step != 3:
@@ -180,6 +214,32 @@ sys.exit(0)
         print("Process 2 stderr:\n", res.stderr)
         sys.exit(1)
 
+    # 7. Compare Next-Batch Tensor Contents
+    if not os.path.exists(sub_batch_file):
+        print("[ERROR] Resumed batch tensor file was not generated by subprocess.")
+        sys.exit(1)
+
+    resumed_batch = torch.load(sub_batch_file)
+    if not torch.equal(batch_2.cpu(), resumed_batch):
+        print(f"[ERROR] Resumed batch tensor mismatch! Uninterrupted batch_2 != Resumed batch.")
+        sys.exit(1)
+
+    print("Next-batch tensor exact equality verified between uninterrupted run and resumed run! ✅")
+
+    # 8. Report Summary
+    print("\n" + "=" * 60)
+    print("CERTIFICATION EXECUTION REPORT")
+    print("=" * 60)
+    print(f"Hardware: {gpu_name} ({total_vram_gb:.2f} GB VRAM)")
+    print(f"Host RAM: {sys_ram_gb:.2f} GB")
+    print(f"Batch Size: {args.batch_size}")
+    print(f"Sequence Length: {cfg.max_seq_len}")
+    print(f"Parameters: {params:,}")
+    print(f"Dataset Path: {dataset_path}")
+    print(f"Checkpoint Dir: {os.path.join(tmp_dir2, 'ckpts')}")
+    print(f"1-Step Peak VRAM: {one_step_peak:.2f} GB ({one_step_peak_pct:.2f}%)")
+    print(f"2-Step Peak VRAM: {two_step_peak:.2f} GB ({two_step_peak_pct:.2f}%)")
+    print(f"Resume Status: VERIFIED WITH EXACT TENSOR MATCH")
     print("=" * 60)
     print("ALL REAL T4 MEMORY & RESUME CHECKS PASSED ✅")
     print("=" * 60)
