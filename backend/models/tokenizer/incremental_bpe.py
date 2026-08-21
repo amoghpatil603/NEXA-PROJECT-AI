@@ -19,7 +19,13 @@ from collections import Counter
 from pathlib import Path
 from typing import Dict, Iterable, List, Optional, Set, Tuple, Union
 
-from tokenizer.bpe_tokenizer import NexaBPETokenizer
+try:
+    from tokenizer.bpe_tokenizer import NexaBPETokenizer
+except ImportError:
+    try:
+        from .bpe_tokenizer import NexaBPETokenizer
+    except ImportError:
+        from backend.models.tokenizer.bpe_tokenizer import NexaBPETokenizer
 
 class IncrementalBPETokenizer(NexaBPETokenizer):
     def _get_current_rss_mb(self) -> float:
@@ -30,8 +36,15 @@ class IncrementalBPETokenizer(NexaBPETokenizer):
                         return int(line.split()[1]) / 1024.0
         except Exception:
             pass
-        import resource
-        return resource.getrusage(resource.RUSAGE_SELF).ru_maxrss / 1024.0
+        try:
+            import resource
+            return resource.getrusage(resource.RUSAGE_SELF).ru_maxrss / 1024.0
+        except Exception:
+            try:
+                import psutil
+                return psutil.Process().memory_info().rss / (1024.0 * 1024.0)
+            except Exception:
+                return 0.0
 
     def _get_available_ram_mb(self) -> float:
         try:

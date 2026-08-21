@@ -14,8 +14,16 @@ import sys
 from pathlib import Path
 from typing import List, Optional
 
-from tokenizer.bpe_tokenizer import NexaBPETokenizer, DEFAULT_SPECIAL_TOKENS
-from tokenizer.incremental_bpe import IncrementalBPETokenizer
+try:
+    from tokenizer.bpe_tokenizer import NexaBPETokenizer, DEFAULT_SPECIAL_TOKENS
+    from tokenizer.incremental_bpe import IncrementalBPETokenizer
+except ImportError:
+    try:
+        from .bpe_tokenizer import NexaBPETokenizer, DEFAULT_SPECIAL_TOKENS
+        from .incremental_bpe import IncrementalBPETokenizer
+    except ImportError:
+        from backend.models.tokenizer.bpe_tokenizer import NexaBPETokenizer, DEFAULT_SPECIAL_TOKENS
+        from backend.models.tokenizer.incremental_bpe import IncrementalBPETokenizer
 
 
 def load_corpus_documents(corpus_path: Path) -> List[str]:
