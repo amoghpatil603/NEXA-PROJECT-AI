@@ -58,6 +58,15 @@ async def health():
         "phase": "NEXA_PHASE5B5_STABILITY_CERTIFIED"
     }
 
+@app.get("/ready")
+async def readiness():
+    return {
+        "status": "ready" if engine is not None else "degraded",
+        "ready": True,
+        "model_loaded": engine is not None,
+        "service": "NEXA AI Platform"
+    }
+
 @app.get("/metrics")
 async def metrics():
     return {

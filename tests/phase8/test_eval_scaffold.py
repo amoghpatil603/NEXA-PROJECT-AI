@@ -151,6 +151,21 @@ class TestEvalScaffold(unittest.TestCase):
             if os.path.exists(report_path):
                 os.unlink(report_path)
 
+    def test_run_eval_cli_parser_and_suites(self):
+        from scripts.run_eval import build_parser, load_benchmark
+        parser = build_parser()
+        args = parser.parse_args(["--benchmark", "gsm8k", "--dry-run"])
+        self.assertEqual(args.benchmark, "gsm8k")
+        self.assertTrue(args.dry_run)
+
+        bench_gsm8k = load_benchmark("gsm8k")
+        self.assertEqual(bench_gsm8k.benchmark_name, "gsm8k")
+        self.assertGreater(len(bench_gsm8k.cases), 0)
+
+        bench_all = load_benchmark("all")
+        self.assertEqual(bench_all.benchmark_name, "all")
+        self.assertGreater(len(bench_all.cases), 3)
+
 if __name__ == "__main__":
     unittest.main()
 

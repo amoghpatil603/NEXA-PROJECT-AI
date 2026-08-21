@@ -14,6 +14,12 @@ def test_health_endpoint():
     data = response.json()
     assert data["status"] == "ok"
 
+def test_readiness_endpoint():
+    response = client.get("/ready")
+    assert response.status_code == 200
+    data = response.json()
+    assert data["ready"] is True
+
 def test_system_status_endpoint():
     response = client.get("/metrics")
     assert response.status_code == 200
