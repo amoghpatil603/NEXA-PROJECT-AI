@@ -33,7 +33,7 @@ drive.mount('/content/drive')
 !pip install -r requirements.txt pytest
 
 # 3. Define Persistent External Checkpoint Directory
-CHECKPOINT_DIR = "/content/drive/MyDrive/NEXA/checkpoints/pretrain"
+CHECKPOINT_DIR = "/content/drive/MyDrive/nexa/checkpoints/pretrain"
 
 # 4. Launch Pretraining (Checkpoints written to Google Drive every 500 steps)
 !python scripts/train_pretrain.py \
@@ -45,9 +45,9 @@ CHECKPOINT_DIR = "/content/drive/MyDrive/NEXA/checkpoints/pretrain"
     --max-steps 100000 \
     --save-steps 500 \
     --log-steps 10 \
-    --dataset-dir data/shards \
-    --checkpoint-dir /content/drive/MyDrive/NEXA/checkpoints/pretrain \
-    --log-dir /content/drive/MyDrive/NEXA/logs/pretrain \
+    --dataset-dir /content/drive/MyDrive/nexa/shards \
+    --checkpoint-dir /content/drive/MyDrive/nexa/checkpoints/pretrain \
+    --log-dir /content/drive/MyDrive/nexa/logs/pretrain \
     --seed 42
 ```
 
@@ -82,9 +82,9 @@ drive.mount('/content/drive')
     --max-steps 100000 \
     --save-steps 500 \
     --log-steps 10 \
-    --dataset-dir data/shards \
-    --checkpoint-dir /content/drive/MyDrive/NEXA/checkpoints/pretrain \
-    --log-dir /content/drive/MyDrive/NEXA/logs/pretrain \
+    --dataset-dir /content/drive/MyDrive/nexa/shards \
+    --checkpoint-dir /content/drive/MyDrive/nexa/checkpoints/pretrain \
+    --log-dir /content/drive/MyDrive/nexa/logs/pretrain \
     --seed 42
 ```
 

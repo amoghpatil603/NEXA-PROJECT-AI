@@ -1,5 +1,8 @@
 # Data and Checkpoints
 data_run1/
+checkpoints/
+logs/
+exported_model/
 *.bin
 *.pt
 *.pth
@@ -13,6 +16,7 @@ test_logs/
 test_logs_mock/
 test_checkpoints/
 test_checkpoints_mock/
+test_output_dataset/
 tmp_canonical_e2e/
 
 # Environment files
