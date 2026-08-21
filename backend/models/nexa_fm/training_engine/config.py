@@ -3,13 +3,22 @@ from dataclasses import dataclass, field, asdict
 import os
 from pathlib import Path
 
-def resolve_dataset_manifest() -> dict:
-    candidates = [
+def resolve_dataset_manifest(dataset_dir: str = None) -> dict:
+    candidates = []
+    if dataset_dir:
+        d = Path(dataset_dir)
+        candidates.extend([
+            d / "manifest/final_manifest.json",
+            d / "final_manifest.json",
+            d.parent / "manifest/final_manifest.json",
+            d.parent / "final_manifest.json"
+        ])
+    candidates.extend([
         Path("data/manifest/final_manifest.json"),
         Path("backend/models/nexa_fm/data/manifest/final_manifest.json"),
         Path(__file__).resolve().parent.parent / "data/manifest/final_manifest.json",
         Path(__file__).resolve().parent.parent.parent.parent / "data/manifest/final_manifest.json"
-    ]
+    ])
     for c in candidates:
         if c.exists():
             with open(c, 'r', encoding='utf-8') as f:
@@ -87,7 +96,7 @@ class TrainingConfig:
 
         if not self.dataset_version or not self.dataset_content_hash:
             try:
-                manifest = resolve_dataset_manifest()
+                manifest = resolve_dataset_manifest(self.dataset_dir)
                 self.dataset_version = manifest.get("dataset_version", "")
                 self.dataset_content_hash = manifest.get("content_hash", "")
             except Exception as e:
