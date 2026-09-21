@@ -71,6 +71,7 @@ class TrainingConfig:
     dataset_content_hash: str = ""
     tokenizer_identity: str = ""
     tokenizer_config_identity: str = ""
+    early_save_steps: list = field(default_factory=list)
 
     def __post_init__(self):
         if self.batch_size <= 0:

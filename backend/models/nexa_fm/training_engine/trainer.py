@@ -171,7 +171,9 @@ class Trainer:
                             "lr": self.scheduler.get_last_lr()[0]
                         })
 
-                    if self.optimizer_step % self.config.save_steps == 0 and self.optimizer_step > 0:
+                    early_saves = getattr(self.config, 'early_save_steps', []) or []
+                    should_save = (self.optimizer_step in early_saves) or (self.optimizer_step % self.config.save_steps == 0)
+                    if should_save and self.optimizer_step > 0:
                         self.checkpoint_manager.save(
                             model=self.model,
                             optimizer=self.optimizer,

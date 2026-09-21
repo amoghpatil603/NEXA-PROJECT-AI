@@ -28,6 +28,7 @@ def build_parser():
     parser.add_argument("--warmup-steps", type=int, default=1000, help="Warmup steps")
     parser.add_argument("--max-steps", type=int, default=100000, help="Total training steps")
     parser.add_argument("--save-steps", type=int, default=1000, help="Checkpoint interval")
+    parser.add_argument("--early-save-steps", type=str, default="", help="Comma-separated list of early step numbers to checkpoint (e.g. '1,10,50,100')")
     parser.add_argument("--log-steps", type=int, default=10, help="Logging interval")
     parser.add_argument("--checkpoint-dir", type=str, default="checkpoints/pretrain", help="Checkpoint directory")
     parser.add_argument("--log-dir", type=str, default="logs/pretrain", help="Log directory")
@@ -42,6 +43,8 @@ def create_pretraining_setup(args=None):
     if args is None:
         args = build_parser().parse_args([])
 
+    early_saves = [int(s.strip()) for s in args.early_save_steps.split(",") if s.strip().isdigit()] if args.early_save_steps else []
+
     config = TrainingConfig(
         batch_size=args.batch_size,
         gradient_accumulation_steps=args.grad_accum,
@@ -50,6 +53,7 @@ def create_pretraining_setup(args=None):
         warmup_steps=args.warmup_steps,
         max_steps=args.max_steps,
         save_steps=args.save_steps,
+        early_save_steps=early_saves,
         log_steps=args.log_steps,
         checkpoint_dir=args.checkpoint_dir,
         log_dir=args.log_dir,
