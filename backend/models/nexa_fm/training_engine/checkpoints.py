@@ -15,6 +15,14 @@ class CheckpointManager:
     """
     Manages atomic checkpoint saving, robust latest checkpoint discovery,
     and exact state restoration with identity integrity guards.
+
+    Save semantics (FIX 2):
+      1. Write all state into .tmp_checkpoint_<uuid>/
+      2. Validate the temporary directory before touching the live path.
+      3. Rename the previously-trusted final_path to .preserved_<uuid>/ (keeping it safe).
+      4. Promote tmp -> final_path atomically.
+      5. Remove the preserved copy ONLY after successful promotion and re-validation.
+    If any step fails, the preserved copy is intact and a RuntimeError is raised.
     """
     def __init__(self, checkpoint_dir: str):
         self.checkpoint_dir = checkpoint_dir
@@ -41,65 +49,110 @@ class CheckpointManager:
             return
 
         final_path = os.path.join(self.checkpoint_dir, f"checkpoint-{step}")
-        tmp_path = os.path.join(self.checkpoint_dir, f".tmp_checkpoint_{step}_{uuid.uuid4().hex[:8]}")
+        tmp_uid = uuid.uuid4().hex[:8]
+        tmp_path = os.path.join(self.checkpoint_dir, f".tmp_checkpoint_{step}_{tmp_uid}")
+        preserved_path = None
         os.makedirs(tmp_path, exist_ok=True)
 
-        # Capture RNG states
-        rng_states = {
-            'python_rng': random.getstate(),
-            'numpy_rng': np.random.get_state(),
-            'torch_cpu_rng': torch.get_rng_state() if torch else None,
-            'torch_cuda_rng': torch.cuda.get_rng_state_all() if (torch and torch.cuda.is_available()) else None,
-        }
-
-        # Capture dataloader cursor position
-        dataloader_state = {
-            'current_shard_idx': getattr(dataloader, 'current_shard_idx', 0),
-            'current_batch_idx': getattr(dataloader, 'current_batch_idx', 0)
-        }
-
-        # Capture scaler state if exists
-        scaler_state = scaler.state_dict() if scaler is not None else None
-
-        # Write state to temporary directory
-        state_file = os.path.join(tmp_path, "training_state.pt")
-        config_file = os.path.join(tmp_path, "training_config.json")
-
-        torch.save({
-            'model_state_dict': model.state_dict(),
-            'optimizer_state_dict': optimizer.state_dict(),
-            'scheduler_state_dict': scheduler.state_dict(),
-            'step': step,
-            'micro_step': micro_step,
-            'epoch': epoch,
-            'rng_states': rng_states,
-            'dataloader_state': dataloader_state,
-            'scaler_state': scaler_state,
-            'seed': config.seed,
-            'dataset_version': config.dataset_version,
-            'dataset_content_hash': config.dataset_content_hash,
-            'tokenizer_identity': config.tokenizer_identity,
-            'tokenizer_config_identity': config.tokenizer_config_identity
-        }, state_file)
-
-        config.save(config_file)
-
-        # Atomic promotion to final path
-        if os.path.exists(final_path):
-            backup_path = os.path.join(self.checkpoint_dir, f".old_checkpoint_{step}_{uuid.uuid4().hex[:8]}")
-            try:
-                os.rename(final_path, backup_path)
-                shutil.rmtree(backup_path, ignore_errors=True)
-            except Exception:
-                shutil.rmtree(final_path, ignore_errors=True)
-
         try:
-            os.rename(tmp_path, final_path)
-        except OSError:
-            # Fallback on platforms where atomic directory rename over existing fails
+            # --- Step 1: Capture all state ---
+            rng_states = {
+                'python_rng': random.getstate(),
+                'numpy_rng': np.random.get_state(),
+                'torch_cpu_rng': torch.get_rng_state() if torch else None,
+                'torch_cuda_rng': torch.cuda.get_rng_state_all() if (torch and torch.cuda.is_available()) else None,
+            }
+            dataloader_state = {
+                'current_shard_idx': getattr(dataloader, 'current_shard_idx', 0),
+                'current_batch_idx': getattr(dataloader, 'current_batch_idx', 0)
+            }
+            scaler_state = scaler.state_dict() if scaler is not None else None
+
+            # --- Step 1: Write state to temporary directory ---
+            state_file = os.path.join(tmp_path, "training_state.pt")
+            config_file = os.path.join(tmp_path, "training_config.json")
+
+            torch.save({
+                'model_state_dict': model.state_dict(),
+                'optimizer_state_dict': optimizer.state_dict(),
+                'scheduler_state_dict': scheduler.state_dict(),
+                'step': step,
+                'micro_step': micro_step,
+                'epoch': epoch,
+                'rng_states': rng_states,
+                'dataloader_state': dataloader_state,
+                'scaler_state': scaler_state,
+                'seed': config.seed,
+                'dataset_version': config.dataset_version,
+                'dataset_content_hash': config.dataset_content_hash,
+                'tokenizer_identity': config.tokenizer_identity,
+                'tokenizer_config_identity': config.tokenizer_config_identity
+            }, state_file)
+            config.save(config_file)
+
+            # --- Step 2: Validate temporary directory before touching live path ---
+            if not self.is_checkpoint_valid(tmp_path):
+                raise RuntimeError(
+                    f"[CheckpointManager] Temporary checkpoint for step {step} failed validation "
+                    f"before promotion. Training state is NOT lost — current in-memory state is intact. "
+                    f"Aborting save to prevent corrupting trusted checkpoint directory."
+                )
+
+            # --- Step 3: Preserve the previous trusted checkpoint (do NOT delete yet) ---
             if os.path.exists(final_path):
-                shutil.rmtree(final_path, ignore_errors=True)
-            shutil.move(tmp_path, final_path)
+                preserved_path = os.path.join(
+                    self.checkpoint_dir, f".preserved_checkpoint_{step}_{tmp_uid}"
+                )
+                try:
+                    os.rename(final_path, preserved_path)
+                except Exception as e:
+                    raise RuntimeError(
+                        f"[CheckpointManager] Failed to move existing checkpoint-{step} "
+                        f"to preservation path before promotion: {e}"
+                    ) from e
+
+            # --- Step 4: Promote tmp -> final_path atomically ---
+            try:
+                os.rename(tmp_path, final_path)
+            except OSError:
+                # Fallback for platforms where atomic directory rename fails (e.g. cross-device)
+                if os.path.exists(final_path):
+                    shutil.rmtree(final_path, ignore_errors=True)
+                shutil.move(tmp_path, final_path)
+            tmp_path = None  # Ownership transferred; do not clean up in finally
+
+            # --- Step 5: Re-validate at final path, then remove preserved copy ---
+            if not self.is_checkpoint_valid(final_path):
+                # Promotion succeeded structurally but validation failed — restore from preserved
+                if preserved_path and os.path.exists(preserved_path):
+                    try:
+                        if os.path.exists(final_path):
+                            shutil.rmtree(final_path, ignore_errors=True)
+                        os.rename(preserved_path, final_path)
+                        preserved_path = None
+                    except Exception:
+                        pass
+                raise RuntimeError(
+                    f"[CheckpointManager] Post-promotion validation failed for checkpoint-{step}. "
+                    f"Previous trusted checkpoint has been restored if available."
+                )
+
+            # Promotion and validation both succeeded — now safe to discard preserved copy
+            if preserved_path and os.path.exists(preserved_path):
+                shutil.rmtree(preserved_path, ignore_errors=True)
+                preserved_path = None
+
+        except Exception:
+            # Ensure the preserved copy is never silently lost on any failure path
+            if preserved_path and os.path.exists(preserved_path) and not os.path.exists(final_path):
+                try:
+                    os.rename(preserved_path, final_path)
+                except Exception:
+                    pass  # Best-effort: leave preserved copy on disk for manual recovery
+            # Clean up an uncommitted tmp directory if it still exists
+            if tmp_path and os.path.exists(tmp_path):
+                shutil.rmtree(tmp_path, ignore_errors=True)
+            raise
 
     def is_checkpoint_valid(self, path: str) -> bool:
         """Verify that a checkpoint directory is structurally complete and readable."""

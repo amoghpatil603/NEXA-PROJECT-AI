@@ -37,6 +37,35 @@ class Trainer:
         self.optimizer_step = 0
         self.epoch = 0
 
+    def _save_and_validate(self):
+        """
+        Save a checkpoint for the current optimizer_step and immediately validate it.
+        Raises RuntimeError if the saved checkpoint fails structural validation.
+        This guard applies to ALL checkpoints: early saves and periodic saves alike.
+        """
+        self.checkpoint_manager.save(
+            model=self.model,
+            optimizer=self.optimizer,
+            scheduler=self.scheduler,
+            step=self.optimizer_step,
+            micro_step=self.micro_step,
+            epoch=self.epoch,
+            dataloader=self.dataloader,
+            config=self.config,
+            scaler=self.scaler
+        )
+        # Post-save validation gate (FIX 1)
+        import os as _os
+        ckpt_path = _os.path.join(
+            self.config.checkpoint_dir, f"checkpoint-{self.optimizer_step}"
+        )
+        if not self.checkpoint_manager.is_checkpoint_valid(ckpt_path):
+            raise RuntimeError(
+                f"[Trainer] FATAL: checkpoint-{self.optimizer_step} failed post-save validation. "
+                f"The saved file is structurally invalid. Halting training to prevent silent data loss."
+            )
+        print(f"[Trainer] checkpoint-{self.optimizer_step} saved and validated OK.")
+
     def _detect_device(self):
         if torch is None:
             return "cpu"
@@ -174,33 +203,13 @@ class Trainer:
                     early_saves = getattr(self.config, 'early_save_steps', []) or []
                     should_save = (self.optimizer_step in early_saves) or (self.optimizer_step % self.config.save_steps == 0)
                     if should_save and self.optimizer_step > 0:
-                        self.checkpoint_manager.save(
-                            model=self.model,
-                            optimizer=self.optimizer,
-                            scheduler=self.scheduler,
-                            step=self.optimizer_step,
-                            micro_step=self.micro_step,
-                            epoch=self.epoch,
-                            dataloader=self.dataloader,
-                            config=self.config,
-                            scaler=self.scaler
-                        )
+                        self._save_and_validate()
         except KeyboardInterrupt:
             print(f"\n[Trainer] Training gracefully interrupted by user at step {self.optimizer_step}.")
             if self.optimizer_step > 0:
                 print(f"[Trainer] Preserving safe checkpoint at step {self.optimizer_step}...")
-                self.checkpoint_manager.save(
-                    model=self.model,
-                    optimizer=self.optimizer,
-                    scheduler=self.scheduler,
-                    step=self.optimizer_step,
-                    micro_step=self.micro_step,
-                    epoch=self.epoch,
-                    dataloader=self.dataloader,
-                    config=self.config,
-                    scaler=self.scaler
-                )
-                print("[Trainer] Safe checkpoint saved successfully. Exiting cleanly.")
+                self._save_and_validate()
+                print("[Trainer] Safe checkpoint saved and validated successfully. Exiting cleanly.")
 
     def resume_from_checkpoint(self, checkpoint_path=None) -> bool:
         """

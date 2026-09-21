@@ -231,5 +231,179 @@ elif mode == 'session2':
         res2 = subprocess.run([sys.executable, script_file, "session2"], capture_output=True, text=True, cwd=os.getcwd())
         self.assertEqual(res2.returncode, 0, f"Session 2 failed with code {res2.returncode}: {res2.stderr}\nStdout: {res2.stdout}")
 
+class TestCheckpointHardening(unittest.TestCase):
+    """Tests for FIX 1 (post-save validation) and FIX 2 (safe replacement semantics)."""
+
+    def setUp(self):
+        self.test_dir = tempfile.mkdtemp()
+        self.ckpt_dir = os.path.join(self.test_dir, "checkpoints")
+        self.log_dir = os.path.join(self.test_dir, "logs")
+        self.config = TrainingConfig(
+            batch_size=2,
+            gradient_accumulation_steps=1,
+            learning_rate=1e-3,
+            max_steps=3,
+            save_steps=1,   # save every step so we exercise validation at every step
+            checkpoint_dir=self.ckpt_dir,
+            log_dir=self.log_dir,
+            seed=42
+        )
+        self.mgr = CheckpointManager(self.ckpt_dir)
+
+    def tearDown(self):
+        shutil.rmtree(self.test_dir, ignore_errors=True)
+
+    # ------------------------------------------------------------------ #
+    # TEST A: periodic checkpoint is validated after creation (FIX 1)     #
+    # ------------------------------------------------------------------ #
+    def test_periodic_checkpoint_validated_after_creation(self):
+        """
+        A. Running Trainer.train() with save_steps=1 must produce a
+           valid checkpoint-N at every optimizer step, and Trainer
+           must NOT raise even though validation is now active.
+        """
+        model = SimpleLinearModel()
+        dataset = DummyDataset(size=10)
+        trainer = Trainer(model, self.config, dataset)
+        # Should complete without raising — all saves must pass validation
+        trainer.train()
+        self.assertGreaterEqual(trainer.optimizer_step, 1)
+        # Every checkpoint written should be structurally valid
+        for step in range(1, trainer.optimizer_step + 1):
+            path = os.path.join(self.ckpt_dir, f"checkpoint-{step}")
+            if os.path.exists(path):
+                self.assertTrue(
+                    self.mgr.is_checkpoint_valid(path),
+                    f"checkpoint-{step} created by Trainer is not valid"
+                )
+
+    # ------------------------------------------------------------------ #
+    # TEST B: corrupted checkpoint → training stops, no silent continue   #
+    # ------------------------------------------------------------------ #
+    def test_corrupted_checkpoint_raises_and_stops_training(self):
+        """
+        B. If is_checkpoint_valid returns False (simulating a structurally
+           invalid checkpoint), training must halt with a RuntimeError.
+           The error may be raised either in CheckpointManager.save() at
+           the pre-promotion gate, or in Trainer._save_and_validate().
+           Either way, training must NOT continue silently.
+        """
+        model = SimpleLinearModel()
+        dataset = DummyDataset(size=10)
+        trainer = Trainer(model, self.config, dataset)
+
+        # Monkeypatch: make validation always report failure after save
+        original_valid = trainer.checkpoint_manager.is_checkpoint_valid
+        trainer.checkpoint_manager.is_checkpoint_valid = lambda path: False
+
+        with self.assertRaises(RuntimeError) as ctx:
+            trainer.train()
+
+        err_msg = str(ctx.exception)
+        # Accept either the CheckpointManager-level or Trainer-level error message
+        self.assertTrue(
+            "failed post-save validation" in err_msg or
+            "failed validation before promotion" in err_msg or
+            "Post-promotion validation failed" in err_msg,
+            f"Expected a checkpoint validation failure message, got: {err_msg}"
+        )
+
+        # Restore so teardown works cleanly
+        trainer.checkpoint_manager.is_checkpoint_valid = original_valid
+
+    # ------------------------------------------------------------------ #
+    # TEST C: previous trusted checkpoint survives a failed promotion      #
+    # ------------------------------------------------------------------ #
+    def test_trusted_checkpoint_preserved_on_promotion_failure(self):
+        """
+        C. When saving step-N for the second time (overwrite scenario),
+           if the temporary checkpoint fails pre-promotion validation,
+           the previously-trusted checkpoint-N must still be accessible.
+        """
+        model = SimpleLinearModel()
+        optimizer = torch.optim.AdamW(model.parameters(), lr=1e-3)
+        scheduler = torch.optim.lr_scheduler.LambdaLR(optimizer, lr_lambda=lambda s: 1.0)
+        dataloader = DummyDataset()
+
+        # Write a valid first version of checkpoint-2
+        self.mgr.save(model, optimizer, scheduler, step=2, micro_step=2,
+                      epoch=0, dataloader=dataloader, config=self.config)
+        first_ckpt_path = os.path.join(self.ckpt_dir, "checkpoint-2")
+        self.assertTrue(self.mgr.is_checkpoint_valid(first_ckpt_path),
+                        "First checkpoint-2 must be valid before test starts")
+
+        # Record the step value stored in the first checkpoint
+        first_state = torch.load(
+            os.path.join(first_ckpt_path, "training_state.pt"),
+            map_location="cpu", weights_only=False
+        )
+        self.assertEqual(first_state["step"], 2)
+
+        # Monkeypatch: make the FIRST call to is_checkpoint_valid return False
+        # (simulates the tmp dir validation failing before promotion)
+        call_count = [0]
+        original_valid = self.mgr.is_checkpoint_valid
+
+        def patched_valid(path):
+            call_count[0] += 1
+            if call_count[0] == 1:
+                return False   # force pre-promotion failure
+            return original_valid(path)
+
+        self.mgr.is_checkpoint_valid = patched_valid
+
+        with self.assertRaises(RuntimeError):
+            self.mgr.save(model, optimizer, scheduler, step=2, micro_step=4,
+                          epoch=0, dataloader=dataloader, config=self.config)
+
+        self.mgr.is_checkpoint_valid = original_valid
+
+        # The original checkpoint-2 must still be accessible and valid
+        self.assertTrue(os.path.exists(first_ckpt_path),
+                        "Trusted checkpoint-2 must still exist after failed overwrite")
+        self.assertTrue(self.mgr.is_checkpoint_valid(first_ckpt_path),
+                        "Trusted checkpoint-2 must still be valid after failed overwrite")
+        recovered_state = torch.load(
+            os.path.join(first_ckpt_path, "training_state.pt"),
+            map_location="cpu", weights_only=False
+        )
+        self.assertEqual(recovered_state["step"], 2,
+                         "Recovered checkpoint must contain the original step=2 state")
+
+    # ------------------------------------------------------------------ #
+    # TEST D: stale .tmp_checkpoint_* dirs cleaned on manager init         #
+    # ------------------------------------------------------------------ #
+    def test_stale_tmp_dirs_cleaned_on_init(self):
+        """
+        D. Any .tmp_checkpoint_* directories left over from a crashed
+           previous run must be removed when CheckpointManager is
+           re-instantiated (startup cleanup).
+        """
+        # Manually plant two stale tmp directories
+        stale1 = os.path.join(self.ckpt_dir, ".tmp_checkpoint_99_aabbccdd")
+        stale2 = os.path.join(self.ckpt_dir, ".tmp_checkpoint_100_deadbeef")
+        os.makedirs(stale1, exist_ok=True)
+        os.makedirs(stale2, exist_ok=True)
+        with open(os.path.join(stale1, "partial.dat"), "w") as f:
+            f.write("stale")
+        with open(os.path.join(stale2, "partial.dat"), "w") as f:
+            f.write("stale")
+
+        # Also plant a valid checkpoint that must NOT be touched
+        valid_path = os.path.join(self.ckpt_dir, "checkpoint-50")
+        os.makedirs(valid_path, exist_ok=True)
+        torch.save({'model_state_dict': {}}, os.path.join(valid_path, "training_state.pt"))
+        self.config.save(os.path.join(valid_path, "training_config.json"))
+
+        # Re-instantiate manager — startup cleanup must fire
+        fresh_mgr = CheckpointManager(self.ckpt_dir)
+
+        self.assertFalse(os.path.exists(stale1), "stale tmp dir 1 must be removed on init")
+        self.assertFalse(os.path.exists(stale2), "stale tmp dir 2 must be removed on init")
+        self.assertTrue(os.path.exists(valid_path), "valid checkpoint-50 must NOT be removed")
+        self.assertTrue(fresh_mgr.is_checkpoint_valid(valid_path),
+                        "checkpoint-50 must remain valid after cleanup")
+
+
 if __name__ == "__main__":
     unittest.main()
