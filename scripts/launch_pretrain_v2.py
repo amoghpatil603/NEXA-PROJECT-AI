@@ -144,10 +144,7 @@ def main():
     print(f"[PRE-FLIGHT 6] DataLoader initialized from '{args.dataset_dir}' with {len(dataloader.shards)} shards.")
 
     # 7. Initialize Trainer from SCRATCH (Do not load V1)
-    # Configure initial max_steps = 1 to enforce Step-1 validation gate
-    target_max_steps = t_config.max_steps
-    t_config.max_steps = 1
-
+    # Maintain production max_steps to ensure correct scheduler construction.
     trainer = Trainer(model, t_config, dataloader)
     print(f"[PRE-FLIGHT 7] Initialized fresh Trainer. Initial optimizer_step = {trainer.optimizer_step}")
     if trainer.optimizer_step != 0:
@@ -156,7 +153,7 @@ def main():
 
     # 8. Complete Optimizer Step 1 and Save Checkpoint-1
     print("\nExecuting Optimizer Step 1 (effective batch size 32)...")
-    trainer.train()
+    trainer.train(max_steps_override=1)
 
     if trainer.optimizer_step != 1:
         print(f"[FATAL ERROR] Step 1 did not complete cleanly (current step: {trainer.optimizer_step})!")
@@ -184,7 +181,6 @@ def main():
             sys.exit(1)
 
     # Verify resume capability from checkpoint-1
-    t_config.max_steps = target_max_steps
     resumed = trainer.resume_from_checkpoint(step1_dir)
     if not resumed or trainer.optimizer_step != 1:
         print(f"[FATAL ERROR] Failed to resume cleanly from checkpoint-1!")

@@ -83,9 +83,29 @@ class Trainer:
                 latest, self.model, self.optimizer, self.scheduler, self.dataloader, self.scaler, config=self.config
             )
 
-    def train(self):
-        self.model.train()
+    def train(self, max_steps_override: int = None):
+        """
+        Execute the training loop.
 
+        Args:
+            max_steps_override: If provided, stop after this many optimizer
+                steps regardless of config.max_steps.  The scheduler is
+                ALWAYS constructed from config.max_steps (set in __init__),
+                so passing a small override here does NOT corrupt the LR
+                schedule horizon.
+        """
+        # Determine effective loop bound WITHOUT mutating config
+        effective_max_steps = (
+            max_steps_override if max_steps_override is not None
+            else self.config.max_steps
+        )
+        if effective_max_steps != self.config.max_steps:
+            print(
+                f"[Trainer] train() called with max_steps_override={effective_max_steps}. "
+                f"Scheduler horizon remains config.max_steps={self.config.max_steps}."
+            )
+
+        self.model.train()
         print(f"Starting training on {self.device}")
 
         if torch is None or self.optimizer is None:
@@ -99,7 +119,7 @@ class Trainer:
         self.optimizer.zero_grad()
 
         try:
-            while self.optimizer_step < self.config.max_steps:
+            while self.optimizer_step < effective_max_steps:
                 try:
                     batch = next(data_iter)
                 except StopIteration:
