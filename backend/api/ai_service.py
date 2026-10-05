@@ -7,8 +7,10 @@ from fastapi import FastAPI, Request, File, UploadFile, HTTPException
 from fastapi.responses import StreamingResponse, JSONResponse
 import uvicorn
 import gc
+from pathlib import Path
 
-sys.path.insert(0, '/app/applet')
+ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(ROOT))
 from backend.models.chat_engine import ChatEngine
 from backend.agents.execution_engine import ExecutionEngine
 from backend.rag.rag_engine import RAGEngine
@@ -37,10 +39,7 @@ doc_parser = None
 async def startup_event():
     global engine, exec_engine, rag_engine, mem_engine, doc_parser
     try:
-        checkpoint_path = '/app/applet/checkpoints/model.pt'
-        if not os.path.exists(checkpoint_path):
-            checkpoint_path = 'checkpoints/model.pt'
-        engine = ChatEngine(checkpoint_path=checkpoint_path)
+        engine = ChatEngine(checkpoint_path=os.getenv("NEXA_CHECKPOINT"))
         exec_engine = ExecutionEngine()
         rag_engine = RAGEngine()
         mem_engine = MemoryEngine()
@@ -48,11 +47,12 @@ async def startup_event():
         logger.info("NEXA FastAPI Service Engines Initialized Successfully!")
     except Exception as e:
         logger.error(f"Error initializing engines in FastAPI startup: {e}")
+        raise
 
 @app.get("/health")
 async def health():
     return {
-        "status": "ok",
+        "status": "ok" if engine is not None else "degraded",
         "model_loaded": engine is not None,
         "model": "NexaTransformer v1",
         "phase": "NEXA_PHASE5B5_STABILITY_CERTIFIED"
@@ -62,7 +62,7 @@ async def health():
 async def readiness():
     return {
         "status": "ready" if engine is not None else "degraded",
-        "ready": True,
+        "ready": engine is not None,
         "model_loaded": engine is not None,
         "service": "NEXA AI Platform"
     }
@@ -234,7 +234,33 @@ async def vision(file: UploadFile = File(...)):
 
 @app.post("/voice")
 async def voice(request: Request):
-    return JSONResponse(status_code=501, content={"error": "Voice pipeline is not implemented (missing dependencies)."})
+    content_type = request.headers.get("content-type", "")
+    if "application/json" in content_type:
+        payload = await request.json()
+        text = str(payload.get("text", "")).strip()
+        if not text:
+            raise HTTPException(status_code=400, detail="text is required")
+        from backend.voice.voice_engine import VoiceEngine
+        return VoiceEngine().process_voice(text)
+
+    body = await request.body()
+    if not body:
+        raise HTTPException(status_code=400, detail="audio body is required")
+    suffix = ".wav" if "wav" in content_type else ".bin"
+    upload_dir = ROOT / "uploads"
+    upload_dir.mkdir(parents=True, exist_ok=True)
+    audio_path = upload_dir / f"voice-{int(time.time() * 1000)}{suffix}"
+    audio_path.write_bytes(body)
+
+    try:
+        from backend.voice.voice_engine import VoiceEngine
+        transcript = VoiceEngine().transcribe(str(audio_path))
+        return {"transcript": transcript}
+    finally:
+        try:
+            audio_path.unlink()
+        except OSError:
+            pass
 
 if __name__ == "__main__":
     uvicorn.run(app, host="127.0.0.1", port=8000)
