@@ -1,30 +1,18 @@
 import os
-import sys
-try:
-    import torch
-    import torch.nn.functional as F
-except ImportError:
-    torch = None
-    F = None
 import random
+from pathlib import Path
 from typing import Optional, List, Dict, Generator, Tuple, Any
 
-sys.path.insert(0, '/app/applet/nexa-model')
-sys.path.insert(0, '/app/applet')
-sys.path.insert(0, '/app/applet/app/applet')
+import torch
+import torch.nn.functional as F
 
-try:
-    from model.config import NexaConfig
-    from model.transformer import NexaTransformer
-    from training.checkpoint import load_checkpoint
-    from tokenizer.bpe_tokenizer import DEFAULT_SPECIAL_TOKENS
-    from tokenizer.incremental_bpe import IncrementalBPETokenizer
-except ImportError:
-    NexaConfig = None
-    NexaTransformer = None
-    load_checkpoint = None
-    DEFAULT_SPECIAL_TOKENS = {'<PAD>': 0}
-    IncrementalBPETokenizer = None
+from backend.models.model.config import NexaConfig
+from backend.models.model.transformer import NexaTransformer
+from backend.models.training.checkpoint import load_checkpoint
+from backend.models.tokenizer.bpe_tokenizer import DEFAULT_SPECIAL_TOKENS
+from backend.models.tokenizer.incremental_bpe import IncrementalBPETokenizer
+
+ROOT = Path(__file__).resolve().parents[2]
 
 class TokenStreamer:
     def __init__(self, tokenizer):
@@ -45,7 +33,7 @@ class TokenStreamer:
 class ChatEngine:
     def __init__(
         self,
-        checkpoint_path: str = '/app/applet/checkpoints/model.pt',
+        checkpoint_path: Optional[str] = None,
         vocab_path: str = '/app/applet/nexa-model/tokenizer/bpe_vocab.json',
         merges_path: str = '/app/applet/nexa-model/tokenizer/bpe_merges.txt',
         device: Optional[str] = None
@@ -80,55 +68,56 @@ class ChatEngine:
         self.bos_token_id = DEFAULT_SPECIAL_TOKENS.get('<BOS>', 1)
         self.pad_token_id = DEFAULT_SPECIAL_TOKENS.get('<PAD>', 0)
 
-        self.config = NexaConfig(
-            vocab_size=8000,
-            max_seq_len=256,
-            d_model=384,
-            n_layers=6,
-            n_heads=6,
-            d_ff=1536,
-            dropout=0.1,
-            norm_eps=1e-5,
-            weight_tying=True,
-            bias=False
-        )
+        checkpoint = self._find_checkpoint(checkpoint_path)
+        self.config = self._load_checkpoint_config(checkpoint)
 
         try:
             self.model = NexaTransformer(self.config).to(self.device)
         except Exception as e:
             raise RuntimeError(f"Failed to initialize NexaTransformer model: {e}")
 
-        ckpt_candidates = [
-            checkpoint_path,
-            '/app/applet/checkpoints/model.pt',
-            '/app/applet/checkpoints_phase4e/latest.ckpt',
-            '/app/applet/checkpoints_phase4e/best.ckpt'
-        ]
+        try:
+            load_checkpoint(checkpoint, self.model, device=self.device)
+        except Exception as e:
+            raise RuntimeError(f"Failed to load trained NEXA checkpoint {checkpoint}: {e}") from e
 
-        loaded_success = False
-        last_err = None
-        loaded_path = None
-
-        for cp in ckpt_candidates:
-            if cp and os.path.exists(cp) and os.path.getsize(cp) > 100000:
-                try:
-                    load_checkpoint(cp, self.model)
-                    loaded_success = True
-                    loaded_path = cp
-                    print(f"Successfully loaded model checkpoint from {cp}")
-                    break
-                except Exception as e:
-                    last_err = e
-
-        if not loaded_success:
-            raise RuntimeError(
-                f"CRITICAL: No valid trained checkpoint found in candidates {ckpt_candidates}. "
-                f"Refusing to perform inference with un-trained / randomly initialized weights. "
-                f"Last error: {last_err}"
-            )
-
-        self.loaded_checkpoint_path = loaded_path
+        self.loaded_checkpoint_path = str(checkpoint)
         self.model.eval()
+
+    @staticmethod
+    def _load_checkpoint_config(checkpoint: Path) -> NexaConfig:
+        try:
+            state = torch.load(checkpoint, map_location="cpu", weights_only=False)
+            cfg = state.get("config") if isinstance(state, dict) else None
+            if isinstance(cfg, NexaConfig):
+                return cfg
+            if isinstance(cfg, dict):
+                allowed = {k: v for k, v in cfg.items() if k in NexaConfig.__dataclass_fields__}
+                return NexaConfig(**allowed)
+        except Exception:
+            pass
+        return NexaConfig.tiny()
+
+    @staticmethod
+    def _find_checkpoint(explicit: Optional[str]) -> Path:
+        candidates = []
+        if explicit:
+            candidates.append(Path(explicit))
+        if os.getenv("NEXA_CHECKPOINT"):
+            candidates.append(Path(os.environ["NEXA_CHECKPOINT"]))
+        candidates.extend([
+            ROOT / "checkpoints" / "model.pt",
+            ROOT / "checkpoints" / "nexa_final.pt",
+            ROOT / "checkpoints_dpo" / "best.ckpt",
+            ROOT / "checkpoints_sft" / "best.ckpt",
+            ROOT / "checkpoints_phase4e" / "best.ckpt",
+            ROOT / "checkpoints_phase4e" / "latest.ckpt",
+        ])
+        for path in candidates:
+            path = path.expanduser()
+            if path.is_file() and path.stat().st_size > 100_000:
+                return path
+        raise RuntimeError("No trained NEXA checkpoint found. Set NEXA_CHECKPOINT to a valid .ckpt/.pt file.")
 
     def format_prompt(
         self,
