@@ -1,6 +1,7 @@
 import os
 import json
 import logging
+from pathlib import Path
 import psycopg2
 from psycopg2.extras import RealDictCursor
 import numpy as np
@@ -219,8 +220,20 @@ def get_connection():
         raise e
 
 def init_db():
-    """Initialize database schema by executing schema.sql."""
-    pass
+    """Initialize the authoritative PostgreSQL + pgvector schema."""
+    schema_path = Path(__file__).resolve().parent / "schema.sql"
+    if not schema_path.exists():
+        raise FileNotFoundError(f"Database schema not found: {schema_path}")
+    conn = get_connection()
+    try:
+        with conn.cursor() as cur:
+            cur.execute(schema_path.read_text(encoding="utf-8"))
+        conn.commit()
+    except Exception:
+        conn.rollback()
+        raise
+    finally:
+        conn.close()
 
 def vector_to_sql_str(vec):
     """Convert numpy array or list to pgvector string format '[v1,v2,...]'."""
