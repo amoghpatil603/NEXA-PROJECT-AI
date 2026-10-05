@@ -1,15 +1,58 @@
-version: '3.8'
+version: "3.8"
 
 services:
+  postgres:
+    image: pgvector/pgvector:pg16
+    environment:
+      POSTGRES_DB: nexa_db
+      POSTGRES_USER: nexa
+      POSTGRES_PASSWORD: nexa_password
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./backend/database/schema.sql:/docker-entrypoint-initdb.d/01-schema.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U nexa -d nexa_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  redis:
+    image: redis:7-alpine
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
   nexa-platform:
     build: .
     ports:
       - "80:80"
       - "3000:3000"
     environment:
-      - NODE_ENV=production
-      - PORT=3000
+      NODE_ENV: production
+      PORT: 3000
+      POSTGRES_HOST: postgres
+      POSTGRES_PORT: 5432
+      POSTGRES_DB: nexa_db
+      POSTGRES_USER: nexa
+      POSTGRES_PASSWORD: nexa_password
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      NEXA_CHECKPOINT: /app/checkpoints/model.pt
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
     restart: unless-stopped
     volumes:
       - ./uploads:/app/uploads
       - ./data:/app/data
+      - ./checkpoints:/app/checkpoints:ro
+
+volumes:
+  postgres_data:
+  redis_data:

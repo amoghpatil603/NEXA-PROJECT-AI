@@ -1,3 +1,15 @@
 torch
 numpy
 psutil
+fastapi
+uvicorn[standard]
+python-multipart
+psycopg2-binary
+redis
+rq
+pillow
+pytesseract
+pypdf
+python-docx
+openpyxl
+pdfplumber
