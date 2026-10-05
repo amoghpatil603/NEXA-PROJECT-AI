@@ -34,8 +34,8 @@ class ChatEngine:
     def __init__(
         self,
         checkpoint_path: Optional[str] = None,
-        vocab_path: str = '/app/applet/nexa-model/tokenizer/bpe_vocab.json',
-        merges_path: str = '/app/applet/nexa-model/tokenizer/bpe_merges.txt',
+        vocab_path: Optional[str] = None,
+        merges_path: Optional[str] = None,
         device: Optional[str] = None
     ):
         if device is None:
@@ -45,11 +45,9 @@ class ChatEngine:
 
         try:
             tok_candidates = [
-                "backend/tokenizer_v1/tokenizer.json",
-                "tokenizer_v1/tokenizer.json",
-                "/app/applet/backend/tokenizer_v1/tokenizer.json",
-                "/app/applet/nexa-model/tokenizer/production/tokenizer.json",
-                "nexa-model/tokenizer/production/tokenizer.json"
+                vocab_path,
+                str(ROOT / "backend/models/tokenizer/production/tokenizer.json"),
+                str(ROOT / "backend/tokenizer_v1/tokenizer.json")
             ]
             loaded_tok = False
             for p in tok_candidates:
@@ -59,8 +57,7 @@ class ChatEngine:
                     print(f"Successfully loaded tokenizer from {p}")
                     break
             if not loaded_tok:
-                print("Warning: Tokenizer files not found, using default special tokens.")
-                self.tokenizer = IncrementalBPETokenizer(vocab_size=8000)
+                raise RuntimeError("Canonical NEXA tokenizer not found.")
         except Exception as e:
             raise RuntimeError(f"Failed to initialize BPE Tokenizer: {e}")
 
