@@ -11,7 +11,7 @@ FROM python:3.10-slim-bullseye
 WORKDIR /app
 
 # Install Node.js
-RUN apt-get update && apt-get install -y curl \
+RUN apt-get update && apt-get install -y curl redis-server tesseract-ocr tesseract-ocr-eng \\
     && curl -fsSL https://deb.nodesource.com/setup_22.x | bash - \
     && apt-get install -y nodejs nginx \
     && apt-get clean \
@@ -19,7 +19,7 @@ RUN apt-get update && apt-get install -y curl \
 
 # Copy python requirements
 COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt || true
+RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy all files
 COPY --from=builder /app /app
